@@ -1,0 +1,21 @@
+{
+ "note": "투자 규모 결정 규칙 (종목 선택과 분리). 숫자를 바꾸면 다음 주간 반영부터 적용됩니다.",
+ "equity_by_stance": {"공격적 매수": 90, "선별적 매수": 75, "중립": 60, "방어적": 45},
+ "agent_adjust_max": 10,
+ "core_etf": "SPY",
+ "max_position_loss_pct": 6,
+ "max_single_weight": 25,
+ "max_theme_pct": 35,
+ "cash_rate_pct": 2.5,
+ "fx_spread_pct": 0.1,
+ "dividend_tax_pct": 15,
+ "explain": {
+  "equity_by_stance": "시장 스탠스별 전체 자산 중 주식 비중(%). 개별주 + 코어 ETF 합계",
+  "max_position_loss_pct": "약세 시나리오에서 한 종목이 전체 자산에 줄 수 있는 최대 손실(%). 비중 상한 = 이 값 ÷ 약세 하락률",
+  "max_single_weight": "한 종목 최대 비중(%)",
+  "max_theme_pct": "AI·반도체 등 같은 공통 위험 테마의 개별주 합계 상한(%). 코어 ETF 는 제외",
+  "cash_rate_pct": "원화 현금 연 이자율(%) — 시뮬레이션 반영",
+  "fx_spread_pct": "환전 스프레드(%) — 매수·매도 시 각각",
+  "dividend_tax_pct": "미국 배당 원천징수(%)"
+ }
+}
