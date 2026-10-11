@@ -118,6 +118,30 @@
   .rep-text { font-size: 12.5px; line-height: 1.65; color: #cbd5e1; }
   .kv { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid #1e2340; }
   .kv span:first-child { color: var(--muted); }
+
+  /* ── 반응형: 스마트폰은 기존 480px 한 줄, 웹(960px↑)은 넓게 2단 ── */
+  .dash { display: flex; flex-direction: column; }
+  .dcol { display: contents; }
+  .o0{order:0} .o1{order:1} .o2{order:2} .o3{order:3} .o4{order:4} .o5{order:5} .o6{order:6} .o7{order:7} .o8{order:8}
+  @media (min-width: 960px) {
+    html { font-size: 17px; }
+    .app-wrapper { max-width: 1280px; }
+    .app-wrapper.px-3 { padding-left: 24px; padding-right: 24px; }
+    .dash { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 0 18px; align-items: start; }
+    .dcol { display: block; }
+    .dfull { grid-column: 1 / -1; }
+    /* 다른 탭: 목록형은 2열, 표(🇺🇸50·🇰🇷50)는 전체 폭 */
+    #news-content, #m2-content, #m3-content, #m4-content, #m5-content, #m6-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 14px; align-items: start; }
+    #news-content > :first-child, #m2-content > .card, #m3-content > .card, #m4-content > .card, #m5-content > .card, #m5-content > .text-xs { grid-column: 1 / -1; }
+    #m1-content { column-count: 2; column-gap: 18px; }
+    #m1-content > * { break-inside: avoid; }
+    .bottom-nav .app-wrapper { max-width: 960px; }
+    .sheet-inner { max-width: 860px; }
+    .rep-text { font-size: 14px; }
+    .toast { max-width: 440px; }
+    td { font-size: 14px; }
+    th { font-size: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -775,11 +799,18 @@ function loadSummary(d) {
       ${closedRows ? '<div class="text-xs font-semibold mt-3 mb-1" style="color:var(--muted);">제외된 종목 성과</div>' + closedRows : ''}
     </div>`;
 
-  render('summary-content', warnHtml + stanceHtml + portfolioHtml + simHtml(INJECTED.sim) + decisionHtml + msgHtml + sectorHtml + historyHtml + `
+  const box = (cls, html) => html ? '<div class="' + cls + '">' + html + '</div>' : '';
+  const briefHtml = `
     <div class="card p-4 mb-3">
       <div class="text-xs mb-3" style="color:var(--muted);">브리핑 텍스트 (복사용)</div>
       <div class="card2 p-4" style="white-space:pre-line;font-size:13px;line-height:1.8;">${esc(d.brief_text)}</div>
-    </div>
+    </div>`;
+  // 스마트폰: 한 줄(원래 순서) / 웹(960px↑): 왼쪽 추천·결정·이력, 오른쪽 시뮬레이션·메시지·섹터·브리핑
+  render('summary-content', '<div class="dash">'
+    + box('o0 dfull', warnHtml)
+    + '<div class="dcol">' + box('o1', stanceHtml) + box('o2', portfolioHtml) + box('o4', decisionHtml) + box('o7', historyHtml) + '</div>'
+    + '<div class="dcol">' + box('o3', simHtml(INJECTED.sim)) + box('o5', msgHtml) + box('o6', sectorHtml) + box('o8', briefHtml) + '</div>'
+    + '</div>' + `
     <div class="text-xs px-1 pb-4" style="color:var(--muted);line-height:1.7;">
       데이터: Yahoo Finance(시세·재무·컨센서스), SEC EDGAR(13F·Form 4), Aside AI 웹검색(뉴스·심층분석).
       주간 신호 갱신 ${esc(d.weekly_built_at || '—')} KST. 자동 생성된 참고 자료이며 투자 자문이 아닙니다.
