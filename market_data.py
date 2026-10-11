@@ -73,6 +73,10 @@ def _snapshot(ticker, name):
         "analysts": _num(info.get("numberOfAnalystOpinions")),
         "rec_mean": _num(info.get("recommendationMean")),
         "target_mean": _num(info.get("targetMeanPrice")),
+        "eps_low_1y": None, "eps_high_1y": None,
+        # 회계연도 종료일(epoch) — PER 기준(올해/내년/향후 12개월) 구분용
+        "last_fy_end": _num(info.get("lastFiscalYearEnd")),
+        "next_fy_end": _num(info.get("nextFiscalYearEnd")),
     }
     # 추정치 변화 (다음 회계연도 +1y EPS 컨센서스)
     try:
@@ -90,6 +94,12 @@ def _snapshot(ticker, name):
         s["eps_0q"] = _row(trend, "0q", "current")
         s["eps_1q"] = _row(trend, "+1q", "current")
         s["eps_0y"] = _row(trend, "0y", "current")
+    except Exception:
+        pass
+    try:  # 내년 EPS 추정치 분산 (근거 상태 표시용)
+        ee = _retry(lambda: t.earnings_estimate)
+        s["eps_low_1y"] = _row(ee, "+1y", "low")
+        s["eps_high_1y"] = _row(ee, "+1y", "high")
     except Exception:
         pass
     try:

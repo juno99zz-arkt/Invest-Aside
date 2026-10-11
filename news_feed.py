@@ -21,7 +21,17 @@ FEEDS = [
     ("CNBC", "https://www.cnbc.com/id/15839069/device/rss/rss.html"),    # Investing
     ("CNBC", "https://www.cnbc.com/id/19854910/device/rss/rss.html"),    # Technology
     ("MarketWatch", "https://feeds.content.dowjones.io/public/rss/mw_topstories"),
+    ("Yahoo Finance", "https://finance.yahoo.com/news/rssindex"),
+    ("Nasdaq", "https://www.nasdaq.com/feed/rssoutbound?category=Markets"),
+    ("Investing.com", "https://www.investing.com/rss/news_25.rss"),
+    ("Seeking Alpha", "https://seekingalpha.com/market_currents.xml"),
+    ("Federal Reserve", "https://www.federalreserve.gov/feeds/press_all.xml"),
 ]
+# 8-K 항목 코드 → 한글 (기업 공식 공시를 뉴스보다 우선)
+ITEMS_8K = {"1.01": "중요 계약 체결", "1.02": "중요 계약 해지", "1.03": "파산·회생", "2.01": "자산 인수·처분 완료",
+             "2.02": "실적 발표", "2.03": "채무 발생", "2.05": "구조조정 비용", "2.06": "자산 손상", "3.02": "주식 발행",
+             "4.02": "재무제표 신뢰성 문제", "5.02": "경영진·이사 변경", "7.01": "공정공시(IR 자료)", "8.01": "기타 중요 사항"}
+MAX_FILINGS = 25
 # Google 뉴스 검색 (여러 언론사, 제목 끝의 ' - 언론사' 로 출처 표기)
 QUERIES = [
     "stock market", "Federal Reserve interest rates", "inflation CPI jobs report",
@@ -58,8 +68,46 @@ def _norm(title):
     return re.sub(r"[^a-z0-9]", "", title.lower())[:60]
 
 
+def fetch_filings(tickers, days=14):
+    """보유·관심·후보 종목의 최근 8-K 공시 (SEC EDGAR, SEC_USER_AGENT 필요)."""
+    try:
+        import sec_data
+        if not sec_data._ua():
+            return []
+        ciks = sec_data._cik_map()
+    except Exception as e:
+        print(f"  공시 목록 실패: {e}")
+        return []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).date().isoformat()
+    out = []
+    for tk in tickers:
+        cik = ciks.get(tk)
+        if not cik:
+            continue
+        try:
+            rec = sec_data._get(f"https://data.sec.gov/submissions/CIK{cik}.json", as_json=True)["filings"]["recent"]
+        except Exception:
+            continue
+        for i, form in enumerate(rec["form"]):
+            if rec["filingDate"][i] < cutoff:
+                break
+            if form not in ("8-K", "6-K"):
+                continue
+            codes = [c.strip() for c in (rec.get("items", [""] * len(rec["form"]))[i] or "").split(",") if c.strip()]
+            labels = [ITEMS_8K.get(c, c) for c in codes if c != "9.01"] or ["공시"]
+            acc = rec["accessionNumber"][i]
+            url = (f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc.replace('-', '')}/"
+                   f"{rec['primaryDocument'][i]}")
+            out.append({"title": f"{tk} {form}: {' · '.join(labels)}", "source": "SEC EDGAR (기업 공시)", "url": url,
+                        "published": rec["filingDate"][i], "snippet": f"{tk} 공식 공시 항목: {', '.join(codes)}",
+                        "kind": "공시", "tickers": [tk]})
+    out.sort(key=lambda x: x["published"], reverse=True)
+    print(f"  기업 공시 후보 {len(out[:MAX_FILINGS])}건")
+    return out[:MAX_FILINGS]
+
+
 def fetch_candidates(tickers=(), days=14):
-    """최근 days일 기사 후보 [{id, title, source, url, published, snippet}] (최신순)."""
+    """최근 days일 후보 [{id, title, source, url, published, snippet, kind}] — 기업 공시 먼저, 그다음 기사(최신순)."""
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
     sources = list(FEEDS)
     sources += [(None, f"https://news.google.com/rss/search?q={quote(q + f' when:{days}d')}&hl=en-US&gl=US&ceid=US:en")
@@ -91,16 +139,22 @@ def fetch_candidates(tickers=(), days=14):
                 continue
             seen.add(key)
             snippet = _clean(e.get("summary")) if source else ""
-            items.append({"title": title, "source": src or "", "url": link,
+            items.append({"title": title, "source": src or "", "url": link, "kind": "뉴스",
                           "published": d.date().isoformat(), "snippet": snippet, "_dt": d})
             n += 1
             if n >= MAX_PER_SOURCE:
                 break
 
     items.sort(key=lambda x: x["_dt"], reverse=True)
-    items = items[:MAX_TOTAL]
+    # 출처 다양화: 한 출처가 후보의 절반을 넘지 않게
+    per_src, diverse = {}, []
+    for x in items:
+        per_src[x["source"]] = per_src.get(x["source"], 0) + 1
+        if per_src[x["source"]] <= MAX_TOTAL // 3:
+            diverse.append(x)
+    items = fetch_filings(list(dict.fromkeys(tickers)), days) + diverse[:MAX_TOTAL]
     for i, x in enumerate(items):
-        x.pop("_dt")
+        x.pop("_dt", None)
         x["id"] = i
     print(f"  뉴스 후보 {len(items)}건 수집 (RSS)")
     return items

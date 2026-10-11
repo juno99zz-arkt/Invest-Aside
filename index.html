@@ -518,13 +518,19 @@ function logicHelpHtml(L) {
         `점수 순으로 같은 업종 최대 ${L.industry_cap}개씩 신규 후보 ${L.new_candidates}종목 + 기존 보유 종목 전부.<br>
          최근 ${L.reuse_days}일 내 분석은 실적 발표·주가 ±${L.reuse_price_pct}%·내년 EPS 추정치 ±${L.reuse_eps_pct}% 변화가 없으면 재사용합니다.`)}
       ${step(6, 'Aside AI 심층분석 (무료)',
-        '웹 검색으로 최신 실적·공시·뉴스를 확인해 기업의 질 / 재무 건전성 / 가격 매력 / 6~12개월 촉매 / 반대 근거·논리 붕괴 조건을 분석하고 판정(편입 적합·관찰·부적합)과 확신도(1~5)를 매깁니다.')}
+        '웹 검색으로 최신 실적·공시·뉴스를 확인해 기업의 질 / 재무 건전성 / 가격 매력 / 6~12개월 촉매 / 반대 근거·논리 붕괴 조건을 분석하고 판정(편입 적합·관찰·부적합)과 확신도(1~5)를 매깁니다. 확신도는 수익 확률이 아니라 근거 상태(데이터 검증·반대 근거 해소·추정치 분산·손익비)로 설명하고, 판단표(현재 행동·가격 조건·약세/기준/강세 시나리오·다음 검증·판단 변경 조건)를 함께 냅니다.')}
       ${step(7, '편입 · 유지 · 제외 규칙',
-        `· 신규편입: 편입 적합 + 확신도 ${L.min_conviction} 이상, 섹터당 최대 ${L.sector_cap}종목, 전체 최대 ${L.max_holdings}종목<br>
+        `· 신규편입: 편입 적합 + 확신도 ${L.min_conviction} 이상 + 핵심 수치 검증 완료, 섹터당 최대 ${L.sector_cap}종목, 전체 최대 ${L.max_holdings}종목<br>
          · 유지: 투자 논리 유효·약화 (주가 하락만으로는 제외하지 않음)<br>
          · 제외: 투자 논리 붕괴 또는 부적합 판정<br>
          · 교체: 만석일 때 확신도 ${L.swap_conviction} 후보가 '약화'·확신도 3 이하 보유 종목을 대체<br>
          · 기준을 넘는 종목이 없으면 억지로 채우지 않습니다.`)}
+      ${step(8, '데이터 검증 (추천 전 관문)',
+        '· FCF 는 현금흐름표 4분기 합계를 기본값으로 쓰고, Yahoo 요약값과 크게 다르면 자동으로 \'불일치\' 표시<br>· AI 가 공식 공시로 핵심 수치를 확인해 확정값을 넣으면 정량 점수를 다시 계산<br>· 확인되지 않으면 \'검증 대기\' → 신규 편입·비중 확대 보류<br>· PER 은 최근 12개월 / 향후 12개월 / 올해·다음 회계연도를 구분<br>· 대가 13F 는 같은 분기끼리만 비교(지연 자료는 가산점 제외), 내부자 매매는 거래 대상 회사가 일치하는 공시만')}
+      ${step(9, '투자 규모 — 종목 선택과 분리',
+        '① 시장 스탠스로 전체 주식 비중 결정 (공격적 90 · 선별적 75 · 중립 60 · 방어적 45%, Agent ±10%p 조정)<br>② 개별주 비중 = Agent 제안(5% 단위) → 약세 시나리오에서 한 종목이 전체 자산에 주는 손실 ≤ 6% 가 되도록 상한 → 같은 테마 합계 ≤ 35%<br>③ 남는 주식 비중은 코어 SPY, 나머지 원화 현금 — 후보가 적다는 이유로 주식 비중이 줄지 않음<br>(규칙 값은 data/risk_profile.json)')}
+      ${step(10, '경고 단계와 변경 알림',
+        '· 보유 종목은 정상 → 추가 매수 중단 → 비중 재검토(비중 절반) → 논리 붕괴(제외) 4단계로 판정<br>· 매일 실적 발표·분석 이후 ±10% 급변·검증 일정·약세 가격 도달을 감지해 알림<br>· 수요일에 알림이 있는 보유·관심 종목만 중간 재평가 (주간 업데이트를 기다리지 않음)')}
       <div class="text-xs px-1" style="color:var(--muted);line-height:1.6;">가중치·가산점은 장기투자 원칙에 따른 설계값이며 과거 수익률로 검증(백테스트)한 값은 아닙니다.</div>
     </div>`;
 }
@@ -535,6 +541,107 @@ function toggleLogicHelp() {
   if (!box) return;
   box.hidden = !box.hidden;
   if (btn) btn.setAttribute('aria-expanded', String(!box.hidden));
+}
+
+// ── 판단표·근거·경고 공통 헬퍼 ───────────────────────────────────
+const ALERT_BADGE = { '정상': 'badge-green', '추가 매수 중단': 'badge-yellow', '비중 재검토': 'badge-red', '논리 붕괴': 'badge-red' };
+const ACT_BADGE = { '신규 매수': 'badge-blue', '추가 매수': 'badge-blue', '보유': 'badge-green', '추가 매수 보류': 'badge-yellow',
+                    '축소 검토': 'badge-red', '매수 보류': 'badge-gray', '관망': 'badge-gray' };
+function evidenceChips(ev) {
+  if (!ev) return '';
+  const dv = ev.data_verified, bc = ev.bear_case_status;
+  return '<span class="badge ' + (dv === '검증 완료' ? 'badge-green' : 'badge-yellow') + '">데이터 ' + esc(dv || '—') + '</span> '
+    + '<span class="badge ' + (bc === '해소' ? 'badge-green' : bc === '부분 해소' ? 'badge-yellow' : 'badge-red') + '">반대근거 ' + esc(bc || '—') + '</span>';
+}
+function riskLine(r) {
+  if (!r || r.bear_pct == null) return '';
+  return '<div class="text-xs mt-2" style="color:var(--muted);line-height:1.6;">시나리오(현재가 대비): '
+    + '<span style="color:#ef4444;">약세 ' + pct(r.bear_pct) + '</span> · 기준 ' + pct(r.base_pct) + ' · <span style="color:#22c55e;">강세 ' + pct(r.bull_pct) + '</span>'
+    + (r.weight ? ' · 비중 ' + r.weight + '% → 약세 시 전체 자산 <b style="color:#ef4444;">' + pct(r.portfolio_impact_pct, 1) + '</b>' : '')
+    + (r.buy_below ? ' · 매수 매력 가격 ≤ $' + r.buy_below : '') + '</div>';
+}
+
+function alertsHtml(alerts) {
+  if (!alerts || !alerts.length) return '';
+  const col = { high: '#ef4444', mid: '#f59e0b', info: '#3b82f6' };
+  const lab = { high: '재평가 필요', mid: '확인', info: '기회' };
+  return `
+    <div class="card p-4 mb-3" style="border-color:#f59e0b;">
+      <div class="text-sm font-bold mb-1">변경 알림 <span class="text-xs" style="color:var(--muted);font-weight:400;">매일 갱신 · 수요일 중간 재평가 대상</span></div>
+      ${alerts.map(a => `
+        <div class="flex items-start gap-2 py-1.5 text-xs" style="border-bottom:1px solid var(--border);">
+          <span class="badge" style="background:${col[a.level]}22;color:${col[a.level]};white-space:nowrap;">${lab[a.level]}</span>
+          <span class="ticker-badge" style="color:#f59e0b;">${esc(a.ticker)}</span>
+          <span style="color:var(--muted);white-space:nowrap;">${esc(a.role)}</span>
+          <span style="color:#cbd5e1;line-height:1.5;">${esc(a.msg)}</span>
+        </div>`).join('')}
+    </div>`;
+}
+
+function themeBars(th, max) {
+  return Object.entries(th || {}).map(([k, v]) => `
+    <div class="flex items-center gap-2 text-xs py-0.5">
+      <span style="min-width:120px;color:#cbd5e1;">${esc(k)}</span>
+      <div class="progress-bar" style="flex:1;"><div class="progress-fill" style="width:${Math.min(100, v / (max || 100) * 100)}%;background:${v > 35 && !k.startsWith('달러') ? '#ef4444' : '#3b82f6'};"></div></div>
+      <span style="min-width:44px;text-align:right;">${v}%</span>
+    </div>`).join('');
+}
+function exposureHtml(ex, rp) {
+  if (!ex) return '';
+  const mine = ex.mine;
+  return `
+    <div class="card p-4 mb-3">
+      <div class="text-sm font-bold mb-1">공통 위험 노출 <span class="text-xs" style="color:var(--muted);font-weight:400;">종목 수가 아니라 같은 위험에 얼마나 몰려 있는지</span></div>
+      <div class="text-xs mb-2" style="color:var(--muted);">추천 계좌 (전체 자산 대비 %, ETF 는 구성 비중으로 분해 · 개별주 테마 상한 ${rp && rp.max_theme_pct || 35}%)</div>
+      ${themeBars(ex.agent && ex.agent.themes)}
+      <div class="text-xs mt-3 mb-1" style="color:var(--muted);">내 실제 보유자산</div>
+      ${mine ? themeBars(mine.themes) + `<div class="text-xs mt-1" style="color:var(--muted);">총 ${wonShort(mine.total_krw)} · 현금 ${mine.cash_pct}% · ${esc(mine.updated || '')}</div>`
+             : '<div class="card2 p-2 text-xs" style="color:var(--muted);line-height:1.6;">아직 입력되지 않았습니다. 보유 종목(예: SOXX, QQQ, 삼성전자)을 알려주시면 Agent 가 <b>data/my_holdings.json</b> 에 기록하고, NVDA 추가 매수 같은 판단이 내 계좌의 AI·반도체·달러 노출을 얼마나 늘리는지 함께 보여줍니다.</div>'}
+    </div>`;
+}
+
+function decisionCardHtml(a, risk, m) {
+  const dt = a.decision_table;
+  if (!dt) return '<div class="card2 p-3 mb-3 text-xs" style="color:var(--muted);">이 분석은 판단표 도입 전 버전입니다. 다음 재분석 때 표시됩니다.</div>';
+  const price = m.price;
+  const sc = (dt.scenarios || []).slice().sort((x, y) => x.price - y.price);
+  const row = s => {
+    const r = price ? (s.price / price - 1) * 100 : null;
+    const c = s.name === '약세' ? '#ef4444' : s.name === '강세' ? '#22c55e' : '#e2e8f0';
+    return `<tr><td style="color:${c};font-weight:600;">${esc(s.name)}</td><td style="text-align:right;">$${s.eps}</td><td style="text-align:right;">${s.pe}배</td>
+      <td style="text-align:right;">$${s.price}</td><td style="text-align:right;${pctColor(r)}">${pct(r)}</td><td style="font-size:11px;color:var(--muted);">${esc(s.horizon)}</td></tr>
+      <tr><td></td><td colspan="5" style="font-size:11px;color:var(--muted);padding-top:0;">${esc(s.assumption)}</td></tr>`;
+  };
+  const ev = a.evidence || {};
+  return `
+    <div class="card p-4 mb-3" style="border-color:#3b82f6;">
+      <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
+        <div class="text-sm font-bold">판단표</div>
+        <div class="flex gap-1 flex-wrap">
+          <span class="badge ${ACT_BADGE[dt.action] || 'badge-gray'}">현재 행동: ${esc(dt.action)}</span>
+          ${a.alert_level && a.alert_level !== '해당없음' ? '<span class="badge ' + (ALERT_BADGE[a.alert_level] || 'badge-gray') + '">경고 단계: ' + esc(a.alert_level) + '</span>' : ''}
+        </div>
+      </div>
+      <div class="rep-sec"><div class="rep-label">가격 조건</div><div class="rep-text">${dt.buy_below ? '<b>$' + dt.buy_below + ' 이하</b>에서 매력 · ' : ''}${esc(dt.price_logic)}</div></div>
+      <div class="rep-label mt-2">약세·기준·강세 시나리오 (현재가 $${price ?? '—'})</div>
+      <table class="mb-2"><thead><tr><th>구분</th><th style="text-align:right;">EPS</th><th style="text-align:right;">PER</th><th style="text-align:right;">가격</th><th style="text-align:right;">현재가 대비</th><th>기간</th></tr></thead>
+      <tbody>${sc.map(row).join('')}</tbody></table>
+      ${risk && risk.bear_pct != null ? (() => { const ml = (INJECTED.risk_profile || {}).max_position_loss_pct || 6; const cap = risk.bear_pct < 0 ? Math.max(5, Math.floor(ml / Math.abs(risk.bear_pct) * 100 / 5) * 5) : null; return `<div class="card2 p-2 mb-2 text-xs" style="line-height:1.6;">비중 한도: ` + (risk.weight ? `약세 ${pct(risk.bear_pct)} × 추천 비중 ${risk.weight}% = 전체 자산 <b style="color:#ef4444;">${pct(risk.portfolio_impact_pct, 1)}</b> 영향` : '현재 미편입') + (cap ? ` · 약세 시 한 종목 손실 ≤ ${ml}% 기준 비중 상한 <b>${Math.min(cap, (INJECTED.risk_profile || {}).max_single_weight || 25)}%</b>` : '') + ` (환율·다른 자산 불변 가정, 가격 예측 아님)</div>`; })() : ''}
+      <div class="rep-label">다음 검증</div>
+      <ul style="padding-left:16px;list-style:disc;" class="mb-2">${(dt.next_checks || []).map(c => '<li class="rep-text"><b>' + esc(c.date) + '</b> ' + esc(c.metric) + ' — 기준 ' + esc(c.threshold) + '</li>').join('')}</ul>
+      <div class="rep-label">판단 변경 조건</div>
+      <ul style="padding-left:16px;list-style:disc;" class="mb-2">${(dt.change_triggers || []).map(c => '<li class="rep-text">' + esc(c.condition) + ' → <b>' + esc(c.new_action) + '</b></li>').join('')}</ul>
+      <div class="rep-label">근거 상태 (확신도 ${a.conviction}/5 의 근거 — 수익 확률이 아님)</div>
+      <div class="flex gap-1 flex-wrap mb-1">${evidenceChips(ev)}</div>
+      <div class="rep-text">추정치 분산: ${esc(ev.estimate_dispersion || '—')}<br>손익비: ${esc(ev.reward_risk || '—')}<br>${esc(ev.conviction_basis || '')}</div>
+      ${(a.data_checks || []).length ? `
+        <div class="rep-label mt-3">핵심 수치 검증</div>
+        <table><thead><tr><th>지표</th><th>대시보드</th><th>확정값</th><th>상태</th></tr></thead><tbody>
+        ${a.data_checks.map(c => `<tr><td style="font-size:12px;">${esc(c.metric)}<div style="font-size:10px;color:var(--muted);">${esc(c.source)}</div></td>
+          <td style="font-size:12px;">${esc(c.dashboard_value)}</td><td style="font-size:12px;">${esc(c.verified_value)}</td>
+          <td><span class="badge ${c.status === '일치' ? 'badge-green' : c.status === '확인불가' ? 'badge-gray' : 'badge-yellow'}">${esc(c.status)}</span></td></tr>`).join('')}
+        </tbody></table>` : ''}
+    </div>`;
 }
 
 // ── 가상 투자 시뮬레이션 ─────────────────────────────────────────
@@ -558,26 +665,46 @@ function simHtml(s) {
     </div>`;
   const beat = s.return_pct - s.bench_return_pct;
   const rows = (s.holdings || []).map(h => `
-    <tr class="pick-card" onclick="openReport('${esc(h.ticker)}')">
-      <td><span class="ticker-badge" style="color:#f59e0b;">${esc(h.ticker)}</span> <span class="badge badge-purple">목표 ${h.target_pct ?? '—'}%</span><div class="text-xs" style="color:var(--muted);">${h.shares.toLocaleString('ko-KR')}주 · 평단 $${h.avg_cost_usd} → $${h.price_usd}</div></td>
+    <tr ${h.ticker === 'SPY' ? '' : `class="pick-card" onclick="openReport('${esc(h.ticker)}')"`}>
+      <td><span class="ticker-badge" style="color:${h.ticker === 'SPY' ? '#93c5fd' : '#f59e0b'};">${esc(h.ticker)}</span> <span class="badge badge-purple">목표 ${h.target_pct ?? '—'}%</span>${h.ticker === 'SPY' ? ' <span class="text-xs" style="color:var(--muted);">코어</span>' : ''}<div class="text-xs" style="color:var(--muted);">${h.shares.toLocaleString('ko-KR')}주 · 평단 $${h.avg_cost_usd} → $${h.price_usd}</div></td>
       <td style="text-align:right;">${wonShort(h.value_krw)}<div class="text-xs" style="${pctColor(h.return_pct)}">${pct(h.return_pct)}</div></td>
       <td style="text-align:right;">${h.weight_pct}%</td>
     </tr>`).join('');
   const cashPct = s.value_krw ? (s.cash_krw / s.value_krw * 100).toFixed(1) : '0';
   const trades = (s.trades || []).slice().reverse().map(t => `
-    <div class="flex items-center gap-2 py-1 text-xs" style="border-bottom:1px solid var(--border);">
-      <span style="color:var(--muted);min-width:72px;">${esc(t.date)}</span>
+    <div class="flex items-center gap-2 py-1 text-xs flex-wrap" style="border-bottom:1px solid var(--border);">
+      <span style="color:var(--muted);min-width:150px;">신호 ${esc(t.signal_date || t.date)} → 체결 ${esc(t.date)}</span>
       <span class="badge ${t.side === '매수' ? 'badge-blue' : 'badge-red'}">${esc(t.side)}</span>
       <span class="ticker-badge" style="color:#f59e0b;">${esc(t.ticker)}</span>
-      <span style="color:#cbd5e1;">${t.shares.toLocaleString('ko-KR')}주 × $${t.price_usd}</span>
-      <span class="ml-auto" style="color:var(--muted);">${wonShort(t.amount_krw)} · ${esc(t.reason)}</span>
+      <span style="color:#cbd5e1;">${t.shares.toLocaleString('ko-KR')}주 × $${t.price_usd} (시가)</span>
+      <span class="ml-auto" style="color:var(--muted);">${wonShort(t.amount_krw)} · 비용 ${wonShort(t.cost_krw)} · ${esc(t.reason)}</span>
     </div>`).join('');
   const wh = (s.weights_history || []).slice().reverse().map(w => `
     <div class="flex items-center gap-2 py-1 text-xs flex-wrap" style="border-bottom:1px solid var(--border);">
       <span style="color:var(--muted);min-width:72px;">${esc(w.date)}</span>
-      ${Object.entries(w.weights).map(([tk, v]) => '<span class="score-chip"><b style="color:#f59e0b;">' + esc(tk) + '</b> ' + v + '%</span>').join('')}
+      ${Object.entries(w.weights).map(([tk, v]) => '<span class="score-chip"><b style="color:' + (tk === 'SPY' ? '#93c5fd' : '#f59e0b') + ';">' + esc(tk) + '</b> ' + v + '%</span>').join('')}
       <span class="score-chip">현금 ${w.cash_pct}%</span>
     </div>`).join('');
+  const al = s.allocation;
+  const allocHtml = al ? `
+    <div class="card2 p-3 mb-3 text-xs" style="line-height:1.7;">
+      <div class="font-semibold mb-1" style="color:#e2e8f0;">비중 결정 (종목 선택과 분리)</div>
+      <div>① 자산배분: ${esc(al.reason)} → <b>주식 ${al.equity_pct}%</b> / 현금 ${al.cash_pct}%</div>
+      <div>② 개별주 ${al.stock_pct}% (위험 한도: 약세 시 종목당 전체 손실 ≤ ${(INJECTED.risk_profile || {}).max_position_loss_pct || 6}%, 테마 합계 ≤ ${(INJECTED.risk_profile || {}).max_theme_pct || 35}%)</div>
+      <div>③ 남는 주식 비중은 코어 ${esc(al.core_etf)} ${al.core_pct}% — 후보가 적다는 이유로 주식 비중이 줄지 않도록</div>
+    </div>` : '';
+  const sh = s.shadow || {};
+  const shadowHtml = (sh.rows || []).length ? `
+    <details class="mt-1"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">제외 후보 사후 추적 (${sh.rows.length}건) — 필터가 유효한지</summary>
+      <div class="text-xs my-1" style="color:var(--muted);">${esc(sh.note)}</div>
+      <div class="flex gap-1 flex-wrap mb-2">${(sh.summary || []).map(g => '<span class="score-chip">' + esc(g.group) + ' ' + g.n + '건 · SPY 대비 <b style="' + pctColor(g.avg_excess_pct) + '">' + pct(g.avg_excess_pct, 2) + '</b></span>').join('')}</div>
+      ${sh.rows.map(r => `<div class="flex items-center gap-2 py-1 text-xs" style="border-bottom:1px solid var(--border);">
+        <span style="color:var(--muted);min-width:72px;">${esc(r.date)}</span><span class="ticker-badge" style="color:#f59e0b;min-width:44px;">${esc(r.ticker)}</span>
+        <span style="color:var(--muted);">${esc(r.verdict || '')} ${r.conviction ?? ''} · ${esc(r.action || '')}</span>
+        <span class="ml-auto" style="${pctColor(r.return_pct)}">${pct(r.return_pct)}</span><span style="color:var(--muted);">SPY ${pct(r.spy_pct)}</span>
+        <b style="${pctColor(r.excess_pct)}">${pct(r.excess_pct)}</b></div>`).join('')}
+    </details>` : '';
+  const c = s.costs || {}, as = s.assumptions || {};
   const invW = Math.min(100, s.invested_pct || 0);
   return `
     <div class="card p-4 mb-3">
@@ -593,27 +720,29 @@ function simHtml(s) {
         <div class="mt-3">
           <div class="flex justify-between text-xs mb-1"><span>주식 ${wonShort(s.stock_krw)} (${s.invested_pct}%)</span><span style="color:var(--muted);">현금 ${wonShort(s.cash_krw)} (${cashPct}%)</span></div>
           <div class="progress-bar"><div class="progress-fill" style="width:${invW}%;background:#f59e0b;"></div></div>
-          <div class="text-xs mt-1" style="color:var(--muted);">목표 주식 비중 ${s.target_invested_pct}% · 주식 부분 수익률 <span style="${pctColor(s.stock_return_pct)}">${pct(s.stock_return_pct, 2)}</span></div>
+          <div class="text-xs mt-1" style="color:var(--muted);">목표 주식 비중 ${s.target_invested_pct}% · 개별주 수익률 <span style="${pctColor(s.stock_return_pct)}">${pct(s.stock_return_pct, 2)}</span></div>
         </div>
         <div class="grid grid-cols-2 gap-2 mt-3 text-xs">
-          <div><div style="color:var(--muted);">같은 비중 SPY 계좌</div><div class="font-semibold mt-0.5">${wonShort(s.bench_value_krw)} <span style="${pctColor(s.bench_return_pct)}">${pct(s.bench_return_pct, 2)}</span></div></div>
-          <div><div style="color:var(--muted);">같은 비중 SPY 대비</div><div class="font-semibold mt-0.5" style="${pctColor(beat)}">${beat >= 0 ? '+' : ''}${beat.toFixed(2)}%p</div></div>
-          <div><div style="color:var(--muted);">원금 전액 SPY였다면</div><div class="font-semibold mt-0.5">${wonShort(s.spy_full_value_krw)} <span style="${pctColor(s.spy_full_return_pct)}">${pct(s.spy_full_return_pct, 2)}</span></div></div>
+          <div><div style="color:var(--muted);">같은 비중 SPY (종목 선택 효과)</div><div class="font-semibold mt-0.5">${wonShort(s.bench_value_krw)} <span style="${pctColor(s.bench_return_pct)}">${pct(s.bench_return_pct, 2)}</span> · 차이 <span style="${pctColor(beat)}">${beat >= 0 ? '+' : ''}${beat.toFixed(2)}%p</span></div></div>
+          <div><div style="color:var(--muted);">정량 상위 8 전략 (AI 분석 추가 가치)</div><div class="font-semibold mt-0.5">${s.quant_value_krw ? wonShort(s.quant_value_krw) + ' <span style="' + pctColor(s.quant_return_pct) + '">' + pct(s.quant_return_pct, 2) + '</span>' : '—'}</div></div>
+          <div><div style="color:var(--muted);">원금 전액 SPY (현금 보유 효과)</div><div class="font-semibold mt-0.5">${wonShort(s.spy_full_value_krw)} <span style="${pctColor(s.spy_full_return_pct)}">${pct(s.spy_full_return_pct, 2)}</span></div></div>
           <div><div style="color:var(--muted);">최대 낙폭</div><div class="font-semibold mt-0.5" style="color:#ef4444;">${s.max_drawdown_pct.toFixed(2)}%</div></div>
         </div>
-        <div class="text-xs mt-2" style="color:var(--muted);">환율 ${s.fx_start.toLocaleString('ko-KR')}원 → ${s.fx_now.toLocaleString('ko-KR')}원 (USD/KRW)</div>
+        <div class="text-xs mt-2" style="color:var(--muted);">환율 ${s.fx_start.toLocaleString('ko-KR')}원 → ${s.fx_now.toLocaleString('ko-KR')}원 · 누적 비용 수수료 ${wonShort(c.fee)}·환전 ${wonShort(c.fx)} · 배당 ${wonShort(c.div)} · 현금이자 ${wonShort(c.interest)}</div>
       </div>
+      ${allocHtml}
       <div class="mb-3 sim-chart-box"><canvas id="sim-chart"></canvas></div>
       <table class="mb-2">
-        <thead><tr><th>보유 종목</th><th style="text-align:right;">평가액·수익률</th><th style="text-align:right;">비중</th></tr></thead>
+        <thead><tr><th>보유</th><th style="text-align:right;">평가액·수익률</th><th style="text-align:right;">비중</th></tr></thead>
         <tbody>${rows}
-          <tr><td><span style="color:var(--muted);">원화 현금</span></td>
+          <tr><td><span style="color:var(--muted);">원화 현금</span> <span class="text-xs" style="color:var(--muted);">연 ${as.cash_rate_pct ?? '—'}%</span></td>
           <td style="text-align:right;">${wonShort(s.cash_krw)}</td><td style="text-align:right;">${cashPct}%</td></tr>
         </tbody>
       </table>
       ${wh ? '<details class="mt-2"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">비중 결정 이력 ' + s.weights_history.length + '회</summary>' + wh + '</details>' : ''}
-      ${trades ? '<details class="mt-1"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">거래 내역 ' + s.trades.length + '건</summary>' + trades + '</details>' : ''}
-      <div class="text-xs mt-2" style="color:var(--muted);line-height:1.6;">규칙: ${esc(s.rule)} 실제 투자 결과가 아닌 가상 계산입니다.</div>
+      ${trades ? '<details class="mt-1"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">거래 내역 ' + s.trades.length + '건 (신호일 ≠ 체결일)</summary>' + trades + '</details>' : ''}
+      ${shadowHtml}
+      <div class="text-xs mt-2" style="color:var(--muted);line-height:1.6;">규칙: ${esc(s.rule)} 실제 투자 결과가 아닌 가상 계산이며, 짧은 기간·적은 종목 수로는 전략의 우수성을 판단할 수 없습니다.</div>
     </div>`;
 }
 
@@ -622,13 +751,15 @@ function drawSimChart(s) {
   if (!el || !s || !s.curve) return;
   if (simChart) simChart.destroy();
   const c = s.curve;
+  const ds = [
+    { label: 'Agent', data: c.value.map(v => v / 1e4), borderColor: '#f59e0b', backgroundColor: '#f59e0b22', borderWidth: 2, fill: true, tension: 0.25, pointRadius: 0 },
+    { label: '같은 비중 SPY', data: c.bench.map(v => v / 1e4), borderColor: '#94a3b8', borderWidth: 1.5, borderDash: [4, 3], fill: false, tension: 0.25, pointRadius: 0 },
+    { label: '전액 SPY', data: c.spy_full.map(v => v / 1e4), borderColor: '#3b82f6', borderWidth: 1, borderDash: [2, 3], fill: false, tension: 0.25, pointRadius: 0 },
+  ];
+  if (c.quant) ds.push({ label: '정량 상위 8', data: c.quant.map(v => v / 1e4), borderColor: '#a855f7', borderWidth: 1.2, borderDash: [6, 3], fill: false, tension: 0.25, pointRadius: 0 });
   simChart = new Chart(el, {
     type: 'line',
-    data: { labels: c.dates.map(d => d.slice(5)), datasets: [
-      { label: 'Agent 비중', data: c.value.map(v => v / 1e4), borderColor: '#f59e0b', backgroundColor: '#f59e0b22', borderWidth: 2, fill: true, tension: 0.25, pointRadius: 0 },
-      { label: '같은 비중 SPY', data: c.bench.map(v => v / 1e4), borderColor: '#94a3b8', borderWidth: 1.5, borderDash: [4, 3], fill: false, tension: 0.25, pointRadius: 0 },
-      { label: '전액 SPY', data: c.spy_full.map(v => v / 1e4), borderColor: '#3b82f6', borderWidth: 1, borderDash: [2, 3], fill: false, tension: 0.25, pointRadius: 0 },
-    ]},
+    data: { labels: c.dates.map(d => d.slice(5)), datasets: ds },
     options: {
       responsive: true, maintainAspectRatio: false, animation: false,
       interaction: { mode: 'index', intersect: false },
@@ -687,13 +818,17 @@ function loadSummary(d) {
       <div class="text-xs mb-2" style="line-height:1.6;color:#cbd5e1;">${esc(h.thesis)}</div>
       <div class="flex items-center gap-1 flex-wrap">
         <span class="badge ${STATUS_BADGE[h.thesis_status] || 'badge-gray'}">논리 ${esc(h.thesis_status || '—')}</span>
-        <span class="score-chip">확신 <span class="score-dots" style="color:#f59e0b;">${dots(h.conviction)}</span></span>
+        ${h.action ? '<span class="badge ' + (ACT_BADGE[h.action] || 'badge-gray') + '">' + esc(h.action) + '</span>' : ''}
+        ${h.alert_level && h.alert_level !== '해당없음' ? '<span class="badge ' + (ALERT_BADGE[h.alert_level] || 'badge-gray') + '">' + esc(h.alert_level) + '</span>' : ''}
+        ${evidenceChips(h.evidence)}
+        <span class="score-chip" title="판단 확신도 — 수익 확률 아님">확신 ${h.conviction ?? '—'}/5</span>
         <span class="score-chip">질 ${sc.quality ?? '—'}</span>
         <span class="score-chip">재무 ${sc.financial_health ?? '—'}</span>
         <span class="score-chip">가격 ${sc.valuation ?? '—'}</span>
         ${h.weight ? '<span class="badge badge-purple">비중 ' + h.weight + '%</span>' : ''}
         <span class="text-xs ml-auto" style="color:var(--muted);">${esc(h.added_date)} 편입 · ${h.weeks_held}주</span>
       </div>
+      ${riskLine(h.risk)}
     </div>`;
   }).join('');
   const portfolioHtml = `
@@ -801,9 +936,9 @@ function loadSummary(d) {
     </div>`;
   // 웹·스마트폰 모두 한 줄 (order 로 원래 순서 유지)
   render('summary-content', '<div class="dash">'
-    + box('o0 dfull', warnHtml)
+    + box('o0 dfull', warnHtml + alertsHtml(INJECTED.alerts))
     + '<div class="dcol">' + box('o1', stanceHtml) + box('o2', portfolioHtml) + box('o4', decisionHtml) + box('o7', historyHtml) + '</div>'
-    + '<div class="dcol">' + box('o3', simHtml(INJECTED.sim)) + box('o5', msgHtml) + box('o6', sectorHtml) + box('o8', briefHtml) + '</div>'
+    + '<div class="dcol">' + box('o3', simHtml(INJECTED.sim) + exposureHtml(INJECTED.exposure, INJECTED.risk_profile)) + box('o5', msgHtml) + box('o6', sectorHtml) + box('o8', briefHtml) + '</div>'
     + '</div>' + `
     <div class="text-xs px-1 pb-4" style="color:var(--muted);line-height:1.7;">
       데이터: Yahoo Finance(시세·재무·컨센서스), SEC EDGAR(13F·Form 4), Aside AI 웹검색(뉴스·심층분석).
@@ -842,7 +977,10 @@ function openReport(tk) {
       </div>
       <div class="flex items-center gap-2 mt-2 flex-wrap">
         <span class="badge ${VERDICT_BADGE[a.verdict] || 'badge-gray'}">${esc(a.verdict)}</span>
-        <span class="score-chip">확신 <span class="score-dots" style="color:#f59e0b;">${dots(a.conviction)}</span></span>
+        <span class="score-chip" title="판단 확신도 — 수익 확률 아님">확신 ${a.conviction}/5</span>
+        ${a.decision_table ? '<span class="badge ' + (ACT_BADGE[a.decision_table.action] || 'badge-gray') + '">' + esc(a.decision_table.action) + '</span>' : ''}
+        ${evidenceChips(a.evidence)}
+        ${rep.analyses[tk].interim_update ? '<span class="badge badge-yellow">' + esc(rep.analyses[tk].interim_update) + ' 중간 재평가</span>' : ''}
         ${dec ? '<span class="badge ' + (ACTION_BADGE[dec.action] || 'badge-gray') + '">이번 주 ' + esc(dec.action) + '</span>' : ''}
         ${rep.analyses[tk].reused_from ? '<span class="badge badge-gray">' + esc(rep.analyses[tk].reused_from) + ' 분석 재사용</span>' : ''}
       </div>
@@ -854,6 +992,8 @@ function openReport(tk) {
         <div class="rep-text" style="color:var(--muted);">${esc(a.verdict_reason)}</div>
         ${a.thesis_status && a.thesis_status !== '해당없음' ? `<div class="card2 p-2 mt-2"><span class="badge ${STATUS_BADGE[a.thesis_status] || 'badge-gray'}">보유 논리 ${esc(a.thesis_status)}</span> <span class="rep-text">${esc(a.thesis_status_reason)}</span></div>` : ''}
       </div>
+
+      ${decisionCardHtml(a, rep.analyses[tk].risk, m)}
 
       <div class="card p-4 mb-3">
         ${scoreHead('① 기업의 질', a.quality.score)}
@@ -889,12 +1029,16 @@ function openReport(tk) {
 
       <div class="card p-4 mb-3">
         <div class="text-sm font-bold mb-2">핵심 지표 <span class="text-xs" style="color:var(--muted);font-weight:400;">Yahoo Finance · ${esc(m.as_of)}</span></div>
-        ${kv('12M 추정 PER / PEG', (num(v.forward_pe) ?? '—') + ' / ' + (num(v.peg, 2) ?? '—'))}
-        ${kv('FCF 수익률', v.fcf_yield_pct == null ? null : v.fcf_yield_pct + '%')}
+        ${kv('PER — 최근 12개월(GAAP)', num(v.pe_trailing_gaap ?? v.trailing_pe))}
+        ${kv('PER — 향후 12개월 추정', num(v.pe_ntm_est) == null ? null : num(v.pe_ntm_est) + (v.eps_ntm_est ? ' (EPS $' + v.eps_ntm_est + ')' : ''))}
+        ${kv('PER — 올해 / 다음 회계연도', (num(v.pe_current_fy) ?? '—') + ' / ' + (num(v.pe_next_fy ?? v.forward_pe) ?? '—'))}
+        ${kv('PEG', num(v.peg, 2))}
+        ${kv('FCF 수익률', v.fcf_yield_pct == null ? null : v.fcf_yield_pct + '% · ' + (v.fcf_yield_basis || ''))}
+        ${m.eps_estimate_range_next_fy && m.eps_estimate_range_next_fy.low != null ? kv('내년 EPS 추정 범위 (저/평균/고)', '$' + m.eps_estimate_range_next_fy.low + ' / $' + m.eps_estimate_range_next_fy.mean + ' / $' + m.eps_estimate_range_next_fy.high + ' (분산 ' + m.eps_estimate_range_next_fy.spread_pct + '%)') : ''}
         ${kv('최근 분기 매출 성장 (YoY)', pct(g.revenue_growth_last_q_yoy_pct))}
         ${kv('영업이익률 / ROE', (g.op_margin_pct ?? '—') + '% / ' + (g.roe_pct ?? '—') + '%')}
         ${kv('EPS 성장 예상 (올해 / 내년)', pct(g.eps_growth_est_this_fy_pct) + ' / ' + pct(g.eps_growth_est_next_fy_pct))}
-        ${kv('FCF 마진 / 주식보상 (TTM)', (c.fcf_margin_pct ?? '—') + '% / $' + (c.sbc_ttm_b ?? '—') + 'B')}
+        ${kv('FCF 마진 / 주식보상 (TTM)', (c.fcf_margin_pct ?? '—') + '% / $' + (c.sbc_ttm_b ?? '—') + 'B' + (c.fcf_margin_basis ? ' · ' + c.fcf_margin_basis : ''))}
         ${kv('순부채 / EBITDA', num(c.net_debt_to_ebitda, 2))}
         ${kv('주식 수 변화', c.share_count_change_pct == null ? null : pct(c.share_count_change_pct, 2) + ' (' + c.share_count_span + ')')}
         ${kv('내년 EPS 추정치 30일 / 90일', pct(r.chg_30d_pct, 2) + ' / ' + pct(r.chg_90d_pct, 2))}
@@ -906,6 +1050,9 @@ function openReport(tk) {
         ${kv('정량 점수 (질/재무/가격/추정치)', m.quant_score && m.quant_score.score != null ? m.quant_score.score + ' (' + [m.quant_score.quality, m.quant_score.health, m.quant_score.value, m.quant_score.revisions].join('/') + ')' : null)}
         ${(m.dashboard_signals || []).length ? '<div class="text-xs mt-2" style="color:#86efac;line-height:1.6;">대시보드 신호: ' + esc(m.dashboard_signals.join(' · ')) + '</div>' : ''}
         ${m.cycle_check ? '<div class="text-xs mt-2" style="color:#fcd34d;line-height:1.6;">⚠️ ' + esc(m.cycle_check) + '</div>' : ''}
+        ${(m.data_conflicts || []).map(x => '<div class="text-xs mt-2" style="color:#fcd34d;line-height:1.6;">⚠️ 자동 대조 불일치 — ' + esc(x.metric) + ': ' + esc(Object.entries(x.values).map(([k, val]) => k + ' ' + val).join(' vs ')) + ' (' + esc(x.why) + ')</div>').join('')}
+        ${rep.analyses[tk].rescored ? '<div class="text-xs mt-2" style="color:#93c5fd;">검증된 확정값으로 정량 점수 재계산: ' + rep.analyses[tk].rescored.before + ' → ' + rep.analyses[tk].rescored.after + '</div>' : ''}
+        <div class="text-xs mt-2" style="color:var(--muted);">${esc(v.forward_pe_yahoo_basis || '')}</div>
       </div>
 
       <div class="card p-4 mb-3">
@@ -984,6 +1131,7 @@ function loadM1(d) {
           <div>
             <div class="font-bold text-sm">${esc(inv.investor)}</div>
             <div class="text-xs" style="color:var(--muted);">${esc(inv.firm)} · ${esc(inv.report_date)} 분기말 · ${esc(inv.filed_date)} 제출</div>
+            ${inv.stale ? '<span class="badge badge-yellow mt-1">자료 지연 — 다른 대가는 ' + esc(inv.latest_quarter) + ' 기준 · 공통 보유·가산점에서 제외</span>' : ''}
           </div>
           <span class="text-xs" style="color:var(--muted);">비중 · 주식수 변화</span>
         </div>
@@ -1103,7 +1251,7 @@ function loadM4(d) {
   const criteria = `
     <div class="card p-4 mb-3">
       <div class="text-xs mb-1" style="color:var(--muted);">선별 기준: 최근 12개월 EPS &lt; 0 + 최근 2분기 중 조정 EPS 적자(일회성 손실 제외) + 향후 12개월 추정 EPS &gt; 0 + 애널리스트 3인 이상 (S&amp;P500·NDX, 시총순)</div>
-      <div class="text-xs" style="color:var(--muted);">추정 PER 신호등: <span class="sig sig-green"></span> &lt;15 저평가 · <span class="sig sig-yellow"></span> 15-25 적정 · <span class="sig sig-red"></span> &gt;25 고평가</div>
+      <div class="text-xs" style="color:var(--muted);">추정 PER 신호등: <span class="sig sig-green"></span> &lt;15 · <span class="sig sig-yellow"></span> 15-25 · <span class="sig sig-red"></span> &gt;25 (참고용 — 흑자전환 직후 이익은 작아 PER 이 왜곡되기 쉬움. 이익이 자산 평가손익에서 나오는 기업은 회색)</div>
     </div>`;
   if (!d || !d.companies.length) { render('m4-content', criteria + emptyCard('이번 주 유니버스 안에 조건을 충족한 기업이 없습니다.')); return; }
 
@@ -1140,6 +1288,7 @@ function loadM4(d) {
           <div style="color:#22c55e;">+$${c.consensus_eps} <span style="color:var(--muted);font-size:11px;">(${c.analyst_count}명 커버)</span></div>
         </div>
       </div>
+      ${c.earnings_note ? '<div class="text-xs mb-2 p-2 rounded" style="background:#78350f33;color:#fcd34d;line-height:1.5;">⚠️ ' + esc(c.earnings_note) + '</div>' : ''}
       <div class="flex items-center justify-between p-2 rounded" style="background:#0f1117;">
         <div>
           <div class="text-xs" style="color:var(--muted);">현재가</div>
@@ -1163,11 +1312,11 @@ function renderTop50(d, containerId, headerLabel) {
   const stocks = (d && d.stocks) || [];
   if (!stocks.length) { render(containerId, emptyCard('시세 데이터 수집에 실패했습니다. 다음 갱신을 기다려 주세요.')); return; }
   const sigDot = s => `<span class="sig sig-${s||'gray'}"></span>`;
-  const fmtPct = v => v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
-  const fmtNum = v => v == null ? '—' : v.toFixed(1);
+  const fmtPct = v => v == null ? '<span style="color:#64748b;font-size:10px;">미수집</span>' : (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+  const fmtNum = v => v == null ? '<span style="color:#64748b;font-size:10px;">미수집</span>' : v.toFixed(1);
   const trendIcon = (t) => {
     const c = t === '↑' ? '#22c55e' : t === '↓' ? '#ef4444' : '#94a3b8';
-    return `<span style="color:${c};font-weight:700;">${t || '→'}</span>`;
+    return t ? `<span style="color:${c};font-weight:700;">${t}</span>` : '<span style="color:#64748b;font-size:10px;">미수집</span>';
   };
 
   // 한국 티커는 .KS/.KQ 접미사 — 표시할 때 접미사 제거
@@ -1179,7 +1328,7 @@ function renderTop50(d, containerId, headerLabel) {
       <td><span class="ticker-badge" style="color:#3b82f6;">${fmtTicker(s.ticker)}</span></td>
       <td style="color:var(--muted);font-size:10px;max-width:90px;overflow:hidden;text-overflow:ellipsis;">${s.name}</td>
       <td><div class="m7-cell">${fmtNum(s.pe)}${sigDot(s.sig_pe)}</div></td>
-      <td><div class="m7-cell">${fmtNum(s.fwd_pe)}${sigDot(s.sig_fwd_pe)}</div></td>
+      <td><div class="m7-cell" title="${s.same_pe ? 'PER 와 추정 PER 이 같음 — 원자료 확인 필요' : ''}">${fmtNum(s.fwd_pe)}${s.same_pe ? '<span style="color:#f59e0b;font-size:10px;">=</span>' : ''}${sigDot(s.sig_fwd_pe)}</div></td>
       <td><div class="m7-cell">${fmtNum(s.peg)}${sigDot(s.sig_peg)}</div></td>
       <td><div class="m7-cell">${fmtPct(s.rev_growth)}${sigDot(s.sig_rev)}</div></td>
       <td><div class="m7-cell">${fmtPct(s.eps_growth)}${sigDot(s.sig_eps)}</div></td>
@@ -1196,7 +1345,8 @@ function renderTop50(d, containerId, headerLabel) {
           <span><span class="sig sig-yellow"></span> 보통</span>
           <span><span class="sig sig-red"></span> 경계</span>
         </div>
-        <div class="mt-1">기준: PER · 12M추정PER &lt;15·15-25·&gt;25 · PEG &lt;1·1-1.5·&gt;1.5 · 성장률 &gt;15·5-15·&lt;5% · EPS추이 ↑·→·↓</div>
+        <div class="mt-1">기준: PER·추정PER·PEG 는 <b>같은 섹터 중앙값 대비</b> ≤0.8배 우호 · 0.8~1.25배 보통 · &gt;1.25배 경계 (섹터 3종목 미만은 목록 전체 중앙값) · 성장률 &gt;15·5-15·&lt;5% · EPS추이 ↑·→·↓</div>
+        <div class="mt-1">추정PER = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님) · <span style="color:#64748b;">미수집</span> = 데이터 없음(다른 값으로 대체하지 않음) · <span style="color:#f59e0b;">=</span> PER 과 추정PER 이 같아 원자료 확인 필요</div>
       </div>
     </div>
     <div class="card p-2" style="overflow-x:auto;">
@@ -1205,7 +1355,7 @@ function renderTop50(d, containerId, headerLabel) {
           <tr>
             <th>#</th><th>티커</th><th>이름</th>
             <th style="text-align:right;">PER</th>
-            <th style="text-align:right;" title="12개월 추정 PER (Forward PE)">12M추정</th>
+            <th style="text-align:right;" title="다음 회계연도 EPS 기준 추정 PER">추정PER</th>
             <th style="text-align:right;">PEG</th>
             <th style="text-align:right;">매출↑</th>
             <th style="text-align:right;">EPS↑</th>
@@ -1379,7 +1529,8 @@ function loadNews(items) {
   }
   const stars = n => '★'.repeat(n) + '☆'.repeat(5 - n);
   const starColor = n => n >= 5 ? '#ef4444' : n >= 4 ? '#f59e0b' : n >= 3 ? '#3b82f6' : '#6b7280';
-  const sorted = items.slice().sort((a, b) => b.stars - a.stars);
+  const impOrder = { '약화': 0, '강화': 1, '변화 없음': 2, '해당없음': 3 };
+  const sorted = items.slice().sort((a, b) => ((impOrder[a.thesis_impact] ?? 3) - (impOrder[b.thesis_impact] ?? 3)) || (b.stars - a.stars));
   const rows = sorted.map(item => {
     const sc = starColor(item.stars);
     const tickers = (item.tickers || []).map(t => '<span class="badge badge-gray mr-1">' + esc(t) + '</span>').join('');
@@ -1387,17 +1538,21 @@ function loadNews(items) {
       '<div class="flex items-center gap-2 mb-2 flex-wrap">' +
         '<span style="color:' + sc + ';font-size:14px;letter-spacing:1px;">' + stars(item.stars) + '</span>' +
         '<span class="text-xs" style="color:var(--muted);">' + esc(item.source) + ' · ' + esc(item.published) + '</span>' +
+        (item.kind === '공시' ? '<span class="badge badge-purple">기업 공시</span>' : '') +
+        (item.thesis_impact && item.thesis_impact !== '해당없음' ? '<span class="badge ' + (item.thesis_impact === '약화' ? 'badge-red' : item.thesis_impact === '강화' ? 'badge-green' : 'badge-gray') + '">투자 논리 ' + esc(item.thesis_impact) + '</span>' : '') +
       '</div>' +
       '<a href="' + safeUrl(item.url) + '" target="_blank" rel="noopener noreferrer" style="font-size:14px;font-weight:600;color:#e2e8f0;line-height:1.4;display:block;margin-bottom:8px;text-decoration:none;">' + esc(item.title) + ' ↗</a>' +
-      '<p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:8px;">' + esc(item.summary) + '</p>' +
+      (item.fact ? '<p style="font-size:12px;color:#cbd5e1;line-height:1.6;margin-bottom:4px;"><b style="color:#94a3b8;">새로운 사실</b> ' + esc(item.fact) + '</p>' +
+               '<p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:8px;"><b style="color:#94a3b8;">해석</b> ' + esc(item.interpretation) + '</p>'
+             : '<p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:8px;">' + esc(item.summary) + '</p>') +
       '<div style="background:#1e2030;border-left:3px solid ' + sc + ';padding:8px 10px;border-radius:0 4px 4px 0;margin-bottom:6px;">' +
-        '<span style="font-size:11px;color:#94a3b8;font-weight:600;">💡 투자 인사이트 </span>' +
+        '<span style="font-size:11px;color:#94a3b8;font-weight:600;">💡 기존 투자 논리에 미치는 변화 </span>' +
         '<span style="font-size:12px;color:#cbd5e1;">' + esc(item.insight) + '</span>' +
       '</div>' + tickers +
     '</div>';
   }).join('');
   render('news-content',
-    '<div class="mb-3"><span class="text-xs" style="color:var(--muted);">중요도 순 · 지난 14일 실제 기사 ' + items.length + '선 (Aside AI 선별)</span></div>' +
+    '<div class="mb-3"><span class="text-xs" style="color:var(--muted);">"내 판단이 달라지는가" 순 (논리 약화 → 강화 → 변화 없음, 같은 단계는 중요도) · 지난 14일 기업 공시·기사 ' + items.length + '선 · 출처 ' + new Set(items.map(x => x.source)).size + '곳</span></div>' +
     rows
   );
 }
