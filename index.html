@@ -519,7 +519,7 @@ function toggleLogicHelp() {
   if (btn) btn.setAttribute('aria-expanded', String(!box.hidden));
 }
 
-// ── 가상 투자 시뮬레이션 (1억원) ─────────────────────────────────
+// ── 가상 투자 시뮬레이션 ─────────────────────────────────────────
 let simChart = null;
 function wonShort(n) {
   if (n == null) return '—';
@@ -538,14 +538,14 @@ function simHtml(s) {
       <div class="text-sm font-bold mb-1">가상 투자 시뮬레이션</div>
       <div class="text-xs" style="color:var(--muted);line-height:1.6;">시세 수집 대기 중입니다. 다음 매일 갱신(17:00 KST) 때 계좌 상태가 표시됩니다.</div>
     </div>`;
-  const beat = s.return_pct - s.spy_return_pct;
+  const beat = s.return_pct - s.bench_return_pct;
   const rows = (s.holdings || []).map(h => `
     <tr class="pick-card" onclick="openReport('${esc(h.ticker)}')">
-      <td><span class="ticker-badge" style="color:#f59e0b;">${esc(h.ticker)}</span><div class="text-xs" style="color:var(--muted);">${h.shares.toLocaleString('ko-KR')}주 · 평단 $${h.avg_cost_usd}</div></td>
-      <td style="text-align:right;">$${h.price_usd}<div class="text-xs" style="${pctColor(h.return_pct)}">${pct(h.return_pct)}</div></td>
-      <td style="text-align:right;">${wonShort(h.value_krw)}<div class="text-xs" style="color:var(--muted);">${h.weight_pct}%</div></td>
+      <td><span class="ticker-badge" style="color:#f59e0b;">${esc(h.ticker)}</span> <span class="badge badge-purple">목표 ${h.target_pct ?? '—'}%</span><div class="text-xs" style="color:var(--muted);">${h.shares.toLocaleString('ko-KR')}주 · 평단 $${h.avg_cost_usd} → $${h.price_usd}</div></td>
+      <td style="text-align:right;">${wonShort(h.value_krw)}<div class="text-xs" style="${pctColor(h.return_pct)}">${pct(h.return_pct)}</div></td>
+      <td style="text-align:right;">${h.weight_pct}%</td>
     </tr>`).join('');
-  const cashW = s.value_krw ? (s.cash_krw / s.value_krw * 100).toFixed(1) : '0';
+  const cashPct = s.value_krw ? (s.cash_krw / s.value_krw * 100).toFixed(1) : '0';
   const trades = (s.trades || []).slice().reverse().map(t => `
     <div class="flex items-center gap-2 py-1 text-xs" style="border-bottom:1px solid var(--border);">
       <span style="color:var(--muted);min-width:72px;">${esc(t.date)}</span>
@@ -554,34 +554,47 @@ function simHtml(s) {
       <span style="color:#cbd5e1;">${t.shares.toLocaleString('ko-KR')}주 × $${t.price_usd}</span>
       <span class="ml-auto" style="color:var(--muted);">${wonShort(t.amount_krw)} · ${esc(t.reason)}</span>
     </div>`).join('');
+  const wh = (s.weights_history || []).slice().reverse().map(w => `
+    <div class="flex items-center gap-2 py-1 text-xs flex-wrap" style="border-bottom:1px solid var(--border);">
+      <span style="color:var(--muted);min-width:72px;">${esc(w.date)}</span>
+      ${Object.entries(w.weights).map(([tk, v]) => '<span class="score-chip"><b style="color:#f59e0b;">' + esc(tk) + '</b> ' + v + '%</span>').join('')}
+      <span class="score-chip">현금 ${w.cash_pct}%</span>
+    </div>`).join('');
+  const invW = Math.min(100, s.invested_pct || 0);
   return `
     <div class="card p-4 mb-3">
       <div class="flex items-center justify-between mb-1">
         <div class="text-sm font-bold">가상 투자 시뮬레이션</div>
         <span class="badge badge-purple">원금 ${wonShort(s.initial_krw)}</span>
       </div>
-      <div class="text-xs mb-3" style="color:var(--muted);">Agent 추천대로 ${esc(s.start_date)}부터 투자했다면 · ${esc(s.as_of)} 종가 기준</div>
+      <div class="text-xs mb-3" style="color:var(--muted);">Agent 추천 비중대로 ${esc(s.start_date)}부터 운용했다면 · ${esc(s.as_of)} 종가 기준</div>
       <div class="card2 p-3 mb-3">
         <div class="text-xs" style="color:var(--muted);">현재 평가금액</div>
         <div class="text-2xl font-bold mt-1">${wonFull(s.value_krw)}</div>
         <div class="text-sm font-semibold mt-1" style="${pctColor(s.pnl_krw)}">${signed(s.pnl_krw, wonFull)} (${pct(s.return_pct, 2)})</div>
+        <div class="mt-3">
+          <div class="flex justify-between text-xs mb-1"><span>주식 ${wonShort(s.stock_krw)} (${s.invested_pct}%)</span><span style="color:var(--muted);">현금 ${wonShort(s.cash_krw)} (${cashPct}%)</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:${invW}%;background:#f59e0b;"></div></div>
+          <div class="text-xs mt-1" style="color:var(--muted);">목표 주식 비중 ${s.target_invested_pct}% · 주식 부분 수익률 <span style="${pctColor(s.stock_return_pct)}">${pct(s.stock_return_pct, 2)}</span></div>
+        </div>
         <div class="grid grid-cols-2 gap-2 mt-3 text-xs">
-          <div><div style="color:var(--muted);">같은 1억 SPY 투자</div><div class="font-semibold mt-0.5">${wonShort(s.spy_value_krw)} <span style="${pctColor(s.spy_return_pct)}">${pct(s.spy_return_pct, 2)}</span></div></div>
-          <div><div style="color:var(--muted);">SPY 대비</div><div class="font-semibold mt-0.5" style="${pctColor(beat)}">${beat >= 0 ? '+' : ''}${beat.toFixed(2)}%p</div></div>
-          <div><div style="color:var(--muted);">달러 기준 수익률</div><div class="font-semibold mt-0.5" style="${pctColor(s.usd_return_pct)}">${pct(s.usd_return_pct, 2)}</div></div>
+          <div><div style="color:var(--muted);">같은 비중 SPY 계좌</div><div class="font-semibold mt-0.5">${wonShort(s.bench_value_krw)} <span style="${pctColor(s.bench_return_pct)}">${pct(s.bench_return_pct, 2)}</span></div></div>
+          <div><div style="color:var(--muted);">같은 비중 SPY 대비</div><div class="font-semibold mt-0.5" style="${pctColor(beat)}">${beat >= 0 ? '+' : ''}${beat.toFixed(2)}%p</div></div>
+          <div><div style="color:var(--muted);">원금 전액 SPY였다면</div><div class="font-semibold mt-0.5">${wonShort(s.spy_full_value_krw)} <span style="${pctColor(s.spy_full_return_pct)}">${pct(s.spy_full_return_pct, 2)}</span></div></div>
           <div><div style="color:var(--muted);">최대 낙폭</div><div class="font-semibold mt-0.5" style="color:#ef4444;">${s.max_drawdown_pct.toFixed(2)}%</div></div>
         </div>
         <div class="text-xs mt-2" style="color:var(--muted);">환율 ${s.fx_start.toLocaleString('ko-KR')}원 → ${s.fx_now.toLocaleString('ko-KR')}원 (USD/KRW)</div>
       </div>
       <div style="height:180px;" class="mb-3"><canvas id="sim-chart"></canvas></div>
       <table class="mb-2">
-        <thead><tr><th>보유 종목</th><th style="text-align:right;">현재가</th><th style="text-align:right;">평가액·비중</th></tr></thead>
+        <thead><tr><th>보유 종목</th><th style="text-align:right;">평가액·수익률</th><th style="text-align:right;">비중</th></tr></thead>
         <tbody>${rows}
-          <tr><td><span style="color:var(--muted);">현금 (USD)</span><div class="text-xs" style="color:var(--muted);">$${s.cash_usd.toLocaleString('en-US')}</div></td><td></td>
-          <td style="text-align:right;">${wonShort(s.cash_krw)}<div class="text-xs" style="color:var(--muted);">${cashW}%</div></td></tr>
+          <tr><td><span style="color:var(--muted);">원화 현금</span></td>
+          <td style="text-align:right;">${wonShort(s.cash_krw)}</td><td style="text-align:right;">${cashPct}%</td></tr>
         </tbody>
       </table>
-      ${trades ? '<details class="mt-2"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">거래 내역 ' + s.trades.length + '건</summary>' + trades + '</details>' : ''}
+      ${wh ? '<details class="mt-2"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">비중 결정 이력 ' + s.weights_history.length + '회</summary>' + wh + '</details>' : ''}
+      ${trades ? '<details class="mt-1"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">거래 내역 ' + s.trades.length + '건</summary>' + trades + '</details>' : ''}
       <div class="text-xs mt-2" style="color:var(--muted);line-height:1.6;">규칙: ${esc(s.rule)} 실제 투자 결과가 아닌 가상 계산입니다.</div>
     </div>`;
 }
@@ -594,13 +607,14 @@ function drawSimChart(s) {
   simChart = new Chart(el, {
     type: 'line',
     data: { labels: c.dates.map(d => d.slice(5)), datasets: [
-      { label: 'Agent 추천', data: c.value.map(v => v / 1e4), borderColor: '#f59e0b', backgroundColor: '#f59e0b22', borderWidth: 2, fill: true, tension: 0.25, pointRadius: 0 },
-      { label: 'SPY', data: c.spy.map(v => v / 1e4), borderColor: '#94a3b8', borderWidth: 1.5, borderDash: [4, 3], fill: false, tension: 0.25, pointRadius: 0 },
+      { label: 'Agent 비중', data: c.value.map(v => v / 1e4), borderColor: '#f59e0b', backgroundColor: '#f59e0b22', borderWidth: 2, fill: true, tension: 0.25, pointRadius: 0 },
+      { label: '같은 비중 SPY', data: c.bench.map(v => v / 1e4), borderColor: '#94a3b8', borderWidth: 1.5, borderDash: [4, 3], fill: false, tension: 0.25, pointRadius: 0 },
+      { label: '전액 SPY', data: c.spy_full.map(v => v / 1e4), borderColor: '#3b82f6', borderWidth: 1, borderDash: [2, 3], fill: false, tension: 0.25, pointRadius: 0 },
     ]},
     options: {
       responsive: true, maintainAspectRatio: false, animation: false,
       interaction: { mode: 'index', intersect: false },
-      plugins: { legend: { labels: { color: '#94a3b8', boxWidth: 12, font: { size: 11 } } },
+      plugins: { legend: { labels: { color: '#94a3b8', boxWidth: 12, font: { size: 10 } } },
         tooltip: { callbacks: { label: ctx => ctx.dataset.label + ' ' + Math.round(ctx.parsed.y).toLocaleString('ko-KR') + '만원' } } },
       scales: { x: { ticks: { color: '#64748b', maxTicksLimit: 6, font: { size: 10 } }, grid: { display: false } },
         y: { ticks: { color: '#64748b', font: { size: 10 }, callback: v => v.toLocaleString('ko-KR') + '만' }, grid: { color: '#1e2340' } } },
@@ -659,6 +673,7 @@ function loadSummary(d) {
         <span class="score-chip">질 ${sc.quality ?? '—'}</span>
         <span class="score-chip">재무 ${sc.financial_health ?? '—'}</span>
         <span class="score-chip">가격 ${sc.valuation ?? '—'}</span>
+        ${h.weight ? '<span class="badge badge-purple">비중 ' + h.weight + '%</span>' : ''}
         <span class="text-xs ml-auto" style="color:var(--muted);">${esc(h.added_date)} 편입 · ${h.weeks_held}주</span>
       </div>
     </div>`;

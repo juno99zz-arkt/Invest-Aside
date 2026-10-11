@@ -235,8 +235,18 @@ def finalize():
             if dcs["ticker"] in reused:
                 dcs["reason"] = (f"[{reused[dcs['ticker']]['analyzed_date']} 분석 재사용 — 이후 실적 발표·큰 주가 변동·"
                                  f"추정치 급변 없음] " + dcs["reason"])
+        prev_weights = next((w.get("weights") for w in reversed(hist["weeks"]) if w["week"] != week and w.get("weights")),
+                            None) or {}
+        weights, w_notes = aside_bridge.resolve_weights(res.get("target_weights"), [h["ticker"] for h in kept],
+                                                        prev_weights)
+        for n in w_notes:
+            print("::warning::" + n)
         hist = update_history(hist, week, today, kept, decisions, removed, snaps, spy)
+        hist["weeks"][-1]["weights"] = weights
+        for h in hist["portfolio"]:
+            h["weight"] = weights.get(h["ticker"])
         save_history(hist)
+        print("비중:", weights, f"현금 {100 - sum(weights.values())}%")
 
         dossier_by_tk = {d["ticker"]: d for d in req["dossiers"]}
         report = {
@@ -248,6 +258,7 @@ def finalize():
                               "reused_from": reused[tk]["analyzed_date"] if tk in reused else None}
                          for tk, a in analyses.items() if a and tk in dossier_by_tk},
             "decisions": decisions,
+            "weights": weights, "weights_reason": res.get("weights_reason"),
             "usage": {"aside": {"engine": "Aside (무료)", "analyzed": len(ok), "reused": len(reused),
                                 "failed": [tk for tk, a in fresh.items() if not a], "est_cost_usd": 0,
                                 "analyzed_at": res.get("analyzed_at")}},
