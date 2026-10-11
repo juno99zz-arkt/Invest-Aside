@@ -21,6 +21,7 @@ sys.path.insert(0, BASE_DIR)
 from data_fetcher import PEG_TICKERS, fetch_top50_metrics, fetch_kr_top50_metrics, fetch_prices
 import picks
 import sec_data
+import sim
 
 KST = timezone(timedelta(hours=9))
 STANCE_LEVEL = {"공격적 매수": 1, "선별적 매수": 2, "중립": 3, "방어적": 4}
@@ -195,6 +196,7 @@ def build_data():
         "m6": m6,
         "m7": {"stocks": top50 or []},
         "m8": {"stocks": kr_top50 or []},
+        "sim": sim.build(hist),
         "meta": build_meta,
     }
 
