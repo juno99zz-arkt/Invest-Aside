@@ -1,20 +1,26 @@
-name: 투자 대시보드 업데이트
+name: 투자 대시보드 업데이트 (Aside)
+
+# 비용 0원 구조
+#   토 09:00 KST  prepare  : 정량 신호·후보 선정·분석 요청서(data/pending/request.json) 생성
+#   토 오전       Aside 루틴이 요청서를 읽고 AI 분석 → data/aside/result.json 업로드(push)
+#   push 감지     finalize : 편입·유지·제외 결정 + 이력·리포트 갱신
+#   매일 17:00 KST daily   : 시세·PEG·M7/M8 갱신
+#   (모든 실행 마지막에 대시보드 생성 → gh-pages 배포)
 
 on:
-  workflow_dispatch:        # 수동 실행 / repository_dispatch 트리거
+  workflow_dispatch:
     inputs:
       mode:
-        description: "daily = 시세 갱신 / weekly = 신호·추천·뉴스 재분석(정기 실행은 격주, 수동은 즉시) / compare = Opus·Sonnet 3종목 비교 / sec_check = SEC 접근 점검 / report = 최근 격주 결과 메일 즉시 발송(비용 없음) (weekly·compare는 Claude API 비용 발생, weekly는 결과 메일 발송)"
+        description: "daily = 시세 갱신 / prepare = 주간 신호·후보·분석요청서 생성 / finalize = Aside 결과 반영 / sec_check = SEC 접근 점검"
         type: choice
-        options: [daily, weekly, compare, sec_check, report]
+        options: [daily, prepare, finalize, sec_check]
         default: daily
-      compare_tickers:
-        description: "compare 모드 종목 지정 (예: MSFT,V,ASML). 비우면 정량 상위 후보 3개"
-        type: string
-        default: ""
+  push:
+    branches: [main]
+    paths: ["data/aside/**"]
   schedule:
-    - cron: "0 8 * * *"    # 매일 KST 17:00 (UTC 08:00) 시세 갱신
-    - cron: "0 0 * * 6"    # 토요일 KST 09:00 (UTC 00:00) — 분석은 '격주 확인' 단계에서 격주만, 메일은 매주
+    - cron: "0 8 * * *"    # 매일 KST 17:00 시세 갱신
+    - cron: "0 0 * * 6"    # 매주 토 KST 09:00 주간 prepare
 
 permissions:
   contents: write
@@ -42,60 +48,40 @@ jobs:
       - name: 의존성 설치
         run: pip install -r requirements.txt
 
-      - name: SEC 접근 점검 (비용 없음)
-        if: inputs.mode == 'sec_check'
+      - name: 실행 모드 결정
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then m=finalize
+          elif [ "${{ github.event.schedule }}" = "0 0 * * 6" ]; then m=prepare
+          elif [ -n "${{ inputs.mode }}" ]; then m="${{ inputs.mode }}"
+          else m=daily; fi
+          echo "mode=$m" >> "$GITHUB_OUTPUT"
+          echo "실행 모드: $m"
+
+      - name: SEC 접근 점검
+        if: steps.mode.outputs.mode == 'sec_check'
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python sec_data.py
 
-      - name: 최근 격주 결과 메일 발송 (비용 없음)
-        if: inputs.mode == 'report'
+      - name: 주간 prepare (신호·후보·분석 요청서)
+        if: steps.mode.outputs.mode == 'prepare'
         env:
-          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          INVEST_REPORT_TO: ${{ secrets.INVEST_REPORT_TO }}
-        run: python report_email.py --latest
-
-      - name: 격주 확인 (기준일 2026-09-12 토요일부터 짝수 주차만 실행)
-        id: cadence
-        run: |
-          if [ "${{ inputs.mode }}" = "weekly" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 0 * * 6" ]; then
-            weeks=$(( ( $(date -u +%s) - $(date -u -d 2026-09-12 +%s) ) / 604800 ))
-            if [ $((weeks % 2)) -eq 0 ]; then echo "run=true" >> "$GITHUB_OUTPUT"; else echo "run=false" >> "$GITHUB_OUTPUT"; fi
-            echo "기준일 이후 ${weeks}주 경과"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: 격주 파이프라인 (신호·심층분석·추천)
-        if: steps.cadence.outputs.run == 'true'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
-        run: python run_weekly.py
+        run: python run_weekly.py prepare
 
-      - name: 격주 결과 main 커밋 (추천 이력 보존)
-        if: steps.cadence.outputs.run == 'true'
+      - name: finalize (Aside 분석 결과 반영)
+        if: steps.mode.outputs.mode == 'finalize'
+        run: python run_weekly.py finalize
+
+      - name: 데이터 커밋
+        if: steps.mode.outputs.mode == 'prepare' || steps.mode.outputs.mode == 'finalize'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "주간 신호·추천 갱신: $(TZ=Asia/Seoul date +%G-W%V)"
-          git push
-
-      - name: 모델 비교 (Opus 5 vs Sonnet 5)
-        if: inputs.mode == 'compare'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          COMPARE_TICKERS: ${{ inputs.compare_tickers }}
-        run: |
-          python compare_models.py
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/compare/
-          git diff --cached --quiet || git commit -m "모델 비교 결과: $(TZ=Asia/Seoul date +%F)"
+          git diff --cached --quiet || git commit -m "주간 ${{ steps.mode.outputs.mode }}: $(TZ=Asia/Seoul date +%G-W%V)"
+          git pull --rebase origin main
           git push
 
       - name: 투자 대시보드 생성
@@ -107,17 +93,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
           publish_branch: gh-pages
-
-      - name: 주간 결과 메일 리포트 (매주 토 09:00 KST, 분석 주는 분석 완료 후)
-        if: steps.cadence.outputs.run == 'true' || github.event.schedule == '0 0 * * 6'
-        continue-on-error: true   # 메일 실패가 배포 결과를 막지 않게
-        env:
-          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          INVEST_REPORT_TO: ${{ secrets.INVEST_REPORT_TO }}
-        run: |
-          if [ "${{ steps.cadence.outputs.run }}" = "true" ]; then
-            python report_email.py            # 이번 분석 결과 (실패 시 실패 알림)
-          else
-            python report_email.py --latest   # 분석 쉬는 주: 지난 분석 결과
-          fi
