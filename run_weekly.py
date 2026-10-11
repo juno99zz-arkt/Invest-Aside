@@ -389,7 +389,8 @@ def finalize():
         meta = {tk: {"sector": s.get("sector"), "industry": (dossier_by_tk.get(tk) or {}).get("industry")}
                 for tk, s in snaps.items()}
         weights, alloc = aside_bridge.size_portfolio([h["ticker"] for h in kept], res.get("target_weights"), prev_weights,
-                                                     analyses, prices, meta, stance, _profile(), res.get("allocation"))
+                                                     analyses, prices, meta, stance, _profile(), res.get("allocation"),
+                                                     new_tickers=[d["ticker"] for d in decisions if d["action"] == "신규편입"])
         alloc["agent_reason"] = res.get("weights_reason")
         for n in alloc["notes"]:
             print("  비중: " + n)

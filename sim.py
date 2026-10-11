@@ -239,30 +239,6 @@ def run(events, series, names=None, initial=INITIAL_KRW, opts=None, today=None, 
             "pending": [{"signal_date": s, "weights": w, "label": l} for s, w, l in pending]}
 
 
-def quant_events(hist, reports):
-    """정량 상위 전략: 매주 Agent 와 같은 개별주 비중·코어 SPY 를 쓰되, 개별주는 그 주 정량 상위 8 후보에 균등 배분."""
-    out, prev, s0 = [], None, start_date(hist)
-    for w in sorted(hist.get("weeks", []), key=lambda w: (w["date"], w.get("interim", False))):
-        if w["date"] < s0:
-            continue
-        wts = week_weights(w, prev or {})
-        prev = wts
-        sig, label = w["date"], w.get("week")
-        rep = reports.get((label or "").split("+")[0])
-        if not rep or w.get("interim"):
-            continue
-        top = [c["ticker"] for c in sorted([c for c in rep.get("candidates", []) if c.get("role") == "신규후보"],
-                                          key=lambda c: -(c.get("score") or 0))][:8]
-        stock = sum(v for k, v in wts.items() if k != BENCH)
-        if not top or stock <= 0:
-            continue
-        w = {tk: stock / len(top) for tk in top}
-        if wts.get(BENCH):
-            w[BENCH] = w.get(BENCH, 0) + wts[BENCH]
-        out.append((sig, w, label))
-    return out
-
-
 def shadow(reports, series, as_of):
     """분석했던 모든 후보의 이후 성과 (분석일 가격 → 현재) vs 같은 기간 SPY."""
     rows = []
@@ -297,15 +273,13 @@ def simulate(hist, series, reports=None, opts=None, today=None):
     if not s0:
         return None
     names = {h["ticker"]: h.get("name") for h in hist.get("portfolio", []) + hist.get("closed", []) if h.get("name")}
-    names[BENCH] = "SPDR S&P 500 (코어)"
+    names[BENCH] = "SPDR S&P 500"
     ev = agent_events(hist)
     main = run(ev, series, names, INITIAL_KRW, opts, today, s0)
     if not main:
         return None
     same = run([(s, {BENCH: sum(w.values())}, l) for s, w, l in ev], series, names, INITIAL_KRW, opts, today, s0)
     full = run([(s0, {BENCH: 100}, "전액 SPY")], series, names, INITIAL_KRW, opts, today, s0)
-    qev = quant_events(hist, reports)
-    quant = run(qev, series, names, INITIAL_KRW, opts, today, s0) if qev else None
     alloc = next((w.get("allocation") for w in sorted(hist.get("weeks", []), key=lambda w: w["date"], reverse=True)
                   if w.get("allocation")), None)
     o = {**DEFAULT_OPTS, **(opts or {})}
@@ -313,20 +287,17 @@ def simulate(hist, series, reports=None, opts=None, today=None):
         **main, "start_date": s0, "initial_krw": INITIAL_KRW, "fee_pct": FEE * 100, "slot_pct": SLOT_PCT,
         "bench_value_krw": same["value_krw"], "bench_return_pct": same["return_pct"],
         "spy_full_value_krw": full["value_krw"], "spy_full_return_pct": full["return_pct"],
-        "quant_value_krw": quant and quant["value_krw"], "quant_return_pct": quant and quant["return_pct"],
         "stock_return_pct": (lambda hs: round((sum(h["value_krw"] for h in hs) / sum(h["cost_krw"] for h in hs) - 1) * 100, 2)
                              if hs and sum(h["cost_krw"] for h in hs) else None)(
                                  [h for h in main["holdings"] if h["ticker"] != BENCH]),
-        "curve": {**main["curve"], "bench": same["curve"]["value"], "spy_full": full["curve"]["value"],
-                  "quant": quant["curve"]["value"] if quant else None},
+        "curve": {**main["curve"], "bench": same["curve"]["value"], "spy_full": full["curve"]["value"]},
         "shadow": shadow(reports, series, main["as_of"]),
         "allocation": alloc,
         "assumptions": {"fill": "신호(결정) 다음 거래일 시가 체결", "fee_pct": FEE * 100, "fx_spread_pct": o["fx_spread_pct"],
                         "dividend_tax_pct": o["dividend_tax_pct"], "cash_rate_pct": o["cash_rate_pct"],
                         "not_included": "양도소득세"},
-        "rule": "원금 1억원(원화). 시장 스탠스로 전체 주식 비중을 정하고, 그 안에서 Agent 가 위험 한도(약세 시나리오 손실·테마 상한) "
-                "내 개별주 비중(5% 단위)을 정한 뒤 남는 주식 비중은 코어 SPY, 나머지는 원화 현금. 9/13~10/10 은 개선 전 규칙"
-                "(종목당 20%·나머지 현금). 체결은 신호 다음 거래일 시가·당일 환율, 정수 주, 수수료·환전 스프레드·배당 원천징수·"
+        "rule": "원금 1억원(원화). 최대 5종목 개별주 + 원화 현금만 운용(ETF 없음). 종목 비중은 확신도·기대수익률(약세25·기준50·강세25)·"
+                "약세 시나리오 손실 한도로 정하고, 주식 합계는 시장 스탠스별 상한 안에서 기대수익이 낮은 종목부터 줄임. 체결은 신호 다음 거래일 시가·당일 환율, 정수 주, 수수료·환전 스프레드·배당 원천징수·"
                 "현금 이자 반영, 양도세 미반영.",
     }
 
@@ -383,7 +354,7 @@ def build(hist):
         res = simulate(hist, Series(data), reports, opts)
         if res:
             print(f"가상 투자: {res['value_krw']:,}원 ({res['return_pct']:+.2f}%) · 같은 비중 SPY {res['bench_return_pct']:+.2f}% "
-                  f"· 정량 상위 {res['quant_return_pct']} · 전액 SPY {res['spy_full_return_pct']:+.2f}%")
+                  f"· 전액 SPY {res['spy_full_return_pct']:+.2f}%")
         return res
     except Exception as e:  # 시세 수집 실패가 대시보드 생성을 막지 않게
         print(f"가상 투자 시뮬레이션 실패: {e}")

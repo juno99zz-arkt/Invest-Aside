@@ -298,6 +298,11 @@
       <span style="font-size:10px;">대가</span>
       <div class="nav-dot"></div>
     </div>
+    <div class="nav-item" onclick="switchTab('m5','nav-m5')" id="nav-m5">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+      <span style="font-size:10px;">내부자</span>
+      <div class="nav-dot"></div>
+    </div>
     <div class="nav-item" onclick="switchTab('m2','nav-m2')" id="nav-m2">
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
       <span style="font-size:10px;">섹터</span>
@@ -311,11 +316,6 @@
     <div class="nav-item" onclick="switchTab('m4','nav-m4')" id="nav-m4">
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       <span style="font-size:10px;">흑자↑</span>
-      <div class="nav-dot"></div>
-    </div>
-    <div class="nav-item" onclick="switchTab('m5','nav-m5')" id="nav-m5">
-      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-      <span style="font-size:10px;">내부자</span>
       <div class="nav-dot"></div>
     </div>
     <div class="nav-item" onclick="switchTab('m6','nav-m6')" id="nav-m6">
@@ -520,7 +520,7 @@ function logicHelpHtml(L) {
       ${step(6, 'Aside AI 심층분석 (무료)',
         '웹 검색으로 최신 실적·공시·뉴스를 확인해 기업의 질 / 재무 건전성 / 가격 매력 / 6~12개월 촉매 / 반대 근거·논리 붕괴 조건을 분석하고 판정(편입 적합·관찰·부적합)과 확신도(1~5)를 매깁니다. 확신도는 수익 확률이 아니라 근거 상태(데이터 검증·반대 근거 해소·추정치 분산·손익비)로 설명하고, 판단표(현재 행동·가격 조건·약세/기준/강세 시나리오·다음 검증·판단 변경 조건)를 함께 냅니다.')}
       ${step(7, '편입 · 유지 · 제외 규칙',
-        `· 신규편입: 편입 적합 + 확신도 ${L.min_conviction} 이상 + 핵심 수치 검증 완료, 섹터당 최대 ${L.sector_cap}종목, 전체 최대 ${L.max_holdings}종목<br>
+        `· 신규편입: 편입 적합 + 확신도 ${L.min_conviction} 이상 + 핵심 수치 검증 완료, 섹터당 최대 ${L.sector_cap}종목, 전체 최대 ${L.max_holdings}종목<br>· 탐색 편입: 확신도 3이라도 Agent 판단이 '신규 매수' + 현재가 ≤ 매수 기준가 + 기대수익 10% 이상이면 10% 비중으로 시작<br>
          · 유지: 투자 논리 유효·약화 (주가 하락만으로는 제외하지 않음)<br>
          · 제외: 투자 논리 붕괴 또는 부적합 판정<br>
          · 교체: 만석일 때 확신도 ${L.swap_conviction} 후보가 '약화'·확신도 3 이하 보유 종목을 대체<br>
@@ -528,7 +528,7 @@ function logicHelpHtml(L) {
       ${step(8, '데이터 검증 (추천 전 관문)',
         '· FCF 는 현금흐름표 4분기 합계를 기본값으로 쓰고, Yahoo 요약값과 크게 다르면 자동으로 \'불일치\' 표시<br>· AI 가 공식 공시로 핵심 수치를 확인해 확정값을 넣으면 정량 점수를 다시 계산<br>· 확인되지 않으면 \'검증 대기\' → 신규 편입·비중 확대 보류<br>· PER 은 최근 12개월 / 향후 12개월 / 올해·다음 회계연도를 구분<br>· 대가 13F 는 같은 분기끼리만 비교(지연 자료는 가산점 제외), 내부자 매매는 거래 대상 회사가 일치하는 공시만')}
       ${step(9, '투자 규모 — 종목 선택과 분리',
-        '① 시장 스탠스로 전체 주식 비중 결정 (공격적 90 · 선별적 75 · 중립 60 · 방어적 45%, Agent ±10%p 조정)<br>② 개별주 비중 = Agent 제안(5% 단위) → 약세 시나리오에서 한 종목이 전체 자산에 주는 손실 ≤ 6% 가 되도록 상한 → 같은 테마 합계 ≤ 35%<br>③ 남는 주식 비중은 코어 SPY, 나머지 원화 현금 — 후보가 적다는 이유로 주식 비중이 줄지 않음<br>(규칙 값은 data/risk_profile.json)')}
+        '이 계좌는 최대 5종목 개별주 + 원화 현금만 운용합니다 (ETF 없음).<br>① 신규 종목 기본 비중: 확신도 5→30% · 4→20% · 3→10%(탐색 편입) / 보유 종목은 지난 비중 또는 Agent 제안<br>② 기대수익률 = 약세 25% · 기준 50% · 강세 25% 가중 — 10% 미만이면 신규 0%, 보유는 확대 금지<br>③ 상한: 한 종목 30% · 약세 시 한 종목이 전체 자산에 주는 손실 ≤ 8% · 같은 테마 합계 ≤ 50% · 경고 단계·검증 대기<br>④ 개별주 합계 상한 = 스탠스별 (공격적 100 · 선별적 90 · 중립 80 · 방어적 60%, Agent ±10%p) — 넘으면 기대수익이 가장 낮은 종목부터 줄이고, 나머지는 원화 현금<br>(규칙 값은 data/risk_profile.json)')}
       ${step(10, '경고 단계와 변경 알림',
         '· 보유 종목은 정상 → 추가 매수 중단 → 비중 재검토(비중 절반) → 논리 붕괴(제외) 4단계로 판정<br>· 매일 실적 발표·분석 이후 ±10% 급변·검증 일정·약세 가격 도달을 감지해 알림<br>· 수요일에 알림이 있는 보유·관심 종목만 중간 재평가 (주간 업데이트를 기다리지 않음)')}
       <div class="text-xs px-1" style="color:var(--muted);line-height:1.6;">가중치·가산점은 장기투자 원칙에 따른 설계값이며 과거 수익률로 검증(백테스트)한 값은 아닙니다.</div>
@@ -686,12 +686,13 @@ function simHtml(s) {
       <span class="score-chip">현금 ${w.cash_pct}%</span>
     </div>`).join('');
   const al = s.allocation;
+  const rp = INJECTED.risk_profile || {};
   const allocHtml = al ? `
     <div class="card2 p-3 mb-3 text-xs" style="line-height:1.7;">
-      <div class="font-semibold mb-1" style="color:#e2e8f0;">비중 결정 (종목 선택과 분리)</div>
-      <div>① 자산배분: ${esc(al.reason)} → <b>주식 ${al.equity_pct}%</b> / 현금 ${al.cash_pct}%</div>
-      <div>② 개별주 ${al.stock_pct}% (위험 한도: 약세 시 종목당 전체 손실 ≤ ${(INJECTED.risk_profile || {}).max_position_loss_pct || 6}%, 테마 합계 ≤ ${(INJECTED.risk_profile || {}).max_theme_pct || 35}%)</div>
-      <div>③ 남는 주식 비중은 코어 ${esc(al.core_etf)} ${al.core_pct}% — 후보가 적다는 이유로 주식 비중이 줄지 않도록</div>
+      <div class="font-semibold mb-1" style="color:#e2e8f0;">비중 결정 — 최대 ${rp.max_holdings || 5}종목 + 원화 현금 (ETF 없음)</div>
+      <div>① 종목별 출발점: 신규는 확신도 5→30% · 4→20% · 3→10%(탐색 편입), 보유는 지난 비중 또는 Agent 제안</div>
+      <div>② 기대수익(약세25·기준50·강세25) ${rp.min_expected_return_pct || 10}% 미만이면 신규 0% · 보유 확대 금지, 약세 시 종목당 전체 손실 ≤ ${rp.max_position_loss_pct || 8}%</div>
+      <div>③ ${esc(al.reason)} → 개별주 <b>${al.stock_pct}%</b> / 원화 현금 <b>${al.cash_pct}%</b> (넘으면 기대수익 낮은 종목부터 축소)</div>
     </div>` : '';
   const sh = s.shadow || {};
   const shadowHtml = (sh.rows || []).length ? `
@@ -724,7 +725,7 @@ function simHtml(s) {
         </div>
         <div class="grid grid-cols-2 gap-2 mt-3 text-xs">
           <div><div style="color:var(--muted);">같은 비중 SPY (종목 선택 효과)</div><div class="font-semibold mt-0.5">${wonShort(s.bench_value_krw)} <span style="${pctColor(s.bench_return_pct)}">${pct(s.bench_return_pct, 2)}</span> · 차이 <span style="${pctColor(beat)}">${beat >= 0 ? '+' : ''}${beat.toFixed(2)}%p</span></div></div>
-          <div><div style="color:var(--muted);">정량 상위 8 전략 (AI 분석 추가 가치)</div><div class="font-semibold mt-0.5">${s.quant_value_krw ? wonShort(s.quant_value_krw) + ' <span style="' + pctColor(s.quant_return_pct) + '">' + pct(s.quant_return_pct, 2) + '</span>' : '—'}</div></div>
+          <div><div style="color:var(--muted);">현재 추천 비중의 기대수익 (12개월)</div><div class="font-semibold mt-0.5">${al && al.expected_return_pct != null ? '<span style="' + pctColor(al.expected_return_pct) + '">' + pct(al.expected_return_pct, 1) + '</span> <span style="color:var(--muted);font-weight:400;">약세25·기준50·강세25 가중 + 현금이자</span>' : '—'}</div></div>
           <div><div style="color:var(--muted);">원금 전액 SPY (현금 보유 효과)</div><div class="font-semibold mt-0.5">${wonShort(s.spy_full_value_krw)} <span style="${pctColor(s.spy_full_return_pct)}">${pct(s.spy_full_return_pct, 2)}</span></div></div>
           <div><div style="color:var(--muted);">최대 낙폭</div><div class="font-semibold mt-0.5" style="color:#ef4444;">${s.max_drawdown_pct.toFixed(2)}%</div></div>
         </div>
@@ -757,7 +758,6 @@ function drawSimChart(s) {
     { label: '같은 비중 SPY', data: c.bench.map(v => v / 1e4), borderColor: '#94a3b8', borderWidth: 1.5, borderDash: [4, 3], fill: false, tension: 0.25, pointRadius: 0 },
     { label: '전액 SPY', data: c.spy_full.map(v => v / 1e4), borderColor: '#3b82f6', borderWidth: 1, borderDash: [2, 3], fill: false, tension: 0.25, pointRadius: 0 },
   ];
-  if (c.quant) ds.push({ label: '정량 상위 8', data: c.quant.map(v => v / 1e4), borderColor: '#a855f7', borderWidth: 1.2, borderDash: [6, 3], fill: false, tension: 0.25, pointRadius: 0 });
   simChart = new Chart(el, {
     type: 'line',
     data: { labels: c.dates.map(d => d.slice(5)), datasets: ds },
@@ -843,12 +843,24 @@ function loadSummary(d) {
       </div>
       <div class="text-xs mb-3" style="color:var(--muted);line-height:1.5;">6개월+ 보유 목표 · 매주 투자 논리 재점검 · 편입가 대비 수익률 (아래는 같은 기간 SPY)</div>
       ${d.logic ? logicHelpHtml(d.logic) : ''}
-      ${cards || '<div class="text-xs p-3 card2" style="color:var(--muted);line-height:1.6;">아직 편입된 종목이 없습니다. 기준(편입 적합 + 확신도 4 이상)을 충족하는 종목이 나올 때만 편입합니다.</div>'}
+      ${cards || '<div class="text-xs p-3 card2" style="color:var(--muted);line-height:1.6;">아직 편입된 종목이 없습니다. 기준(편입 적합 + 확신도 4 이상, 또는 가격 조건을 충족한 확신도 3 탐색 편입)을 충족하는 종목이 나올 때만 편입하고, 나머지는 원화 현금으로 둡니다.</div>'}
       ${cards ? '<div class="text-xs mt-2" style="color:var(--muted);">종목을 누르면 심층분석 리포트가 열립니다.</div>' : ''}
     </div>`;
 
   // 이번 주 결정
   let decisionHtml = '';
+  const RQ = d.review_quotes || {};
+  const quoteLine = tk => {
+    const q = RQ[tk];
+    if (!q || q.price == null) return '';
+    const met = q.buy_below && q.price <= q.buy_below;
+    return '<div class="flex items-center gap-2 flex-wrap text-xs mb-1">'
+      + '<span class="score-chip">현재가 <b>$' + q.price.toFixed(2) + '</b>'
+      + (q.change_pct != null ? ' <span style="' + pctColor(q.change_pct) + '">(' + pct(q.change_pct) + ' 분석 후)</span>' : '') + '</span>'
+      + (q.buy_below ? '<span class="score-chip" style="' + (met ? 'color:#86efac;' : '') + '">매수 기준 ≤ $' + q.buy_below + (met ? ' 충족' : ' · ' + pct((q.buy_below / q.price - 1) * 100) + ' 남음') + '</span>' : '')
+      + (q.expected_return_pct != null ? '<span class="score-chip">기대수익 <span style="' + pctColor(q.expected_return_pct) + '">' + pct(q.expected_return_pct) + '</span></span>' : '')
+      + '</div>';
+  };
   const lw = d.last_week;
   if (lw) {
     const row = x => {
@@ -861,6 +873,7 @@ function loadSummary(d) {
           <span class="text-xs truncate" style="color:var(--muted);min-width:0;">${esc(companyName(x.ticker))}</span>
           ${link ? '<span class="text-xs ml-auto" style="color:#93c5fd;white-space:nowrap;">리포트 ›</span>' : ''}
         </div>
+        ${quoteLine(x.ticker)}
         <div class="text-xs" style="color:var(--muted);line-height:1.6;">${esc(x.reason)}</div>
       </div>`;
     };
@@ -871,7 +884,7 @@ function loadSummary(d) {
     decisionHtml = `
       <div class="card p-4 mb-3">
         <div class="text-sm font-bold mb-1">이번 주 결정 · ${esc(lw.week)}</div>
-        <div class="text-xs mb-2" style="color:var(--muted);">${esc(lw.date)} 분석 기준</div>
+        <div class="text-xs mb-2" style="color:var(--muted);">${esc(lw.date)} 분석 기준 · 현재가는 ${esc(d.quotes_at || INJECTED.meta.built_at_kst)} 업데이트 시점</div>
         ${noNew ? '<div class="card2 p-2 mb-2 text-xs" style="color:#fcd34d;line-height:1.6;">이번 주 신규 편입 없음 — 억지로 채우지 않습니다. 아래 검토 후보의 판정 사유를 확인하세요.</div>' : ''}
         ${main.map(row).join('')}
         ${others.length ? `<details class="mt-2"><summary class="text-xs cursor-pointer py-1" style="color:#93c5fd;">검토했지만 편입하지 않은 후보 ${others.length}종목</summary>${others.map(row).join('')}</details>` : ''}
@@ -939,7 +952,7 @@ function loadSummary(d) {
   render('summary-content', '<div class="dash">'
     + box('o0 dfull', warnHtml + alertsHtml(INJECTED.alerts))
     + '<div class="dcol">' + box('o1', stanceHtml) + box('o2', portfolioHtml) + box('o4', decisionHtml) + box('o7', historyHtml) + '</div>'
-    + '<div class="dcol">' + box('o3', simHtml(INJECTED.sim) + exposureHtml(INJECTED.exposure, INJECTED.risk_profile)) + box('o5', msgHtml) + box('o6', sectorHtml) + box('o8', briefHtml) + '</div>'
+    + '<div class="dcol">' + box('o3', simHtml(INJECTED.sim)) + box('o5', msgHtml) + box('o6', sectorHtml) + box('o8', briefHtml) + '</div>'
     + '</div>' + `
     <div class="text-xs px-1 pb-4" style="color:var(--muted);line-height:1.7;">
       데이터: Yahoo Finance(시세·재무·컨센서스), SEC EDGAR(13F·Form 4), Aside AI 웹검색(뉴스·심층분석).
@@ -1498,6 +1511,9 @@ function loadM6(d) {
         </div>
       </div>
       <div class="text-xs p-3 rounded" style="background:#0f1117;color:var(--muted);line-height:1.6;">${esc(d.overall.summary)}</div>
+      ${(() => { const n = d.semiconductor.length; const slow = d.semiconductor.filter(s => /둔화|역성장/.test(s.trend)); const lim = Math.floor(n / 3);
+        return '<div class="text-xs p-3 rounded mt-2" style="background:#0f1117;color:#cbd5e1;line-height:1.7;"><b>판정 규칙</b> · 지속 = 빅테크 CapEx 확대 + 반도체 ' + n + '종목 중 내년 EPS 둔화·역성장 ' + lim + '종목 이하 · 경계 = CapEx 축소, 또는 둔화가 과반인데 CapEx 확대가 아님 · 그 외 = 주의<br>'
+          + '<b>지금 \'' + esc(d.overall.bull_market_signal) + '\'인 이유</b> · CapEx는 ' + esc(d.overall.capex_trend) + '이지만 둔화·역성장이 ' + slow.length + '종목(' + slow.map(s => esc(s.ticker) + ' ' + esc(s.trend)).join(', ') + ')으로 기준(' + lim + '종목 이하)을 넘었습니다.</div>'; })()}
     </div>
 
     <div class="card p-4 mb-3">

@@ -195,23 +195,72 @@ def scenario_of(a, name):
     return None
 
 
-def size_portfolio(kept, proposed, prev, analyses, prices, meta, stance, profile, allocation=None):
-    """종목 선택과 '얼마나' 를 분리한 비중 결정.
-    1) 자산배분: 스탠스 → 전체 주식 비중 (Agent 가 ±agent_adjust_max 안에서 조정 가능)
-    2) 종목 비중: Agent 제안(5% 단위) → 약세 시나리오 손실 상한 → 경고 단계 → 검증 대기 → 테마 상한
-    3) 남는 주식 비중은 코어 ETF(SPY), 나머지는 원화 현금
-    반환: (weights {ticker|SPY: %}, allocation 설명 dict)"""
+SCENARIO_PROBS = {"약세": 0.25, "기준": 0.5, "강세": 0.25}
+
+
+def expected_return(a, price, probs=None):
+    """약세·기준·강세 시나리오 가격의 확률 가중 12개월 기대수익률(%). 시나리오가 없으면 None."""
+    if not price:
+        return None
+    tot = 0.0
+    for name, p in (probs or SCENARIO_PROBS).items():
+        s = scenario_of(a, name)
+        if not s or not s.get("price"):
+            return None
+        tot += p * (s["price"] / price - 1)
+    return round(tot * 100, 1)
+
+
+def size_portfolio(kept, proposed, prev, analyses, prices, meta, stance, profile, allocation=None, new_tickers=None):
+    """최대 5종목 개별주 + 원화 현금 계좌의 비중 결정 (ETF·코어 없음, 종목 선택과 분리).
+    1) 종목별 출발점: 보유 종목은 Agent 제안(없으면 지난 비중), 신규는 확신도별 기본(5→30, 4→20, 3→10 탐색 비중)
+       — Agent 는 신규 종목을 확신도 기본보다 높일 수 없음
+    2) 기대수익률(약세25·기준50·강세25) < 최소 기대수익이면 신규 0%, 보유는 비중 확대 금지
+    3) 상한: 한 종목 최대 · 약세 시나리오에서 전체 자산 손실 한도 · 경고 단계 · 검증 대기 · 테마 합계
+    4) 주식 합계 ≤ 스탠스별 상한(Agent ±조정) — 넘으면 기대수익이 가장 낮은 종목부터 5%p 축소
+    5) 나머지는 원화 현금
+    반환: (weights {ticker: %}, allocation 설명 dict)"""
     from themes import themes_of
     notes, per = [], {}
-    base_w, w_notes = resolve_weights(proposed, kept, prev)
-    notes += w_notes
-    max_single, max_loss = profile.get("max_single_weight", 25), profile.get("max_position_loss_pct", 6)
-    w = {}
+    prev = prev or {}
+    new = set(new_tickers) if new_tickers is not None else {tk for tk in kept if tk not in prev}
+    conv_w = {int(k): v for k, v in (profile.get("conviction_weight") or {"5": 30, "4": 20, "3": 10}).items()}
+    max_single = profile.get("max_single_weight", 30)
+    max_loss = profile.get("max_position_loss_pct", 8)
+    hurdle = profile.get("min_expected_return_pct", 10)
+    probs = {k: v / 100 for k, v in (profile.get("scenario_probs") or {}).items()} or None
+    w, er = {}, {}
     for tk in kept:
         a = analyses.get(tk) or {}
-        x = min(base_w[tk], max_single)
-        info = {"proposed": base_w[tk]}
-        bear, price = scenario_of(a, "약세"), prices.get(tk)
+        price = prices.get(tk)
+        v = (proposed or {}).get(tk)
+        ok = isinstance(v, (int, float)) and not isinstance(v, bool) and v % 5 == 0 and 0 <= v <= max_single
+        if v is not None and not ok:
+            notes.append(f"{tk} 제안 비중 {v!r} 무효(5% 단위, 0~{max_single}%) — 규칙값 사용")
+            v = None
+        pw = prev.get(tk)
+        info = {"new": tk in new}
+        if tk in new:
+            base = conv_w.get(int(a.get("conviction") or 0), 0)
+            x = base if v is None else min(int(v), base)
+            info["conviction_base"] = base
+        else:
+            x = int(v) if v is not None else int(pw if pw is not None else DEFAULT_WEIGHT)
+        info["proposed"] = x
+        e = expected_return(a, price, probs)
+        er[tk] = e
+        info["expected_return_pct"] = e
+        if e is None:
+            notes.append(f"{tk}: 시나리오 없음 — 기대수익 미계산")
+        elif e < hurdle:
+            if tk in new:
+                notes.append(f"{tk}: 기대수익 {e:+.1f}% < 최소 {hurdle}% → 신규 0%")
+                x = 0
+            elif pw is not None and x > pw:
+                notes.append(f"{tk}: 기대수익 {e:+.1f}% < 최소 {hurdle}% → 비중 확대 금지({pw}%)")
+                x = pw
+        x = min(x, max_single)
+        bear = scenario_of(a, "약세")
         if bear and price:
             down = bear["price"] / price - 1
             info["downside_pct"] = round(down * 100, 1)
@@ -221,24 +270,22 @@ def size_portfolio(kept, proposed, prev, analyses, prices, meta, stance, profile
                 if x > cap:
                     notes.append(f"{tk}: 약세 시나리오 {down * 100:.0f}% → 전체 손실 {max_loss}% 이내로 비중 {x}%→{cap}%")
                     x = cap
-        else:
-            info["risk_cap"] = None
-            notes.append(f"{tk}: 약세 시나리오 없음 — 손실 상한 미적용")
-        lvl, pw = a.get("alert_level"), (prev or {}).get(tk)
+        lvl = a.get("alert_level")
         if lvl == "비중 재검토":
-            new = max(5, _floor5((pw or x) / 2))
-            notes.append(f"{tk}: 경고 '비중 재검토' → {x}%→{min(x, new)}%")
-            x = min(x, new)
+            nx = max(5, _floor5((pw or x) / 2))
+            notes.append(f"{tk}: 경고 '비중 재검토' → {x}%→{min(x, nx)}%")
+            x = min(x, nx)
         elif lvl == "추가 매수 중단" and pw is not None and x > pw:
             notes.append(f"{tk}: 경고 '추가 매수 중단' → 지난 비중 {pw}% 유지")
             x = pw
-        if (a.get("evidence") or {}).get("data_verified") == "검증 대기" and pw is not None and x > pw:
-            notes.append(f"{tk}: 핵심 수치 검증 대기 → 비중 확대 보류({pw}%)")
-            x = pw
+        if (a.get("evidence") or {}).get("data_verified") == "검증 대기" and x > (pw or 0):
+            notes.append(f"{tk}: 핵심 수치 검증 대기 → 비중 확대 보류({pw or 0}%)")
+            x = pw or 0
         w[tk] = x
         per[tk] = info
-    # 테마 상한 (달러 자산은 제외 — 미국 주식 전략이므로)
-    max_theme = profile.get("max_theme_pct", 35)
+    ekey = lambda t: er.get(t) if er.get(t) is not None else -999
+    # 테마 상한 (달러 자산 제외)
+    max_theme = profile.get("max_theme_pct", 50)
     for _ in range(40):
         exp = {}
         for tk, x in w.items():
@@ -249,40 +296,39 @@ def size_portfolio(kept, proposed, prev, analyses, prices, meta, stance, profile
         if not over:
             break
         th, tks = over[0]
-        big = max(tks, key=lambda t: w[t])
-        if w[big] <= 5:
-            break
-        w[big] -= 5
-        notes.append(f"테마 '{th}' 합계 {max_theme}% 초과 → {big} 5%p 축소")
-    # 자산배분
-    base_eq = profile.get("equity_by_stance", {}).get(stance, 60)
-    eq, reason = base_eq, f"스탠스 '{stance}' 기본 주식 비중 {base_eq}%"
+        low = min([t for t in tks if w[t] > 0], key=ekey)
+        w[low] -= 5
+        notes.append(f"테마 '{th}' 합계 {max_theme}% 초과 → 기대수익이 낮은 {low} 5%p 축소")
+    # 주식 합계 상한 (스탠스)
+    caps = profile.get("stock_cap_by_stance") or {}
+    base_cap = caps.get(stance, 80)
+    cap, reason = base_cap, f"스탠스 '{stance}' 주식 합계 상한 {base_cap}%"
     adj = profile.get("agent_adjust_max", 10)
     if allocation and isinstance(allocation.get("equity_pct"), (int, float)):
-        want = _floor5(allocation["equity_pct"] + 2.5)
-        if abs(want - base_eq) <= adj:
-            eq = want
-            reason += f" → Agent 조정 {eq}%: {allocation.get('reason', '')}"
+        want = min(100, _floor5(allocation["equity_pct"] + 2.5))
+        if abs(want - base_cap) <= adj:
+            cap = want
+            if cap != base_cap:
+                reason += f" → Agent 조정 {cap}%: {allocation.get('reason', '')}"
         else:
-            notes.append(f"Agent 제안 주식 비중 {allocation['equity_pct']}% 는 허용 범위(±{adj}%p) 밖 — 기본값 사용")
-    while sum(w.values()) > eq:
-        big = max(w, key=lambda t: w[t])
-        w[big] -= 5
-        notes.append(f"개별주 합계가 주식 비중 {eq}% 초과 → {big} 5%p 축소")
-    w = {t: x for t, x in w.items() if x > 0}
-    stock = sum(w.values())
-    core = eq - stock
-    core_tk = profile.get("core_etf", "SPY")
-    weights = dict(w)
-    if core > 0:
-        weights[core_tk] = core
+            notes.append(f"Agent 제안 주식 상한 {allocation['equity_pct']}% 는 허용 범위(±{adj}%p) 밖 — 기본값 사용")
+    while sum(w.values()) > cap:
+        low = min([t for t in w if w[t] > 0], key=ekey)
+        w[low] -= 5
+        notes.append(f"주식 합계가 상한 {cap}% 초과 → 기대수익이 가장 낮은 {low} 5%p 축소")
+    weights = {t: x for t, x in w.items() if x > 0}
+    stock = sum(weights.values())
     for tk, info in per.items():
-        info["final"] = w.get(tk, 0)
+        info["final"] = weights.get(tk, 0)
         if info.get("downside_pct") is not None:
             info["portfolio_impact_pct"] = round(info["final"] * info["downside_pct"] / 100, 1)
-    alloc = {"stance": stance, "equity_pct": eq, "stock_pct": stock, "core_etf": core_tk, "core_pct": max(core, 0),
-             "cash_pct": 100 - eq, "reason": reason, "notes": notes, "per_stock": per,
-             "rules": {k: profile.get(k) for k in ("max_position_loss_pct", "max_single_weight", "max_theme_pct")}}
+    port_e = round(sum(weights[t] * (er.get(t) or 0) for t in weights) / 100
+                   + (100 - stock) * profile.get("cash_rate_pct", 2.5) / 100, 1)
+    alloc = {"stance": stance, "equity_pct": cap, "stock_pct": stock, "core_etf": None, "core_pct": 0,
+             "cash_pct": 100 - stock, "reason": reason, "notes": notes, "per_stock": per,
+             "expected_return_pct": port_e,
+             "rules": {k: profile.get(k) for k in ("max_holdings", "max_position_loss_pct", "max_single_weight",
+                                                    "max_theme_pct", "min_expected_return_pct", "conviction_weight")}}
     return weights, alloc
 
 
