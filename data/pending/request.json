@@ -1,8 +1,8 @@
 {
  "week": "2026-W41",
  "date": "2026-10-11",
- "created_at_kst": "2026-10-11 10:47",
- "spy_price": 778.57,
+ "created_at_kst": "2026-10-11 17:54",
+ "spy_price": null,
  "held": [
   "NVDA"
  ],
@@ -14,217 +14,211 @@
   "ADBE",
   "KEYS",
   "MPC",
-  "FSLR"
+  "ALL",
+  "MSTR",
+  "CRCL"
+ ],
+ "watchlist": [
+  "MSTR",
+  "CRCL"
  ],
  "fresh_reason": {
-  "NVDA": "지난 분석 28일 경과",
+  "NVDA": null,
   "SPCX": null,
-  "EXPE": "지난 분석 28일 경과",
+  "EXPE": null,
   "CPAY": null,
-  "RDDT": "지난 분석 28일 경과",
+  "RDDT": null,
   "ADBE": null,
-  "KEYS": "지난 분석 28일 경과",
+  "KEYS": null,
   "MPC": null,
-  "FSLR": "첫 분석"
+  "ALL": null,
+  "MSTR": "첫 분석",
+  "CRCL": "첫 분석"
  },
  "reused": {
+  "NVDA": "2026-10-11",
   "SPCX": "2026-10-10",
+  "EXPE": "2026-10-11",
   "CPAY": "2026-09-26",
+  "RDDT": "2026-10-11",
   "ADBE": "2026-10-10",
-  "MPC": "2026-10-10"
+  "KEYS": "2026-10-11",
+  "MPC": "2026-10-10",
+  "ALL": "2026-10-10"
  },
  "to_analyze": [
   {
-   "ticker": "NVDA",
-   "name": "NVIDIA Corporation",
+   "ticker": "MSTR",
+   "name": "Strategy Inc",
    "sector": "IT·기술",
-   "industry": "Semiconductors",
+   "industry": "Software - Application",
    "as_of": "2026-10-11",
-   "price": 229.28,
-   "market_cap_b": 5536.42,
+   "price": 154.34,
+   "market_cap_b": 61.54,
    "valuation": {
-    "trailing_pe": 28.986094,
-    "forward_pe": 14.406897,
-    "peg": 0.4791,
-    "fcf_yield_pct": 0.76,
-    "analyst_target_mean": 328.71695,
-    "analyst_rating_mean_1buy_5sell": 1.29508,
-    "analysts": 59.0
+    "trailing_pe": null,
+    "forward_pe": 3.1186097,
+    "peg": null,
+    "fcf_yield_pct": -36.7,
+    "analyst_target_mean": 237.8,
+    "analyst_rating_mean_1buy_5sell": 1.25,
+    "analysts": 15.0
    },
    "growth_profitability": {
-    "gross_margin_pct": 74.7,
-    "op_margin_pct": 66.2,
-    "roe_pct": 117.2,
-    "revenue_growth_last_q_yoy_pct": 105.9,
-    "eps_growth_last_q_yoy_pct": 127.8,
-    "eps_growth_est_this_fy_pct": 95.2,
-    "eps_growth_est_next_fy_pct": 70.9
+    "gross_margin_pct": 67.6,
+    "op_margin_pct": -6808.1,
+    "roe_pct": -63.6,
+    "revenue_growth_last_q_yoy_pct": 6.9,
+    "eps_growth_last_q_yoy_pct": null,
+    "eps_growth_est_this_fy_pct": null,
+    "eps_growth_est_next_fy_pct": 383.8
    },
    "cash_debt_dilution": {
-    "fcf_ttm_b": 127.01,
-    "sbc_ttm_b": 7.24,
-    "buyback_ttm_b": 55.31,
-    "fcf_margin_pct": 13.8,
-    "net_debt_to_ebitda": -0.12,
-    "share_count_change_pct": -0.82,
-    "share_count_span": "2025-07→2026-07"
+    "fcf_ttm_b": -21.75,
+    "sbc_ttm_b": 0.05,
+    "buyback_ttm_b": null,
+    "fcf_margin_pct": -4532.5,
+    "net_debt_to_ebitda": null,
+    "share_count_change_pct": 32.26,
+    "share_count_span": "2025-06→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 15.9146,
-    "chg_7d_pct": 1.48,
-    "chg_30d_pct": 2.55,
-    "chg_90d_pct": 25.21,
-    "up_revisions_30d": 46.0,
-    "down_revisions_30d": 0.0
+    "current": 13.17459,
+    "chg_7d_pct": 0.39,
+    "chg_30d_pct": -4.71,
+    "chg_90d_pct": 50.16,
+    "up_revisions_30d": 2.0,
+    "down_revisions_30d": 1.0
    },
    "quarterly": {
     "periods": [
-     "2025-07",
-     "2025-10",
-     "2026-01",
-     "2026-04",
-     "2026-07"
+     "2025-06",
+     "2025-09",
+     "2025-12",
+     "2026-03",
+     "2026-06"
     ],
     "revenue_b": [
-     46.74,
-     57.01,
-     68.13,
-     81.61,
-     96.22
+     0.11,
+     0.13,
+     0.12,
+     0.12,
+     0.12
     ],
     "op_margin_pct": [
-     60.8,
-     63.2,
-     65.0,
-     65.6,
-     66.2
+     -13.6,
+     -0.0,
+     -8.1,
+     -12.0,
+     -12.7
     ],
     "diluted_eps": [
-     1.08,
-     1.3,
-     1.76,
-     2.39,
-     2.46
+     32.6,
+     8.42,
+     -42.93,
+     -38.25,
+     -24.45
     ]
    },
    "annual_revenue_b": [
     [
-     "2023-01",
-     26.97
+     "2022-12",
+     0.5
     ],
     [
-     "2024-01",
-     60.92
+     "2023-12",
+     0.5
     ],
     [
-     "2025-01",
-     130.5
+     "2024-12",
+     0.46
     ],
     [
-     "2026-01",
-     215.94
+     "2025-12",
+     0.48
     ]
    ],
    "eps_surprises": [
     {
-     "quarter": "2025-10",
-     "actual": 1.3,
-     "estimate": 1.25647,
-     "surprise_pct": 3.5
+     "quarter": "2025-09",
+     "actual": 8.42,
+     "estimate": 9.6725,
+     "surprise_pct": -13.0
     },
     {
-     "quarter": "2026-01",
-     "actual": 1.62,
-     "estimate": 1.53812,
-     "surprise_pct": 5.3
+     "quarter": "2025-12",
+     "actual": -42.93,
+     "estimate": -20.99,
+     "surprise_pct": -104.5
     },
     {
-     "quarter": "2026-04",
-     "actual": 1.87,
-     "estimate": 1.77191,
-     "surprise_pct": 5.5
+     "quarter": "2026-03",
+     "actual": -38.25,
+     "estimate": -15.326,
+     "surprise_pct": -149.6
     },
     {
-     "quarter": "2026-07",
-     "actual": 2.22,
-     "estimate": 2.09113,
-     "surprise_pct": 6.2
+     "quarter": "2026-06",
+     "actual": -24.45,
+     "estimate": 3.07433,
+     "surprise_pct": -895.3
     }
    ],
-   "next_earnings": "2026-11-17",
-   "return_1y_pct": 25.5,
-   "from_52w_high_pct": -4.2,
+   "next_earnings": "2026-10-29",
+   "return_1y_pct": -49.4,
+   "from_52w_high_pct": -51.1,
    "quant_score": {
-    "score": 79.3,
-    "quality": 89,
-    "health": 70,
-    "value": 61,
-    "revisions": 92
+    "score": 42.6,
+    "quality": 36,
+    "health": 28,
+    "value": 50,
+    "revisions": 51
    },
    "cycle_check": null,
-   "dashboard_signals": [
-    "M1 대가 상위보유: Chase Coleman (+3점)",
-    "M1 대가 최근분기 매수: Cathie Wood (+5점)",
-    "M3 실적 개선 기업 (+3점)"
-   ],
-   "holding": {
-    "added_date": "2026-09-13",
-    "added_price": 218.29,
-    "return_since_add_pct": 5.0,
-    "original_thesis": "AI 인프라 사이클의 사실상 독점 공급자로 분기 매출이 1년 만에 2배(46.7B→96.2B)가 됐는데 주가는 1년간 +23%에 그쳐, 선행 PER 14배(PEG 0.46)까지 멀티플이 압축된 '고성장 + 비(非)고평가' 조합이다.",
-    "thesis_breakers": [
-     "분기 매출의 전분기 대비 증가율이 2개 분기 연속 5% 미만으로 둔화되거나 가이던스가 컨센서스를 하회하는 경우",
-     "GAAP 총마진이 70% 아래로 하락하고 경영진이 원가 전가 실패를 인정하는 경우",
-     "차기 회계연도 EPS 컨센서스가 2개 분기 연속 하향(상향 건수 < 하향 건수)으로 전환되는 경우",
-     "재고와 구매 약정은 계속 늘어나는데 데이터센터 매출 성장률이 함께 둔화되는 조합이 나타나는 경우",
-     "상위 고객 중 한 곳이 자체 ASIC 비중 대폭 확대로 엔비디아 물량을 축소한다고 공식화하는 경우",
-     "하이퍼스케일러 합산 2027년 CAPEX 가이던스가 전년 대비 감소로 제시되는 경우"
-    ],
-    "last_thesis_status": "유효",
-    "last_conviction": 4
-   }
+   "dashboard_signals": [],
+   "holding": null
   },
   {
-   "ticker": "EXPE",
-   "name": "Expedia Group, Inc.",
-   "sector": "경기소비재",
-   "industry": "Travel Services",
+   "ticker": "CRCL",
+   "name": "Circle Internet Group, Inc.",
+   "sector": "금융",
+   "industry": "Capital Markets",
    "as_of": "2026-10-11",
-   "price": 274.22,
-   "market_cap_b": 32.91,
+   "price": 84.51,
+   "market_cap_b": 21.46,
    "valuation": {
-    "trailing_pe": 17.128044,
-    "forward_pe": 11.174254,
-    "peg": 0.6802,
-    "fcf_yield_pct": 10.44,
-    "analyst_target_mean": 338.77142,
-    "analyst_rating_mean_1buy_5sell": 2.15789,
-    "analysts": 35.0
+    "trailing_pe": 57.88356,
+    "forward_pe": 59.846615,
+    "peg": null,
+    "fcf_yield_pct": 0.96,
+    "analyst_target_mean": 105.55917,
+    "analyst_rating_mean_1buy_5sell": 2.24138,
+    "analysts": 24.0
    },
    "growth_profitability": {
-    "gross_margin_pct": 90.4,
-    "op_margin_pct": 19.0,
-    "roe_pct": 89.5,
-    "revenue_growth_last_q_yoy_pct": 14.0,
-    "eps_growth_last_q_yoy_pct": 188.7,
-    "eps_growth_est_this_fy_pct": 32.5,
-    "eps_growth_est_next_fy_pct": 16.8
+    "gross_margin_pct": 22.0,
+    "op_margin_pct": 4.9,
+    "roe_pct": 15.3,
+    "revenue_growth_last_q_yoy_pct": 6.6,
+    "eps_growth_last_q_yoy_pct": null,
+    "eps_growth_est_this_fy_pct": -51.4,
+    "eps_growth_est_next_fy_pct": 26.3
    },
    "cash_debt_dilution": {
-    "fcf_ttm_b": 4.46,
-    "sbc_ttm_b": 0.41,
-    "buyback_ttm_b": 1.92,
-    "fcf_margin_pct": 21.9,
-    "net_debt_to_ebitda": -0.5,
-    "share_count_change_pct": -3.61,
+    "fcf_ttm_b": 0.71,
+    "sbc_ttm_b": 0.22,
+    "buyback_ttm_b": null,
+    "fcf_margin_pct": 7.1,
+    "net_debt_to_ebitda": -7.49,
+    "share_count_change_pct": 10.53,
     "share_count_span": "2025-06→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 24.55131,
-    "chg_7d_pct": 0.35,
-    "chg_30d_pct": 0.7,
-    "chg_90d_pct": 6.22,
-    "up_revisions_30d": 3.0,
+    "current": 1.42004,
+    "chg_7d_pct": 2.27,
+    "chg_30d_pct": 1.97,
+    "chg_90d_pct": -12.05,
+    "up_revisions_30d": 6.0,
     "down_revisions_30d": 0.0
    },
    "quarterly": {
@@ -236,473 +230,80 @@
      "2026-06"
     ],
     "revenue_b": [
-     3.79,
-     4.41,
-     3.55,
-     3.43,
-     4.32
+     0.66,
+     0.74,
+     0.77,
+     0.69,
+     0.7
     ],
     "op_margin_pct": [
-     14.0,
-     25.6,
-     15.4,
-     7.1,
-     19.0
+     -49.6,
+     10.7,
+     7.3,
+     6.6,
+     4.8
     ],
     "diluted_eps": [
-     2.48,
-     7.33,
-     1.6,
-     -0.05,
-     7.16
+     -4.48,
+     0.64,
+     0.43,
+     0.21,
+     0.18
     ]
    },
    "annual_revenue_b": [
     [
      "2022-12",
-     11.67
+     0.77
     ],
     [
      "2023-12",
-     12.84
+     1.45
     ],
     [
      "2024-12",
-     13.69
+     1.68
     ],
     [
      "2025-12",
-     14.73
+     2.75
     ]
    ],
    "eps_surprises": [
     {
      "quarter": "2025-09",
-     "actual": 7.57,
-     "estimate": 6.94574,
-     "surprise_pct": 9.0
+     "actual": 0.64,
+     "estimate": 0.18338,
+     "surprise_pct": 249.0
     },
     {
      "quarter": "2025-12",
-     "actual": 3.78,
-     "estimate": 3.36869,
-     "surprise_pct": 12.2
+     "actual": 0.43,
+     "estimate": 0.16199,
+     "surprise_pct": 165.5
     },
     {
      "quarter": "2026-03",
-     "actual": 1.96,
-     "estimate": 1.37698,
-     "surprise_pct": 42.3
+     "actual": 0.21,
+     "estimate": 0.1771,
+     "surprise_pct": 18.6
     },
     {
      "quarter": "2026-06",
-     "actual": 5.76,
-     "estimate": 5.25301,
-     "surprise_pct": 9.6
+     "actual": 0.18,
+     "estimate": 0.15958,
+     "surprise_pct": 12.8
     }
    ],
    "next_earnings": "2026-11-04",
-   "return_1y_pct": 31.3,
-   "from_52w_high_pct": -19.0,
+   "return_1y_pct": -36.4,
+   "from_52w_high_pct": -41.0,
    "quant_score": {
-    "score": 79.9,
-    "quality": 75,
-    "health": 73,
-    "value": 85,
-    "revisions": 84
-   },
-   "cycle_check": null,
-   "dashboard_signals": [],
-   "holding": null
-  },
-  {
-   "ticker": "RDDT",
-   "name": "Reddit, Inc.",
-   "sector": "커뮤니케이션",
-   "industry": "Internet Content & Information",
-   "as_of": "2026-10-11",
-   "price": 159.91,
-   "market_cap_b": 30.77,
-   "valuation": {
-    "trailing_pe": 37.18837,
-    "forward_pe": 16.506855,
-    "peg": 0.7581,
-    "fcf_yield_pct": 2.2,
-    "analyst_target_mean": 213.70909,
-    "analyst_rating_mean_1buy_5sell": 1.94118,
-    "analysts": 33.0
-   },
-   "growth_profitability": {
-    "gross_margin_pct": 91.4,
-    "op_margin_pct": 28.8,
-    "roe_pct": 30.7,
-    "revenue_growth_last_q_yoy_pct": 61.1,
-    "eps_growth_last_q_yoy_pct": 177.8,
-    "eps_growth_est_this_fy_pct": 69.2,
-    "eps_growth_est_next_fy_pct": 26.2
-   },
-   "cash_debt_dilution": {
-    "fcf_ttm_b": 1.02,
-    "sbc_ttm_b": 0.34,
-    "buyback_ttm_b": null,
-    "fcf_margin_pct": 24.4,
-    "net_debt_to_ebitda": -3.45,
-    "share_count_change_pct": 2.8,
-    "share_count_span": "2025-06→2026-06"
-   },
-   "estimate_revisions_next_fy_eps": {
-    "current": 7.06846,
-    "chg_7d_pct": 0.45,
-    "chg_30d_pct": 0.66,
-    "chg_90d_pct": 9.24,
-    "up_revisions_30d": 3.0,
-    "down_revisions_30d": 0.0
-   },
-   "quarterly": {
-    "periods": [
-     "2025-06",
-     "2025-09",
-     "2025-12",
-     "2026-03",
-     "2026-06"
-    ],
-    "revenue_b": [
-     0.5,
-     0.58,
-     0.73,
-     0.66,
-     0.8
-    ],
-    "op_margin_pct": [
-     13.6,
-     23.7,
-     31.9,
-     27.6,
-     28.8
-    ],
-    "diluted_eps": [
-     0.45,
-     0.8,
-     1.24,
-     1.01,
-     1.25
-    ]
-   },
-   "annual_revenue_b": [
-    [
-     "2022-12",
-     0.67
-    ],
-    [
-     "2023-12",
-     0.8
-    ],
-    [
-     "2024-12",
-     1.3
-    ],
-    [
-     "2025-12",
-     2.2
-    ]
-   ],
-   "eps_surprises": [
-    {
-     "quarter": "2025-09",
-     "actual": 0.8,
-     "estimate": 0.52015,
-     "surprise_pct": 53.8
-    },
-    {
-     "quarter": "2025-12",
-     "actual": 1.24,
-     "estimate": 0.93136,
-     "surprise_pct": 33.1
-    },
-    {
-     "quarter": "2026-03",
-     "actual": 1.01,
-     "estimate": 0.56388,
-     "surprise_pct": 79.1
-    },
-    {
-     "quarter": "2026-06",
-     "actual": 1.25,
-     "estimate": 0.96481,
-     "surprise_pct": 29.6
-    }
-   ],
-   "next_earnings": "2026-10-29",
-   "return_1y_pct": -19.5,
-   "from_52w_high_pct": -38.2,
-   "quant_score": {
-    "score": 75.2,
-    "quality": 84,
+    "score": 48.0,
+    "quality": 38,
     "health": 77,
-    "value": 53,
-    "revisions": 85
-   },
-   "cycle_check": null,
-   "dashboard_signals": [],
-   "holding": null
-  },
-  {
-   "ticker": "KEYS",
-   "name": "Keysight Technologies Inc.",
-   "sector": "IT·기술",
-   "industry": "Scientific & Technical Instruments",
-   "as_of": "2026-10-11",
-   "price": 382.75,
-   "market_cap_b": 65.16,
-   "valuation": {
-    "trailing_pe": 51.792965,
-    "forward_pe": 27.468643,
-    "peg": 0.7007,
-    "fcf_yield_pct": 2.87,
-    "analyst_target_mean": 418.0,
-    "analyst_rating_mean_1buy_5sell": 1.58333,
-    "analysts": 12.0
-   },
-   "growth_profitability": {
-    "gross_margin_pct": 63.3,
-    "op_margin_pct": 25.7,
-    "roe_pct": 20.9,
-    "revenue_growth_last_q_yoy_pct": 36.5,
-    "eps_growth_last_q_yoy_pct": 109.1,
-    "eps_growth_est_this_fy_pct": 60.2,
-    "eps_growth_est_next_fy_pct": 21.4
-   },
-   "cash_debt_dilution": {
-    "fcf_ttm_b": 1.47,
-    "sbc_ttm_b": 0.21,
-    "buyback_ttm_b": 0.62,
-    "fcf_margin_pct": 28.4,
-    "net_debt_to_ebitda": 0.09,
-    "share_count_change_pct": -0.92,
-    "share_count_span": "2025-07→2026-07"
-   },
-   "estimate_revisions_next_fy_eps": {
-    "current": 13.93407,
-    "chg_7d_pct": 0.45,
-    "chg_30d_pct": 2.08,
-    "chg_90d_pct": 17.52,
-    "up_revisions_30d": 12.0,
-    "down_revisions_30d": 0.0
-   },
-   "quarterly": {
-    "periods": [
-     "2025-07",
-     "2025-10",
-     "2026-01",
-     "2026-04",
-     "2026-07"
-    ],
-    "revenue_b": [
-     1.35,
-     1.42,
-     1.6,
-     1.72,
-     1.85
-    ],
-    "op_margin_pct": [
-     17.3,
-     15.3,
-     15.5,
-     23.7,
-     25.0
-    ],
-    "diluted_eps": [
-     1.1,
-     1.33,
-     1.63,
-     2.02,
-     2.3
-    ]
-   },
-   "annual_revenue_b": [
-    [
-     "2022-10",
-     5.42
-    ],
-    [
-     "2023-10",
-     5.46
-    ],
-    [
-     "2024-10",
-     4.98
-    ],
-    [
-     "2025-10",
-     5.38
-    ]
-   ],
-   "eps_surprises": [
-    {
-     "quarter": "2025-10",
-     "actual": 1.91,
-     "estimate": 1.85411,
-     "surprise_pct": 3.0
-    },
-    {
-     "quarter": "2026-01",
-     "actual": 2.17,
-     "estimate": 1.9954,
-     "surprise_pct": 8.8
-    },
-    {
-     "quarter": "2026-04",
-     "actual": 2.87,
-     "estimate": 2.32041,
-     "surprise_pct": 23.7
-    },
-    {
-     "quarter": "2026-07",
-     "actual": 3.07,
-     "estimate": 2.48193,
-     "surprise_pct": 23.7
-    }
-   ],
-   "next_earnings": "2026-11-24",
-   "return_1y_pct": 140.0,
-   "from_52w_high_pct": -1.4,
-   "quant_score": {
-    "score": 74.1,
-    "quality": 76,
-    "health": 69,
-    "value": 55,
-    "revisions": 91
-   },
-   "cycle_check": null,
-   "dashboard_signals": [],
-   "holding": null
-  },
-  {
-   "ticker": "FSLR",
-   "name": "First Solar, Inc.",
-   "sector": "IT·기술",
-   "industry": "Solar",
-   "as_of": "2026-10-11",
-   "price": 177.82,
-   "market_cap_b": 19.11,
-   "valuation": {
-    "trailing_pe": 10.96301,
-    "forward_pe": 7.670213,
-    "peg": 0.3571,
-    "fcf_yield_pct": 8.37,
-    "analyst_target_mean": 274.47134,
-    "analyst_rating_mean_1buy_5sell": 1.86111,
-    "analysts": 30.0
-   },
-   "growth_profitability": {
-    "gross_margin_pct": 44.0,
-    "op_margin_pct": 42.6,
-    "roe_pct": 18.5,
-    "revenue_growth_last_q_yoy_pct": -3.7,
-    "eps_growth_last_q_yoy_pct": 23.3,
-    "eps_growth_est_this_fy_pct": 23.8,
-    "eps_growth_est_next_fy_pct": 32.0
-   },
-   "cash_debt_dilution": {
-    "fcf_ttm_b": 1.5,
-    "sbc_ttm_b": 0.02,
-    "buyback_ttm_b": null,
-    "fcf_margin_pct": 29.7,
-    "net_debt_to_ebitda": -0.64,
-    "share_count_change_pct": 0.21,
-    "share_count_span": "2025-06→2026-06"
-   },
-   "estimate_revisions_next_fy_eps": {
-    "current": 23.15513,
-    "chg_7d_pct": -0.01,
-    "chg_30d_pct": 0.38,
-    "chg_90d_pct": -0.43,
-    "up_revisions_30d": 4.0,
-    "down_revisions_30d": 0.0
-   },
-   "quarterly": {
-    "periods": [
-     "2025-06",
-     "2025-09",
-     "2025-12",
-     "2026-03",
-     "2026-06"
-    ],
-    "revenue_b": [
-     1.1,
-     1.59,
-     1.68,
-     1.04,
-     1.06
-    ],
-    "op_margin_pct": [
-     33.0,
-     29.2,
-     32.6,
-     33.1,
-     42.6
-    ],
-    "diluted_eps": [
-     null,
-     4.24,
-     4.84,
-     3.22,
-     3.92
-    ]
-   },
-   "annual_revenue_b": [
-    [
-     "2022-12",
-     2.62
-    ],
-    [
-     "2023-12",
-     3.32
-    ],
-    [
-     "2024-12",
-     4.21
-    ],
-    [
-     "2025-12",
-     5.22
-    ]
-   ],
-   "eps_surprises": [
-    {
-     "quarter": "2025-09",
-     "actual": 4.24,
-     "estimate": 4.28843,
-     "surprise_pct": -1.1
-    },
-    {
-     "quarter": "2025-12",
-     "actual": 4.84,
-     "estimate": 5.16793,
-     "surprise_pct": -6.3
-    },
-    {
-     "quarter": "2026-03",
-     "actual": 3.22,
-     "estimate": 2.97424,
-     "surprise_pct": 8.3
-    },
-    {
-     "quarter": "2026-06",
-     "actual": 3.92,
-     "estimate": 2.87963,
-     "surprise_pct": 36.1
-    }
-   ],
-   "next_earnings": "2026-10-29",
-   "return_1y_pct": -21.3,
-   "from_52w_high_pct": -44.1,
-   "quant_score": {
-    "score": 72.7,
-    "quality": 63,
-    "health": 73,
-    "value": 94,
-    "revisions": 63
+    "value": 19,
+    "revisions": 60
    },
    "cycle_check": null,
    "dashboard_signals": [],
@@ -724,7 +325,7 @@
     "peg": 0.4791,
     "fcf_yield_pct": 0.76,
     "analyst_target_mean": 328.71695,
-    "analyst_rating_mean_1buy_5sell": 1.29508,
+    "analyst_rating_mean_1buy_5sell": 1.29032,
     "analysts": 59.0
    },
    "growth_profitability": {
@@ -831,7 +432,7 @@
    "return_1y_pct": 25.5,
    "from_52w_high_pct": -4.2,
    "quant_score": {
-    "score": 79.3,
+    "score": 79.2,
     "quality": 89,
     "health": 70,
     "value": 61,
@@ -867,15 +468,15 @@
    "industry": "Aerospace & Defense",
    "as_of": "2026-10-11",
    "price": 162.57,
-   "market_cap_b": 2141.73,
+   "market_cap_b": 2142.96,
    "valuation": {
     "trailing_pe": null,
-    "forward_pe": 84.42871,
+    "forward_pe": 81.731255,
     "peg": null,
     "fcf_yield_pct": null,
-    "analyst_target_mean": 224.55556,
-    "analyst_rating_mean_1buy_5sell": 1.78378,
-    "analysts": 27.0
+    "analyst_target_mean": 221.06897,
+    "analyst_rating_mean_1buy_5sell": 1.78947,
+    "analysts": 29.0
    },
    "growth_profitability": {
     "gross_margin_pct": 51.9,
@@ -884,7 +485,7 @@
     "revenue_growth_last_q_yoy_pct": 91.9,
     "eps_growth_last_q_yoy_pct": null,
     "eps_growth_est_this_fy_pct": null,
-    "eps_growth_est_next_fy_pct": 4176.2
+    "eps_growth_est_next_fy_pct": 15010.6
    },
    "cash_debt_dilution": {
     "fcf_ttm_b": -32.52,
@@ -896,10 +497,10 @@
     "share_count_span": "2026-03→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 2.03722,
-    "chg_7d_pct": 5.57,
-    "chg_30d_pct": 14.33,
-    "chg_90d_pct": 201.4,
+    "current": 2.07419,
+    "chg_7d_pct": 7.49,
+    "chg_30d_pct": 13.86,
+    "chg_90d_pct": 206.87,
     "up_revisions_30d": 3.0,
     "down_revisions_30d": 0.0
    },
@@ -987,8 +588,8 @@
     "trailing_pe": 17.128044,
     "forward_pe": 11.174254,
     "peg": 0.6802,
-    "fcf_yield_pct": 10.44,
-    "analyst_target_mean": 338.77142,
+    "fcf_yield_pct": 10.43,
+    "analyst_target_mean": 336.14285,
     "analyst_rating_mean_1buy_5sell": 2.15789,
     "analysts": 35.0
    },
@@ -1011,10 +612,10 @@
     "share_count_span": "2025-06→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 24.55131,
-    "chg_7d_pct": 0.35,
-    "chg_30d_pct": 0.7,
-    "chg_90d_pct": 6.22,
+    "current": 24.54034,
+    "chg_7d_pct": 0.12,
+    "chg_30d_pct": 0.66,
+    "chg_90d_pct": 6.17,
     "up_revisions_30d": 3.0,
     "down_revisions_30d": 0.0
    },
@@ -1096,11 +697,11 @@
    "return_1y_pct": 31.3,
    "from_52w_high_pct": -19.0,
    "quant_score": {
-    "score": 79.9,
+    "score": 79.6,
     "quality": 75,
     "health": 73,
     "value": 85,
-    "revisions": 84
+    "revisions": 83
    },
    "cycle_check": null,
    "dashboard_signals": [],
@@ -1115,7 +716,7 @@
    "price": 397.92,
    "market_cap_b": 26.13,
    "valuation": {
-    "trailing_pe": 24.44226,
+    "trailing_pe": 24.189665,
     "forward_pe": 12.62992,
     "peg": 0.7512,
     "fcf_yield_pct": 7.45,
@@ -1129,8 +730,8 @@
     "roe_pct": 29.2,
     "revenue_growth_last_q_yoy_pct": 21.5,
     "eps_growth_last_q_yoy_pct": -7.0,
-    "eps_growth_est_this_fy_pct": 28.1,
-    "eps_growth_est_next_fy_pct": 15.0
+    "eps_growth_est_this_fy_pct": 28.2,
+    "eps_growth_est_next_fy_pct": 14.9
    },
    "cash_debt_dilution": {
     "fcf_ttm_b": 1.64,
@@ -1142,10 +743,10 @@
     "share_count_span": "2025-06→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 31.50739,
-    "chg_7d_pct": 0.19,
-    "chg_30d_pct": 0.19,
-    "chg_90d_pct": 2.95,
+    "current": 31.50614,
+    "chg_7d_pct": 0.18,
+    "chg_30d_pct": 0.18,
+    "chg_90d_pct": 2.94,
     "up_revisions_30d": 13.0,
     "down_revisions_30d": 2.0
    },
@@ -1275,10 +876,10 @@
     "share_count_span": "2025-06→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 7.06846,
-    "chg_7d_pct": 0.45,
-    "chg_30d_pct": 0.66,
-    "chg_90d_pct": 9.24,
+    "current": 7.08639,
+    "chg_7d_pct": 0.25,
+    "chg_30d_pct": 0.7,
+    "chg_90d_pct": 9.22,
     "up_revisions_30d": 3.0,
     "down_revisions_30d": 0.0
    },
@@ -1361,7 +962,7 @@
    "from_52w_high_pct": -38.2,
    "quant_score": {
     "score": 75.2,
-    "quality": 84,
+    "quality": 85,
     "health": 77,
     "value": 53,
     "revisions": 85
@@ -1491,11 +1092,11 @@
    "return_1y_pct": -28.2,
    "from_52w_high_pct": -32.7,
    "quant_score": {
-    "score": 74.8,
+    "score": 74.6,
     "quality": 81,
     "health": 69,
     "value": 93,
-    "revisions": 59
+    "revisions": 58
    },
    "cycle_check": null,
    "dashboard_signals": [],
@@ -1622,7 +1223,7 @@
    "return_1y_pct": 140.0,
    "from_52w_high_pct": -1.4,
    "quant_score": {
-    "score": 74.1,
+    "score": 74.0,
     "quality": 76,
     "health": 69,
     "value": 55,
@@ -1639,13 +1240,13 @@
    "industry": "Oil & Gas Refining & Marketing",
    "as_of": "2026-10-11",
    "price": 455.03,
-   "market_cap_b": 132.84,
+   "market_cap_b": 127.78,
    "valuation": {
     "trailing_pe": 15.755887,
     "forward_pe": 8.711596,
     "peg": 0.8956,
-    "fcf_yield_pct": 6.96,
-    "analyst_target_mean": 385.55557,
+    "fcf_yield_pct": 7.24,
+    "analyst_target_mean": 409.27777,
     "analyst_rating_mean_1buy_5sell": 2.36842,
     "analysts": 18.0
    },
@@ -1655,8 +1256,8 @@
     "roe_pct": 42.1,
     "revenue_growth_last_q_yoy_pct": 53.7,
     "eps_growth_last_q_yoy_pct": 348.0,
-    "eps_growth_est_this_fy_pct": 443.1,
-    "eps_growth_est_next_fy_pct": -12.8
+    "eps_growth_est_this_fy_pct": 467.3,
+    "eps_growth_est_next_fy_pct": -13.9
    },
    "cash_debt_dilution": {
     "fcf_ttm_b": 12.9,
@@ -1668,10 +1269,10 @@
     "share_count_span": "2025-06→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 50.68686,
-    "chg_7d_pct": 7.54,
-    "chg_30d_pct": 51.98,
-    "chg_90d_pct": 111.28,
+    "current": 52.23268,
+    "chg_7d_pct": 5.31,
+    "chg_30d_pct": 46.34,
+    "chg_90d_pct": 121.34,
     "up_revisions_30d": 12.0,
     "down_revisions_30d": 0.0
    },
@@ -1755,7 +1356,7 @@
    "quant_score": {
     "score": 70.3,
     "quality": 41,
-    "health": 54,
+    "health": 53,
     "value": 83,
     "revisions": 96
    },
@@ -1766,46 +1367,46 @@
    "holding": null
   },
   {
-   "ticker": "FSLR",
-   "name": "First Solar, Inc.",
-   "sector": "IT·기술",
-   "industry": "Solar",
+   "ticker": "ALL",
+   "name": "Allstate Corporation (The)",
+   "sector": "금융",
+   "industry": "Insurance - Property & Casualty",
    "as_of": "2026-10-11",
-   "price": 177.82,
-   "market_cap_b": 19.11,
+   "price": 229.43,
+   "market_cap_b": 58.01,
    "valuation": {
-    "trailing_pe": 10.96301,
-    "forward_pe": 7.670213,
-    "peg": 0.3571,
-    "fcf_yield_pct": 8.37,
-    "analyst_target_mean": 274.47134,
-    "analyst_rating_mean_1buy_5sell": 1.86111,
-    "analysts": 30.0
+    "trailing_pe": 4.590436,
+    "forward_pe": 8.201271,
+    "peg": 1.6878,
+    "fcf_yield_pct": 26.13,
+    "analyst_target_mean": 270.54544,
+    "analyst_rating_mean_1buy_5sell": 2.52,
+    "analysts": 22.0
    },
    "growth_profitability": {
-    "gross_margin_pct": 44.0,
-    "op_margin_pct": 42.6,
-    "roe_pct": 18.5,
-    "revenue_growth_last_q_yoy_pct": -3.7,
-    "eps_growth_last_q_yoy_pct": 23.3,
-    "eps_growth_est_this_fy_pct": 23.8,
-    "eps_growth_est_next_fy_pct": 32.0
+    "gross_margin_pct": 36.8,
+    "op_margin_pct": 22.8,
+    "roe_pct": 46.1,
+    "revenue_growth_last_q_yoy_pct": 11.8,
+    "eps_growth_last_q_yoy_pct": 61.2,
+    "eps_growth_est_this_fy_pct": 1.6,
+    "eps_growth_est_next_fy_pct": -20.7
    },
    "cash_debt_dilution": {
-    "fcf_ttm_b": 1.5,
-    "sbc_ttm_b": 0.02,
-    "buyback_ttm_b": null,
-    "fcf_margin_pct": 29.7,
-    "net_debt_to_ebitda": -0.64,
-    "share_count_change_pct": 0.21,
+    "fcf_ttm_b": 12.25,
+    "sbc_ttm_b": null,
+    "buyback_ttm_b": 2.46,
+    "fcf_margin_pct": 21.6,
+    "net_debt_to_ebitda": 0.1,
+    "share_count_change_pct": -3.7,
     "share_count_span": "2025-06→2026-06"
    },
    "estimate_revisions_next_fy_eps": {
-    "current": 23.15513,
-    "chg_7d_pct": -0.01,
-    "chg_30d_pct": 0.38,
-    "chg_90d_pct": -0.43,
-    "up_revisions_30d": 4.0,
+    "current": 28.0522,
+    "chg_7d_pct": 0.97,
+    "chg_30d_pct": 1.61,
+    "chg_90d_pct": 6.01,
+    "up_revisions_30d": 3.0,
     "down_revisions_30d": 0.0
    },
    "quarterly": {
@@ -1817,80 +1418,336 @@
      "2026-06"
     ],
     "revenue_b": [
-     1.1,
-     1.59,
-     1.68,
-     1.04,
-     1.06
+     16.55,
+     17.06,
+     17.2,
+     16.75,
+     18.34
     ],
-    "op_margin_pct": [
-     33.0,
-     29.2,
-     32.6,
-     33.1,
-     42.6
-    ],
+    "op_margin_pct": [],
     "diluted_eps": [
-     null,
-     4.24,
-     4.84,
-     3.22,
-     3.92
+     7.76,
+     13.95,
+     14.37,
+     9.25,
+     12.51
     ]
    },
    "annual_revenue_b": [
     [
      "2022-12",
-     2.62
+     50.62
     ],
     [
      "2023-12",
-     3.32
+     56.59
     ],
     [
      "2024-12",
-     4.21
+     63.52
     ],
     [
      "2025-12",
-     5.22
+     67.07
     ]
    ],
    "eps_surprises": [
     {
      "quarter": "2025-09",
-     "actual": 4.24,
-     "estimate": 4.28843,
-     "surprise_pct": -1.1
+     "actual": 11.17,
+     "estimate": 7.54321,
+     "surprise_pct": 48.1
     },
     {
      "quarter": "2025-12",
-     "actual": 4.84,
-     "estimate": 5.16793,
-     "surprise_pct": -6.3
+     "actual": 14.31,
+     "estimate": 9.86302,
+     "surprise_pct": 45.1
     },
     {
      "quarter": "2026-03",
-     "actual": 3.22,
-     "estimate": 2.97424,
-     "surprise_pct": 8.3
+     "actual": 10.65,
+     "estimate": 7.24462,
+     "surprise_pct": 47.0
     },
     {
      "quarter": "2026-06",
-     "actual": 3.92,
-     "estimate": 2.87963,
-     "surprise_pct": 36.1
+     "actual": 8.99,
+     "estimate": 6.07298,
+     "surprise_pct": 48.0
+    }
+   ],
+   "next_earnings": "2026-11-04",
+   "return_1y_pct": 13.7,
+   "from_52w_high_pct": -16.3,
+   "quant_score": {
+    "score": 72.6,
+    "quality": 53,
+    "health": 69,
+    "value": 79,
+    "revisions": 86
+   },
+   "cycle_check": null,
+   "dashboard_signals": [],
+   "holding": null
+  },
+  {
+   "ticker": "MSTR",
+   "name": "Strategy Inc",
+   "sector": "IT·기술",
+   "industry": "Software - Application",
+   "as_of": "2026-10-11",
+   "price": 154.34,
+   "market_cap_b": 61.54,
+   "valuation": {
+    "trailing_pe": null,
+    "forward_pe": 3.1186097,
+    "peg": null,
+    "fcf_yield_pct": -36.7,
+    "analyst_target_mean": 237.8,
+    "analyst_rating_mean_1buy_5sell": 1.25,
+    "analysts": 15.0
+   },
+   "growth_profitability": {
+    "gross_margin_pct": 67.6,
+    "op_margin_pct": -6808.1,
+    "roe_pct": -63.6,
+    "revenue_growth_last_q_yoy_pct": 6.9,
+    "eps_growth_last_q_yoy_pct": null,
+    "eps_growth_est_this_fy_pct": null,
+    "eps_growth_est_next_fy_pct": 383.8
+   },
+   "cash_debt_dilution": {
+    "fcf_ttm_b": -21.75,
+    "sbc_ttm_b": 0.05,
+    "buyback_ttm_b": null,
+    "fcf_margin_pct": -4532.5,
+    "net_debt_to_ebitda": null,
+    "share_count_change_pct": 32.26,
+    "share_count_span": "2025-06→2026-06"
+   },
+   "estimate_revisions_next_fy_eps": {
+    "current": 13.17459,
+    "chg_7d_pct": 0.39,
+    "chg_30d_pct": -4.71,
+    "chg_90d_pct": 50.16,
+    "up_revisions_30d": 2.0,
+    "down_revisions_30d": 1.0
+   },
+   "quarterly": {
+    "periods": [
+     "2025-06",
+     "2025-09",
+     "2025-12",
+     "2026-03",
+     "2026-06"
+    ],
+    "revenue_b": [
+     0.11,
+     0.13,
+     0.12,
+     0.12,
+     0.12
+    ],
+    "op_margin_pct": [
+     -13.6,
+     -0.0,
+     -8.1,
+     -12.0,
+     -12.7
+    ],
+    "diluted_eps": [
+     32.6,
+     8.42,
+     -42.93,
+     -38.25,
+     -24.45
+    ]
+   },
+   "annual_revenue_b": [
+    [
+     "2022-12",
+     0.5
+    ],
+    [
+     "2023-12",
+     0.5
+    ],
+    [
+     "2024-12",
+     0.46
+    ],
+    [
+     "2025-12",
+     0.48
+    ]
+   ],
+   "eps_surprises": [
+    {
+     "quarter": "2025-09",
+     "actual": 8.42,
+     "estimate": 9.6725,
+     "surprise_pct": -13.0
+    },
+    {
+     "quarter": "2025-12",
+     "actual": -42.93,
+     "estimate": -20.99,
+     "surprise_pct": -104.5
+    },
+    {
+     "quarter": "2026-03",
+     "actual": -38.25,
+     "estimate": -15.326,
+     "surprise_pct": -149.6
+    },
+    {
+     "quarter": "2026-06",
+     "actual": -24.45,
+     "estimate": 3.07433,
+     "surprise_pct": -895.3
     }
    ],
    "next_earnings": "2026-10-29",
-   "return_1y_pct": -21.3,
-   "from_52w_high_pct": -44.1,
+   "return_1y_pct": -49.4,
+   "from_52w_high_pct": -51.1,
    "quant_score": {
-    "score": 72.7,
-    "quality": 63,
-    "health": 73,
-    "value": 94,
-    "revisions": 63
+    "score": 42.6,
+    "quality": 36,
+    "health": 28,
+    "value": 50,
+    "revisions": 51
+   },
+   "cycle_check": null,
+   "dashboard_signals": [],
+   "holding": null
+  },
+  {
+   "ticker": "CRCL",
+   "name": "Circle Internet Group, Inc.",
+   "sector": "금융",
+   "industry": "Capital Markets",
+   "as_of": "2026-10-11",
+   "price": 84.51,
+   "market_cap_b": 21.46,
+   "valuation": {
+    "trailing_pe": 57.88356,
+    "forward_pe": 59.846615,
+    "peg": null,
+    "fcf_yield_pct": 0.96,
+    "analyst_target_mean": 105.55917,
+    "analyst_rating_mean_1buy_5sell": 2.24138,
+    "analysts": 24.0
+   },
+   "growth_profitability": {
+    "gross_margin_pct": 22.0,
+    "op_margin_pct": 4.9,
+    "roe_pct": 15.3,
+    "revenue_growth_last_q_yoy_pct": 6.6,
+    "eps_growth_last_q_yoy_pct": null,
+    "eps_growth_est_this_fy_pct": -51.4,
+    "eps_growth_est_next_fy_pct": 26.3
+   },
+   "cash_debt_dilution": {
+    "fcf_ttm_b": 0.71,
+    "sbc_ttm_b": 0.22,
+    "buyback_ttm_b": null,
+    "fcf_margin_pct": 7.1,
+    "net_debt_to_ebitda": -7.49,
+    "share_count_change_pct": 10.53,
+    "share_count_span": "2025-06→2026-06"
+   },
+   "estimate_revisions_next_fy_eps": {
+    "current": 1.42004,
+    "chg_7d_pct": 2.27,
+    "chg_30d_pct": 1.97,
+    "chg_90d_pct": -12.05,
+    "up_revisions_30d": 6.0,
+    "down_revisions_30d": 0.0
+   },
+   "quarterly": {
+    "periods": [
+     "2025-06",
+     "2025-09",
+     "2025-12",
+     "2026-03",
+     "2026-06"
+    ],
+    "revenue_b": [
+     0.66,
+     0.74,
+     0.77,
+     0.69,
+     0.7
+    ],
+    "op_margin_pct": [
+     -49.6,
+     10.7,
+     7.3,
+     6.6,
+     4.8
+    ],
+    "diluted_eps": [
+     -4.48,
+     0.64,
+     0.43,
+     0.21,
+     0.18
+    ]
+   },
+   "annual_revenue_b": [
+    [
+     "2022-12",
+     0.77
+    ],
+    [
+     "2023-12",
+     1.45
+    ],
+    [
+     "2024-12",
+     1.68
+    ],
+    [
+     "2025-12",
+     2.75
+    ]
+   ],
+   "eps_surprises": [
+    {
+     "quarter": "2025-09",
+     "actual": 0.64,
+     "estimate": 0.18338,
+     "surprise_pct": 249.0
+    },
+    {
+     "quarter": "2025-12",
+     "actual": 0.43,
+     "estimate": 0.16199,
+     "surprise_pct": 165.5
+    },
+    {
+     "quarter": "2026-03",
+     "actual": 0.21,
+     "estimate": 0.1771,
+     "surprise_pct": 18.6
+    },
+    {
+     "quarter": "2026-06",
+     "actual": 0.18,
+     "estimate": 0.15958,
+     "surprise_pct": 12.8
+    }
+   ],
+   "next_earnings": "2026-11-04",
+   "return_1y_pct": -36.4,
+   "from_52w_high_pct": -41.0,
+   "quant_score": {
+    "score": 48.0,
+    "quality": 38,
+    "health": 77,
+    "value": 19,
+    "revisions": 60
    },
    "cycle_check": null,
    "dashboard_signals": [],
@@ -1902,31 +1759,16 @@
   "sector_eps_revisions_30d": [
    {
     "sector": "에너지",
-    "chg_pct": 5.94,
+    "chg_pct": 6.29,
     "momentum": "↑상승중"
    },
    {
     "sector": "IT·기술",
-    "chg_pct": 0.24,
-    "momentum": "→횡보"
-   },
-   {
-    "sector": "부동산",
-    "chg_pct": 0.22,
-    "momentum": "→횡보"
-   },
-   {
-    "sector": "금융",
-    "chg_pct": 0.1,
+    "chg_pct": 0.23,
     "momentum": "→횡보"
    },
    {
     "sector": "산업재",
-    "chg_pct": 0.06,
-    "momentum": "→횡보"
-   },
-   {
-    "sector": "커뮤니케이션",
     "chg_pct": 0.05,
     "momentum": "→횡보"
    },
@@ -1936,13 +1778,28 @@
     "momentum": "→횡보"
    },
    {
+    "sector": "금융",
+    "chg_pct": 0.03,
+    "momentum": "→횡보"
+   },
+   {
     "sector": "유틸리티",
     "chg_pct": 0.0,
     "momentum": "→횡보"
    },
    {
+    "sector": "부동산",
+    "chg_pct": 0.0,
+    "momentum": "→횡보"
+   },
+   {
     "sector": "경기소비재",
-    "chg_pct": -0.05,
+    "chg_pct": -0.01,
+    "momentum": "→횡보"
+   },
+   {
+    "sector": "커뮤니케이션",
+    "chg_pct": -0.01,
     "momentum": "→횡보"
    },
    {
@@ -1952,7 +1809,7 @@
    },
    {
     "sector": "소재",
-    "chg_pct": -0.33,
+    "chg_pct": -0.39,
     "momentum": "→횡보"
    }
   ],
@@ -1968,12 +1825,36 @@
  },
  "news_candidates": [
   {
+   "title": "3 AI Chip Stocks With Real Data Center Exposure In The US",
+   "source": "Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQbUtmTzlZVTM4X0ZpcjR2WEFEVU5VVmFfV2R0WG53TmVaWGpXTW1mLVp5T1RIeXVnWjVBSlpRWHJaakVEU1B5V1RlSm9pQTVTTnBUS1dUV1AxVG9tMG9nTlBrUjhnTUdXNkgxbG82NWlYb183bDg4eUZvUXZPc3hsV2hDUm45cGFidm5jeWtB?oc=5",
+   "published": "2026-10-11",
+   "snippet": "",
+   "id": 0
+  },
+  {
+   "title": "AI may change the price of your Big Mac and groceries — what this means for shoppers",
+   "source": "CNBC",
+   "url": "https://www.cnbc.com/2026/10/11/ai-dynamic-pricing-shoppers-groceries.html",
+   "published": "2026-10-11",
+   "snippet": "As retailers turn to AI tools to streamline operations, experts warn that collecting more detailed consumer data increases the risk of personalized pricing.",
+   "id": 1
+  },
+  {
    "title": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control",
    "source": "CNBC",
    "url": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
    "published": "2026-10-10",
    "snippet": "Nadella joined other tech moguls and researchers in calling for stronger safeguards and, in some cases, for the pacing of frontier development.",
-   "id": 0
+   "id": 2
+  },
+  {
+   "title": "3 AI Infrastructure Stocks Worth Watching As Data Center Spending Climbs",
+   "source": "Simply Wall Street",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQalZFOFBHSE5qb3hoN0dXYnMwSnoxUlljdnBXRTFFbmlDZDUwQXZTSk5YdjM2ZGNlVWZOeEljVlpueVRLMzlWMUdGbkFOTi13S2g5bXhvdzVObGdic3NFTXJ3MXZGTjF6Y1FnTFQ2Z0ZaQ2hfdnN2VWpPU2FKdmJfbFF3Tm1xeUJPcDRZdi04SkRaNGp0RjlzLVF6ZEpPOF9RbnV2LXd5Y21iTUhFY1I4dVJzMjNpMlB5bHo3T3BLdzRiaFJRdWF4NHk2eEp4MzFrWkFIM1JBRXdrd9IB3wFBVV95cUxOdlpyWjdIcGp2OWc1RXlKc0pIUDZ4UzVjRG82M1pyM3FoeTlsT2U0eVRyLWt1TngxWlF0alRHU292NWZmNUI1cHVNZmQ0Vjd0eGszYi03bGZJMGJ1LTE1bm5oZUVWU2hlOVl0U1o4WjVBci1kV2VSSks1UlU1aGN6SXdNdjF4b1dLNlp3QmVaaTU1Wi1ieXFoOGY1X0s4NDVaMDFpMVEwZ3dvRm1PT3RyTms0b09vamdoRG9mM2J1SFdYNElnclJQRmcwc09vQmlncnRta09RWEJMRVRqU2U4?oc=5",
+   "published": "2026-10-10",
+   "snippet": "",
+   "id": 3
   },
   {
    "title": "Should I put my nest egg in a 30-year Treasury bond?",
@@ -1981,7 +1862,7 @@
    "url": "https://www.marketwatch.com/story/should-i-put-my-nest-egg-in-a-30-year-treasury-bond-89db6e09?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "Risk comes in many forms, even with “safe” investments.",
-   "id": 1
+   "id": 4
   },
   {
    "title": "Worse than taking away your parents’ car keys? Taking away their cell phone. How to protect your aging parents.",
@@ -1989,7 +1870,7 @@
    "url": "https://www.marketwatch.com/story/worse-than-taking-away-your-parents-car-keys-taking-away-their-cellphone-how-to-protect-your-aging-parents-f01be6e6?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "Parental controls aren’t just for kids anymore",
-   "id": 2
+   "id": 5
   },
   {
    "title": "These decisions you make in your 20s — not your income — determine whether you’ll spend decades in debt or retire comfortably",
@@ -1997,7 +1878,7 @@
    "url": "https://www.marketwatch.com/story/these-decisions-you-make-in-your-20s-not-your-income-determine-whether-youll-spend-decades-in-debt-or-retire-comfortably-7bbb28f9?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "Don’t just focus on stock picks when you’re thinking of building retirement wealth",
-   "id": 3
+   "id": 6
   },
   {
    "title": "How to downsize like a pro — and free yourself from being a ‘prisoner of your possessions’",
@@ -2005,7 +1886,7 @@
    "url": "https://www.marketwatch.com/story/how-to-downsize-like-a-pro-and-free-yourself-from-being-a-prisoner-of-your-possessions-c4b5533e?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "Seven tips for painlessly moving in retirement.",
-   "id": 4
+   "id": 7
   },
   {
    "title": "Rising interest rates: The good, the bad and the ugly for retirees",
@@ -2013,7 +1894,7 @@
    "url": "https://www.marketwatch.com/story/the-good-the-bad-and-the-ugly-of-rising-interest-rates-ee465a81?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "Unlike higher gas prices, which hurt almost everyone, higher borrowing costs have an uneven impact.",
-   "id": 5
+   "id": 8
   },
   {
    "title": "Taxing stocks, estates and employee benefits could keep Social Security from running out of money. Here’s who could pay the most.",
@@ -2021,7 +1902,7 @@
    "url": "https://www.marketwatch.com/story/taxing-stocks-estates-and-employee-benefits-could-keep-social-security-from-running-out-of-money-heres-who-could-pay-the-most-616be82c?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "Social Security is projected to become insolvent in six years. These are some of the creative solutions that are on the table, beyond raising payroll taxes.",
-   "id": 6
+   "id": 9
   },
   {
    "title": "Ken Paxton is right. Tax cuts will mean Social Security and Medicare cuts.",
@@ -2029,7 +1910,7 @@
    "url": "https://www.marketwatch.com/story/ken-paxton-is-right-tax-cuts-will-mean-social-security-and-medicare-cuts-2befed72?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "It doesn’t matter if you are a Republican or Democrat. Math is math.",
-   "id": 7
+   "id": 10
   },
   {
    "title": "Millions of Americans will have fewer options during Medicare open enrollment this year",
@@ -2037,7 +1918,7 @@
    "url": "https://www.marketwatch.com/story/millions-of-americans-will-have-fewer-options-during-medicare-open-enrollment-this-year-6b56698b?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "There will be no Medicare Advantage plans in 181 counties in 2027, up from 67 in 2026.",
-   "id": 8
+   "id": 11
   },
   {
    "title": "‘I feel like a loser’: My stock portfolio is swinging wildly. Is it finally time to worry?",
@@ -2045,7 +1926,7 @@
    "url": "https://www.marketwatch.com/story/i-feel-like-a-loser-my-etfs-go-up-one-day-and-crash-the-next-is-this-a-bad-sign-0c9848b2?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "“I presume these are sophisticated investors taking a profit.”",
-   "id": 9
+   "id": 12
   },
   {
    "title": "Elon Musk is now richer than any American ever — and it’s not even close",
@@ -2053,7 +1934,7 @@
    "url": "https://www.marketwatch.com/story/elon-musk-is-now-richer-than-any-american-ever-and-its-not-even-close-58f31401?mod=mw_rss_topstories",
    "published": "2026-10-10",
    "snippet": "Musk’s trillioniare status means he’s wealthier than his next three contemporaries combined — and also worth more than historical tycoons like John D. Rockefeller.",
-   "id": 10
+   "id": 13
   },
   {
    "title": "Stocks saw new highs and big declines: How the volatile AI trade moved last week's market",
@@ -2061,7 +1942,7 @@
    "url": "https://www.cnbc.com/investingclub/2026/10/10/stocks-saw-new-highs-and-big-declines-how-the-volatile-ai-trade-moved-last-weeks-market.html",
    "published": "2026-10-10",
    "snippet": "Looking to balance out our AI exposure, we put more of our sizable cash pile to work.",
-   "id": 11
+   "id": 14
   },
   {
    "title": "JPMorgan makes bullish call in fixed income space, suggests it's a once in a generation opportunity",
@@ -2069,7 +1950,7 @@
    "url": "https://www.cnbc.com/2026/10/10/jpmorgan-sees-once-in-a-generation-opportunity-in-fixed-income-space.html",
    "published": "2026-10-10",
    "snippet": "Why Priya Misra, a portfolio manager at the firm, is looking to take credit risk in high-quality companies.",
-   "id": 12
+   "id": 15
   },
   {
    "title": "Vance says Microsoft replaced laid-off workers with foreign hires. Here’s what the visa data shows",
@@ -2077,7 +1958,7 @@
    "url": "https://www.cnbc.com/2026/10/10/vance-microsoft-h1b-layoffs-visa-data.html",
    "published": "2026-10-10",
    "snippet": "The administration barred Microsoft and seven other firms from sponsoring green cards over claims they favor foreign workers. Here's what the visa data shows.",
-   "id": 13
+   "id": 16
   },
   {
    "title": "How de-extincting dire wolves and woolly mammoths may extend human life",
@@ -2085,7 +1966,7 @@
    "url": "https://www.cnbc.com/2026/10/10/de-extincting-dire-wolves-woolly-mammoths-help-humans.html",
    "published": "2026-10-10",
    "snippet": "Colossal Biosciences CEO Ben Lamm says bringing extinct species back can contribute to conservation, healthcare and developmental biology.",
-   "id": 14
+   "id": 17
   },
   {
    "title": "Putin relayed Iran war proposal to Trump, Kremlin says",
@@ -2093,7 +1974,7 @@
    "url": "https://www.cnbc.com/2026/10/10/putin-trump-iran-war-russia-diesel.html",
    "published": "2026-10-10",
    "snippet": "Putin's reported call with Trump regarding the Iran war comes on the heels of a deal for the U.S. to buy Russian diesel amid a surge in fuel prices.",
-   "id": 15
+   "id": 18
   },
   {
    "title": "Pokémon card values are soaring. What collectors should know before buying or selling",
@@ -2101,7 +1982,7 @@
    "url": "https://www.cnbc.com/2026/10/10/pokemon-card-values-grading-guide.html",
    "published": "2026-10-10",
    "snippet": "Pokémon card values are surging. Learn how grading, scarcity, recent sales and counterfeits can affect what collectors pay.",
-   "id": 16
+   "id": 19
   },
   {
    "title": "How Supreme Court justices are leaning in major 401(k) case over private funds and underperformance",
@@ -2109,7 +1990,15 @@
    "url": "https://www.cnbc.com/2026/10/10/supreme-court-case-401k-private-funds-intel.html",
    "published": "2026-10-10",
    "snippet": "The Supreme Court is weighing an Intel 401(k) case as employers await new Labor Department rules on private investments in retirement plans.",
-   "id": 17
+   "id": 20
+  },
+  {
+   "title": "Oil-Gear Maker NOV Cuts Earnings Guidance as Iran War Hikes Costs and Snarls Deliveries",
+   "source": "EnergyNow.com",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTkc4VE5VcFJuNzNERXo0bDRSdWJkMnQzcGJNUjdRdzM3bDdZYy1lRFppVWhNT0tsSnhmbnZGM2FXaEJtbzV5MlpwYUlqRFNVWnl0RE1lM1FGcEZCYlJ0WFJteS1ZZVM4SWkzY21tX09XOXBSWTNwMlhUWkhIZGdaM3lNZHVtNUhsbWxMcUdwdW5xblFoYXRWX0pSblZxbkVhVE4zVzBGRzhBUTRFaHVfNG1Wbk9UbG1zVUE?oc=5",
+   "published": "2026-10-10",
+   "snippet": "",
+   "id": 21
   },
   {
    "title": "Buffett's 'trips down YouTube rabbit hole' revealed",
@@ -2117,7 +2006,7 @@
    "url": "https://www.cnbc.com/2026/10/10/buffetts-trips-down-youtube-rabbit-hole-revealed.html",
    "published": "2026-10-10",
    "snippet": "Warren Buffett watches CNBC in the morning, but nearly every evening he \"can't get enough\" of watching YouTube clips while sitting on a recliner in front of an \"enormous\" television in his Omaha home, reports The Wall Street Journal.",
-   "id": 18
+   "id": 22
   },
   {
    "title": "From BJ’s to Lululemon, retailers are trimming assortments to boost business",
@@ -2125,7 +2014,7 @@
    "url": "https://www.cnbc.com/2026/10/10/from-bjs-to-lululemon-retailers-are-trimming-assortments.html",
    "published": "2026-10-10",
    "snippet": "Retail brands are shrinking assortments to get back to healthy growth, while box stores are culling products to better curate offerings and stabilize business.",
-   "id": 19
+   "id": 23
   },
   {
    "title": "Hollywood takes on Zuckerberg, Musk and Altman amid widespread anxiety over AI",
@@ -2133,7 +2022,7 @@
    "url": "https://www.cnbc.com/2026/10/10/ai-movies-tech-ceos-hollywood.html",
    "published": "2026-10-10",
    "snippet": "New films about Zuckerberg, Musk, Altman and AI arrive as public concern about the technology and its leaders rises.",
-   "id": 20
+   "id": 24
   },
   {
    "title": "Nvidia GPUs are everywhere. Here are the ways companies are accessing them",
@@ -2141,7 +2030,23 @@
    "url": "https://www.cnbc.com/2026/10/10/nvidia-gpus-are-everywhere-heres-how-companies-access-them.html",
    "published": "2026-10-10",
    "snippet": "One industry researcher identified over 300 neoclouds that can provide GPU capacity, up about 55% in less than a year.",
-   "id": 21
+   "id": 25
+  },
+  {
+   "title": "Is MLP (XTRA:MLP) Fairly Valued As It Lifts 2026 Earnings Guidance?",
+   "source": "Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQN0pueElpdWowZHJjRHlsT2swOHY3c0w1bGdtRDROcFFBRUVpeHl2NjYwLVEybjN4NlFvWHZDMl9ZUGFyVEkzQ1g1ODRKSUpJNXB2TzZvTXlMYnJCb0g2S2tNb3EzWk5kRW13djAzYl90aHhpOFhjc3hsSDZBanRYRTBNNzVEd0tKanZmaGxoMnRBbVFibFE?oc=5",
+   "published": "2026-10-10",
+   "snippet": "",
+   "id": 26
+  },
+  {
+   "title": "S&P 500 Near Record Highs: Can the Rally Continue? (October 2026 Outlook)",
+   "source": "Mitrade",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOVG91NW00Ul8yX3lvamVOdDlOVmtGQzcySXBmdHh5c0ZYRThGOXNiUTd0dldMbW04TEpQTU5qcENVZXJQN3A3NENNSXVFbC0zMmhpbHk2NURmMHU1Z21rcFg2U1BCRFFicERTRnMwYThGUXNQaVFNZzdlc0VzVmRNZ0tiYTJ0LURsMVRsdTE3Yw?oc=5",
+   "published": "2026-10-10",
+   "snippet": "",
+   "id": 27
   },
   {
    "title": "AI is changing how lawyers work — and putting the billable hour under pressure",
@@ -2149,7 +2054,7 @@
    "url": "https://www.cnbc.com/2026/10/10/ai-lawyers-billable-hour-legal-careers.html",
    "published": "2026-10-10",
    "snippet": "AI adoption is forcing the legal profession to rethink the billable hour and how lawyers build expertise.",
-   "id": 22
+   "id": 28
   },
   {
    "title": "Trump's diesel agreement with Putin accused of contradicting Russia sanctions law",
@@ -2157,7 +2062,15 @@
    "url": "https://www.cnbc.com/2026/10/09/trump-putin-diesel-russia-sanctions-ukraine.html",
    "published": "2026-10-10",
    "snippet": "Ukraine President Volodymyr Zelenskyy said in a searing statement that the U.S. easing sanctions on Moscow \"plays into Russia's hands.\"",
-   "id": 23
+   "id": 29
+  },
+  {
+   "title": "What September Job Losses Signal for the Bank of Canada’s Rate Outlook",
+   "source": "Morningstar",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYTBneTU4dE15dUNYTmNJcmVISGNOSllLREY4YnFqeHlNNkNqWE1WaTkwMjBDTzNtOFhSRzk5R1EyelhUdEFJSVB6bURKR0xXRE5PNEtST1Z6T0xWbHVSOUd5M0wyLWY2Qjlha3U5bGIxdkF4cmxiVjRoUVVhR1NCTDBhZ0FpRHNKRjBJUURRa2kzM1oxT21kaTZuUGN6d0RNQnNzQkV3?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 30
   },
   {
    "title": "Cramer’s week ahead: Earnings kick off as banks and chipmakers face big tests",
@@ -2165,7 +2078,7 @@
    "url": "https://www.cnbc.com/2026/10/09/jim-cramer-week-ahead-bank-earnings-ai-chips.html",
    "published": "2026-10-09",
    "snippet": "CNBC’s Jim Cramer said next week’s earnings reports will give investors a clearer picture of corporate performance and the strength of the AI trade.",
-   "id": 24
+   "id": 31
   },
   {
    "title": "Junk bonds are 'flashing yellow.' Watch these warning signs",
@@ -2173,7 +2086,7 @@
    "url": "https://www.cnbc.com/2026/10/09/junk-bonds-are-flashing-yellow-watch-these-warning-signs.html",
    "published": "2026-10-09",
    "snippet": "Spreads have widened in the high-yield bond market, but that doesn't tell the whole story.",
-   "id": 25
+   "id": 32
   },
   {
    "title": "Verizon posts worst day since 2002 as SpaceX U.S. network plans whack cell provider stocks",
@@ -2181,7 +2094,15 @@
    "url": "https://www.cnbc.com/2026/10/09/verizon-att-tmobile-stocks-spacex-network.html",
    "published": "2026-10-09",
    "snippet": "SpaceX announced the spectrum deal Thursday, as the company aims to push deeper into the telecom market through its Starlink service.",
-   "id": 26
+   "id": 33
+  },
+  {
+   "title": "Fed Interest Rate Forecast for the Next 5 Years: 2026 to 2031",
+   "source": "Norada Real Estate Investments",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVnFWOWJRSThWYmhuZmU3VWU2UVRiVUF1a3JQNGV2Z3NFXzRNTmoxRHFTVWFjYkJodnh3Z0RYeUFIWF9CeUdUWlNpMXEwZ0Z3S1RNRk1NNjRoWkFMaU9jMEdpdXpnbGFQNkQxUE8tNG9NZnI2dUJCSjNoUHhIZnB1Q0NTWjFudEhhSXViX2ZRU1hpSzhnWnlaZ2V1OGdBbWJh?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 34
   },
   {
    "title": "Tesla drops 'Full Self-Driving' brand name in Europe after regulator pushback",
@@ -2189,7 +2110,7 @@
    "url": "https://www.cnbc.com/2026/10/09/tesla-full-self-driving-europe-regulator.html",
    "published": "2026-10-09",
    "snippet": "German regulators called Tesla's \"Full Self-Driving\" brand name \"somewhat misleading.\"",
-   "id": 27
+   "id": 35
   },
   {
    "title": "Trump created a committee to dig into the Fed's Lisa Cook. What is it and what comes next?",
@@ -2197,7 +2118,7 @@
    "url": "https://www.cnbc.com/2026/10/09/trump-lisa-cook-fed-firing-committee-explained.html",
    "published": "2026-10-09",
    "snippet": "Trump’s bid to fire the Fed's Lisa Cook follows a Supreme Court ruling and could affect Jerome Powell, central bank independence and interest rates.",
-   "id": 28
+   "id": 36
   },
   {
    "title": "Americans' debt problems are flashing a warning not seen since the Great Recession",
@@ -2205,7 +2126,7 @@
    "url": "https://www.cnbc.com/2026/10/09/american-debt-delinquency.html",
    "published": "2026-10-09",
    "snippet": "Researchers found that while wealth disparities narrowed somewhat, the ability to meet debt payments deteriorated significantly.",
-   "id": 29
+   "id": 37
   },
   {
    "title": "What's behind the recovery rally in tech stocks — plus, Elon Musk's very good week",
@@ -2213,7 +2134,31 @@
    "url": "https://www.cnbc.com/investingclub/2026/10/09/whats-behind-the-recovery-rally-in-tech-stocks-plus-musks-good-week.html",
    "published": "2026-10-09",
    "snippet": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.",
-   "id": 30
+   "id": 38
+  },
+  {
+   "title": "Delta Posted Record Revenue. Why It Slashed Earnings Guidance.",
+   "source": "Barron's",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQY28xT1V1dEl4dWZzWjZnSTB4T3B1MXhwTE5vSXJ3RzlkSnNYTjdjMjdFdTh2WnhoVEVULUc4ME5DMFZRdzFJMTJKaUtWbHZrbUxpTnE4TG1ob2dNYWRFZ3hhaWdDRTRZdE9wQlpKWlB2aVo4bzBjelFRUWhtMTFkbEtVUDU?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 39
+  },
+  {
+   "title": "AI spending drives a big share of U.S. economic growth",
+   "source": "Quartz",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBidzFTenpRNjQyY3JFdjVGanZpSzNEdXpBdXpBZi1DTjFyYnl6X1QyT0RXSGlPR3lULXdycHpqNFBnWEVEeE1tVlZFbW0tR21USDZJMXFYMGMxQTlWdkRKc1NkSFo1elhBeENzTVBpd3djUQ?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 40
+  },
+  {
+   "title": "Stock Market Today: Stock Market News And Analysis",
+   "source": "Investor's Business Daily",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8zdGl1MmxTM2JJa2pLNlFSWVhuZUd1ekRIeVpDcGVqckVJcloxaWlnRHJ3b0hqb291NXk4dlo0SmRQNlhDaGpubDh6ZWNTUHZiYVhjOVJINUxSYXE0NHRiNVE2OW51R2h4N1daaXRIdzVBR1UxT0g4?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 41
   },
   {
    "title": "Wall Street is pitching data centers as a major real estate bet. The risks are piling up",
@@ -2221,7 +2166,15 @@
    "url": "https://www.cnbc.com/2026/10/09/ai-data-centers-investing.html",
    "published": "2026-10-09",
    "snippet": "Wall Street firms are bringing AI data center investments to public markets as political, liquidity and project risks grow.",
-   "id": 31
+   "id": 42
+  },
+  {
+   "title": "What to Look Out for in Economic Data This Week (October 12-16)",
+   "source": "Kiplinger",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1MeVNwMVVnVmhvRWo4b0N4WkhCRXQxTVRtb2ZmTWhCSmd4eERsN3Nfdllwejg0eG5ueFFCRUdPTzVUaXh4dEFZaWJqN3FFZnlFWTBlZ2ZvVkFFRzVScTR3TXRhZGl6MHp2RUF1clppVDRvR1lveC1FaXNCeXQ?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 43
   },
   {
    "title": "AI agents like Muse can shop for you. Here's what that means for retail stocks",
@@ -2229,15 +2182,7 @@
    "url": "https://www.cnbc.com/investingclub/2026/10/09/ai-agents-could-soon-shop-for-consumers-what-it-means-for-retail-stocks.html",
    "published": "2026-10-09",
    "snippet": "For Amazon, Costco, and TJX, the rise of AI shopping agents presents challenges — and some surprising advantages.",
-   "id": 32
-  },
-  {
-   "title": "SpaceX deal to acquire spectrum license hammers shares of AT&T, Verizon and T-Mobile",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/08/spacex-spectrum-license-att-verizon-tmobile.html",
-   "published": "2026-10-09",
-   "snippet": "SpaceX agreed to purchase a nationwide spectrum portfolio as it to pushes its Starlink service deeper into the U.S. telecommunications market.",
-   "id": 33
+   "id": 44
   },
   {
    "title": "OpenAI and Anthropic poach Trump officials as industry fights for Washington’s trust",
@@ -2245,7 +2190,15 @@
    "url": "https://www.cnbc.com/2026/10/09/openai-anthropic-poach-trump-officials.html",
    "published": "2026-10-09",
    "snippet": "AI labs have been looking to people with political experience as frontier tech is increasingly viewed as a national security issue.",
-   "id": 34
+   "id": 45
+  },
+  {
+   "title": "Nasdaq, S&P 500 Futures Mixed As Oil Surge, Trump Tariffs Cloud Market Outlook: Why INTC, TSLA, SPCX, ORCL, SLS Are In Focus",
+   "source": "Stocktwits",
+   "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOdVAzN3MtUDg4Z0JxMzNBUFBrNTg0LWZ4MXVSbFZfS0VIYnlUUGlxUUhkNm1wWm94RnJpdVBLYU94UGNVOWE2NVh6aVpuN1hTOS16UHJSci1FVjhUdzJrYzgtTWZ4QzczRjRwRkMzUnNOcWNQUmRibm5GcnFJMHpJcThMT0VXRFlDeHJOY1BHdm51dXk0bmNjVzRtSHJ2NzhmMHMtcFJKejhlN191czBYcnhnUmE2elR0VERWMnVXUDUtRkZhc3F0VDFJTHI4T0UxQVNFZ3dpUTdNX0QwUU9qTW5Ya2IycTM4S0pnREgxU25WanhpWVhIWlBrTHVXMkxVUTlzeg?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 46
   },
   {
    "title": "Treasury's Bessent hires Trump's controversial former Fed board pick, Judy Shelton, as advisor",
@@ -2253,7 +2206,7 @@
    "url": "https://www.cnbc.com/2026/10/09/judy-shelton-scott-bessent-treasury.html",
    "published": "2026-10-09",
    "snippet": "Shelton's controversial economic ideas led the Senate to block her nomination to the Fed. Now she's going to be a counselor to the Treasury secretary.",
-   "id": 35
+   "id": 47
   },
   {
    "title": "Living with Mom and trading on margin. The regular investor gets in on Wall Street's record stock borrowing binge",
@@ -2261,7 +2214,15 @@
    "url": "https://www.cnbc.com/2026/10/09/margin-debt-stock-market-risk.html",
    "published": "2026-10-09",
    "snippet": "Margin debt has surged to record levels as investors like 29-year-old Hy Luu borrow more against their portfolios. Here’s how leverage can amplify stock losses.",
-   "id": 36
+   "id": 48
+  },
+  {
+   "title": "Week in Focus 12-16th October 2026: US CPI, US Retail Sales, Start of Q3 Earnings, China CPI, UK jobs, RBA Minutes and Aussie jobs",
+   "source": "Newsquawk",
+   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPRUphOThPQkJkQnRZUVpvcllBWTRuMzNRY3hfYUdzeFp6ajBWeURWRFNwY2xDQlVpMWVGZENadVFVcjN1Uk0tRGZ0T0U2ZEpoc1RrODIwSmZmZGxyd3BWMlBJNHdhenFlM1daVXFBOGRDSlp4bTh6QXAwU2poN2FRdmk5a3prVEpEZWhSME43Rk1CeEpfWFFQcUl1OUJKbzFVSTkyRzBlS0lyV1FpYjJwcElPS3YzZWZreFR1aEtrNUFoeXM1MW1xd25ldl9nNlFFNTFUMEFsMXQ3d3RzWVRsWTdMbi1Oc3h2MWFxZkdYTFZWR28?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 49
   },
   {
    "title": "OpenAI's revenue scare, Delta earnings, what investors think of a Starbucks-Chipotle deal and more in Morning Squawk",
@@ -2269,7 +2230,7 @@
    "url": "https://www.cnbc.com/2026/10/09/5-things-to-know-before-the-stock-market-opens.html",
    "published": "2026-10-09",
    "snippet": "Here are five key things investors need to know to start the trading day.",
-   "id": 37
+   "id": 50
   },
   {
    "title": "OpenAI defends decision to fire researchers: 'These decisions were not about raising safety concerns or speaking out'",
@@ -2277,7 +2238,15 @@
    "url": "https://www.cnbc.com/2026/10/09/openai-fired-researchers-ai-concerns.html",
    "published": "2026-10-09",
    "snippet": "OpenAI has defended its decision to fire three safety researchers for what the AI lab has described as a \"significant breach of trust\"",
-   "id": 38
+   "id": 51
+  },
+  {
+   "title": "AI-centered US stock bull market nears four-year anniversary",
+   "source": "Reuters",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZThNNTgyNW8tMm1YNzBUMG1FRDdMVm9PNktJLUYtek04SHhGX1ZyY0tIM3RVbk50Yk5iSlROdUhjZV9DaWpIRHVrREVkN3dxVUlUUkRXYkhFREJaVVJLRGw1RS1GVTkwcVUweWlPd2xVSkNmY3RJYWZFdGxqYWVRZ2JiSzJOZTVWb3dvMndyRThaZ0NWN2tBMGQzNmtvaGxZSkVOd19rbzNGcjVEQlVhM0xTaGJXV1U?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 52
   },
   {
    "title": "Tokenization could unleash tens of billions of dollars in trapped capital, Nasdaq CEO says",
@@ -2285,7 +2254,7 @@
    "url": "https://www.cnbc.com/2026/10/09/nasdaq-ceo-tokenization-could-unleash-billions-in-trapped-capital-.html",
    "published": "2026-10-09",
    "snippet": "Nasdaq CEO Adena Friedman said tokenization could free up tens of billions of dollars in trapped capital.",
-   "id": 39
+   "id": 53
   },
   {
    "title": "'Real boss of India?': Elon Musk takes aim at Indian billionaire Ambani as Starlink launch stalls",
@@ -2293,7 +2262,7 @@
    "url": "https://www.cnbc.com/2026/10/09/musk-starlink-ambani-india-us.html",
    "published": "2026-10-09",
    "snippet": "Musk claimed Starlink was not being allowed to launch in India despite spending five years complying with every single law and requirement of the government.",
-   "id": 40
+   "id": 54
   },
   {
    "title": "Nvidia-backed Aussie AI firm Firmus withdraws historic IPO, citing market volatility",
@@ -2301,7 +2270,23 @@
    "url": "https://www.cnbc.com/2026/10/09/nvidia-ai-firmus-ipo-.html",
    "published": "2026-10-09",
    "snippet": "Nvidia-backed Australian AI data center operator Firmus has withdrawn its planned IPO amid market volatility.",
-   "id": 41
+   "id": 55
+  },
+  {
+   "title": "Why Nvidia (NVDA) Stock Is Trading Lower Today",
+   "source": "Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNV295TG93WHFzalBJS0VBUFFFSy1tVFNDS0hxY1I4R0NPWTk0cm9iZ05pZERubmFIU0tiZzV3ZGlZQnhpT1o0Nm5ST1N3aUVBZzB4X21NV0xkN2hmaUdzOVY0UWgycFU3bFVHY3dtMERIYjd1eUY2eUNwZDdjUWhIMXN3MXUtSkRfalNYNWY0SzVmTEJ5cFJsUENB?oc=5",
+   "published": "2026-10-09",
+   "snippet": "",
+   "id": 56
+  },
+  {
+   "title": "Pepsi shares rallied despite cutting profit guidance. Where Cramer stands on the stock now",
+   "source": "CNBC",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBsc0h0dGJDLTM3eGJCVkY2bFJ1MFNjaUtLMi1fR0JGVzg4b0U3UE5Zdldrb3EtUlUxT1UzU0RxcDhpMHE3RnJPVl85T0M0Zkc4WTZMVEdoRXkwRFJteUpRU1ZRR2E2MFRsZVlSUVNIT2xmMEdWSUdiU9IBfkFVX3lxTE5xdkw1dmNoUXFaekRLa1ZSWmp4MWpGWmZtWGRYRl9KbjcwOHpOQjY1aXhScVFDUlNKZkhCX0t3LVBkbjhmZzE4MUV5ZUFuWDd3VW9UZXpKWUZGNFZFSER4V3R6c2hPVmp0YkpUdHZzU1lsXzQ0UWVtbERwdC1Jdw?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 57
   },
   {
    "title": "Cramer says Thursday's AI sell-off proves the value of this age-old investing strategy",
@@ -2309,7 +2294,47 @@
    "url": "https://www.cnbc.com/2026/10/08/jim-cramer-diversification-ai-selloff.html",
    "published": "2026-10-08",
    "snippet": "CNBC’s Jim Cramer said Thursday’s sell-off in AI stocks underscores the importance of diversification, even when it means holding stocks that have struggled.",
-   "id": 42
+   "id": 58
+  },
+  {
+   "title": "Is the stock market open on Columbus Day, Indigenous Peoples Day?",
+   "source": "Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQdUxaQ0dZRTY2Wmo0WElseFdGeC0yOU1GM0NxUEktek8yOVlwalFEeVJiMnB6enBYN3NleVI1LW5FckkyY1FrYzhibTZLTGw2YktDc0FwVTI4THJyVGZwRHQwaTZCOVA1NHJBRU5RalBLaVFZNlN5dEJ6RHBaTXI1TFRWQVNqcXZzMGRidVFueHVoMll6ZUtPWHlxaHk0ZnlhaTRfdU5lQVBnaGJPaGVOMU96UFYwMkpVRG5fMTAySTMwMUljQURFc0hIbmttdWt4ZXRpZ3p3?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 59
+  },
+  {
+   "title": "S&P 500 Pulls Back From Another Fresh ATH As Yields Soften",
+   "source": "StoneX",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRzZjbmxLY0Q3d1o5QmtjZ0VhWXFFaVRpVV9STnpjNlJ4S0FRbVJtckZlWEMzdUtmcVlGQTI0N2UtRUZJTzlwcnFWb0d6Y09Bc1h3bTB3TWxka19WXy0wcTd1Tl9lMzVLR1cwQ3p0LTNyYjE0cGxJb1RhSTdDSEp1RlQ1b3JpZ05mTEczOE9GMHdMaURBWC15UmtTTlp5TVpxWUx1YkJYWnNYMUoySmg1eTQ0MGVRRFZ4M1cw?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 60
+  },
+  {
+   "title": "U.S. Interest Rates Could Rise Over Next Six to Nine Months, Fed’s Musalem Says",
+   "source": "WSJ",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeHRyMnRQZ0p3RDBMZ2J3eDFvbXIwNFlMbWY0eE9GQnRMYVljeGZ0NlZKaVBGbkFnY090QzZHeE13c05hLUpTT3h6Rm9pcGtiOFBnUnI2RFcwVFlkUzk4MjNoY01PVlRLV0FMekNqVkdRRTFDZHVxNGFTQ0hLZEM4d1UzSHhBWF9scWh2d0txRW91emUzTzFIUEhKMVE2WUVpdmdlb0I3NGhHX0VCRV9yZTJlNmQyX3BRZVNuaDBVRjNtM2M?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 61
+  },
+  {
+   "title": "Trump reports Nvidia stock trades ahead of awards to Huang, Musk and Brin",
+   "source": "CTech",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8xc0NfQ2pzWDZNbHdHTmVVRjhEMDhiRzBST21ZN2MtY210ejdPTXlTRW1XY3NoX1dDTGVOdVpvclNseXVXYU5HQnpCV0Rfbmt2N0FueWN3eHEwdHdtc1NsUEhRMEVEcEpV?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 62
+  },
+  {
+   "title": "Nvidia Stock Drops, but a Big Options Trade Bet Suggests It Could Go Higher",
+   "source": "Barron's",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1OR2d5TV9DVTYyTUREaERXMDdRV3BqMFptZUZVREFCZGFaRXhyeDUxdWdhLWpoeE5OcnV6ejQwMFl0ZDljNnR1ZWlnZmJybjJWTTI2eGZsY3ZFOEMtSURPMFhINXJSR2tvcW5aeDY0QWo5RkFkdzRDRlhyZFRzQ3M?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 63
   },
   {
    "title": "Inflation on many everyday items was entirely due to tariffs, NY Fed says",
@@ -2317,175 +2342,47 @@
    "url": "https://www.cnbc.com/2026/10/08/inflation-tariffs-trump-fed-consumer-goods.html",
    "published": "2026-10-08",
    "snippet": "Tariffs added 2.9 percentage points to inflation in 67 categories of goods by February 2026, researchers at the New York Federal Reserve found.",
-   "id": 43
-  },
-  {
-   "title": "Inflation fears on the rise as one-year outlook in Fed survey hits highest level since May 2023",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/07/inflation-fears-on-the-rise-as-one-year-outlook-in-fed-survey-hits-highest-since-may-2023.html",
-   "published": "2026-10-07",
-   "snippet": "The Survey of Consumer Expectations indicated that the median outlook for inflation over the next 12 months rose to 3.9%.",
-   "id": 44
-  },
-  {
-   "title": "ICE came to town and left behind weakened economies",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/07/ice-raids-local-economies.html",
-   "published": "2026-10-07",
-   "snippet": "Research links ICE enforcement surges to lasting declines in local spending, foot traffic and jobs. In Minneapolis, businesses are still recovering.",
-   "id": 45
-  },
-  {
-   "title": "India’s central bank hikes rates for the first time since 2023 as inflation risks build",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/07/india-rbi-interest-rates-inflation.html",
-   "published": "2026-10-07",
-   "snippet": "HSBC and Goldman Sachs expect the RBI to raise interest rates in December as well.",
-   "id": 46
-  },
-  {
-   "title": "Why AI is both the hope and the hazard for world leaders, according to IMF chief Georgieva",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/07/economy-inflation-ai-trade-imf-iran-hormuz-trump-.html",
-   "published": "2026-10-07",
-   "snippet": "Kristalina Georgieva warns that the technology lifting growth hopes is also pushing up inflation and yields, just as public debt levels rose.",
-   "id": 47
-  },
-  {
-   "title": "World Bank warns of AI concentration risks as it lifts East Asia and Pacific growth outlook to 4.5%",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/06/world-bank-east-asia-growth-inflation-ai-exports-.html",
-   "published": "2026-10-07",
-   "snippet": "The World Bank now expects the region to grow 4.5% this year, but flagged that trade growth outside AI-related goods has been \"weak or negative.\"",
-   "id": 48
-  },
-  {
-   "title": "Trade deficit hits $105.6 billion, widest since just before Trump tariffs enacted last year",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/06/trade-deficit-hits-105point6-billion-widest-since-just-before-trump-tariffs-enacted-last-year.html",
-   "published": "2026-10-06",
-   "snippet": "That marked a 13.7% jump from July and was ahead of the Dow Jones consensus estimate for $102 billion.",
-   "id": 49
-  },
-  {
-   "title": "Unsure how long this AI bull has? Bonds now offer a cushion at the best values in years",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/06/unsure-how-long-this-ai-bull-has-bonds-now-offer-a-cushion-at-the-best-values-in-years.html",
-   "published": "2026-10-06",
-   "snippet": "See an AI-generated hypothetical portfolio derived from my TV talk and this column's archives.",
-   "id": 50
-  },
-  {
-   "title": "Nvidia's $6 trillion milestone looms. Here's when options traders see it happening",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/05/nvidias-6-trillion-milestone-looms-heres-when-options-traders-see-it-happening.html",
-   "published": "2026-10-05",
-   "snippet": "Nvidia will likely cross the $6 trillion threshold by the end of this month, according to options traders.",
-   "id": 51
-  },
-  {
-   "title": "The 2029 tipping point: Western populations are about to start shrinking, piling pressure on public finances",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/05/aging-population-moodys-public-finances.html",
-   "published": "2026-10-05",
-   "snippet": "Moody's predicts that the world's aging populations will have fundamental impacts on the global economy and lead to difficult policy decisions.",
-   "id": 52
-  },
-  {
-   "title": "Top Wall Street analysts are upbeat about the prospects for these 3 stocks",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/04/top-analysts-are-upbeat-about-the-prospects-for-these-3-stocks.html",
-   "published": "2026-10-04",
-   "snippet": "Investors with a long-term horizon can track ratings from top Wall Street analysts to find stocks with solid growth prospects.",
-   "id": 53
-  },
-  {
-   "title": "Berkshire buys more Lennar shares, but pace of purchases slows",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/03/berkshire-buys-more-lennar-shares-but-pace-of-purchases-slows.html",
-   "published": "2026-10-04",
-   "snippet": "Berkshire Hathaway added to its bet on Lennar this week, raising its stake in the homebuilder to 11.2%, although the pace of its buying appears to be slowing.",
-   "id": 54
-  },
-  {
-   "title": "Lula or Bolsonaro: Wall Street braces for two wildly different results in Brazil election",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/03/lula-or-bolsonaro-wall-street-braces-for-two-wildly-different-results-in-brazil-election.html",
-   "published": "2026-10-03",
-   "snippet": "With the first round of Brazil's presidential election taking place Sunday, Wall Street is gearing up with starkly different market predictions.",
-   "id": 55
-  },
-  {
-   "title": "Men are losing ground in the labor market. Here's why",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/02/men-labor-market-jobs-report.html",
-   "published": "2026-10-02",
-   "snippet": "Women outnumbered men in the workforce for eight straight months as of September, according to one analysis.",
-   "id": 56
-  },
-  {
-   "title": "IPO postponements are accelerating in third quarter, even beyond Oura",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/09/29/ipo-postponements-are-accelerating-in-third-quarter-even-beyond-oura.html",
-   "published": "2026-10-02",
-   "snippet": "It's been a strong year for IPOs. But now, more companies are deciding to stay on the sidelines.",
-   "id": 57
-  },
-  {
-   "title": "Labor market faltered in September as jobs increased by just 29,000, unemployment rate rose to 4.2%",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html",
-   "published": "2026-10-02",
-   "snippet": "Nonfarm payrolls rose by just 29,000 in September, well below the 84,000 forecast, and the unemployment rate rose to 4.2%, the Bureau of Labor Statistics said.",
-   "id": 58
-  },
-  {
-   "title": "Europe’s winter energy crunch may already be underway. Two U.S. stocks that may benefit",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/01/europes-winter-energy-crunch-may-already-be-underway-two-us-stocks-that-may-benefit.html",
-   "published": "2026-10-01",
-   "snippet": "BP's largest oil discovery in 25 years. What it means for the stock.",
-   "id": 59
-  },
-  {
-   "title": "The September jobs report will be released Friday. Here's what to expect",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/10/01/the-september-jobs-report-will-be-released-friday-heres-what-to-expect.html",
-   "published": "2026-10-01",
-   "snippet": "Wall Street is looking for job growth of 84,000 to close out the summer.",
-   "id": 60
-  },
-  {
-   "title": "Fed’s preferred gauge showed core inflation at 3.0% in August, much lighter than expected",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/09/30/feds-preferred-gauge-showed-core-inflation-at-3point0percent-in-august-much-lighter-than-expected.html",
-   "published": "2026-09-30",
-   "snippet": "The personal consumption expenditures price index was projected to show an annual gain of 3.7% on headline and 3.3% for core, according to the Dow Jones consensus.",
-   "id": 61
-  },
-  {
-   "title": "Private sector jobs rose by 90,000 in September, better than expected, ADP reports",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/09/30/private-sector-jobs-rose-by-90000-in-september-better-than-expected-adp-reports.html",
-   "published": "2026-09-30",
-   "snippet": "Private job creation picked up in September after a brief slowdown.",
-   "id": 62
-  },
-  {
-   "title": "Higher rates are wreaking havoc on these two ETFs. Traders see one bouncing back",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/09/29/higher-rates-are-wreaking-havoc-on-these-two-etfs-traders-see-one-bouncing-back.html",
-   "published": "2026-09-29",
-   "snippet": "The relentless surge in rates is breaking the back of two key macro trades that had been holding firm.",
-   "id": 63
-  },
-  {
-   "title": "Nearly half the stocks in the S&P 500 are at cross purposes with the rest of the market",
-   "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/09/28/nearly-half-of-the-stocks-in-the-sp-500-are-working-against-it.html",
-   "published": "2026-09-28",
-   "snippet": "Almost half of the stocks in the S&P 500 have a negative beta, evidence of a chasm between the entire index and its individual components.",
    "id": 64
+  },
+  {
+   "title": "Canadian Jobs Data and U.S. CPI Put the USD/CAD Rally to the Test",
+   "source": "StoneX",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOd1VjSnd3ZXl3VEhaUGVra0g1Y0dxaTdia2QwYmM5bHdXQno3YzFXejdETDZFWXdPZUMySFpVdlhNZWphT2FWVlVyVVpzeHp0Tk1XeXlsaHhYZWs4UWRfQ1JnMnk3QzFZVlFCR2V1TmlVdVBpT3ppSi0xY3U5dkhfQWpZOW9LZ3ZlX2c5MzhMeU9wbU53NEs0b0xxNDZCQ3VsVWc?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 65
+  },
+  {
+   "title": "Fed's Waller: More hikes needed, but there is 'flexibility' about the pace",
+   "source": "Reuters",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVlJjTS1oeE1aRmVEcC05dTZkd25ONVRidzJkTlozaEE3Q0tvQ2hPd0dYemMxNWUzTUZORnFfb0FWZUdDOVp3QUVwelQ5cjJzcV9oMl9mZmpCTnJOaGh6XzZXLXlxOWJBUVhTX05oOVhwS2hhZG1WbmppWlRRRGNDOGZneGNneTRiLXBhVHd1Z3FGc1JaZC14Qm14SVRlYi1Cd3MxSjVR?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 66
+  },
+  {
+   "title": "Trump discloses Nvidia stock trades as he prepares to honor CEO Huang",
+   "source": "Reuters",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPc0R0am1rbndOQjhQUzhJdTNHcXpnb3lDWFVteEs0SzJiVzc5cFNhMkNJZ2F5dzhjSTFlbFE1ZDRHNVE0MTNJM1phbUU1MVZXX0VkdmZoRUJDaU5OX3pPZ3V2bUZIaTMxZ0std2V2eVFyVUlaZGFXNjhCYTNtV1AxbnVsSlJnVXlWTW9JWWhiYTJaczdTR1JBcDNFaFg0YWRmZjRhZVR6c3dvd3pv?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 67
+  },
+  {
+   "title": "COMMENTARY: Five charts sounding the alarm for stretched US markets",
+   "source": "Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSmYzcUx2ZXViSzFiaDNseDVlb25ZVDc4bGdpdTNfeHl2bjZDQklZOTlkNFp5c3dSWDl5OVE4U3VjdW14dWFzN0Z6WFZDR3RIN09HTk92bHV1eFczczlfdjV4QlBNcHcyRHhkUXRfSUxKZ0otSXMta1NaSnhRVDJGbW5iUVlCZ1lOVTkwellNcS1na1ZKVDM1RTAyUnRFbGRrU3M3bUJOZ1F1djVPUTZXQXpONWFmXzBhQnZkMmJ1SEgxN0U?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 68
+  },
+  {
+   "title": "Fed minutes, Pepsi earnings, midterm megadonors and more in Morning Squawk",
+   "source": "CNBC",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUEtVYzFNNC1IVlIxSS1kWURaNU0xYzhZYTM1R2FFQ3BnSm5KYm5WQmpNOVNBLW1GTXJycjdGSFcxYmRJbU5ZREpnc29FamhkNTUyM2JhbERVaHhvUVNsNmdhaE9hbHFRWE1uOHA1a0dIcEltSE9qMERtMUdkNjNTazQ0bjdlTXJkY3Fz0gGQAUFVX3lxTE5SaVo5ZTRoV1cyVE1uRldCbXhwaVl6ZnBQaUFyMzNDX1JfYjZuQkxQc0p6U2hhdU1Rd0JSNlFUZmp0U2ljMTQ2OUhlV1FiMWh0VmZTY1JyVmNsU0pqRlBxdnZWWmdibGxNWEU2LXo1RzBTQ19NNTBtUWk2NDdEYTFvdlUzVW5obGpPaXVXVkdnLQ?oc=5",
+   "published": "2026-10-08",
+   "snippet": "",
+   "id": 69
   }
  ],
  "snaps": {
@@ -2499,25 +2396,25 @@
    "name": "Space Exploration Technologies ",
    "sector": "Industrials",
    "price": 162.57,
-   "eps_next_fy": 2.03722
+   "eps_next_fy": 2.07419
   },
   "EXPE": {
    "name": "Expedia Group, Inc.",
    "sector": "Consumer Cyclical",
    "price": 274.22,
-   "eps_next_fy": 24.55131
+   "eps_next_fy": 24.54034
   },
   "CPAY": {
    "name": "Corpay, Inc.",
    "sector": "Technology",
    "price": 397.92,
-   "eps_next_fy": 31.50739
+   "eps_next_fy": 31.50614
   },
   "RDDT": {
    "name": "Reddit, Inc.",
    "sector": "Communication Services",
    "price": 159.91,
-   "eps_next_fy": 7.06846
+   "eps_next_fy": 7.08639
   },
   "ADBE": {
    "name": "Adobe Inc.",
@@ -2535,18 +2432,30 @@
    "name": "Marathon Petroleum Corporation",
    "sector": "Energy",
    "price": 455.03,
-   "eps_next_fy": 50.68686
+   "eps_next_fy": 52.23268
   },
-  "FSLR": {
-   "name": "First Solar, Inc.",
+  "ALL": {
+   "name": "Allstate Corporation (The)",
+   "sector": "Financial Services",
+   "price": 229.43,
+   "eps_next_fy": 28.0522
+  },
+  "MSTR": {
+   "name": "Strategy Inc",
    "sector": "Technology",
-   "price": 177.82,
-   "eps_next_fy": 23.15513
+   "price": 154.34,
+   "eps_next_fy": 13.17459
+  },
+  "CRCL": {
+   "name": "Circle Internet Group, Inc.",
+   "sector": "Financial Services",
+   "price": 84.51,
+   "eps_next_fy": 1.42004
   }
  },
  "scores": {
   "NVDA": {
-   "score": 79.3,
+   "score": 79.2,
    "quality": 89,
    "health": 70,
    "value": 61,
@@ -2570,15 +2479,15 @@
    "net_debt_ebitda": -10.23
   },
   "EXPE": {
-   "score": 79.9,
+   "score": 79.6,
    "quality": 75,
    "health": 73,
    "value": 85,
-   "revisions": 84,
+   "revisions": 83,
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 21.9,
-   "fcf_yield_pct": 10.44,
+   "fcf_yield_pct": 10.43,
    "net_debt_ebitda": -0.5
   },
   "CPAY": {
@@ -2595,7 +2504,7 @@
   },
   "RDDT": {
    "score": 75.2,
-   "quality": 84,
+   "quality": 85,
    "health": 77,
    "value": 53,
    "revisions": 85,
@@ -2606,11 +2515,11 @@
    "net_debt_ebitda": -3.45
   },
   "ADBE": {
-   "score": 74.8,
+   "score": 74.6,
    "quality": 81,
    "health": 69,
    "value": 93,
-   "revisions": 59,
+   "revisions": 58,
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 36.0,
@@ -2618,7 +2527,7 @@
    "net_debt_ebitda": 0.12
   },
   "KEYS": {
-   "score": 74.1,
+   "score": 74.0,
    "quality": 76,
    "health": 69,
    "value": 55,
@@ -2632,26 +2541,50 @@
   "MPC": {
    "score": 70.3,
    "quality": 41,
-   "health": 54,
+   "health": 53,
    "value": 83,
    "revisions": 96,
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 6.0,
-   "fcf_yield_pct": 6.96,
+   "fcf_yield_pct": 7.24,
    "net_debt_ebitda": 1.72
   },
-  "FSLR": {
-   "score": 72.7,
-   "quality": 63,
-   "health": 73,
-   "value": 94,
-   "revisions": 63,
+  "ALL": {
+   "score": 72.6,
+   "quality": 53,
+   "health": 69,
+   "value": 79,
+   "revisions": 86,
    "eligible": true,
    "turnaround": false,
-   "fcf_margin_pct": 29.7,
-   "fcf_yield_pct": 8.37,
-   "net_debt_ebitda": -0.64
+   "fcf_margin_pct": 21.6,
+   "fcf_yield_pct": 26.13,
+   "net_debt_ebitda": 0.1
+  },
+  "MSTR": {
+   "score": 42.6,
+   "quality": 36,
+   "health": 28,
+   "value": 50,
+   "revisions": 51,
+   "eligible": false,
+   "turnaround": false,
+   "fcf_margin_pct": -4532.5,
+   "fcf_yield_pct": -36.7,
+   "net_debt_ebitda": null
+  },
+  "CRCL": {
+   "score": 48.0,
+   "quality": 38,
+   "health": 77,
+   "value": 19,
+   "revisions": 60,
+   "eligible": true,
+   "turnaround": false,
+   "fcf_margin_pct": 7.1,
+   "fcf_yield_pct": 0.96,
+   "net_debt_ebitda": -7.49
   }
  },
  "next_earnings": {
@@ -2663,10 +2596,12 @@
   "ADBE": "2026-12-09",
   "KEYS": "2026-11-24",
   "MPC": "2026-11-03",
-  "FSLR": "2026-10-29"
+  "ALL": "2026-11-04",
+  "MSTR": "2026-10-29",
+  "CRCL": "2026-11-04"
  },
  "signals": {
-  "built_at_kst": "2026-10-11 10:47",
+  "built_at_kst": "2026-10-11 17:54",
   "week": "2026-W41",
   "universe_size": 518,
   "m1": {
@@ -3393,112 +3328,80 @@
      "sector": "Energy",
      "sector_kr": "에너지",
      "stocks": 21,
-     "eps_revision_pct_30d": 5.94,
-     "eps_revision_pct_7d": 1.45,
+     "eps_revision_pct_30d": 6.29,
+     "eps_revision_pct_7d": 1.41,
      "upgrade_ratio": 0.75,
      "momentum": "↑상승중",
      "sparkline": [
       0.0,
-      0.01,
-      0.97,
-      0.45,
-      2.75
+      0.82,
+      1.04,
+      3.52,
+      3.34
      ]
     },
     {
      "sector": "Technology",
      "sector_kr": "IT·기술",
-     "stocks": 92,
-     "eps_revision_pct_30d": 0.24,
-     "eps_revision_pct_7d": 0.03,
+     "stocks": 91,
+     "eps_revision_pct_30d": 0.23,
+     "eps_revision_pct_7d": 0.06,
      "upgrade_ratio": 0.77,
      "momentum": "→횡보",
      "sparkline": [
       0.0,
-      1.01,
-      3.64,
-      4.23,
-      4.63
-     ]
-    },
-    {
-     "sector": "Real Estate",
-     "sector_kr": "부동산",
-     "stocks": 30,
-     "eps_revision_pct_30d": 0.22,
-     "eps_revision_pct_7d": 0.0,
-     "upgrade_ratio": 0.46,
-     "momentum": "→횡보",
-     "sparkline": [
-      0.0,
-      0.0,
-      0.11,
-      0.83,
-      0.49
-     ]
-    },
-    {
-     "sector": "Financial Services",
-     "sector_kr": "금융",
-     "stocks": 68,
-     "eps_revision_pct_30d": 0.1,
-     "eps_revision_pct_7d": 0.03,
-     "upgrade_ratio": 0.59,
-     "momentum": "→횡보",
-     "sparkline": [
-      0.0,
-      0.65,
-      0.95,
-      0.99,
-      0.83
+      1.16,
+      3.09,
+      3.48,
+      4.25
      ]
     },
     {
      "sector": "Industrials",
      "sector_kr": "산업재",
      "stocks": 80,
-     "eps_revision_pct_30d": 0.06,
+     "eps_revision_pct_30d": 0.05,
      "eps_revision_pct_7d": 0.0,
      "upgrade_ratio": 0.68,
      "momentum": "→횡보",
      "sparkline": [
       0.0,
-      1.55,
-      1.77,
-      1.88,
-      1.86
-     ]
-    },
-    {
-     "sector": "Communication Services",
-     "sector_kr": "커뮤니케이션",
-     "stocks": 22,
-     "eps_revision_pct_30d": 0.05,
-     "eps_revision_pct_7d": 0.0,
-     "upgrade_ratio": 0.54,
-     "momentum": "→횡보",
-     "sparkline": [
-      0.0,
-      -0.01,
-      0.4,
-      0.29,
-      0.12
+      1.49,
+      1.72,
+      1.91,
+      1.85
      ]
     },
     {
      "sector": "Healthcare",
      "sector_kr": "헬스케어",
-     "stocks": 61,
+     "stocks": 60,
      "eps_revision_pct_30d": 0.04,
-     "eps_revision_pct_7d": 0.0,
-     "upgrade_ratio": 0.64,
+     "eps_revision_pct_7d": 0.02,
+     "upgrade_ratio": 0.66,
      "momentum": "→횡보",
      "sparkline": [
       0.0,
-      0.8,
-      0.87,
-      0.91,
-      0.9
+      0.83,
+      0.97,
+      0.93,
+      0.93
+     ]
+    },
+    {
+     "sector": "Financial Services",
+     "sector_kr": "금융",
+     "stocks": 68,
+     "eps_revision_pct_30d": 0.03,
+     "eps_revision_pct_7d": 0.02,
+     "upgrade_ratio": 0.59,
+     "momentum": "→횡보",
+     "sparkline": [
+      0.0,
+      0.63,
+      0.96,
+      0.94,
+      0.98
      ]
     },
     {
@@ -3514,23 +3417,55 @@
       0.02,
       0.01,
       0.01,
-      0.02
+      0.03
+     ]
+    },
+    {
+     "sector": "Real Estate",
+     "sector_kr": "부동산",
+     "stocks": 30,
+     "eps_revision_pct_30d": 0.0,
+     "eps_revision_pct_7d": 0.0,
+     "upgrade_ratio": 0.46,
+     "momentum": "→횡보",
+     "sparkline": [
+      0.0,
+      0.0,
+      0.75,
+      0.75,
+      0.7
      ]
     },
     {
      "sector": "Consumer Cyclical",
      "sector_kr": "경기소비재",
-     "stocks": 56,
-     "eps_revision_pct_30d": -0.05,
-     "eps_revision_pct_7d": -0.0,
+     "stocks": 55,
+     "eps_revision_pct_30d": -0.01,
+     "eps_revision_pct_7d": 0.0,
      "upgrade_ratio": 0.5,
      "momentum": "→횡보",
      "sparkline": [
       0.0,
-      0.05,
-      0.37,
-      0.05,
-      0.08
+      0.14,
+      0.28,
+      0.08,
+      0.16
+     ]
+    },
+    {
+     "sector": "Communication Services",
+     "sector_kr": "커뮤니케이션",
+     "stocks": 22,
+     "eps_revision_pct_30d": -0.01,
+     "eps_revision_pct_7d": -0.06,
+     "upgrade_ratio": 0.54,
+     "momentum": "→횡보",
+     "sparkline": [
+      0.0,
+      0.4,
+      0.4,
+      0.2,
+      0.03
      ]
     },
     {
@@ -3538,29 +3473,29 @@
      "sector_kr": "필수소비재",
      "stocks": 33,
      "eps_revision_pct_30d": -0.1,
-     "eps_revision_pct_7d": -0.05,
+     "eps_revision_pct_7d": -0.06,
      "upgrade_ratio": 0.62,
      "momentum": "→횡보",
      "sparkline": [
       0.0,
-      -0.06,
-      0.01,
-      0.22,
-      0.22
+      -0.1,
+      0.03,
+      0.09,
+      0.15
      ]
     },
     {
      "sector": "Basic Materials",
      "sector_kr": "소재",
      "stocks": 19,
-     "eps_revision_pct_30d": -0.33,
-     "eps_revision_pct_7d": 0.01,
+     "eps_revision_pct_30d": -0.39,
+     "eps_revision_pct_7d": -0.08,
      "upgrade_ratio": 0.44,
      "momentum": "→횡보",
      "sparkline": [
       0.0,
       -0.46,
-      -0.35,
+      -0.22,
       -1.61,
       -0.58
      ]
@@ -3600,11 +3535,11 @@
      "ticker": "MPC",
      "name": "Marathon Petroleum Corporation",
      "sector": "에너지",
-     "market_cap_b": 133,
+     "market_cap_b": 128,
      "revenue_growth_pct": 53.7,
      "earnings_growth_pct": 348.0,
-     "eps_revision_30d": 51.98,
-     "eps_revision_90d": 111.28,
+     "eps_revision_30d": 46.34,
+     "eps_revision_90d": 121.34,
      "up_30d": 12.0,
      "down_30d": 0.0,
      "op_margin_q": [
@@ -3627,11 +3562,11 @@
      "ticker": "PSX",
      "name": "Phillips 66",
      "sector": "에너지",
-     "market_cap_b": 111,
+     "market_cap_b": 112,
      "revenue_growth_pct": 53.1,
      "earnings_growth_pct": 344.9,
-     "eps_revision_30d": 25.25,
-     "eps_revision_90d": 51.76,
+     "eps_revision_30d": 25.03,
+     "eps_revision_90d": 53.16,
      "up_30d": 10.0,
      "down_30d": 0.0,
      "op_margin_q": [
@@ -3657,8 +3592,8 @@
      "market_cap_b": 125,
      "revenue_growth_pct": 51.7,
      "earnings_growth_pct": 453.5,
-     "eps_revision_30d": 37.88,
-     "eps_revision_90d": 92.81,
+     "eps_revision_30d": 36.46,
+     "eps_revision_90d": 96.75,
      "up_30d": 9.0,
      "down_30d": 1.0,
      "op_margin_q": [
@@ -3732,41 +3667,14 @@
     },
     {
      "rank": 7,
-     "ticker": "PLTR",
-     "name": "Palantir Technologies Inc.",
-     "sector": "IT·기술",
-     "market_cap_b": 502,
-     "revenue_growth_pct": 92.8,
-     "earnings_growth_pct": 215.4,
-     "eps_revision_30d": 0.78,
-     "eps_revision_90d": 11.92,
-     "up_30d": 3.0,
-     "down_30d": 0.0,
-     "op_margin_q": [
-      26.8,
-      33.3,
-      40.9,
-      46.2,
-      47.1
-     ],
-     "eps_surprises": [
-      25.5,
-      8.6,
-      18.1,
-      18.5
-     ],
-     "next_earnings": "2026-11-02"
-    },
-    {
-     "rank": 8,
      "ticker": "CVX",
      "name": "Chevron Corporation",
      "sector": "에너지",
      "market_cap_b": 416,
      "revenue_growth_pct": 53.5,
      "earnings_growth_pct": 321.9,
-     "eps_revision_30d": 9.03,
-     "eps_revision_90d": 16.65,
+     "eps_revision_30d": 10.23,
+     "eps_revision_90d": 18.04,
      "up_30d": 6.0,
      "down_30d": 1.0,
      "op_margin_q": [
@@ -3785,15 +3693,69 @@
      "next_earnings": "2026-10-30"
     },
     {
+     "rank": 8,
+     "ticker": "PLTR",
+     "name": "Palantir Technologies Inc.",
+     "sector": "IT·기술",
+     "market_cap_b": 502,
+     "revenue_growth_pct": 92.8,
+     "earnings_growth_pct": 215.4,
+     "eps_revision_30d": 1.1,
+     "eps_revision_90d": 12.27,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "op_margin_q": [
+      26.8,
+      33.3,
+      40.9,
+      46.2,
+      47.1
+     ],
+     "eps_surprises": [
+      25.5,
+      8.6,
+      18.1,
+      18.5
+     ],
+     "next_earnings": "2026-11-02"
+    },
+    {
      "rank": 9,
+     "ticker": "STX",
+     "name": "Seagate Technology Holdings PLC",
+     "sector": "IT·기술",
+     "market_cap_b": 178,
+     "revenue_growth_pct": 48.5,
+     "earnings_growth_pct": 148.8,
+     "eps_revision_30d": 1.89,
+     "eps_revision_90d": 29.87,
+     "up_30d": 15.0,
+     "down_30d": 0.0,
+     "op_margin_q": [
+      23.8,
+      26.9,
+      29.9,
+      35.7,
+      43.1
+     ],
+     "eps_surprises": [
+      8.8,
+      9.6,
+      16.8,
+      12.1
+     ],
+     "next_earnings": "2026-10-27"
+    },
+    {
+     "rank": 10,
      "ticker": "WDC",
      "name": "Western Digital Corporation",
      "sector": "IT·기술",
      "market_cap_b": 149,
      "revenue_growth_pct": 43.8,
      "earnings_growth_pct": 984.1,
-     "eps_revision_30d": 0.25,
-     "eps_revision_90d": 24.03,
+     "eps_revision_30d": 0.93,
+     "eps_revision_90d": 22.85,
      "up_30d": 10.0,
      "down_30d": 0.0,
      "op_margin_q": [
@@ -3810,33 +3772,6 @@
       7.9
      ],
      "next_earnings": "2026-10-22"
-    },
-    {
-     "rank": 10,
-     "ticker": "P",
-     "name": "Everpure, Inc.",
-     "sector": "IT·기술",
-     "market_cap_b": 51,
-     "revenue_growth_pct": 37.7,
-     "earnings_growth_pct": 50.0,
-     "eps_revision_30d": 19.13,
-     "eps_revision_90d": 40.33,
-     "up_30d": 18.0,
-     "down_30d": 0.0,
-     "op_margin_q": [
-      0.6,
-      5.6,
-      8.2,
-      1.9,
-      5.3
-     ],
-     "eps_surprises": [
-      -0.7,
-      7.0,
-      18.9,
-      21.0
-     ],
-     "next_earnings": "2026-08-26"
     }
    ]
   },
@@ -3846,13 +3781,13 @@
      "rank": 1,
      "ticker": "SPCX",
      "name": "Space Exploration Technologies ",
-     "market_cap_b": 2141.7,
+     "market_cap_b": 2143.0,
      "turnaround_quarter": "이번 분기 흑자 예상",
      "trailing_eps": -1.1,
-     "consensus_eps": 1.93,
-     "analyst_count": 27,
+     "consensus_eps": 1.99,
+     "analyst_count": 29,
      "current_price": 162.57,
-     "projected_pe": 84.4,
+     "projected_pe": 81.7,
      "sig_proj_pe": "red",
      "recent_eps": [
       -1.27,
@@ -3900,10 +3835,10 @@
      "market_cap_b": 47.3,
      "turnaround_quarter": "다음 분기 흑자 예상",
      "trailing_eps": -3.84,
-     "consensus_eps": 3.05,
+     "consensus_eps": 3.14,
      "analyst_count": 33,
      "current_price": 179.39,
-     "projected_pe": 58.8,
+     "projected_pe": 57.2,
      "sig_proj_pe": "red",
      "recent_eps": [
       -1.49,
@@ -3918,7 +3853,7 @@
      "turnaround_quarter": "내년 연간 흑자 예상",
      "trailing_eps": -0.27,
      "consensus_eps": 0.06,
-     "analyst_count": 20,
+     "analyst_count": 21,
      "current_price": 68.21,
      "projected_pe": 1158.5,
      "sig_proj_pe": "red",
@@ -4201,7 +4136,7 @@
      "ticker": "ASML",
      "eps_growth_last_q": 28.5,
      "eps_growth_this_fy": 55.2,
-     "eps_growth_next_fy": 35.4,
+     "eps_growth_next_fy": 35.7,
      "trend": "둔화 전망"
     },
     {
@@ -4222,7 +4157,7 @@
      "ticker": "AMAT",
      "eps_growth_last_q": 42.8,
      "eps_growth_this_fy": 35.7,
-     "eps_growth_next_fy": 44.4,
+     "eps_growth_next_fy": 44.5,
      "trend": "가속 전망"
     }
    ],
@@ -4329,6 +4264,1512 @@
    "sec": true
   }
  },
- "finalized_at": "2026-10-11 11:00",
- "finalize_errors": []
+ "finalized_at": null,
+ "ranking": {
+  "cutoff_final": 72.6,
+  "eligible_count": 500,
+  "universe": 518,
+  "rows": [
+   {
+    "ticker": "SPCX",
+    "name": "Space Exploration Technologies ",
+    "sector": "Industrials",
+    "industry": "Aerospace & Defense",
+    "score": 67.0,
+    "quality": 60,
+    "health": 75,
+    "value": 34,
+    "revisions": 95,
+    "eligible": true,
+    "bonus": 18,
+    "bonus_items": [
+     "M1 대가 상위보유: Cathie Wood (+3)",
+     "M1 대가 최근분기 매수: Cathie Wood (+5)",
+     "흑자전환 임박(다음 분기 EPS 컨센서스 흑자) (+10)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 85.0,
+    "cyclical": false,
+    "metrics": {
+     "price": 162.57,
+     "forward_pe": 81.731255,
+     "peg": null,
+     "op_margin": -0.01804,
+     "gross_margin": 0.51875,
+     "revenue_growth": 0.919,
+     "growth_1y": 150.1064,
+     "rev_30d": 13.857005626458088,
+     "rev_90d": 206.87369620215713,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "analysts": 29.0
+    },
+    "rank": 1,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "EXPE",
+    "name": "Expedia Group, Inc.",
+    "sector": "Consumer Cyclical",
+    "industry": "Travel Services",
+    "score": 79.6,
+    "quality": 75,
+    "health": 73,
+    "value": 85,
+    "revisions": 83,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 79.6,
+    "cyclical": true,
+    "metrics": {
+     "price": 274.22,
+     "forward_pe": 11.174254,
+     "peg": 0.6802,
+     "op_margin": 0.1898,
+     "gross_margin": 0.90433,
+     "revenue_growth": 0.14,
+     "growth_1y": 0.1675,
+     "rev_30d": 0.6588675583097632,
+     "rev_90d": 6.174383167396693,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "analysts": 35.0
+    },
+    "rank": 2,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "CPAY",
+    "name": "Corpay, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "score": 70.7,
+    "quality": 83,
+    "health": 45,
+    "value": 84,
+    "revisions": 67,
+    "eligible": true,
+    "bonus": 5,
+    "bonus_items": [
+     "M1 대가 최근분기 매수: Chase Coleman (+5)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 75.7,
+    "cyclical": false,
+    "metrics": {
+     "price": 397.92,
+     "forward_pe": 12.62992,
+     "peg": 0.7512,
+     "op_margin": 0.4692,
+     "gross_margin": 0.80539,
+     "revenue_growth": 0.215,
+     "growth_1y": 0.1492,
+     "rev_30d": 0.18481290714009607,
+     "rev_90d": 2.9409227721064153,
+     "up_30d": 13.0,
+     "down_30d": 2.0,
+     "analysts": 15.0
+    },
+    "rank": 3,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "RDDT",
+    "name": "Reddit, Inc.",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "score": 75.2,
+    "quality": 85,
+    "health": 77,
+    "value": 53,
+    "revisions": 85,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 75.2,
+    "cyclical": false,
+    "metrics": {
+     "price": 159.91,
+     "forward_pe": 16.506855,
+     "peg": 0.7581,
+     "op_margin": 0.28788,
+     "gross_margin": 0.91442,
+     "revenue_growth": 0.611,
+     "growth_1y": 0.2622,
+     "rev_30d": 0.7007167745712737,
+     "rev_90d": 9.217640313671334,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "analysts": 33.0
+    },
+    "rank": 4,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "ADBE",
+    "name": "Adobe Inc.",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "score": 74.6,
+    "quality": 81,
+    "health": 69,
+    "value": 93,
+    "revisions": 58,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 74.6,
+    "cyclical": false,
+    "metrics": {
+     "price": 242.27,
+     "forward_pe": 8.754654,
+     "peg": 0.5816,
+     "op_margin": 0.34822,
+     "gross_margin": 0.89252996,
+     "revenue_growth": 0.129,
+     "growth_1y": 0.1304,
+     "rev_30d": 0.6368426105601238,
+     "rev_90d": 0.5259276749550366,
+     "up_30d": 21.0,
+     "down_30d": 10.0,
+     "analysts": 32.0
+    },
+    "rank": 5,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "KEYS",
+    "name": "Keysight Technologies Inc.",
+    "sector": "Technology",
+    "industry": "Scientific & Technical Instruments",
+    "score": 74.0,
+    "quality": 76,
+    "health": 69,
+    "value": 55,
+    "revisions": 91,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 74.0,
+    "cyclical": false,
+    "metrics": {
+     "price": 382.75,
+     "forward_pe": 27.468643,
+     "peg": 0.7007,
+     "op_margin": 0.25677,
+     "gross_margin": 0.63278997,
+     "revenue_growth": 0.365,
+     "growth_1y": 0.21440001,
+     "rev_30d": 2.0817719677272595,
+     "rev_90d": 17.524012428772405,
+     "up_30d": 12.0,
+     "down_30d": 0.0,
+     "analysts": 12.0
+    },
+    "rank": 6,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "MPC",
+    "name": "Marathon Petroleum Corporation",
+    "sector": "Energy",
+    "industry": "Oil & Gas Refining & Marketing",
+    "score": 70.3,
+    "quality": 41,
+    "health": 53,
+    "value": 83,
+    "revisions": 96,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 73.3,
+    "cyclical": true,
+    "metrics": {
+     "price": 455.03,
+     "forward_pe": 8.711596,
+     "peg": 0.8956,
+     "op_margin": 0.13561,
+     "gross_margin": 0.12819,
+     "revenue_growth": 0.537,
+     "growth_1y": -0.13949999,
+     "rev_30d": 46.33540101210827,
+     "rev_90d": 121.34461117302813,
+     "up_30d": 12.0,
+     "down_30d": 0.0,
+     "analysts": 18.0
+    },
+    "rank": 7,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "ALL",
+    "name": "Allstate Corporation (The)",
+    "sector": "Financial Services",
+    "industry": "Insurance - Property & Casualty",
+    "score": 72.6,
+    "quality": 53,
+    "health": 69,
+    "value": 79,
+    "revisions": 86,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 72.6,
+    "cyclical": false,
+    "metrics": {
+     "price": 229.43,
+     "forward_pe": 8.201271,
+     "peg": 1.6878,
+     "op_margin": 0.22827,
+     "gross_margin": 0.36800998,
+     "revenue_growth": 0.118,
+     "growth_1y": -0.20709999,
+     "rev_30d": 1.6095427965389528,
+     "rev_90d": 6.013057668092157,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "analysts": 22.0
+    },
+    "rank": 8,
+    "status": "심층분석 후보 선정"
+   },
+   {
+    "ticker": "PLTR",
+    "name": "Palantir Technologies Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "score": 68.9,
+    "quality": 92,
+    "health": 77,
+    "value": 16,
+    "revisions": 88,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 71.9,
+    "cyclical": false,
+    "metrics": {
+     "price": 209.05,
+     "forward_pe": 88.899185,
+     "peg": 1.8461,
+     "op_margin": 0.47120997,
+     "gross_margin": 0.84796,
+     "revenue_growth": 0.928,
+     "growth_1y": 0.4518,
+     "rev_30d": 1.0993263025748439,
+     "rev_90d": 12.273213399029835,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "analysts": 26.0
+    },
+    "rank": 9,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "MU",
+    "name": "Micron Technology, Inc.",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "score": 83.4,
+    "quality": 89,
+    "health": 72,
+    "value": 82,
+    "revisions": 87,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 15,
+    "penalty_items": [
+     "경기순환 업종 사이클 정점 할인(-15점): 현재 영업이익률 81% vs 최근 4년 평균 7%"
+    ],
+    "final": 71.4,
+    "cyclical": true,
+    "metrics": {
+     "price": 1029.0,
+     "forward_pe": 4.9870977,
+     "peg": 0.1598,
+     "op_margin": 0.80678004,
+     "gross_margin": 0.80716,
+     "revenue_growth": 3.793,
+     "growth_1y": 0.1713,
+     "rev_30d": 20.644658100117795,
+     "rev_90d": 26.31539283667373,
+     "up_30d": 4.0,
+     "down_30d": 1.0,
+     "analysts": 46.0
+    },
+    "rank": 10,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "CIEN",
+    "name": "Ciena Corporation",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "score": 68.3,
+    "quality": 64,
+    "health": 64,
+    "value": 44,
+    "revisions": 95,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 71.3,
+    "cyclical": false,
+    "metrics": {
+     "price": 449.77,
+     "forward_pe": 38.024807,
+     "peg": 0.5679,
+     "op_margin": 0.18076,
+     "gross_margin": 0.44072,
+     "revenue_growth": 0.37,
+     "growth_1y": 0.6507,
+     "rev_30d": 26.615221704858662,
+     "rev_90d": 28.442460018673003,
+     "up_30d": 7.0,
+     "down_30d": 0.0,
+     "analysts": 20.0
+    },
+    "rank": 11,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "WDAY",
+    "name": "Workday, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "score": 71.3,
+    "quality": 65,
+    "health": 68,
+    "value": 81,
+    "revisions": 71,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 71.3,
+    "cyclical": false,
+    "metrics": {
+     "price": 186.59,
+     "forward_pe": 14.100376,
+     "peg": 0.7031,
+     "op_margin": 0.11816,
+     "gross_margin": 0.75795,
+     "revenue_growth": 0.128,
+     "growth_1y": 0.19469999,
+     "rev_30d": 0.15318548612929167,
+     "rev_90d": 4.689640986693243,
+     "up_30d": 38.0,
+     "down_30d": 1.0,
+     "analysts": 38.0
+    },
+    "rank": 12,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "ANET",
+    "name": "Arista Networks, Inc.",
+    "sector": "Technology",
+    "industry": "Computer Hardware",
+    "score": 71.2,
+    "quality": 85,
+    "health": 76,
+    "value": 32,
+    "revisions": 89,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 71.2,
+    "cyclical": true,
+    "metrics": {
+     "price": 216.74,
+     "forward_pe": 41.546066,
+     "peg": 1.5225,
+     "op_margin": 0.45393002,
+     "gross_margin": 0.63004,
+     "revenue_growth": 0.377,
+     "growth_1y": 0.2674,
+     "rev_30d": 1.0964521305045347,
+     "rev_90d": 17.118585469452253,
+     "up_30d": 1.0,
+     "down_30d": 0.0,
+     "analysts": 29.0
+    },
+    "rank": 13,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "NXPI",
+    "name": "NXP Semiconductors N.V.",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "score": 70.9,
+    "quality": 75,
+    "health": 55,
+    "value": 86,
+    "revisions": 65,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 70.9,
+    "cyclical": true,
+    "metrics": {
+     "price": 227.52,
+     "forward_pe": 12.545968,
+     "peg": 0.4684,
+     "op_margin": 0.30406,
+     "gross_margin": 0.56102,
+     "revenue_growth": 0.195,
+     "growth_1y": 0.2042,
+     "rev_30d": 0.21994892542793698,
+     "rev_90d": 2.400306722485044,
+     "up_30d": 17.0,
+     "down_30d": 4.0,
+     "analysts": 29.0
+    },
+    "rank": 14,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "CVX",
+    "name": "Chevron Corporation",
+    "sector": "Energy",
+    "industry": "Oil & Gas Integrated",
+    "score": 64.8,
+    "quality": 47,
+    "health": 65,
+    "value": 56,
+    "revisions": 87,
+    "eligible": true,
+    "bonus": 6,
+    "bonus_items": [
+     "M1 대가 상위보유: Warren Buffett (+3)",
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 70.8,
+    "cyclical": true,
+    "metrics": {
+     "price": 211.98,
+     "forward_pe": 14.476116,
+     "peg": 0.8994,
+     "op_margin": 0.21866,
+     "gross_margin": 0.44267,
+     "revenue_growth": 0.535,
+     "growth_1y": -0.1347,
+     "rev_30d": 10.231044905521436,
+     "rev_90d": 18.0399837527751,
+     "up_30d": 6.0,
+     "down_30d": 1.0,
+     "analysts": 24.0
+    },
+    "rank": 15,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "NTAP",
+    "name": "NetApp, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "score": 70.4,
+    "quality": 75,
+    "health": 73,
+    "value": 40,
+    "revisions": 90,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 70.4,
+    "cyclical": false,
+    "metrics": {
+     "price": 237.15,
+     "forward_pe": 21.258228,
+     "peg": 2.1387,
+     "op_margin": 0.26667,
+     "gross_margin": 0.70625997,
+     "revenue_growth": 0.299,
+     "growth_1y": 0.1149,
+     "rev_30d": 2.2875061891401236,
+     "rev_90d": 13.327888237373687,
+     "up_30d": 18.0,
+     "down_30d": 0.0,
+     "analysts": 16.0
+    },
+    "rank": 16,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "SCHW",
+    "name": "Charles Schwab Corporation (The",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "score": 70.4,
+    "quality": 77,
+    "health": 50,
+    "value": 61,
+    "revisions": 87,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 70.4,
+    "cyclical": false,
+    "metrics": {
+     "price": 96.7,
+     "forward_pe": 12.202616,
+     "peg": 0.8418,
+     "op_margin": 0.52277,
+     "gross_margin": 0.97495,
+     "revenue_growth": 0.209,
+     "growth_1y": 0.22399999,
+     "rev_30d": 1.540040541544833,
+     "rev_90d": 6.483875302338077,
+     "up_30d": 4.0,
+     "down_30d": 0.0,
+     "analysts": 21.0
+    },
+    "rank": 17,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "EOG",
+    "name": "EOG Resources, Inc.",
+    "sector": "Energy",
+    "industry": "Oil & Gas E&P",
+    "score": 70.3,
+    "quality": 66,
+    "health": 68,
+    "value": 65,
+    "revisions": 80,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 70.3,
+    "cyclical": true,
+    "metrics": {
+     "price": 148.16,
+     "forward_pe": 9.612278,
+     "peg": 1.3513,
+     "op_margin": 0.40717998,
+     "gross_margin": 0.62636,
+     "revenue_growth": 0.587,
+     "growth_1y": -0.1189,
+     "rev_30d": 6.971130823907597,
+     "rev_90d": 5.071347889897999,
+     "up_30d": 8.0,
+     "down_30d": 2.0,
+     "analysts": 28.0
+    },
+    "rank": 18,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "CF",
+    "name": "CF Industries Holdings, Inc.",
+    "sector": "Basic Materials",
+    "industry": "Agricultural Inputs",
+    "score": 70.2,
+    "quality": 59,
+    "health": 67,
+    "value": 90,
+    "revisions": 66,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 70.2,
+    "cyclical": true,
+    "metrics": {
+     "price": 111.54,
+     "forward_pe": 10.069295,
+     "peg": 0.603,
+     "op_margin": 0.49325,
+     "gross_margin": 0.42486,
+     "revenue_growth": 0.176,
+     "growth_1y": -0.2535,
+     "rev_30d": 4.9178897024733566,
+     "rev_90d": 1.2335449611834477,
+     "up_30d": 0.0,
+     "down_30d": 0.0,
+     "analysts": 20.0
+    },
+    "rank": 19,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "FSLR",
+    "name": "First Solar, Inc.",
+    "sector": "Technology",
+    "industry": "Solar",
+    "score": 70.0,
+    "quality": 63,
+    "health": 73,
+    "value": 94,
+    "revisions": 54,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 70.0,
+    "cyclical": false,
+    "metrics": {
+     "price": 177.82,
+     "forward_pe": 7.670213,
+     "peg": 0.3571,
+     "op_margin": 0.42641997,
+     "gross_margin": 0.44015998,
+     "revenue_growth": -0.037,
+     "growth_1y": 0.3188,
+     "rev_30d": 0.033866489044205715,
+     "rev_90d": -0.6536029130346533,
+     "up_30d": 4.0,
+     "down_30d": 0.0,
+     "analysts": 30.0
+    },
+    "rank": 20,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "HPE",
+    "name": "Hewlett Packard Enterprise Comp",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "score": 69.2,
+    "quality": 51,
+    "health": 50,
+    "value": 76,
+    "revisions": 91,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 69.2,
+    "cyclical": false,
+    "metrics": {
+     "price": 73.46,
+     "forward_pe": 15.600644,
+     "peg": 0.498,
+     "op_margin": 0.12560001,
+     "gross_margin": 0.36622003,
+     "revenue_growth": 0.337,
+     "growth_1y": 0.2307,
+     "rev_30d": 2.60098792655265,
+     "rev_90d": 16.600138668779707,
+     "up_30d": 18.0,
+     "down_30d": 0.0,
+     "analysts": 21.0
+    },
+    "rank": 21,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "APH",
+    "name": "Amphenol Corporation",
+    "sector": "Technology",
+    "industry": "Electronic Components",
+    "score": 69.1,
+    "quality": 71,
+    "health": 57,
+    "value": 50,
+    "revisions": 91,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 69.1,
+    "cyclical": true,
+    "metrics": {
+     "price": 87.24,
+     "forward_pe": 26.194736,
+     "peg": 0.9304,
+     "op_margin": 0.29779,
+     "gross_margin": 0.38952,
+     "revenue_growth": 0.55,
+     "growth_1y": 0.24069999,
+     "rev_30d": 2.7919925431638393,
+     "rev_90d": 16.130202067751107,
+     "up_30d": 5.0,
+     "down_30d": 0.0,
+     "analysts": 19.0
+    },
+    "rank": 22,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "ASML",
+    "name": "ASML Holding N.V. - New York Re",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "score": 68.9,
+    "quality": 80,
+    "health": 73,
+    "value": 33,
+    "revisions": 87,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 68.9,
+    "cyclical": true,
+    "metrics": {
+     "price": 1780.34,
+     "forward_pe": 30.574593,
+     "peg": 1.5764,
+     "op_margin": 0.37057,
+     "gross_margin": 0.52733004,
+     "revenue_growth": 0.213,
+     "growth_1y": 0.35669997,
+     "rev_30d": 0.601751699894413,
+     "rev_90d": 19.284639287871645,
+     "up_30d": 4.0,
+     "down_30d": 0.0,
+     "analysts": 16.0
+    },
+    "rank": 23,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "TXN",
+    "name": "Texas Instruments Incorporated",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "score": 68.8,
+    "quality": 79,
+    "health": 63,
+    "value": 46,
+    "revisions": 83,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 68.8,
+    "cyclical": true,
+    "metrics": {
+     "price": 283.74,
+     "forward_pe": 26.655142,
+     "peg": 0.9708,
+     "op_margin": 0.42576998,
+     "gross_margin": 0.58325,
+     "revenue_growth": 0.228,
+     "growth_1y": 0.2544,
+     "rev_30d": 0.3206771941983018,
+     "rev_90d": 14.240214841129637,
+     "up_30d": 23.0,
+     "down_30d": 0.0,
+     "analysts": 31.0
+    },
+    "rank": 24,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "ADI",
+    "name": "Analog Devices, Inc.",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "score": 68.7,
+    "quality": 78,
+    "health": 60,
+    "value": 57,
+    "revisions": 77,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 68.7,
+    "cyclical": true,
+    "metrics": {
+     "price": 406.19,
+     "forward_pe": 24.846283,
+     "peg": 0.5757,
+     "op_margin": 0.39503,
+     "gross_margin": 0.65800005,
+     "revenue_growth": 0.396,
+     "growth_1y": 0.2678,
+     "rev_30d": 0.06941392367406901,
+     "rev_90d": 10.600014883670596,
+     "up_30d": 23.0,
+     "down_30d": 0.0,
+     "analysts": 32.0
+    },
+    "rank": 25,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "LLY",
+    "name": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - General",
+    "score": 63.6,
+    "quality": 88,
+    "health": 59,
+    "value": 33,
+    "revisions": 72,
+    "eligible": true,
+    "bonus": 5,
+    "bonus_items": [
+     "M1 대가 최근분기 매수: Cathie Wood (+5)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 68.6,
+    "cyclical": false,
+    "metrics": {
+     "price": 1179.27,
+     "forward_pe": 24.754045,
+     "peg": 1.1368,
+     "op_margin": 0.54222,
+     "gross_margin": 0.83399004,
+     "revenue_growth": 0.477,
+     "growth_1y": 0.3316,
+     "rev_30d": 0.8069774110233053,
+     "rev_90d": 6.291492318879673,
+     "up_30d": 4.0,
+     "down_30d": 2.0,
+     "analysts": 29.0
+    },
+    "rank": 26,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "FIX",
+    "name": "Comfort Systems USA, Inc.",
+    "sector": "Industrials",
+    "industry": "Engineering & Construction",
+    "score": 68.4,
+    "quality": 65,
+    "health": 73,
+    "value": 53,
+    "revisions": 81,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 68.4,
+    "cyclical": false,
+    "metrics": {
+     "price": 1715.69,
+     "forward_pe": 28.510025,
+     "peg": 0.5431,
+     "op_margin": 0.17062001,
+     "gross_margin": 0.25661,
+     "revenue_growth": 0.503,
+     "growth_1y": 0.22799999,
+     "rev_30d": 0.22603890960375436,
+     "rev_90d": 13.126778694708074,
+     "up_30d": 7.0,
+     "down_30d": 0.0,
+     "analysts": 8.0
+    },
+    "rank": 27,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "MCHP",
+    "name": "Microchip Technology Incorporat",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "score": 68.1,
+    "quality": 68,
+    "health": 39,
+    "value": 73,
+    "revisions": 83,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 68.1,
+    "cyclical": true,
+    "metrics": {
+     "price": 75.55,
+     "forward_pe": 16.482859,
+     "peg": 0.226,
+     "op_margin": 0.23958,
+     "gross_margin": 0.60194,
+     "revenue_growth": 0.38,
+     "growth_1y": 0.2571,
+     "rev_30d": 0.4030535688860114,
+     "rev_90d": 11.448683346706531,
+     "up_30d": 1.0,
+     "down_30d": 0.0,
+     "analysts": 25.0
+    },
+    "rank": 28,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "COP",
+    "name": "ConocoPhillips",
+    "sector": "Energy",
+    "industry": "Oil & Gas E&P",
+    "score": 67.6,
+    "quality": 53,
+    "health": 65,
+    "value": 56,
+    "revisions": 91,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 67.6,
+    "cyclical": true,
+    "metrics": {
+     "price": 134.1,
+     "forward_pe": 13.338679,
+     "peg": 1.0836,
+     "op_margin": 0.3151,
+     "gross_margin": 0.47574002,
+     "revenue_growth": 0.355,
+     "growth_1y": -0.078600004,
+     "rev_30d": 6.285938413492498,
+     "rev_90d": 12.956148816953982,
+     "up_30d": 5.0,
+     "down_30d": 0.0,
+     "analysts": 26.0
+    },
+    "rank": 29,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "DECK",
+    "name": "Deckers Outdoor Corporation",
+    "sector": "Consumer Cyclical",
+    "industry": "Footwear & Accessories",
+    "score": 67.4,
+    "quality": 55,
+    "health": 74,
+    "value": 81,
+    "revisions": 62,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 67.4,
+    "cyclical": false,
+    "metrics": {
+     "price": 82.89,
+     "forward_pe": 9.956016,
+     "peg": 0.9765,
+     "op_margin": 0.15233,
+     "gross_margin": 0.57804,
+     "revenue_growth": 0.057,
+     "growth_1y": 0.107700005,
+     "rev_30d": 0.28847570110132426,
+     "rev_90d": 0.5592978158807768,
+     "up_30d": 17.0,
+     "down_30d": 1.0,
+     "analysts": 22.0
+    },
+    "rank": 30,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "VLO",
+    "name": "Valero Energy Corporation",
+    "sector": "Energy",
+    "industry": "Oil & Gas Refining & Marketing",
+    "score": 64.3,
+    "quality": 38,
+    "health": 67,
+    "value": 57,
+    "revisions": 90,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 67.3,
+    "cyclical": true,
+    "metrics": {
+     "price": 433.75,
+     "forward_pe": 10.054777,
+     "peg": 1.8505,
+     "op_margin": 0.12269,
+     "gross_margin": 0.16118999,
+     "revenue_growth": 0.517,
+     "growth_1y": -0.1409,
+     "rev_30d": 36.457699368998554,
+     "rev_90d": 96.74956637624632,
+     "up_30d": 9.0,
+     "down_30d": 1.0,
+     "analysts": 19.0
+    },
+    "rank": 31,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "GOOG",
+    "name": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "score": 64.2,
+    "quality": 72,
+    "health": 73,
+    "value": 33,
+    "revisions": 78,
+    "eligible": true,
+    "bonus": 8,
+    "bonus_items": [
+     "M1 대가 상위보유: Warren Buffett, Bill Ackman (+3)",
+     "M1 대가 최근분기 매수: Warren Buffett, Cathie Wood (+5)"
+    ],
+    "penalty": 5,
+    "penalty_items": [
+     "M1 대가 최근분기 매도(-5점): Bill Ackman"
+    ],
+    "final": 67.2,
+    "cyclical": false,
+    "metrics": {
+     "price": 347.86,
+     "forward_pe": 22.865774,
+     "peg": 1.1971,
+     "op_margin": 0.34033,
+     "gross_margin": 0.60897,
+     "revenue_growth": 0.242,
+     "growth_1y": 0.2564,
+     "rev_30d": 1.2901348659330283,
+     "rev_90d": 4.583974102058734,
+     "up_30d": 5.0,
+     "down_30d": 1.0,
+     "analysts": 14.0
+    },
+    "rank": 32,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "AMAT",
+    "name": "Applied Materials, Inc.",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "score": 64.1,
+    "quality": 73,
+    "health": 71,
+    "value": 44,
+    "revisions": 69,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M1 대가 상위보유: Chase Coleman (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 67.1,
+    "cyclical": true,
+    "metrics": {
+     "price": 507.03,
+     "forward_pe": 27.438263,
+     "peg": 0.8297,
+     "op_margin": 0.33736,
+     "gross_margin": 0.49398,
+     "revenue_growth": 0.248,
+     "growth_1y": 0.44529998,
+     "rev_30d": 0.13086033490493437,
+     "rev_90d": 10.931857038573847,
+     "up_30d": 3.0,
+     "down_30d": 1.0,
+     "analysts": 36.0
+    },
+    "rank": 33,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "CSCO",
+    "name": "Cisco Systems, Inc.",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "score": 67.1,
+    "quality": 66,
+    "health": 62,
+    "value": 55,
+    "revisions": 81,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 67.1,
+    "cyclical": false,
+    "metrics": {
+     "price": 118.39,
+     "forward_pe": 21.062387,
+     "peg": 0.9812,
+     "op_margin": 0.27719,
+     "gross_margin": 0.64524,
+     "revenue_growth": 0.176,
+     "growth_1y": 0.0923,
+     "rev_30d": 0.3330798641976573,
+     "rev_90d": 7.135546216084854,
+     "up_30d": 2.0,
+     "down_30d": 0.0,
+     "analysts": 25.0
+    },
+    "rank": 34,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "CRM",
+    "name": "Salesforce, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "score": 66.8,
+    "quality": 60,
+    "health": 47,
+    "value": 83,
+    "revisions": 72,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 66.8,
+    "cyclical": false,
+    "metrics": {
+     "price": 229.13,
+     "forward_pe": 14.302121,
+     "peg": 0.7791,
+     "op_margin": 0.21375,
+     "gross_margin": 0.77282,
+     "revenue_growth": 0.108,
+     "growth_1y": -0.0438,
+     "rev_30d": 0.667252714661033,
+     "rev_90d": 3.2669475765879223,
+     "up_30d": 38.0,
+     "down_30d": 9.0,
+     "analysts": 54.0
+    },
+    "rank": 35,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "PSX",
+    "name": "Phillips 66",
+    "sector": "Energy",
+    "industry": "Oil & Gas Refining & Marketing",
+    "score": 63.8,
+    "quality": 34,
+    "health": 54,
+    "value": 63,
+    "revisions": 95,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 66.8,
+    "cyclical": true,
+    "metrics": {
+     "price": 278.18,
+     "forward_pe": 10.204486,
+     "peg": 0.8205,
+     "op_margin": 0.08529,
+     "gross_margin": 0.13098,
+     "revenue_growth": 0.531,
+     "growth_1y": -0.0828,
+     "rev_30d": 25.033585459342234,
+     "rev_90d": 53.15790390353611,
+     "up_30d": 10.0,
+     "down_30d": 0.0,
+     "analysts": 19.0
+    },
+    "rank": 36,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "ABNB",
+    "name": "Airbnb, Inc.",
+    "sector": "Consumer Cyclical",
+    "industry": "Travel Services",
+    "score": 66.5,
+    "quality": 75,
+    "health": 77,
+    "value": 35,
+    "revisions": 79,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 66.5,
+    "cyclical": true,
+    "metrics": {
+     "price": 165.87,
+     "forward_pe": 26.812515,
+     "peg": 1.4191,
+     "op_margin": 0.21009001,
+     "gross_margin": 0.82901,
+     "revenue_growth": 0.165,
+     "growth_1y": 0.1722,
+     "rev_30d": 0.6300612666937181,
+     "rev_90d": 3.1680035930239727,
+     "up_30d": 7.0,
+     "down_30d": 0.0,
+     "analysts": 39.0
+    },
+    "rank": 37,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "LRCX",
+    "name": "Lam Research Corporation",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "score": 68.4,
+    "quality": 76,
+    "health": 71,
+    "value": 35,
+    "revisions": 88,
+    "eligible": true,
+    "bonus": 3,
+    "bonus_items": [
+     "M1 대가 상위보유: Chase Coleman (+3)"
+    ],
+    "penalty": 5,
+    "penalty_items": [
+     "M1 대가 최근분기 매도(-5점): Chase Coleman"
+    ],
+    "final": 66.4,
+    "cyclical": true,
+    "metrics": {
+     "price": 318.84,
+     "forward_pe": 27.10268,
+     "peg": 1.4467,
+     "op_margin": 0.37390998,
+     "gross_margin": 0.50469,
+     "revenue_growth": 0.3,
+     "growth_1y": 0.24159999,
+     "rev_30d": 0.9177091343513143,
+     "rev_90d": 18.007926225288255,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "analysts": 31.0
+    },
+    "rank": 38,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "MMM",
+    "name": "3M Company",
+    "sector": "Industrials",
+    "industry": "Conglomerates",
+    "score": 66.3,
+    "quality": 55,
+    "health": 58,
+    "value": 71,
+    "revisions": 78,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 66.3,
+    "cyclical": false,
+    "metrics": {
+     "price": 159.96,
+     "forward_pe": 16.289322,
+     "peg": 1.6065,
+     "op_margin": 0.20354,
+     "gross_margin": 0.39408,
+     "revenue_growth": 0.025,
+     "growth_1y": 0.09819999,
+     "rev_30d": 0.427998134603114,
+     "rev_90d": 3.4517523714007616,
+     "up_30d": 3.0,
+     "down_30d": 0.0,
+     "analysts": 18.0
+    },
+    "rank": 39,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "EXE",
+    "name": "Expand Energy Corporation",
+    "sector": "Energy",
+    "industry": "Oil & Gas E&P",
+    "score": 66.2,
+    "quality": 44,
+    "health": 66,
+    "value": 81,
+    "revisions": 73,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 66.2,
+    "cyclical": true,
+    "metrics": {
+     "price": 88.22,
+     "forward_pe": 8.734653,
+     "peg": 0.8198,
+     "op_margin": 0.26323998,
+     "gross_margin": 0.47069,
+     "revenue_growth": -0.106,
+     "growth_1y": 0.102,
+     "rev_30d": 15.942028985507244,
+     "rev_90d": 10.466661489681213,
+     "up_30d": 3.0,
+     "down_30d": 4.0,
+     "analysts": 27.0
+    },
+    "rank": 40,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "CRCL",
+    "name": "Circle Internet Group, Inc.",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "score": 48.0,
+    "quality": 38,
+    "health": 77,
+    "value": 19,
+    "revisions": 60,
+    "eligible": true,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 48.0,
+    "cyclical": false,
+    "metrics": {
+     "price": 84.51,
+     "forward_pe": 59.846615,
+     "peg": null,
+     "op_margin": 0.04899,
+     "gross_margin": 0.21997999,
+     "revenue_growth": 0.066,
+     "growth_1y": 0.2628,
+     "rev_30d": 1.9748086230916224,
+     "rev_90d": -12.04949863432822,
+     "up_30d": 6.0,
+     "down_30d": 0.0,
+     "analysts": 24.0
+    },
+    "rank": 299,
+    "status": "순위 밖 (상위 8개 선정 완료 후)"
+   },
+   {
+    "ticker": "MSTR",
+    "name": "Strategy Inc",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "score": 42.6,
+    "quality": 36,
+    "health": 28,
+    "value": 50,
+    "revisions": 51,
+    "eligible": false,
+    "bonus": 0,
+    "bonus_items": [],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 42.6,
+    "cyclical": false,
+    "metrics": {
+     "price": 154.34,
+     "forward_pe": 3.1186097,
+     "peg": null,
+     "op_margin": -68.081116,
+     "gross_margin": 0.67600995,
+     "revenue_growth": 0.069,
+     "growth_1y": 3.8377,
+     "rev_30d": -4.707143461621636,
+     "rev_90d": 50.16053715263967,
+     "up_30d": 2.0,
+     "down_30d": 1.0,
+     "analysts": 15.0
+    },
+    "status": "기본 조건 미달: 영업이익률 적자 + 흑자전환 임박 조건 미충족"
+   },
+   {
+    "ticker": "NVDA",
+    "name": "NVIDIA Corporation",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "score": 79.2,
+    "quality": 89,
+    "health": 70,
+    "value": 61,
+    "revisions": 92,
+    "eligible": true,
+    "bonus": 11,
+    "bonus_items": [
+     "M1 대가 상위보유: Chase Coleman (+3)",
+     "M1 대가 최근분기 매수: Cathie Wood (+5)",
+     "M3 실적 개선 기업 (+3)"
+    ],
+    "penalty": 0,
+    "penalty_items": [],
+    "final": 90.2,
+    "cyclical": true,
+    "metrics": {
+     "price": 229.28,
+     "forward_pe": 14.406897,
+     "peg": 0.4791,
+     "op_margin": 0.66236997,
+     "gross_margin": 0.74674004,
+     "revenue_growth": 1.059,
+     "growth_1y": 0.709,
+     "rev_30d": 2.5487368435974886,
+     "rev_90d": 25.210952122817616,
+     "up_30d": 46.0,
+     "down_30d": 0.0,
+     "analysts": 59.0
+    },
+    "status": "보유 종목 (매주 자동 재점검)"
+   }
+  ]
+ }
 }
