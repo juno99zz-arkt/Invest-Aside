@@ -730,6 +730,7 @@ function simHtml(s) {
         </div>
         <div class="text-xs mt-2" style="color:var(--muted);">환율 ${s.fx_start.toLocaleString('ko-KR')}원 → ${s.fx_now.toLocaleString('ko-KR')}원 · 누적 비용 수수료 ${wonShort(c.fee)}·환전 ${wonShort(c.fx)} · 배당 ${wonShort(c.div)} · 현금이자 ${wonShort(c.interest)}</div>
       </div>
+      ${(s.pending || []).map(p => '<div class="card2 p-2 mb-3 text-xs" style="border-color:#f59e0b;line-height:1.6;">⏳ 체결 대기: ' + esc(p.signal_date) + ' 결정 → 다음 거래일 시가에 체결 예정 — ' + Object.entries(p.weights).map(([k, v]) => esc(k) + ' ' + v + '%').join(' · ') + ' · 현금 ' + (100 - Object.values(p.weights).reduce((a, b) => a + b, 0)) + '%</div>').join('')}
       ${allocHtml}
       <div class="mb-3 sim-chart-box"><canvas id="sim-chart"></canvas></div>
       <table class="mb-2">
