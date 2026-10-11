@@ -1,0 +1,6 @@
+{
+ "note": "실제 보유자산(선택). 채우면 대시보드가 '내 계좌의 공통 위험 노출'과 추천 종목 추가 시 변화를 계산합니다. 티커는 Yahoo 표기(예: 005930.KS, SOXX). shares(주식 수) 또는 value_krw(평가액) 중 하나 입력.",
+ "updated": null,
+ "cash_krw": 0,
+ "holdings": []
+}

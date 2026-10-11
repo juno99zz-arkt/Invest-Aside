@@ -70,13 +70,23 @@ def quant_scores(snaps):
     peg = df["peg"].where(df["peg"] > 0)
     breadth = (df["up_30d"].fillna(0) - df["down_30d"].fillna(0)) / (df["up_30d"].fillna(0) + df["down_30d"].fillna(0)).replace(0, float("nan"))
 
-    quality = (_rank(df["gross_margin"]) + _rank(df["op_margin"]) + _rank(df["roe"].clip(-1, 1))
-               + _rank(fcf_margin) + _rank(df["revenue_growth"]) + _rank(df["growth_1y"])) / 6
+    qp = {"gross": _rank(df["gross_margin"]), "op": _rank(df["op_margin"]), "roe": _rank(df["roe"].clip(-1, 1)),
+          "fcf_margin": _rank(fcf_margin), "rev_growth": _rank(df["revenue_growth"]), "eps_growth": _rank(df["growth_1y"])}
+    quality = sum(qp.values()) / 6
     fcf_positive = (fcf_margin > 0).astype(float).where(fcf_margin.notna())
-    health = (_rank(net_debt_ebitda, higher_better=False) + _rank(fcf_positive)) / 2
-    value = (_rank(fwd_pe, higher_better=False, by=df["sector"]) + _rank(fcf_yield, by=df["sector"])
-             + _rank(peg, higher_better=False)) / 3
+    hp = {"net_debt": _rank(net_debt_ebitda, higher_better=False), "fcf_positive": _rank(fcf_positive)}
+    health = sum(hp.values()) / 2
+    vp = {"fwd_pe": _rank(fwd_pe, higher_better=False, by=df["sector"]), "fcf_yield": _rank(fcf_yield, by=df["sector"]),
+          "peg": _rank(peg, higher_better=False)}
+    value = sum(vp.values()) / 3
     revisions = (_rank(df["rev_30d"]) + _rank(df["rev_90d"]) + _rank(breadth)) / 3
+    # 후보 점수 재계산(rescore)용 분포 — 검증된 FCF 값으로 해당 종목의 백분위를 다시 구한다
+    global LAST_DIST
+    LAST_DIST = {
+        "fcf_margin": {tk: (None if pd.isna(v) else round(float(v), 4)) for tk, v in fcf_margin.items()},
+        "fcf_yield": {tk: (None if pd.isna(v) else round(float(v), 5)) for tk, v in fcf_yield.items()},
+        "sector": {tk: s for tk, s in df["sector"].items()},
+    }
 
     w = WEIGHTS
     total = (quality * w["quality"] + health * w["health"] + value * w["value"] + revisions * w["revisions"]) * 100
@@ -97,7 +107,56 @@ def quant_scores(snaps):
             "fcf_margin_pct": None if pd.isna(fcf_margin[tk]) else round(float(fcf_margin[tk]) * 100, 1),
             "fcf_yield_pct": None if pd.isna(fcf_yield[tk]) else round(float(fcf_yield[tk]) * 100, 2),
             "net_debt_ebitda": None if pd.isna(net_debt_ebitda[tk]) else round(float(net_debt_ebitda[tk]), 2),
+            "parts": {"quality": {k: round(float(v[tk]), 4) for k, v in qp.items()},
+                      "health": {k: round(float(v[tk]), 4) for k, v in hp.items()},
+                      "value": {k: round(float(v[tk]), 4) for k, v in vp.items()},
+                      "revisions": round(float(revisions[tk]), 4)},
         }
+    return out
+
+
+LAST_DIST = {}
+
+
+def _pct_rank(values, v, higher_better=True):
+    """values(자기 자신 제외)에 v 를 넣었을 때의 백분위 (pandas rank(pct=True) 평균 순위와 같은 방식)."""
+    vals = [x for x in values if x is not None]
+    n = len(vals) + 1
+    less = sum(1 for x in vals if x < v)
+    eq = sum(1 for x in vals if x == v) + 1
+    r = less + (eq + 1) / 2
+    return r / n if higher_better else (n - r + 1) / n
+
+
+def rescore(tk, sc, dist, fcf_margin=None, fcf_yield=None):
+    """검증된 FCF 마진·수익률(비율, 0.42 = 42%)로 해당 종목의 기업의 질·재무·가격 매력과 총점 재계산.
+    sc: quant_scores 의 종목 dict(parts 포함). 반환: 새 dict (원래 값은 score_before 등으로 보존)."""
+    if not sc.get("parts") or not dist:
+        return sc
+    p = {k: dict(v) if isinstance(v, dict) else v for k, v in sc["parts"].items()}
+    others = lambda key: [v for t, v in dist.get(key, {}).items() if t != tk]
+    if fcf_margin is not None:
+        p["quality"]["fcf_margin"] = _pct_rank(others("fcf_margin"), fcf_margin)
+        p["health"]["fcf_positive"] = 1.0 if fcf_margin > 0 else 0.0
+    if fcf_yield is not None:
+        sector = dist.get("sector", {}).get(tk)
+        same = [v for t, v in dist.get("fcf_yield", {}).items() if t != tk and dist["sector"].get(t) == sector]
+        p["value"]["fcf_yield"] = _pct_rank(same, fcf_yield)
+    q = sum(p["quality"].values()) / 6
+    h = (p["health"]["net_debt"] + (sc["parts"]["health"]["fcf_positive"] if fcf_margin is None
+                                    else _pct_rank([1.0 if (v or 0) > 0 else 0.0 for t, v in dist["fcf_margin"].items()
+                                                    if t != tk and v is not None], p["health"]["fcf_positive"]))) / 2
+    v = sum(p["value"].values()) / 3
+    w = WEIGHTS
+    total = (q * w["quality"] + h * w["health"] + v * w["value"] + p["revisions"] * w["revisions"]) * 100
+    out = {**sc, "parts": p, "score": round(total, 1), "quality": round(q * 100), "health": round(h * 100),
+           "value": round(v * 100)}
+    out["score_before"] = sc.get("score_before", sc["score"])
+    out["rescored"] = {"fcf_margin": fcf_margin, "fcf_yield": fcf_yield}
+    if fcf_margin is not None:
+        out["fcf_margin_pct"] = round(fcf_margin * 100, 1)
+    if fcf_yield is not None:
+        out["fcf_yield_pct"] = round(fcf_yield * 100, 2)
     return out
 
 
@@ -106,7 +165,9 @@ def _signals(tk, m1, m3_tickers, m5, scores=None):
     """가산점 신호 [(설명, 점수)]."""
     out = []
     if m1:
-        gurus = [inv["investor"] for inv in m1["investors"] if any(r["ticker"] == tk for r in inv["top10"])]
+        # 자료 지연(다른 대가보다 이전 분기) 13F 는 가산점에서 제외
+        gurus = [inv["investor"] for inv in m1["investors"]
+                 if not inv.get("stale") and any(r["ticker"] == tk for r in inv["top10"])]
         if gurus:
             out.append(("M1 대가 상위보유: " + ", ".join(gurus), SIGNAL_POINTS["guru_top10"]))
         if m1.get("bought_by", {}).get(tk):
@@ -209,6 +270,8 @@ def fresh_analysis_reason(entry, snap, holding, today):
     """재분석이 필요하면 사유 문자열, 재사용 가능하면 None."""
     if not entry:
         return "첫 분석"
+    if not (entry.get("analysis") or {}).get("decision_table"):
+        return "판단표·데이터 검증 도입 전 분석 — 새 형식으로 재분석"
     if (date.fromisoformat(today) - date.fromisoformat(entry["analyzed_date"])).days >= REUSE_MAX_DAYS:
         return f"지난 분석 {REUSE_MAX_DAYS}일 경과"
     if entry.get("next_earnings") and entry["next_earnings"] <= today:
@@ -241,6 +304,8 @@ def decide(holdings, new_candidates, analyses, snaps, scores, today):
                               "reason": "이번 주 분석을 완료하지 못해 기존 판단을 유지합니다 (데이터·API 오류)."})
             continue
         status = a.get("thesis_status")
+        if a.get("alert_level") == "논리 붕괴":
+            status = "붕괴"
         own_status = status not in (None, "해당없음")
         if not own_status:  # 편입 전 후보 시절 분석을 재사용한 경우 기존 상태 유지
             status = h.get("thesis_status") or "유효"
@@ -249,14 +314,21 @@ def decide(holdings, new_candidates, analyses, snaps, scores, today):
             removed.append(h)
             decisions.append({"ticker": h["ticker"], "action": "제외", "reason": reason})
         else:
-            h = {**h, "last_review": today, "thesis_status": status, "conviction": a["conviction"]}
+            h = {**h, "last_review": today, "thesis_status": status, "conviction": a["conviction"],
+                 "alert_level": a.get("alert_level")}
             kept.append(h)
             note = " (논리 약화 — 관찰 강화)" if status == "약화" else ""
+            if a.get("alert_level") in ("추가 매수 중단", "비중 재검토"):
+                note += f" [경고: {a['alert_level']}]"
             decisions.append({"ticker": h["ticker"], "action": "유지", "reason": reason + note})
 
+    verified = lambda tk: (analyses[tk].get("evidence") or {}).get("data_verified", "검증 완료") == "검증 완료"
+    pending_check = [tk for tk in new_candidates
+                     if analyses.get(tk) and analyses[tk]["verdict"] == "편입 적합"
+                     and analyses[tk]["conviction"] >= MIN_CONVICTION_NEW and not verified(tk)]
     qualified = [tk for tk in new_candidates
                  if analyses.get(tk) and analyses[tk]["verdict"] == "편입 적합"
-                 and analyses[tk]["conviction"] >= MIN_CONVICTION_NEW]
+                 and analyses[tk]["conviction"] >= MIN_CONVICTION_NEW and verified(tk)]
     qualified.sort(key=lambda tk: (-analyses[tk]["conviction"], -scores[tk]["score"]))
 
     def sector_count(tk):
@@ -296,6 +368,11 @@ def decide(holdings, new_candidates, analyses, snaps, scores, today):
         if tk in qualified:
             continue
         a = analyses.get(tk)
+        if tk in pending_check:
+            decisions.append({"ticker": tk, "action": "보류", "reason":
+                              "편입 적합·확신도 기준은 충족했지만 핵심 수치가 '검증 대기' — 공식 자료 확인 후 재판단. "
+                              + a["verdict_reason"]})
+            continue
         if a is None:
             reason = "분석 실패로 판단 보류."
         elif a["verdict"] == "편입 적합":

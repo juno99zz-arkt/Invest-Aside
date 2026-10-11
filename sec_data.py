@@ -193,8 +193,12 @@ def fetch_13f():
     tick = _cusip_to_ticker(need)
     label = lambda c, h: tick.get(c) or h["name"].title()
 
+    # 서로 다른 분기를 섞지 않기: 가장 최근 분기말보다 오래된 13F 는 '자료 지연' → 가산점·공통 보유에서 제외
+    latest_q = max(p[2][2] for p in prepared)
     investors, bought_by, sold_by = [], {}, {}
     for investor, firm, filing, cur, prev, total, top, new, exited, bought, sold in prepared:
+        if filing[2] < latest_q:
+            bought, sold = [], []
         for c in bought:
             if c in tick:
                 bought_by.setdefault(tick[c], []).append(investor)
@@ -216,6 +220,7 @@ def fetch_13f():
         investors.append({
             "investor": investor, "firm": firm,
             "filed_date": filing[0], "report_date": filing[2],
+            "stale": filing[2] < latest_q, "latest_quarter": latest_q,
             "top10": rows,
             "new_positions": [label(c, h) for c, h in new],
             "exited_positions": [label(c, h) for c, h in exited],
@@ -224,6 +229,8 @@ def fetch_13f():
     # 2인 이상 상위 10에 공통 등장 → 등장 횟수·합산 비중 순
     count = {}
     for inv in investors:
+        if inv["stale"]:
+            continue
         for r in inv["top10"]:
             cnt, w = count.get(r["ticker"], (0, 0.0))
             count[r["ticker"]] = (cnt + 1, w + r["weight_pct"])
@@ -240,6 +247,7 @@ def _cik_map():
 
 def _parse_form4(xml_text):
     root = ET.fromstring(xml_text)
+    issuer = _find(root, "issuer")
     owner = _find(root, "reportingOwner")
     rel = _find(owner, "reportingOwnerRelationship")
     title = _text(rel, "officerTitle")
@@ -262,6 +270,8 @@ def _parse_form4(xml_text):
         post = _text(tx, "sharesOwnedFollowingTransaction")
         post_shares = float(post) if post else post_shares
     return {
+        "issuer_cik": (_text(issuer, "issuerCik") or "").lstrip("0"),
+        "issuer_symbol": (_text(issuer, "issuerTradingSymbol") or "").upper().replace(".", "-"),
         "insider_name": _text(owner, "rptOwnerName"),
         "title": title,
         "plan_10b5_1": plan,
@@ -313,26 +323,34 @@ def fetch_insider_trades(tickers, days=14, min_buy=100_000, min_sell=1_000_000):
                 break
             if form == "4":
                 doc = rec["primaryDocument"][i].split("/")[-1]
-                out.append((tk, f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/"
-                                f"{rec['accessionNumber'][i].replace('-', '')}/{doc}"))
+                out.append((tk, cik, f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/"
+                                     f"{rec['accessionNumber'][i].replace('-', '')}/{doc}"))
         return out
 
     with ThreadPoolExecutor(max_workers=6) as ex:
         urls = [u for lst in ex.map(filings_for, tickers) for u in lst]
     print(f"  Form 4 {len(urls)}건 파싱")
 
-    def parse(pair):
-        tk, url = pair
+    def parse(item):
+        tk, cik, url = item
         try:
-            return tk, _parse_form4(_get(url))
+            f = _parse_form4(_get(url))
         except Exception:
             return tk, None
+        # 회사가 '신고자'인 공시(예: Berkshire 명의의 Lennar 매수)는 제외 — 거래 대상(issuer)이 이 종목일 때만
+        if f.get("issuer_cik") and f["issuer_cik"] != cik.lstrip("0"):
+            return tk, None
+        return tk, f
 
-    buys, sells = [], []
+    buys, sells, seen = [], [], set()
     with ThreadPoolExecutor(max_workers=6) as ex:
         for tk, f in ex.map(parse, urls):
             if not f:
                 continue
+            key = (tk, f["insider_name"], f["date"], round(f["buy"][1]), round(f["sell"][1]))
+            if key in seen:            # 같은 공시가 중복 수집된 경우
+                continue
+            seen.add(key)
             if f["buy"][1] >= min_buy:
                 buys.append({"ticker": tk, "insider_name": f["insider_name"], "title": f["title"],
                              "transaction": "매수", "date": f["date"],

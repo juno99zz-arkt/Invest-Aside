@@ -201,9 +201,38 @@ def _signal_trend(arrow):
     return {"↑": "green", "→": "yellow", "↓": "red"}.get(arrow, "gray")
 
 
+def _median(xs):
+    xs = sorted(x for x in xs if x is not None and x > 0)
+    if not xs:
+        return None
+    n = len(xs)
+    return xs[n // 2] if n % 2 else (xs[n // 2 - 1] + xs[n // 2]) / 2
+
+
+def _relative_signals(rows):
+    """PER·추정 PER·PEG 신호등을 '같은 섹터 중앙값 대비'로 다시 매긴다.
+    ≤ 0.8배 녹색 · 0.8~1.25배 노랑 · > 1.25배 빨강. 같은 섹터가 3개 미만이면 목록 전체 중앙값."""
+    for key, sig in (("pe", "sig_pe"), ("fwd_pe", "sig_fwd_pe"), ("peg", "sig_peg")):
+        overall = _median([r.get(key) for r in rows])
+        for r in rows:
+            v = r.get(key)
+            peers = [x.get(key) for x in rows if x.get("sector") == r.get("sector")]
+            med = _median(peers) if len([p for p in peers if p]) >= 3 else overall
+            r.setdefault("sector_median", {})[key] = med and round(med, 1)
+            if v is None or not med:
+                r[sig] = "gray"
+            elif v <= 0:
+                r[sig] = "red"
+            else:
+                ratio = v / med
+                r[sig] = "green" if ratio <= 0.8 else "yellow" if ratio <= 1.25 else "red"
+    return rows
+
+
 def _fetch_metrics(tickers_list):
     """(ticker, name) 리스트 → 지표 + 신호등 결과 리스트. 공통 fetcher.
-    지표: PER (trailing) / 12개월 추정 PER (forward) / PEG / 매출↑ / EPS↑ / EPS추이
+    지표: PER (trailing) / 추정 PER (Yahoo forwardPE = 다음 회계연도 EPS 기준) / PEG / 매출↑ / EPS↑ / EPS추이
+    결측은 다른 값으로 채우지 않고 missing 목록에 표시. PER·PEG 신호등은 섹터 중앙값 대비.
     """
     try:
         import yfinance as yf
@@ -226,13 +255,13 @@ def _fetch_metrics(tickers_list):
                     elif delta < -0.05: arrow = "↓"
                     else: arrow = "→"
                 else:
-                    arrow = "→"
+                    arrow = None          # 미수집 (변화 없음 '→' 과 구분)
 
-                # trailingPE 가 없으면 forwardPE 로 대체 (적어도 한 값은 채움)
                 pe_r     = round(float(trailing_pe), 1) if trailing_pe else None
                 fwd_pe_r = round(float(forward_pe),  1) if forward_pe  else None
-                if pe_r is None and fwd_pe_r is not None:
-                    pe_r = fwd_pe_r
+                missing = [k for k, v in (("PER", pe_r), ("추정PER", fwd_pe_r), ("PEG", peg), ("매출↑", rev),
+                                          ("EPS↑", eps), ("추이", arrow)) if v is None]
+                same_pe = pe_r is not None and fwd_pe_r is not None and pe_r == fwd_pe_r
 
                 rev_pct = round(rev * 100, 1) if rev is not None else None
                 eps_pct = round(eps * 100, 1) if eps is not None else None
@@ -241,6 +270,9 @@ def _fetch_metrics(tickers_list):
                 result.append({
                     "ticker": ticker,
                     "name": name,
+                    "sector": info.get("sector"),
+                    "missing": missing,
+                    "same_pe": same_pe,
                     "pe": pe_r,
                     "fwd_pe": fwd_pe_r,
                     "peg": peg_r,
@@ -256,7 +288,7 @@ def _fetch_metrics(tickers_list):
                 })
             except Exception:
                 pass
-        return result or None
+        return _relative_signals(result) if result else None
     except ImportError:
         return None
 

@@ -18,8 +18,12 @@ IMPACTS = ["긍정", "부정", "불확실"]
 THESIS_STATUS = ["유효", "약화", "붕괴", "해당없음"]
 VERDICTS = ["편입 적합", "관찰", "부적합"]
 
-# ── 스키마 (analyst.py ANALYSIS_TOOL / MARKET_TOOL 과 동일 구조) ─────────────
-S, I = "str", "score"
+ALERT_LEVELS = ["정상", "추가 매수 중단", "비중 재검토", "논리 붕괴", "해당없음"]
+ACTIONS = ["신규 매수", "추가 매수", "보유", "추가 매수 보류", "축소 검토", "매수 보류", "관망"]
+IMPACT = ["강화", "약화", "변화 없음", "해당없음"]
+
+# ── 스키마 (analyst.py ANALYSIS_TOOL / MARKET_TOOL 기반 + 판단표·근거·데이터 검증) ─────────────
+S, I, N, NO = "str", "score", "num", "num?"
 ANALYSIS_SCHEMA = {
     "one_line_thesis": S,
     "quality": {"score": I, "moat": S, "growth_durability": S, "summary": S},
@@ -33,6 +37,19 @@ ANALYSIS_SCHEMA = {
     "verdict_reason": S,
     "conviction": I,
     "sources": [{"title": S, "url": S}],
+    # ── 2026-10 개선: 데이터 검증·근거 상태·경고 단계·판단표 ──
+    "alert_level": ALERT_LEVELS,
+    "data_checks": [{"metric": S, "dashboard_value": S, "verified_value": S, "source": S,
+                     "status": ["일치", "불일치(수정)", "확인불가"]}],
+    "verified_metrics": {"fcf_margin_pct": NO, "fcf_yield_pct": NO, "pe_ntm": NO, "pe_basis_note": S},
+    "evidence": {"data_verified": ["검증 완료", "검증 대기"], "bear_case_status": ["해소", "부분 해소", "미해소"],
+                  "estimate_dispersion": S, "reward_risk": S, "conviction_basis": S},
+    "decision_table": {
+        "action": ACTIONS, "buy_below": NO, "price_logic": S,
+        "scenarios": [{"name": ["약세", "기준", "강세"], "eps": N, "pe": N, "price": N, "horizon": S, "assumption": S}],
+        "next_checks": [{"metric": S, "threshold": S, "date": S}],
+        "change_triggers": [{"condition": S, "new_action": S}],
+    },
 }
 MARKET_SCHEMA = {
     "stance": STANCES,
@@ -41,7 +58,7 @@ MARKET_SCHEMA = {
     "key_change": S,
     "next_events": [{"date": S, "event": S}],
 }
-NEWS_ITEM = {"summary": S, "insight": S, "stars": I}
+NEWS_ITEM = {"summary": S, "insight": S, "stars": I, "fact": S, "interpretation": S, "thesis_impact": IMPACT}
 
 
 def _check(val, spec, path, errs):
@@ -51,7 +68,12 @@ def _check(val, spec, path, errs):
     elif spec == I:
         if not isinstance(val, int) or isinstance(val, bool) or not 1 <= val <= 5:
             errs.append(f"{path}: 1~5 정수여야 함 (현재 {val!r})")
-    elif isinstance(spec, list) and spec and all(isinstance(x, str) and x not in (S, I) for x in spec):
+    elif spec in (N, NO):
+        if val is None and spec == NO:
+            return
+        if not isinstance(val, (int, float)) or isinstance(val, bool):
+            errs.append(f"{path}: 숫자여야 함 (현재 {val!r})")
+    elif isinstance(spec, list) and spec and all(isinstance(x, str) and x not in (S, I, N, NO) for x in spec):
         if val not in spec:
             errs.append(f"{path}: {spec} 중 하나여야 함 (현재 {val!r})")
     elif isinstance(spec, list):
@@ -81,6 +103,24 @@ def validate_analysis(a, tk="?"):
             errs.append(f"{tk}.bear_case.thesis_breakers: 2개 이상 필요")
         if not any(str(s.get("url", "")).startswith("http") for s in a["sources"]):
             errs.append(f"{tk}.sources: 실제 URL 1개 이상 필요")
+        if len(a["data_checks"]) < 2:
+            errs.append(f"{tk}.data_checks: 핵심 수치 2개 이상 검증 필요")
+        sc = a["decision_table"]["scenarios"]
+        names = [x["name"] for x in sc]
+        if sorted(names) != sorted(["약세", "기준", "강세"]):
+            errs.append(f"{tk}.decision_table.scenarios: 약세·기준·강세 3개가 각 1번씩 필요 (현재 {names})")
+        else:
+            by = {x["name"]: x for x in sc}
+            for x in sc:
+                if x["eps"] and x["pe"] and abs(x["eps"] * x["pe"] / x["price"] - 1) > 0.15:
+                    errs.append(f"{tk}.{x['name']}: price({x['price']}) ≈ eps×pe({x['eps']}×{x['pe']}) 이어야 함")
+            if not by["약세"]["price"] < by["기준"]["price"] <= by["강세"]["price"]:
+                errs.append(f"{tk}.scenarios: 약세 < 기준 ≤ 강세 가격 순서여야 함")
+        if not a["decision_table"]["next_checks"] or not a["decision_table"]["change_triggers"]:
+            errs.append(f"{tk}.decision_table: next_checks·change_triggers 각 1개 이상 필요")
+        if any(c["status"] == "불일치(수정)" for c in a["data_checks"]) and a["evidence"]["data_verified"] == "검증 완료" \
+                and all(v is None for k, v in a["verified_metrics"].items() if k != "pe_basis_note"):
+            errs.append(f"{tk}: 불일치를 수정했다면 verified_metrics 에 확정값을 넣어야 함")
     return errs
 
 
@@ -107,7 +147,10 @@ def merge_news(news, candidates):
         item = {
             "title": (c or n).get("title", ""), "source": (c or n).get("source", ""),
             "url": (c or n).get("url", ""), "published": (c or n).get("published", ""),
+            "kind": (c or {}).get("kind") or n.get("kind") or "뉴스",
             "summary": n.get("summary", ""), "insight": n.get("insight", ""),
+            "fact": n.get("fact", ""), "interpretation": n.get("interpretation", ""),
+            "thesis_impact": n.get("thesis_impact", "해당없음"),
             "stars": n.get("stars", 3), "tickers": [t for t in (n.get("tickers") or []) if isinstance(t, str)],
         }
         if not item["url"].startswith("http") or item["url"] in seen:
@@ -140,6 +183,108 @@ def resolve_weights(proposed, kept, prev):
     return out, notes
 
 
+def _floor5(x):
+    return int(max(0, x) // 5 * 5)
+
+
+def scenario_of(a, name):
+    for s in ((a or {}).get("decision_table") or {}).get("scenarios", []):
+        if s.get("name") == name:
+            return s
+    return None
+
+
+def size_portfolio(kept, proposed, prev, analyses, prices, meta, stance, profile, allocation=None):
+    """종목 선택과 '얼마나' 를 분리한 비중 결정.
+    1) 자산배분: 스탠스 → 전체 주식 비중 (Agent 가 ±agent_adjust_max 안에서 조정 가능)
+    2) 종목 비중: Agent 제안(5% 단위) → 약세 시나리오 손실 상한 → 경고 단계 → 검증 대기 → 테마 상한
+    3) 남는 주식 비중은 코어 ETF(SPY), 나머지는 원화 현금
+    반환: (weights {ticker|SPY: %}, allocation 설명 dict)"""
+    from themes import themes_of
+    notes, per = [], {}
+    base_w, w_notes = resolve_weights(proposed, kept, prev)
+    notes += w_notes
+    max_single, max_loss = profile.get("max_single_weight", 25), profile.get("max_position_loss_pct", 6)
+    w = {}
+    for tk in kept:
+        a = analyses.get(tk) or {}
+        x = min(base_w[tk], max_single)
+        info = {"proposed": base_w[tk]}
+        bear, price = scenario_of(a, "약세"), prices.get(tk)
+        if bear and price:
+            down = bear["price"] / price - 1
+            info["downside_pct"] = round(down * 100, 1)
+            if down < 0:
+                cap = max(5, _floor5(max_loss / abs(down)))
+                info["risk_cap"] = cap
+                if x > cap:
+                    notes.append(f"{tk}: 약세 시나리오 {down * 100:.0f}% → 전체 손실 {max_loss}% 이내로 비중 {x}%→{cap}%")
+                    x = cap
+        else:
+            info["risk_cap"] = None
+            notes.append(f"{tk}: 약세 시나리오 없음 — 손실 상한 미적용")
+        lvl, pw = a.get("alert_level"), (prev or {}).get(tk)
+        if lvl == "비중 재검토":
+            new = max(5, _floor5((pw or x) / 2))
+            notes.append(f"{tk}: 경고 '비중 재검토' → {x}%→{min(x, new)}%")
+            x = min(x, new)
+        elif lvl == "추가 매수 중단" and pw is not None and x > pw:
+            notes.append(f"{tk}: 경고 '추가 매수 중단' → 지난 비중 {pw}% 유지")
+            x = pw
+        if (a.get("evidence") or {}).get("data_verified") == "검증 대기" and pw is not None and x > pw:
+            notes.append(f"{tk}: 핵심 수치 검증 대기 → 비중 확대 보류({pw}%)")
+            x = pw
+        w[tk] = x
+        per[tk] = info
+    # 테마 상한 (달러 자산은 제외 — 미국 주식 전략이므로)
+    max_theme = profile.get("max_theme_pct", 35)
+    for _ in range(40):
+        exp = {}
+        for tk, x in w.items():
+            for th in themes_of(tk, (meta.get(tk) or {}).get("sector"), (meta.get(tk) or {}).get("industry")):
+                if not th.startswith("달러"):
+                    exp.setdefault(th, []).append(tk)
+        over = [(th, tks) for th, tks in exp.items() if sum(w[t] for t in tks) > max_theme]
+        if not over:
+            break
+        th, tks = over[0]
+        big = max(tks, key=lambda t: w[t])
+        if w[big] <= 5:
+            break
+        w[big] -= 5
+        notes.append(f"테마 '{th}' 합계 {max_theme}% 초과 → {big} 5%p 축소")
+    # 자산배분
+    base_eq = profile.get("equity_by_stance", {}).get(stance, 60)
+    eq, reason = base_eq, f"스탠스 '{stance}' 기본 주식 비중 {base_eq}%"
+    adj = profile.get("agent_adjust_max", 10)
+    if allocation and isinstance(allocation.get("equity_pct"), (int, float)):
+        want = _floor5(allocation["equity_pct"] + 2.5)
+        if abs(want - base_eq) <= adj:
+            eq = want
+            reason += f" → Agent 조정 {eq}%: {allocation.get('reason', '')}"
+        else:
+            notes.append(f"Agent 제안 주식 비중 {allocation['equity_pct']}% 는 허용 범위(±{adj}%p) 밖 — 기본값 사용")
+    while sum(w.values()) > eq:
+        big = max(w, key=lambda t: w[t])
+        w[big] -= 5
+        notes.append(f"개별주 합계가 주식 비중 {eq}% 초과 → {big} 5%p 축소")
+    w = {t: x for t, x in w.items() if x > 0}
+    stock = sum(w.values())
+    core = eq - stock
+    core_tk = profile.get("core_etf", "SPY")
+    weights = dict(w)
+    if core > 0:
+        weights[core_tk] = core
+    for tk, info in per.items():
+        info["final"] = w.get(tk, 0)
+        if info.get("downside_pct") is not None:
+            info["portfolio_impact_pct"] = round(info["final"] * info["downside_pct"] / 100, 1)
+    alloc = {"stance": stance, "equity_pct": eq, "stock_pct": stock, "core_etf": core_tk, "core_pct": max(core, 0),
+             "cash_pct": 100 - eq, "reason": reason, "notes": notes, "per_stock": per,
+             "rules": {k: profile.get(k) for k in ("max_position_loss_pct", "max_single_weight", "max_theme_pct")}}
+    return weights, alloc
+
+
 def load_result(request, result):
     """결과 파일 검증 → (market_brief | None, {ticker: analysis | None}, 오류 목록)."""
     errors = []
@@ -156,8 +301,10 @@ def load_result(request, result):
         mb = {**{k: mb[k] for k in MARKET_SCHEMA}, "news": news, "news_source": "aside"}
 
     analyses = {}
-    wanted = [d["ticker"] for d in request.get("to_analyze", [])]
     got = result.get("analyses") or {}
+    # 요청된 종목 + (재사용 대상이었지만 새 스키마로 다시 분석해 온 종목)
+    wanted = [d["ticker"] for d in request.get("to_analyze", [])]
+    wanted += [tk for tk in got if tk not in wanted and tk in {d["ticker"] for d in request.get("dossiers", [])}]
     for tk in wanted:
         a = got.get(tk)
         if a is None:
