@@ -119,28 +119,22 @@
   .kv { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid #1e2340; }
   .kv span:first-child { color: var(--muted); }
 
-  /* ── 반응형: 스마트폰은 기존 480px 한 줄, 웹(960px↑)은 넓게 2단 ── */
+  /* ── 반응형: 스마트폰은 기존 480px, 웹(960px↑)은 넓고 크게 — 모두 한 줄로 쭉 ── */
   .dash { display: flex; flex-direction: column; }
   .dcol { display: contents; }
+  .sim-chart-box { height: 180px; }
   .o0{order:0} .o1{order:1} .o2{order:2} .o3{order:3} .o4{order:4} .o5{order:5} .o6{order:6} .o7{order:7} .o8{order:8}
   @media (min-width: 960px) {
     html { font-size: 17px; }
-    .app-wrapper { max-width: 1280px; }
+    .app-wrapper { max-width: 1040px; }
     .app-wrapper.px-3 { padding-left: 24px; padding-right: 24px; }
-    .dash { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 0 18px; align-items: start; }
-    .dcol { display: block; }
-    .dfull { grid-column: 1 / -1; }
-    /* 다른 탭: 목록형은 2열, 표(🇺🇸50·🇰🇷50)는 전체 폭 */
-    #news-content, #m2-content, #m3-content, #m4-content, #m5-content, #m6-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 14px; align-items: start; }
-    #news-content > :first-child, #m2-content > .card, #m3-content > .card, #m4-content > .card, #m5-content > .card, #m5-content > .text-xs { grid-column: 1 / -1; }
-    #m1-content { column-count: 2; column-gap: 18px; }
-    #m1-content > * { break-inside: avoid; }
     .bottom-nav .app-wrapper { max-width: 960px; }
     .sheet-inner { max-width: 860px; }
     .rep-text { font-size: 14px; }
     .toast { max-width: 440px; }
     td { font-size: 14px; }
     th { font-size: 12px; }
+    .sim-chart-box { height: 260px; }
   }
 </style>
 </head>
@@ -609,7 +603,7 @@ function simHtml(s) {
         </div>
         <div class="text-xs mt-2" style="color:var(--muted);">환율 ${s.fx_start.toLocaleString('ko-KR')}원 → ${s.fx_now.toLocaleString('ko-KR')}원 (USD/KRW)</div>
       </div>
-      <div style="height:180px;" class="mb-3"><canvas id="sim-chart"></canvas></div>
+      <div class="mb-3 sim-chart-box"><canvas id="sim-chart"></canvas></div>
       <table class="mb-2">
         <thead><tr><th>보유 종목</th><th style="text-align:right;">평가액·수익률</th><th style="text-align:right;">비중</th></tr></thead>
         <tbody>${rows}
@@ -805,7 +799,7 @@ function loadSummary(d) {
       <div class="text-xs mb-3" style="color:var(--muted);">브리핑 텍스트 (복사용)</div>
       <div class="card2 p-4" style="white-space:pre-line;font-size:13px;line-height:1.8;">${esc(d.brief_text)}</div>
     </div>`;
-  // 스마트폰: 한 줄(원래 순서) / 웹(960px↑): 왼쪽 추천·결정·이력, 오른쪽 시뮬레이션·메시지·섹터·브리핑
+  // 웹·스마트폰 모두 한 줄 (order 로 원래 순서 유지)
   render('summary-content', '<div class="dash">'
     + box('o0 dfull', warnHtml)
     + '<div class="dcol">' + box('o1', stanceHtml) + box('o2', portfolioHtml) + box('o4', decisionHtml) + box('o7', historyHtml) + '</div>'
