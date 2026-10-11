@@ -185,6 +185,11 @@ def prepare():
         "signals": signals_block,
         "finalized_at": None,
     }
+    try:  # 후보 선정 순위표 (왜 탈락했나 답변용)
+        from explain import ranking_table
+        request["ranking"] = ranking_table(scores, snaps, hist["portfolio"], m1, m3_tk, m5, cycle_notes, new_tk)
+    except Exception as e:
+        print(f"순위표 생성 실패(무시): {e}")
     _dump(PENDING_PATH, request)
     print(f"분석 요청서 저장: {PENDING_PATH} (week {week})")
 
