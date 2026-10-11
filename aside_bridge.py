@@ -117,6 +117,29 @@ def merge_news(news, candidates):
     return out
 
 
+MAX_WEIGHT = 30     # 종목당 최대 비중(%)
+DEFAULT_WEIGHT = 20  # 비중 미지정 시 기본 (5종목 × 20%)
+
+
+def resolve_weights(proposed, kept, prev):
+    """Agent 제안 비중(result.target_weights) → 최종 비중 {ticker: %}.
+    - 보유 확정 종목(kept)만 대상. 5% 단위 정수, 5~MAX_WEIGHT.
+    - 제안이 없거나 형식이 틀리면 이전 비중, 신규는 DEFAULT_WEIGHT.
+    - 합계 100 초과 시 큰 비중부터 5%씩 축소. 나머지는 현금."""
+    out, notes = {}, []
+    for tk in kept:
+        v = (proposed or {}).get(tk)
+        ok = isinstance(v, (int, float)) and not isinstance(v, bool) and v % 5 == 0 and 5 <= v <= MAX_WEIGHT
+        if v is not None and not ok:
+            notes.append(f"{tk} 비중 {v!r} 무효(5% 단위, 5~{MAX_WEIGHT}%) — 기본값 사용")
+        out[tk] = int(v) if ok else int((prev or {}).get(tk, DEFAULT_WEIGHT))
+    while sum(out.values()) > 100:
+        big = max(out, key=lambda k: out[k])
+        out[big] -= 5
+        notes.append(f"합계 100% 초과 — {big} 5%p 축소")
+    return out, notes
+
+
 def load_result(request, result):
     """결과 파일 검증 → (market_brief | None, {ticker: analysis | None}, 오류 목록)."""
     errors = []
@@ -163,4 +186,13 @@ if __name__ == "__main__":
     print(f"종목 분석: {len(ok)}/{len(an)} 통과 {ok}")
     for e in errs:
         print("  ✗", e)
+    tw = res.get("target_weights")
+    if tw is None:
+        print("  ✗ target_weights 없음 (이전 비중·기본 20% 적용됨)")
+    else:
+        _, notes = resolve_weights(tw, list(tw), {})
+        print(f"비중 제안: {tw} (합계 {sum(v for v in tw.values() if isinstance(v, (int, float)))}%, 나머지 현금)")
+        for n in notes:
+            print("  ✗", n)
+            errs.append(n)
     sys.exit(1 if errs else 0)
