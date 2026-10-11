@@ -481,7 +481,7 @@ function logicHelpHtml(L) {
     </div>`;
   return `
     <div id="logic-help" hidden class="mb-3">
-      ${step(1, '후보 범위', 'S&amp;P 500 + 나스닥 100 전 종목(약 520개). 격주 토요일 09:00(KST)에 실행합니다.')}
+      ${step(1, '후보 범위', 'S&amp;P 500 + 나스닥 100 전 종목(약 520개). 매주 토요일 09:00(KST)에 정량 단계를 실행하고, 이어서 Aside가 AI 분석을 수행합니다.')}
       ${step(2, '기본 조건 (하나라도 어긋나면 제외)',
         '· 향후 12개월 추정 EPS 흑자<br>· 애널리스트 5명 이상 커버<br>· 영업이익률 흑자, <b>또는</b> 흑자전환 임박(다음 분기 EPS 컨센서스 흑자 + 최근 30일 추정치 하향 없음)')}
       ${step(3, '정량 점수 (0~100, 유니버스 내 백분위)',
@@ -499,7 +499,7 @@ function logicHelpHtml(L) {
       ${step(5, '심층분석 대상',
         `점수 순으로 같은 업종 최대 ${L.industry_cap}개씩 신규 후보 ${L.new_candidates}종목 + 기존 보유 종목 전부.<br>
          최근 ${L.reuse_days}일 내 분석은 실적 발표·주가 ±${L.reuse_price_pct}%·내년 EPS 추정치 ±${L.reuse_eps_pct}% 변화가 없으면 재사용합니다.`)}
-      ${step(6, 'Claude(Opus 5) 심층분석',
+      ${step(6, 'Aside AI 심층분석 (무료)',
         '웹 검색으로 최신 실적·공시·뉴스를 확인해 기업의 질 / 재무 건전성 / 가격 매력 / 6~12개월 촉매 / 반대 근거·논리 붕괴 조건을 분석하고 판정(편입 적합·관찰·부적합)과 확신도(1~5)를 매깁니다.')}
       ${step(7, '편입 · 유지 · 제외 규칙',
         `· 신규편입: 편입 적합 + 확신도 ${L.min_conviction} 이상, 섹터당 최대 ${L.sector_cap}종목, 전체 최대 ${L.max_holdings}종목<br>
@@ -529,7 +529,7 @@ function loadSummary(d) {
   if (!d.week) {
     warnings.push('주간 파이프라인이 아직 실행되지 않았습니다. GitHub Actions에서 <b>weekly</b> 모드를 실행하세요.');
   } else {
-    if (st.claude === false) warnings.push('Claude 분석 미실행(ANTHROPIC_API_KEY 미설정 또는 API 오류) — 심층분석·추천·뉴스가 갱신되지 않았습니다.');
+    if (st.claude === false) warnings.push('Aside AI 분석 결과가 반영되지 않았습니다 — 심층분석·추천·뉴스가 갱신되지 않았습니다.');
     if (st.sec === false) warnings.push('SEC 수집 실패 또는 SEC_USER_AGENT 미설정 — 대가 포트폴리오·내부자 신호가 비어 있습니다.');
   }
   const warnHtml = warnings.length
@@ -583,7 +583,7 @@ function loadSummary(d) {
         </div>
         <span class="text-xs" style="color:var(--muted);">${(d.portfolio || []).length} / ${d.logic ? d.logic.max_holdings : 5}</span>
       </div>
-      <div class="text-xs mb-3" style="color:var(--muted);line-height:1.5;">6개월+ 보유 목표 · 격주 투자 논리 재점검 · 편입가 대비 수익률 (아래는 같은 기간 SPY)</div>
+      <div class="text-xs mb-3" style="color:var(--muted);line-height:1.5;">6개월+ 보유 목표 · 매주 투자 논리 재점검 · 편입가 대비 수익률 (아래는 같은 기간 SPY)</div>
       ${d.logic ? logicHelpHtml(d.logic) : ''}
       ${cards || '<div class="text-xs p-3 card2" style="color:var(--muted);line-height:1.6;">아직 편입된 종목이 없습니다. 기준(편입 적합 + 확신도 4 이상)을 충족하는 종목이 나올 때만 편입합니다.</div>'}
       ${cards ? '<div class="text-xs mt-2" style="color:var(--muted);">종목을 누르면 심층분석 리포트가 열립니다.</div>' : ''}
@@ -677,7 +677,7 @@ function loadSummary(d) {
       <div class="card2 p-4" style="white-space:pre-line;font-size:13px;line-height:1.8;">${esc(d.brief_text)}</div>
     </div>
     <div class="text-xs px-1 pb-4" style="color:var(--muted);line-height:1.7;">
-      데이터: Yahoo Finance(시세·재무·컨센서스), SEC EDGAR(13F·Form 4), Claude 웹검색(뉴스·심층분석).
+      데이터: Yahoo Finance(시세·재무·컨센서스), SEC EDGAR(13F·Form 4), Aside AI 웹검색(뉴스·심층분석).
       주간 신호 갱신 ${esc(d.weekly_built_at || '—')} KST. 자동 생성된 참고 자료이며 투자 자문이 아닙니다.
     </div>`);
 }
@@ -782,7 +782,7 @@ function openReport(tk) {
         <div class="text-sm font-bold mb-2">참고 자료</div>
         ${(a.sources || []).map(s => `<a href="${safeUrl(s.url)}" target="_blank" rel="noopener noreferrer" class="block text-xs py-1" style="color:#93c5fd;line-height:1.5;">${esc(s.title)}</a>`).join('') || '<div class="text-xs" style="color:var(--muted);">—</div>'}
       </div>
-      <div class="text-xs px-1 pb-8" style="color:var(--muted);line-height:1.7;">Claude(Opus 5)가 공개 데이터와 웹 검색으로 자동 작성한 분석입니다. 사실관계 오류가 있을 수 있으니 원문 자료를 확인하세요. 투자 자문이 아닙니다.</div>
+      <div class="text-xs px-1 pb-8" style="color:var(--muted);line-height:1.7;">Aside AI가 공개 데이터와 웹 검색으로 자동 작성한 분석입니다. 사실관계 오류가 있을 수 있으니 원문 자료를 확인하세요. 투자 자문이 아닙니다.</div>
     </div>`;
   const sheet = document.getElementById('report-sheet');
   sheet.hidden = false;
@@ -1244,7 +1244,7 @@ const INJECTED = {"summary": {"date": "2026-09-13", "week": "2026-W37", "weekly_
 // ── News 렌더링 ──────────────────────────────────────────────────
 function loadNews(items) {
   if (!items || !items.length) {
-    render('news-content', emptyCard('이번 주 뉴스가 없습니다. 주간 파이프라인(Claude 웹검색)이 실행되면 실제 기사 10선이 표시됩니다.'));
+    render('news-content', emptyCard('이번 주 뉴스가 없습니다. 주간 파이프라인(Aside AI 분석)이 실행되면 실제 기사 10선이 표시됩니다.'));
     return;
   }
   const stars = n => '★'.repeat(n) + '☆'.repeat(5 - n);
@@ -1267,7 +1267,7 @@ function loadNews(items) {
     '</div>';
   }).join('');
   render('news-content',
-    '<div class="mb-3"><span class="text-xs" style="color:var(--muted);">중요도 순 · 지난 14일 실제 기사 ' + items.length + '선 (Claude 웹검색)</span></div>' +
+    '<div class="mb-3"><span class="text-xs" style="color:var(--muted);">중요도 순 · 지난 14일 실제 기사 ' + items.length + '선 (Aside AI 선별)</span></div>' +
     rows
   );
 }
@@ -1298,9 +1298,10 @@ function refreshNow() {
     '<b>업데이트 방법</b><br>' +
     '① GitHub Actions 새 창에서 <b>Run workflow</b> 클릭<br>' +
     '&nbsp;&nbsp;· mode <b>daily</b>: 시세·PEG 갱신 (약 1분)<br>' +
-    '&nbsp;&nbsp;· mode <b>weekly</b>: 신호·추천·뉴스 재분석 (약 20~30분, API 비용 발생)<br>' +
+    '&nbsp;&nbsp;· mode <b>prepare</b>: 주간 신호·후보 갱신 (약 10~20분, 비용 없음)<br>' +
+    '&nbsp;&nbsp;· AI 심층분석은 매주 토요일 Aside가 자동 수행<br>' +
     '② 약 30초 후 이 페이지가 자동 새로고침됩니다<br>' +
-    '<a href="https://github.com/juno99zz-arkt/Invest/actions/workflows/update_invest.yml" target="_blank" style="color:#93c5fd;text-decoration:underline;">→ GitHub Actions 열기</a>',
+    '<a href="https://github.com/juno99zz-arkt/Invest-Aside/actions/workflows/update_invest.yml" target="_blank" style="color:#93c5fd;text-decoration:underline;">→ GitHub Actions 열기</a>',
     10000
   );
 

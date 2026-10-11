@@ -179,7 +179,7 @@ def build_data():
     build_meta = {
         "built_at_kst":   now_kst.strftime("%Y-%m-%d %H:%M"),
         "built_at_iso":   now_kst.isoformat(),
-        "schedule_label": "매일 KST 17:00 시세 갱신 · 격주 토 09:00 신호·추천 갱신",
+        "schedule_label": "매일 KST 17:00 시세 갱신 · 매주 토 신호·추천 갱신 (Aside AI 분석)",
         "weekly_built_at": weekly.get("built_at_kst"),
     }
 

@@ -1,5 +1,4 @@
 yfinance==1.7.0
-anthropic==1.5.0
 requests>=2.31
 feedparser>=6.0.0
 lxml>=5.0
