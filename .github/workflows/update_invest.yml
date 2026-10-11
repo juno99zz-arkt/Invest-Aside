@@ -11,10 +11,14 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "daily = 시세 갱신 / prepare = 주간 신호·후보·분석요청서 생성 / finalize = Aside 결과 반영 / sec_check = SEC 접근 점검"
+        description: "daily = 시세 갱신 / prepare = 주간 신호·후보·분석요청서 생성 / finalize = Aside 결과 반영 / explain = 후보 순위 진단 / sec_check = SEC 접근 점검"
         type: choice
-        options: [daily, prepare, finalize, sec_check]
+        options: [daily, prepare, finalize, explain, sec_check]
         default: daily
+      tickers:
+        description: "explain 모드: 탈락 사유를 볼 티커 (예: AMD,AVGO)"
+        type: string
+        default: ""
   push:
     branches: [main]
     paths: ["data/aside/**"]
@@ -74,8 +78,14 @@ jobs:
         if: steps.mode.outputs.mode == 'finalize'
         run: python run_weekly.py finalize
 
+      - name: 후보 순위 진단
+        if: steps.mode.outputs.mode == 'explain'
+        env:
+          EXPLAIN_TICKERS: ${{ inputs.tickers }}
+        run: python explain.py
+
       - name: 데이터 커밋
-        if: steps.mode.outputs.mode == 'prepare' || steps.mode.outputs.mode == 'finalize'
+        if: steps.mode.outputs.mode == 'prepare' || steps.mode.outputs.mode == 'finalize' || steps.mode.outputs.mode == 'explain'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
