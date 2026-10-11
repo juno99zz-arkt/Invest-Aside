@@ -187,6 +187,19 @@ def build_summary(weekly, hist, report):
         })
 
     last_week = hist["weeks"][-1] if hist.get("weeks") else None
+    # 이번 주 검토 종목의 업데이트 시점 현재가 (분석 시 가격·매수 기준가·기대수익과 함께)
+    review_tk = [d["ticker"] for d in (last_week or {}).get("decisions", [])]
+    rq_px = fetch_prices([t for t in review_tk if t not in prices]) if review_tk else {}
+    review_quotes = {}
+    for tk in review_tk:
+        an = analyses.get(tk) or {}
+        a, m = an.get("analysis") or {}, an.get("metrics") or {}
+        p1 = prices.get(tk) or rq_px.get(tk)
+        dt = a.get("decision_table") or {}
+        review_quotes[tk] = {"price": round(p1, 2) if p1 else None, "analysis_price": m.get("price"),
+                             "change_pct": round((p1 / m["price"] - 1) * 100, 1) if p1 and m.get("price") else None,
+                             "buy_below": dt.get("buy_below"), "action": dt.get("action"),
+                             "expected_return_pct": picks.expected_return(a, p1) if p1 else None}
     stance = brief.get("stance")
     added = [d["ticker"] for d in (last_week or {}).get("decisions", []) if d["action"] == "신규편입"]
     lines = [f"📊 [{today.isoformat()}] 주간 장기투자 브리핑", ""]
@@ -216,6 +229,8 @@ def build_summary(weekly, hist, report):
         ],
         "portfolio": holdings,
         "last_week": last_week,
+        "review_quotes": review_quotes,
+        "quotes_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
         "weeks": hist.get("weeks", [])[-12:],
         "closed": hist.get("closed", []),
         "brief_text": "\n".join(lines),

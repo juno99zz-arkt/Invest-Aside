@@ -23,6 +23,7 @@ MAX_HOLDINGS = 5
 MAX_PER_SECTOR = 2
 NEW_CANDIDATES = 8
 MIN_CONVICTION_NEW = 4      # 신규 편입 최소 확신도 (1~5)
+MIN_EXPECTED_RETURN = 10    # 확신도 3 탐색 편입에 필요한 최소 기대수익률(%, 약세25·기준50·강세25)
 SWAP_CONVICTION = 5         # 만석일 때 교체하려면 후보 확신도 5 + 기존 종목 '약화'·확신도 3 이하
 
 # 정량 점수 영역 비중 (합계 1.0)
@@ -288,6 +289,23 @@ def fresh_analysis_reason(entry, snap, holding, today):
 
 
 # ── 3. 결정 ──────────────────────────────────────────────────────
+def expected_return(a, price):
+    """약세25·기준50·강세25 가중 12개월 기대수익률(%)."""
+    sc = {s.get("name"): s.get("price") for s in ((a or {}).get("decision_table") or {}).get("scenarios", [])}
+    if not price or not all(sc.get(k) for k in ("약세", "기준", "강세")):
+        return None
+    return round((0.25 * sc["약세"] + 0.5 * sc["기준"] + 0.25 * sc["강세"]) / price * 100 - 100, 1)
+
+
+def starter_ok(a, price):
+    """확신도 3 '탐색 편입' 조건: 편입 적합 + Agent 행동 '신규 매수' + 현재가 ≤ 매수 기준가 + 기대수익 ≥ 최소치."""
+    dt = (a or {}).get("decision_table") or {}
+    e = expected_return(a, price)
+    return (a.get("conviction") == 3 and dt.get("action") in ("신규 매수", "추가 매수")
+            and dt.get("buy_below") and price and price <= dt["buy_below"]
+            and e is not None and e >= MIN_EXPECTED_RETURN)
+
+
 def decide(holdings, new_candidates, analyses, snaps, scores, today):
     """
     analyses: {ticker: 분석 dict | None}
@@ -323,13 +341,14 @@ def decide(holdings, new_candidates, analyses, snaps, scores, today):
             decisions.append({"ticker": h["ticker"], "action": "유지", "reason": reason + note})
 
     verified = lambda tk: (analyses[tk].get("evidence") or {}).get("data_verified", "검증 완료") == "검증 완료"
+    px = lambda tk: (snaps.get(tk) or {}).get("price")
+    passes = lambda tk: analyses[tk]["conviction"] >= MIN_CONVICTION_NEW or starter_ok(analyses[tk], px(tk))
     pending_check = [tk for tk in new_candidates
-                     if analyses.get(tk) and analyses[tk]["verdict"] == "편입 적합"
-                     and analyses[tk]["conviction"] >= MIN_CONVICTION_NEW and not verified(tk)]
+                     if analyses.get(tk) and analyses[tk]["verdict"] == "편입 적합" and passes(tk) and not verified(tk)]
     qualified = [tk for tk in new_candidates
-                 if analyses.get(tk) and analyses[tk]["verdict"] == "편입 적합"
-                 and analyses[tk]["conviction"] >= MIN_CONVICTION_NEW and verified(tk)]
-    qualified.sort(key=lambda tk: (-analyses[tk]["conviction"], -scores[tk]["score"]))
+                 if analyses.get(tk) and analyses[tk]["verdict"] == "편입 적합" and passes(tk) and verified(tk)]
+    qualified.sort(key=lambda tk: (-analyses[tk]["conviction"], -(expected_return(analyses[tk], px(tk)) or -999),
+                                   -scores[tk]["score"]))
 
     def sector_count(tk):
         return sum(1 for x in kept if sector(x["ticker"]) == sector(tk))
@@ -362,7 +381,13 @@ def decide(holdings, new_candidates, analyses, snaps, scores, today):
             "thesis": a["one_line_thesis"], "thesis_breakers": a["bear_case"]["thesis_breakers"],
             "conviction": a["conviction"], "thesis_status": "유효", "last_review": today,
         })
-        decisions.append({"ticker": tk, "action": "신규편입", "reason": a["verdict_reason"]})
+        if a["conviction"] < MIN_CONVICTION_NEW:
+            e = expected_return(a, px(tk))
+            note = (f"[탐색 편입] 확신도 {a['conviction']}이지만 현재가 ${px(tk):.2f} ≤ 매수 기준가 ${a['decision_table']['buy_below']}, "
+                    f"기대수익 {e:+.1f}% → 작은 비중으로 시작하고 다음 검증 후 확대 여부 결정. ")
+        else:
+            note = ""
+        decisions.append({"ticker": tk, "action": "신규편입", "reason": note + a["verdict_reason"]})
 
     for tk in new_candidates:
         if tk in qualified:
@@ -376,7 +401,8 @@ def decide(holdings, new_candidates, analyses, snaps, scores, today):
         if a is None:
             reason = "분석 실패로 판단 보류."
         elif a["verdict"] == "편입 적합":
-            reason = f"편입 적합이나 확신도 {a['conviction']}로 기준({MIN_CONVICTION_NEW}) 미달. {a['verdict_reason']}"
+            reason = (f"편입 적합이나 확신도 {a['conviction']}로 기준({MIN_CONVICTION_NEW}) 미달이고 탐색 편입 조건"
+                      f"(신규 매수 판단 + 매수 기준가 이하 + 기대수익 {MIN_EXPECTED_RETURN}% 이상)도 미충족. {a['verdict_reason']}")
         else:
             reason = f"[{a['verdict']}] {a['verdict_reason']}"
         decisions.append({"ticker": tk, "action": "미편입", "reason": reason})
