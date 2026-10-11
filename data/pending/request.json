@@ -1767,7 +1767,7 @@
     "forward_pe_yahoo": 14.4,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
     "fcf_yield_pct": 2.29,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 328.71695,
     "analyst_rating_mean_1buy_5sell": 1.29032,
     "analysts": 59.0
@@ -1792,7 +1792,7 @@
     "sbc_ttm_b": 7.24,
     "buyback_ttm_b": 55.31,
     "fcf_margin_pct": 41.9,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 302.97,
     "net_debt_to_ebitda": -0.12,
     "share_count_change_pct": -0.82,
@@ -1945,8 +1945,8 @@
     "eps_ntm_est": 1.65,
     "forward_pe_yahoo": 81.7,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": -1.52,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": -1.5,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 221.06897,
     "analyst_rating_mean_1buy_5sell": 1.78947,
     "analysts": 29.0
@@ -1970,8 +1970,8 @@
     "fcf_ttm_b": -32.52,
     "sbc_ttm_b": 2.16,
     "buyback_ttm_b": 4.95,
-    "fcf_margin_pct": -157.5,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_pct": -141.1,
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 20.65,
     "net_debt_to_ebitda": -10.23,
     "share_count_change_pct": 0.77,
@@ -2080,8 +2080,8 @@
     "eps_ntm_est": 23.76,
     "forward_pe_yahoo": 11.2,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": 13.55,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": 13.6,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 336.14285,
     "analyst_rating_mean_1buy_5sell": 2.15789,
     "analysts": 35.0
@@ -2106,7 +2106,7 @@
     "sbc_ttm_b": 0.41,
     "buyback_ttm_b": 1.92,
     "fcf_margin_pct": 28.4,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 15.7,
     "net_debt_to_ebitda": -0.5,
     "share_count_change_pct": -3.61,
@@ -2231,8 +2231,8 @@
     "eps_ntm_est": 30.6,
     "forward_pe_yahoo": 12.6,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": 6.27,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": 6.3,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 461.0,
     "analyst_rating_mean_1buy_5sell": 1.6875,
     "analysts": 15.0
@@ -2257,7 +2257,7 @@
     "sbc_ttm_b": 0.11,
     "buyback_ttm_b": 1.8,
     "fcf_margin_pct": 32.6,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 5.02,
     "net_debt_to_ebitda": 2.7,
     "share_count_change_pct": -7.02,
@@ -2349,10 +2349,10 @@
    "return_1y_pct": 42.1,
    "from_52w_high_pct": -6.4,
    "quant_score": {
-    "score": 70.2,
+    "score": 70.3,
     "quality": 83,
     "health": 44,
-    "value": 82,
+    "value": 83,
     "revisions": 67,
     "score_before": 70.7
    },
@@ -2385,7 +2385,7 @@
     "forward_pe_yahoo": 16.5,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
     "fcf_yield_pct": 3.31,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 213.70909,
     "analyst_rating_mean_1buy_5sell": 1.94118,
     "analysts": 33.0
@@ -2410,7 +2410,7 @@
     "sbc_ttm_b": 0.34,
     "buyback_ttm_b": null,
     "fcf_margin_pct": 36.7,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 2.78,
     "net_debt_to_ebitda": -3.45,
     "share_count_change_pct": 2.8,
@@ -2552,8 +2552,8 @@
     "eps_ntm_est": 27.25,
     "forward_pe_yahoo": 8.8,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": 11.23,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": 11.2,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 275.06375,
     "analyst_rating_mean_1buy_5sell": 2.76923,
     "analysts": 32.0
@@ -2578,7 +2578,7 @@
     "sbc_ttm_b": 2.07,
     "buyback_ttm_b": 9.29,
     "fcf_margin_pct": 40.8,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 25.97,
     "net_debt_to_ebitda": 0.12,
     "share_count_change_pct": -5.0,
@@ -2703,8 +2703,8 @@
     "eps_ntm_est": 13.8,
     "forward_pe_yahoo": 27.5,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": 2.25,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": 2.26,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 418.0,
     "analyst_rating_mean_1buy_5sell": 1.58333,
     "analysts": 12.0
@@ -2729,7 +2729,7 @@
     "sbc_ttm_b": 0.21,
     "buyback_ttm_b": 0.62,
     "fcf_margin_pct": 22.3,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 6.58,
     "net_debt_to_ebitda": 0.09,
     "share_count_change_pct": -0.92,
@@ -2854,8 +2854,8 @@
     "eps_ntm_est": 54.11,
     "forward_pe_yahoo": 8.7,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": 10.09,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": 10.1,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 409.27777,
     "analyst_rating_mean_1buy_5sell": 2.36842,
     "analysts": 18.0
@@ -2880,7 +2880,7 @@
     "sbc_ttm_b": null,
     "buyback_ttm_b": 4.93,
     "fcf_margin_pct": 8.4,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 153.58,
     "net_debt_to_ebitda": 1.72,
     "share_count_change_pct": -6.91,
@@ -3007,8 +3007,8 @@
     "eps_ntm_est": 29.68,
     "forward_pe_yahoo": 8.2,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": 21.11,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": 21.1,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 270.54544,
     "analyst_rating_mean_1buy_5sell": 2.52,
     "analysts": 22.0
@@ -3032,8 +3032,8 @@
     "fcf_ttm_b": 12.25,
     "sbc_ttm_b": null,
     "buyback_ttm_b": 2.46,
-    "fcf_margin_pct": 17.7,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_pct": 17.6,
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 69.35,
     "net_debt_to_ebitda": 0.1,
     "share_count_change_pct": -3.7,
@@ -3312,8 +3312,8 @@
     "eps_ntm_est": 1.35,
     "forward_pe_yahoo": 59.8,
     "forward_pe_yahoo_basis": "Yahoo forwardPE = 현재가 ÷ 다음 회계연도 컨센서스 EPS (향후 12개월 아님)",
-    "fcf_yield_pct": 3.31,
-    "fcf_yield_basis": "현금흐름표 TTM FCF ÷ 시가총액",
+    "fcf_yield_pct": 3.2,
+    "fcf_yield_basis": "AI 검증 확정값",
     "analyst_target_mean": 105.55917,
     "analyst_rating_mean_1buy_5sell": 2.24138,
     "analysts": 24.0
@@ -3337,8 +3337,8 @@
     "fcf_ttm_b": 0.71,
     "sbc_ttm_b": 0.22,
     "buyback_ttm_b": null,
-    "fcf_margin_pct": 24.4,
-    "fcf_margin_basis": "현금흐름표 TTM FCF ÷ TTM 매출",
+    "fcf_margin_pct": 23.9,
+    "fcf_margin_basis": "AI 검증 확정값 (공식 현금흐름표)",
     "revenue_ttm_b": 2.91,
     "net_debt_to_ebitda": -7.49,
     "share_count_change_pct": 10.53,
@@ -3430,10 +3430,10 @@
    "return_1y_pct": -36.4,
    "from_52w_high_pct": -41.0,
    "quant_score": {
-    "score": 51.3,
+    "score": 50.7,
     "quality": 46,
     "health": 77,
-    "value": 25,
+    "value": 22,
     "revisions": 60,
     "score_before": 48.0
    },
@@ -4291,8 +4291,8 @@
    },
    "score_before": 79.3,
    "rescored": {
-    "fcf_margin": 0.41920460509161,
-    "fcf_yield": 0.02294007773934261
+    "fcf_margin": 0.419,
+    "fcf_yield": 0.0229
    }
   },
   "SPCX": {
@@ -4303,8 +4303,8 @@
    "revisions": 95,
    "eligible": true,
    "turnaround": true,
-   "fcf_margin_pct": -157.5,
-   "fcf_yield_pct": -1.52,
+   "fcf_margin_pct": -141.1,
+   "fcf_yield_pct": -1.5,
    "net_debt_ebitda": -10.23,
    "parts": {
     "quality": {
@@ -4328,8 +4328,8 @@
    },
    "score_before": 67.0,
    "rescored": {
-    "fcf_margin": -1.5752203816719945,
-    "fcf_yield": -0.01517619030653791
+    "fcf_margin": -1.411,
+    "fcf_yield": -0.015
    }
   },
   "EXPE": {
@@ -4341,7 +4341,7 @@
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 28.4,
-   "fcf_yield_pct": 13.55,
+   "fcf_yield_pct": 13.6,
    "net_debt_ebitda": -0.5,
    "parts": {
     "quality": {
@@ -4365,20 +4365,20 @@
    },
    "score_before": 79.6,
    "rescored": {
-    "fcf_margin": 0.2840127388535032,
-    "fcf_yield": 0.1354806230004166
+    "fcf_margin": 0.284,
+    "fcf_yield": 0.136
    }
   },
   "CPAY": {
-   "score": 70.2,
+   "score": 70.3,
    "quality": 83,
    "health": 44,
-   "value": 82,
+   "value": 83,
    "revisions": 67,
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 32.6,
-   "fcf_yield_pct": 6.27,
+   "fcf_yield_pct": 6.3,
    "net_debt_ebitda": 2.7,
    "parts": {
     "quality": {
@@ -4395,15 +4395,15 @@
     },
     "value": {
      "fwd_pe": 0.8132,
-     "fcf_yield": 0.8260869565217391,
+     "fcf_yield": 0.8369565217391305,
      "peg": 0.8268
     },
     "revisions": 0.6707
    },
    "score_before": 70.7,
    "rescored": {
-    "fcf_margin": 0.32634306290486487,
-    "fcf_yield": 0.06270865677980782
+    "fcf_margin": 0.326,
+    "fcf_yield": 0.063
    }
   },
   "RDDT": {
@@ -4439,8 +4439,8 @@
    },
    "score_before": 75.2,
    "rescored": {
-    "fcf_margin": 0.3665742538057329,
-    "fcf_yield": 0.03310943221929166
+    "fcf_margin": 0.36700000000000005,
+    "fcf_yield": 0.0331
    }
   },
   "ADBE": {
@@ -4452,7 +4452,7 @@
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 40.8,
-   "fcf_yield_pct": 11.23,
+   "fcf_yield_pct": 11.2,
    "net_debt_ebitda": 0.12,
    "parts": {
     "quality": {
@@ -4476,8 +4476,8 @@
    },
    "score_before": 74.7,
    "rescored": {
-    "fcf_margin": 0.4078552175587216,
-    "fcf_yield": 0.11233251906940554
+    "fcf_margin": 0.408,
+    "fcf_yield": 0.11199999999999999
    }
   },
   "KEYS": {
@@ -4489,7 +4489,7 @@
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 22.3,
-   "fcf_yield_pct": 2.25,
+   "fcf_yield_pct": 2.26,
    "net_debt_ebitda": 0.09,
    "parts": {
     "quality": {
@@ -4513,8 +4513,8 @@
    },
    "score_before": 74.0,
    "rescored": {
-    "fcf_margin": 0.2231844424187177,
-    "fcf_yield": 0.0225440978735821
+    "fcf_margin": 0.223,
+    "fcf_yield": 0.0226
    }
   },
   "MPC": {
@@ -4526,7 +4526,7 @@
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 8.4,
-   "fcf_yield_pct": 10.09,
+   "fcf_yield_pct": 10.1,
    "net_debt_ebitda": 1.72,
    "parts": {
     "quality": {
@@ -4550,8 +4550,8 @@
    },
    "score_before": 70.3,
    "rescored": {
-    "fcf_margin": 0.08399044127701413,
-    "fcf_yield": 0.10094402482643469
+    "fcf_margin": 0.084,
+    "fcf_yield": 0.10099999999999999
    }
   },
   "ALL": {
@@ -4562,15 +4562,15 @@
    "revisions": 86,
    "eligible": true,
    "turnaround": false,
-   "fcf_margin_pct": 17.7,
-   "fcf_yield_pct": 21.11,
+   "fcf_margin_pct": 17.6,
+   "fcf_yield_pct": 21.1,
    "net_debt_ebitda": 0.1,
    "parts": {
     "quality": {
      "gross": 0.3494,
      "op": 0.583,
      "roe": 0.8621,
-     "fcf_margin": 0.6975308641975309,
+     "fcf_margin": 0.6954732510288066,
      "rev_growth": 0.6033,
      "eps_growth": 0.0215
     },
@@ -4587,8 +4587,8 @@
    },
    "score_before": 72.6,
    "rescored": {
-    "fcf_margin": 0.1766334520599305,
-    "fcf_yield": 0.211141615766027
+    "fcf_margin": 0.17600000000000002,
+    "fcf_yield": 0.21100000000000002
    }
   },
   "MSTR": {
@@ -4629,22 +4629,22 @@
    }
   },
   "CRCL": {
-   "score": 51.3,
+   "score": 50.7,
    "quality": 46,
    "health": 77,
-   "value": 25,
+   "value": 22,
    "revisions": 60,
    "eligible": true,
    "turnaround": false,
-   "fcf_margin_pct": 24.4,
-   "fcf_yield_pct": 3.31,
+   "fcf_margin_pct": 23.9,
+   "fcf_yield_pct": 3.2,
    "net_debt_ebitda": -7.49,
    "parts": {
     "quality": {
      "gross": 0.1699,
      "op": 0.0753,
      "roe": 0.4733,
-     "fcf_margin": 0.8106995884773662,
+     "fcf_margin": 0.8065843621399177,
      "rev_growth": 0.3736,
      "eps_growth": 0.8594
     },
@@ -4654,15 +4654,15 @@
     },
     "value": {
      "fwd_pe": 0.0139,
-     "fcf_yield": 0.22727272727272727,
+     "fcf_yield": 0.1590909090909091,
      "peg": 0.5
     },
     "revisions": 0.6035
    },
    "score_before": 48.0,
    "rescored": {
-    "fcf_margin": 0.24430456120400393,
-    "fcf_yield": 0.03308367528230926
+    "fcf_margin": 0.239,
+    "fcf_yield": 0.032
    }
   }
  },
@@ -7895,7 +7895,7 @@
    "CRCL": "Financial Services"
   }
  },
- "finalized_at": null,
+ "finalized_at": "2026-10-11 18:43",
  "ranking": {
   "cutoff_final": 72.3,
   "eligible_count": 501,
@@ -9400,5 +9400,7 @@
     "status": "보유 종목 (매주 자동 재점검)"
    }
   ]
- }
+ },
+ "finalized_result_at": "2026-10-11 18:42",
+ "finalize_errors": []
 }
