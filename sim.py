@@ -1,9 +1,9 @@
 """
-가상 투자 시뮬레이션 — Agent 추천 비중대로 5천만원을 운용했다면 계좌는 지금 어떤 상태인가.
+가상 투자 시뮬레이션 — Agent 추천 비중대로 1억원을 운용했다면 계좌는 지금 어떤 상태인가.
 
 규칙
 - 시작: 추천 포트폴리오에 첫 종목이 들어간 주간 결정일 (NVDA 2026-09-13)
-- 원금 5천만원(원화). 종목 매수 시 그날 환율로 환전, 매도 대금은 원화 현금으로 복귀. 미투자분은 원화 현금
+- 원금 1억원(원화). 종목 매수 시 그날 환율로 환전, 매도 대금은 원화 현금으로 복귀. 미투자분은 원화 현금
 - 비중: 주간 결정의 weights(5% 단위, Agent 가 결정). 기록이 없으면 보유 종목당 20%(최대 5종목 = 5칸)
 - 비중·구성이 바뀐 주에만 리밸런싱. 체결가는 결정 당시 기준가(편입가·제외가, 없으면 결정일 직전 종가)
 - 정수 주, 매매 수수료 0.25%. 세금·환전 스프레드 미반영
@@ -15,7 +15,7 @@ import math
 from bisect import bisect_right
 from datetime import date, timedelta
 
-INITIAL_KRW = 50_000_000
+INITIAL_KRW = 100_000_000
 FEE = 0.0025
 SLOT_PCT = 20            # 비중 기록이 없을 때 종목당 기본 비중 (5종목 × 20%)
 STEP = 5                 # 비중 단위 (%)
@@ -243,7 +243,7 @@ def simulate(hist, series, today=None):
         "spy_full_value_krw": round(full_now), "spy_full_return_pct": round((full_now / INITIAL_KRW - 1) * 100, 2),
         "max_drawdown_pct": round(mdd * 100, 2),
         "holdings": holdings, "trades": trades, "weights_history": weight_log, "curve": curve,
-        "rule": "원금 5천만원(원화). Agent가 정한 비중(5% 단위, 기본 종목당 20%)만큼만 매수하고 나머지는 원화 현금으로 보유. "
+        "rule": "원금 1억원(원화). Agent가 정한 비중(5% 단위, 기본 종목당 20%)만큼만 매수하고 나머지는 원화 현금으로 보유. "
                 "비중·구성이 바뀐 주에만 리밸런싱, 체결은 결정 당시 기준가·당일 환율, 정수 주, 수수료 0.25%. "
                 "벤치마크는 같은 비중만큼 SPY에 투자한 계좌. 세금·환전 스프레드 미반영.",
     }
