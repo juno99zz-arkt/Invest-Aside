@@ -234,7 +234,9 @@ def run(events, series, names=None, initial=INITIAL_KRW, opts=None, today=None, 
             "invested_pct": round(stock_now / total_now * 100, 1) if total_now else 0,
             "target_invested_pct": sum(cur_w.values()), "max_drawdown_pct": round(mdd * 100, 2),
             "costs": {k: round(v) for k, v in tot.items()}, "holdings": holdings, "trades": trades,
-            "weights_history": wlog, "curve": curve}
+            "weights_history": wlog, "curve": curve,
+            # 아직 다음 거래일이 오지 않아 체결 전인 신호 (주말 결정 등)
+            "pending": [{"signal_date": s, "weights": w, "label": l} for s, w, l in pending]}
 
 
 def quant_events(hist, reports):
