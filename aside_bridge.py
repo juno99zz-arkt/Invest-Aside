@@ -118,9 +118,10 @@ def validate_analysis(a, tk="?"):
                 errs.append(f"{tk}.scenarios: 약세 < 기준 ≤ 강세 가격 순서여야 함")
         if not a["decision_table"]["next_checks"] or not a["decision_table"]["change_triggers"]:
             errs.append(f"{tk}.decision_table: next_checks·change_triggers 각 1개 이상 필요")
-        if any(c["status"] == "불일치(수정)" for c in a["data_checks"]) and a["evidence"]["data_verified"] == "검증 완료" \
-                and all(v is None for k, v in a["verified_metrics"].items() if k != "pe_basis_note"):
-            errs.append(f"{tk}: 불일치를 수정했다면 verified_metrics 에 확정값을 넣어야 함")
+        # FCF 를 '불일치(수정)' 으로 고쳤다면 확정값이 있어야 점수를 재계산할 수 있다
+        fcf_fixed = any(c["status"] == "불일치(수정)" and "FCF" in c["metric"].upper() for c in a["data_checks"])
+        if fcf_fixed and a["evidence"]["data_verified"] == "검증 완료" and a["verified_metrics"].get("fcf_margin_pct") is None:
+            errs.append(f"{tk}: FCF 불일치를 수정했다면 verified_metrics.fcf_margin_pct 에 확정값을 넣어야 함")
     return errs
 
 
