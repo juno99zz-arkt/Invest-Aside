@@ -1,6 +1,6 @@
 {
  "week": "2026-W41",
- "date": "2026-10-10",
+ "date": "2026-10-11",
  "spy_price": 778.57,
  "candidates": [
   {
@@ -16,7 +16,7 @@
    "fcf_margin_pct": 13.8,
    "fcf_yield_pct": 0.76,
    "net_debt_ebitda": -0.12,
-   "analysis": "재사용"
+   "analysis": "지난 분석 28일 경과"
   },
   {
    "ticker": "SPCX",
@@ -31,22 +31,22 @@
    "fcf_margin_pct": null,
    "fcf_yield_pct": null,
    "net_debt_ebitda": -10.23,
-   "analysis": "분석 이후 내년 EPS 추정치 +9.4%"
+   "analysis": "재사용"
   },
   {
    "ticker": "EXPE",
    "role": "신규후보",
-   "score": 79.7,
+   "score": 79.9,
    "quality": 75,
    "health": 73,
    "value": 85,
-   "revisions": 83,
+   "revisions": 84,
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 21.9,
-   "fcf_yield_pct": 10.43,
+   "fcf_yield_pct": 10.44,
    "net_debt_ebitda": -0.5,
-   "analysis": "재사용"
+   "analysis": "지난 분석 28일 경과"
   },
   {
    "ticker": "CPAY",
@@ -66,8 +66,8 @@
   {
    "ticker": "RDDT",
    "role": "신규후보",
-   "score": 75.3,
-   "quality": 85,
+   "score": 75.2,
+   "quality": 84,
    "health": 77,
    "value": 53,
    "revisions": 85,
@@ -76,12 +76,12 @@
    "fcf_margin_pct": 24.4,
    "fcf_yield_pct": 2.2,
    "net_debt_ebitda": -3.45,
-   "analysis": "재사용"
+   "analysis": "지난 분석 28일 경과"
   },
   {
    "ticker": "ADBE",
    "role": "신규후보",
-   "score": 74.7,
+   "score": 74.8,
    "quality": 81,
    "health": 69,
    "value": 93,
@@ -91,12 +91,12 @@
    "fcf_margin_pct": 36.0,
    "fcf_yield_pct": 9.91,
    "net_debt_ebitda": 0.12,
-   "analysis": "첫 분석"
+   "analysis": "재사용"
   },
   {
    "ticker": "KEYS",
    "role": "신규후보",
-   "score": 74.0,
+   "score": 74.1,
    "quality": 76,
    "health": 69,
    "value": 55,
@@ -106,7 +106,7 @@
    "fcf_margin_pct": 28.4,
    "fcf_yield_pct": 2.87,
    "net_debt_ebitda": 0.09,
-   "analysis": "재사용"
+   "analysis": "지난 분석 28일 경과"
   },
   {
    "ticker": "MPC",
@@ -119,1242 +119,27 @@
    "eligible": true,
    "turnaround": false,
    "fcf_margin_pct": 6.0,
-   "fcf_yield_pct": 7.24,
+   "fcf_yield_pct": 6.96,
    "net_debt_ebitda": 1.72,
-   "analysis": "분석 이후 주가 +16%"
+   "analysis": "재사용"
   },
   {
-   "ticker": "ALL",
+   "ticker": "FSLR",
    "role": "신규후보",
-   "score": 72.6,
-   "quality": 53,
-   "health": 69,
-   "value": 78,
-   "revisions": 86,
+   "score": 72.7,
+   "quality": 63,
+   "health": 73,
+   "value": 94,
+   "revisions": 63,
    "eligible": true,
    "turnaround": false,
-   "fcf_margin_pct": 21.6,
-   "fcf_yield_pct": 26.13,
-   "net_debt_ebitda": 0.1,
+   "fcf_margin_pct": 29.7,
+   "fcf_yield_pct": 8.37,
+   "net_debt_ebitda": -0.64,
    "analysis": "첫 분석"
   }
  ],
  "analyses": {
-  "NVDA": {
-   "analysis": {
-    "one_line_thesis": "AI 인프라 사이클의 사실상 독점 공급자로 분기 매출이 1년 만에 2배(46.7B→96.2B)가 됐는데 주가는 1년간 +23%에 그쳐, 선행 PER 14배(PEG 0.46)까지 멀티플이 압축된 '고성장 + 비(非)고평가' 조합이다.",
-    "quality": {
-     "score": 5,
-     "moat": "CUDA 소프트웨어 생태계, NVLink/Oberon 랙 단위 시스템 표준화, TSMC CoWoS·HBM 공급망 선점이 결합된 복합 해자다. FY27 2분기 데이터센터 매출 89B(+117% YoY)로 가속기 시장을 사실상 독점 중이고, HBM 가격이 이번 사이클에 2배 이상 올랐음에도 GAAP·non-GAAP 총마진이 모두 75%로 회복된 점은 가격전가력이 실재함을 보여준다.",
-     "growth_durability": "매출이 단품 GPU가 아니라 랙·시스템 단위 플랫폼 교체(Hopper→Blackwell→Blackwell Ultra→Vera Rubin)의 연간 케이던스로 발생하며, 회사는 블랙웰·루빈 2년간 5,000억달러 매출 가시성을 제시했고 젠슨 황은 FY28 매출 +70% 성장을 언급했다. 다만 수요가 소수 하이퍼스케일러·AI 랩 설비투자에 집중(2분기 하이퍼스케일 48.7B, 그 외 AI클라우드·엔터프라이즈 40.3B)돼 있어 '자본지출 사이클에 연동된 구조적 성장'으로 봐야 한다.",
-     "summary": "분기 영업이익률이 60.8%(2025-07)→66.2%(2026-07)로 규모의 경제가 계속 확대되고 ROE 117%, 연매출은 FY24 60.9B→FY26 215.9B로 3.5배가 됐다. 반도체 업종에서 이 정도의 가격결정력·생태계 잠금효과를 동시에 가진 사례는 없어 질적으로는 최상위 등급이 타당하다."
-    },
-    "financial_health": {
-     "score": 5,
-     "cash_flow": "TTM 잉여현금흐름 127.0B에 주식보상비용은 7.24B로 FCF의 5.7%에 불과해 현금흐름의 질이 매우 높다. 참고로 제공된 요약의 FCF 마진 13.8%·FCF 수익률 0.79%는 TTM 매출 303B·시총 5,271B와 대조하면 각각 약 42%·2.4%여야 하므로 데이터 오류로 판단해 후자를 채택했다.",
-     "debt": "순차입금/EBITDA -0.12로 순현금 상태이며, 실질적인 재무 레버리지는 부채가 아니라 2분기에 119B→279B로 급증한 메모리 중심 구매 약정이다. 수요가 유지되면 공급 선점이지만 꺾이면 재고·선지급 평가손으로 되돌아오는 양면적 항목이다.",
-     "dilution": "TTM 자사주 매입 55.3B(시총의 약 1%)에도 주식수는 1년간 -0.82% 감소에 그쳐 SBC 상쇄 후 순환원 효과는 제한적이다. 그래도 방향은 희석이 아닌 감소이며, 순현금 구조상 환원 여력은 충분하다.",
-     "summary": "순현금·초과 현금창출·낮은 SBC 비중으로 전통적 재무 리스크는 사실상 없다. 감시 포인트는 279B 구매 약정과 재고 회전율, 그리고 AI 랩·네오클라우드에 대한 지분투자가 매출로 되돌아오는 순환 거래 노출이다."
-    },
-    "valuation": {
-     "score": 4,
-     "current_view": "주가 218.29달러, 시총 5.27조달러에서 후행 PER 27.6배, 선행 PER 14.0배, PEG 0.46배다. 지난 1년 EPS가 +127.8% 늘었는데 주가는 +23.1%만 올라 멀티플이 크게 압축됐는데, 이는 시장이 현재 이익을 '사이클 피크'로 의심하고 있다는 신호이기도 하다.",
-     "upside_scenario": "차기 회계연도 EPS 컨센서스 15.57달러(30일간 +21.3%, 상향 41건·하향 0건)가 실현되고 시장이 20배만 인정해도 310달러대로 애널리스트 평균 목표가 327달러(+50%)에 부합한다. 반대로 FY28 성장이 30%대로 둔화되고 멀티플이 12~15배에 머물면 주가는 사실상 제자리다.",
-     "summary": "저PER이 정당화되려면 FY28까지 최소 40~50% 이상 매출 성장과 70% 중반 총마진 유지라는 두 조건이 필요하다. 조건이 충족되면 명백한 저평가이고, 깨지면 전형적인 시클리컬 저PER 함정이 되는 비대칭 구조다."
-    },
-    "catalysts": [
-     {
-      "event": "FY27 3분기 실적 발표",
-      "timing": "2026-11-17",
-      "impact": "불확실",
-      "detail": "직전 분기에 회사는 컨센서스(매출 104.2B)를 상회하는 가이던스를 제시했고 최근 4개 분기 EPS 서프라이즈가 +3.5%→+6.2%로 확대되는 중이다. 이번에는 Vera Rubin 초기 램프 국면에서 75% 총마진을 방어하는지가 관건이다."
-     },
-     {
-      "event": "Vera Rubin(HBM4) 본격 양산·출하",
-      "timing": "2026년 하반기~2027년 상반기",
-      "impact": "긍정",
-      "detail": "블랙웰과 동일한 Oberon 랙 아키텍처를 재사용해 전환 과정의 마진 훼손이 제한적일 것이라는 게 시장 기대다. 과거 Hopper→Blackwell 전환 때 총마진이 72%대로 눌렸다가 75%로 회복된 패턴의 재현 여부가 6~12개월 최대 변수다."
-     },
-     {
-      "event": "하이퍼스케일러 2027년 CAPEX 가이던스",
-      "timing": "2027년 1~2월 빅테크 4분기 실적",
-      "impact": "불확실",
-      "detail": "데이터센터 매출의 절반 이상이 소수 클라우드 사업자에서 나오므로 이들의 설비투자 상·하향이 엔비디아 FY28 컨센서스(EPS 15.57달러)를 직접 움직인다."
-     },
-     {
-      "event": "중국 수출 정책 변화",
-      "timing": "수시(6~12개월)",
-      "impact": "불확실",
-      "detail": "미 정부가 구형 칩 일부의 중국 판매를 허용했으나 실제 판매는 부진하고 중국 당국 입장도 불투명해, 현재 실적에는 사실상 옵션가치로만 반영돼 있다. 재개 시 업사이드, 추가 규제 시 제한적 다운사이드."
-     },
-     {
-      "event": "CES/GTC 로드맵 업데이트",
-      "timing": "2027년 1월 CES, 3월 GTC",
-      "impact": "긍정",
-      "detail": "Vera CPU, Rubin Ultra 등 신제품 로드맵과 누적 수주 가시성(기존 블랙웰·루빈 2년 5,000억달러) 상향 여부가 FY29 추정의 기준선을 만든다."
-     }
-    ],
-    "bear_case": {
-     "summary": "이익이 소수 고객의 설비투자에 집중돼 있고 그 고객들의 AI 투자수익 회수는 아직 증명되지 않았다. 자체 ASIC(구글 TPU·아마존 트레이니엄 등)의 물량 잠식, HBM4 원가 급등, 한 분기에 119B→279B로 급증한 구매 약정이 겹치면, 매출 둔화 국면에서 마진과 재고가 동시에 악화되는 전형적 반도체 다운사이클이 나타날 수 있다.",
-     "key_risks": [
-      "고객 집중: 2분기 하이퍼스케일 매출 48.7B이 소수 사업자에 몰려 있어 한 곳의 발주 조정만으로 분기 성장률이 급변한다.",
-      "원가 리스크: HBM 가격이 이번 사이클에 2배 이상 올랐고 Rubin의 HBM4 채택으로 원가 구조가 더 무거워져 75% 총마진 유지가 어려울 수 있다.",
-      "약정·재고 리스크: 구매 약정 279B은 수요 둔화 시 재고평가손·선지급 손실로 전이될 수 있는 고정비적 성격의 노출이다.",
-      "순환 거래 논란: AI 랩·네오클라우드에 대한 투자·보증이 매출로 되돌아오는 구조의 지속가능성과 회계 인식에 대한 의문.",
-      "정책 리스크: 중국 매출이 실질적으로 빠진 상태이며 추가 규제·관세가 재발할 수 있다.",
-      "전력·부지 병목으로 데이터센터 가동이 지연되면 출하가 이연될 수 있다.",
-      "밸류에이션 함정: 선행 PER 14배는 이익이 피크가 아닐 때만 저렴하다."
-     ],
-     "thesis_breakers": [
-      "분기 매출의 전분기 대비 증가율이 2개 분기 연속 5% 미만으로 둔화되거나 가이던스가 컨센서스를 하회하는 경우",
-      "GAAP 총마진이 70% 아래로 하락하고 경영진이 원가 전가 실패를 인정하는 경우",
-      "차기 회계연도 EPS 컨센서스가 2개 분기 연속 하향(상향 건수 < 하향 건수)으로 전환되는 경우",
-      "재고와 구매 약정은 계속 늘어나는데 데이터센터 매출 성장률이 함께 둔화되는 조합이 나타나는 경우",
-      "상위 고객 중 한 곳이 자체 ASIC 비중 대폭 확대로 엔비디아 물량을 축소한다고 공식화하는 경우",
-      "하이퍼스케일러 합산 2027년 CAPEX 가이던스가 전년 대비 감소로 제시되는 경우"
-     ]
-    },
-    "thesis_status": "해당없음",
-    "thesis_status_reason": "신규 편입 후보로 기존 보유 논리가 없어 해당사항 없음. 편입 시에는 위 thesis_breakers 6개 항목을 분기 실적마다 점검하는 것을 논리 유지 조건으로 삼는다.",
-    "verdict": "편입 적합",
-    "verdict_reason": "실적(FY27 2분기 매출 96.2B·+106% YoY, 영업이익률 66.2%, 총마진 75%)과 추정치 상향(차기 FY EPS 30일간 +21.3%, 상향 41건·하향 0건)이 동시에 가속 중인데 선행 PER 14배·PEG 0.46배로 가격이 낙관을 선반영하지 않았다. 순현금·FCF 127B·SBC 비중 5.7%로 하방 방어력도 충분해, 사이클 피크 리스크를 감안해도 6개월 이상 보유 기대값이 우위다. 다만 단일 종목 비중을 통제하고 총마진 70%선과 QoQ 성장률을 분기마다 확인하는 조건부 편입이다.",
-    "conviction": 4,
-    "sources": [
-     {
-      "title": "Nvidia earnings takeaways: Huang forecasts 70% fiscal 2028 revenue growth (CNBC)",
-      "url": "https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html"
-     },
-     {
-      "title": "NVIDIA Q2 FY27 slides: revenue doubles to $96B, data center surges (Investing.com)",
-      "url": "https://www.investing.com/news/company-news/nvidia-q2-fy27-slides-revenue-doubles-to-96b-data-center-surges-93CH-4878041"
-     },
-     {
-      "title": "NVIDIA Q2 FY2027 Earnings: Data Center Revenue & FY28 Guide (Lighthouse Canton)",
-      "url": "https://www.lighthouse-canton.com/insights/nvidia-q2-fy2027-earnings-recap"
-     },
-     {
-      "title": "NVDA Q2 FY2027 revenue doubled year-over-year to $96.2B (Substack)",
-      "url": "https://studios.substack.com/p/nvda-q2-fy2027-revenue-doubled-year"
-     },
-     {
-      "title": "NVIDIA Earnings Q2 FY27: Revenue, Data Center, AI Capex (REX Shares)",
-      "url": "https://www.rexshares.com/nvidia-earnings/"
-     },
-     {
-      "title": "Nvidia earnings preview: Q2 2027 (S&P Global)",
-      "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/08/nvidia-earnings-preview-q2-2027"
-     },
-     {
-      "title": "AI 랠리 갈림길: 루빈 전환과 HBM 가격 (Benzinga Korea)",
-      "url": "https://kr.benzinga.com/news/usa/stocks/%EC%82%B4-%EA%B2%83%EC%9D%B8%EA%B0%80-%EA%B9%A8%EC%A7%88-%EA%B2%83%EC%9D%B8%EA%B0%80%EA%B0%88%EB%A6%BC%EA%B8%B8-%EC%84%A0-ai-%EB%9E%A0%EB%A6%AC-%EC%9A%B4%EB%AA%85-%EC%A5%94/"
-     },
-     {
-      "title": "Nvidia Earnings: Updates and Commentary August 2026 (Kiplinger)",
-      "url": "https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-august-2026"
-     }
-    ]
-   },
-   "metrics": {
-    "ticker": "NVDA",
-    "name": "NVIDIA Corporation",
-    "sector": "IT·기술",
-    "industry": "Semiconductors",
-    "as_of": "2026-10-10",
-    "price": 229.28,
-    "market_cap_b": 5536.42,
-    "valuation": {
-     "trailing_pe": 29.133419,
-     "forward_pe": 14.406897,
-     "peg": 0.4791,
-     "fcf_yield_pct": 0.76,
-     "analyst_target_mean": 328.71695,
-     "analyst_rating_mean_1buy_5sell": 1.29508,
-     "analysts": 59.0
-    },
-    "growth_profitability": {
-     "gross_margin_pct": 74.7,
-     "op_margin_pct": 66.2,
-     "roe_pct": 117.2,
-     "revenue_growth_last_q_yoy_pct": 105.9,
-     "eps_growth_last_q_yoy_pct": 127.8,
-     "eps_growth_est_this_fy_pct": 95.2,
-     "eps_growth_est_next_fy_pct": 70.9
-    },
-    "cash_debt_dilution": {
-     "fcf_ttm_b": 127.01,
-     "sbc_ttm_b": 7.24,
-     "buyback_ttm_b": 55.31,
-     "fcf_margin_pct": 13.8,
-     "net_debt_to_ebitda": -0.12,
-     "share_count_change_pct": -0.82,
-     "share_count_span": "2025-07→2026-07"
-    },
-    "estimate_revisions_next_fy_eps": {
-     "current": 15.9146,
-     "chg_7d_pct": 1.48,
-     "chg_30d_pct": 2.55,
-     "chg_90d_pct": 25.21,
-     "up_revisions_30d": 46.0,
-     "down_revisions_30d": 0.0
-    },
-    "quarterly": {
-     "periods": [
-      "2025-07",
-      "2025-10",
-      "2026-01",
-      "2026-04",
-      "2026-07"
-     ],
-     "revenue_b": [
-      46.74,
-      57.01,
-      68.13,
-      81.61,
-      96.22
-     ],
-     "op_margin_pct": [
-      60.8,
-      63.2,
-      65.0,
-      65.6,
-      66.2
-     ],
-     "diluted_eps": [
-      1.08,
-      1.3,
-      1.76,
-      2.39,
-      2.46
-     ]
-    },
-    "annual_revenue_b": [
-     [
-      "2023-01",
-      26.97
-     ],
-     [
-      "2024-01",
-      60.92
-     ],
-     [
-      "2025-01",
-      130.5
-     ],
-     [
-      "2026-01",
-      215.94
-     ]
-    ],
-    "eps_surprises": [
-     {
-      "quarter": "2025-10",
-      "actual": 1.3,
-      "estimate": 1.25647,
-      "surprise_pct": 3.5
-     },
-     {
-      "quarter": "2026-01",
-      "actual": 1.62,
-      "estimate": 1.53812,
-      "surprise_pct": 5.3
-     },
-     {
-      "quarter": "2026-04",
-      "actual": 1.87,
-      "estimate": 1.77191,
-      "surprise_pct": 5.5
-     },
-     {
-      "quarter": "2026-07",
-      "actual": 2.22,
-      "estimate": 2.09113,
-      "surprise_pct": 6.2
-     }
-    ],
-    "next_earnings": "2026-11-17",
-    "return_1y_pct": 25.5,
-    "from_52w_high_pct": -4.2,
-    "quant_score": {
-     "score": 79.3,
-     "quality": 89,
-     "health": 70,
-     "value": 61,
-     "revisions": 92
-    },
-    "cycle_check": null,
-    "dashboard_signals": [
-     "M1 대가 상위보유: Chase Coleman (+3점)",
-     "M1 대가 최근분기 매수: Cathie Wood (+5점)",
-     "M3 실적 개선 기업 (+3점)"
-    ]
-   },
-   "reused_from": "2026-09-13"
-  },
-  "EXPE": {
-   "analysis": {
-    "one_line_thesis": "B2B(화이트라벨 유통)와 광고가 구조적 성장 축으로 자리잡으며 5개 분기 연속 가이던스 상회·마진 확대를 만들어내는 중인데, AI 디스인터미디에이션 공포로 선행 PER 11.5배·FCF 수익률 두 자릿수까지 할인된 현금창출형 경기소비재.",
-    "quality": {
-     "score": 3,
-     "moat": "해자는 '독점'보다 '규모+공급망 접근성'에 가깝다. 진짜 차별화 축은 B2B 유통(Expedia Partner Solutions)으로, 항공사·카드사·신흥 OTA에 숙박 재고를 공급하며 Q2 2026 기준 B2B 총예약 +21%, B2B 매출 +23%로 20개 분기 연속 두 자릿수 성장을 기록했다. 반면 B2C(Expedia·Hotels.com·Vrbo)는 예약 +8%로 Booking.com·Airbnb 대비 점유율 우위가 없고, 매출의 절반 안팎을 마케팅에 쏟아야 트래픽이 유지되는 구조라 해자의 두께는 중간 수준이다.",
-     "growth_durability": "성장의 질은 개선 중이다. Q2 2026 매출 +14%, 조정 EBITDA 마진 25.9%(+196bp), 조정 EPS +36%로 비용 통제·마케팅 레버리지·광고 믹스가 동시에 작동했고, 미국 소비자 수요는 15개 분기 만의 최고 성장률을 보였다. 다만 Q3 2026 가이던스는 매출 46.5~47.5억 달러(+5~8%), 예약 +5~7%로 뚜렷이 둔화되며 회사도 어려운 기저·B2B 투자·환율로 마진 확대 폭이 줄 것이라고 안내했다. 유럽 아웃바운드 부진, 항공권 예약 -5% 등 소비자 부문의 순환적 취약성은 남아 있다.",
-     "summary": "구조적 성장 동력(B2B·광고)과 순환적·경쟁적 취약 부문(B2C 소비자 브랜드)이 공존하는 혼합형 기업이다. 마진 확대는 일회성이 아니라 간접비 동결 속 매출 성장이 만든 영업 레버리지라 지속성이 있으나, 성장률 자체는 한 자릿수 중후반으로 수렴하는 추세다. 종합 3점."
-    },
-    "financial_health": {
-     "score": 4,
-     "cash_flow": "TTM 잉여현금흐름 44.6억 달러(FCF 마진 21.9%)는 TTM GAAP 순이익(주당 15.89달러×약 1.20억 주 ≈ 19억 달러)의 2.3배로, 상당 부분이 선수예약금(deferred merchant bookings) 증가라는 운전자본 플로트에서 나온다. 예약 성장이 멈추면 FCF는 순이익 수준으로 수렴하므로, 정상화 기준 '진짜 주주이익'은 25~30억 달러대(시총 337억 달러 대비 7~9%)로 보수적으로 봐야 한다. 그럼에도 SBC가 4.1억 달러로 FCF의 10% 미만이라 현금흐름의 질 자체는 나쁘지 않다.",
-     "debt": "순차입금/EBITDA -0.5배로 순현금 상태다. 항공·숙박 예약 플로트가 대차대조표 부채로 잡히는 업종 특성상 총차입금은 존재하지만, 이자비용을 감당할 EBITDA 창출력과 현금 보유가 충분해 재무 리스크는 낮다.",
-     "dilution": "희석이 아니라 축소 국면이다. 2025년 6월→2026년 6월 주식수 -3.61%, TTM 자사주 매입 19.2억 달러(Q2 2026에만 88만 주·2억 달러, 상반기 누적 9억 달러)를 집행했고 분기배당 0.48달러(연 1.92달러, 시가배당률 약 0.7%)도 유지 중이다. SBC 4.1억 달러를 자사주 매입이 4배 이상 상쇄한다.",
-     "summary": "순현금 + 두 자릿수 FCF 마진 + 연 3.6% 주식수 축소로 재무 체력은 상위권이다. 다만 FCF 숫자를 액면 그대로 받아들이면 안 되고 플로트 효과를 걷어낸 뒤 평가해야 한다는 점에서 만점은 아니다. 4점."
-    },
-    "valuation": {
-     "score": 4,
-     "current_view": "주가 280.83달러는 선행 PER 11.5배(FY2027 EPS 컨센서스 24.43달러 기준), TTM PER 17.7배, PEG 0.74배다. 52주 고점 대비 -17%인데 같은 기간 회사는 실적을 4개 분기 연속 상회(서프라이즈 +9.0%, +12.2%, +42.3%, +9.6%)하고 연간 가이던스를 상향했으며, FY2027 EPS 추정치는 90일간 +5.8% 상향(30일 상향 21건 vs 하향 6건)됐다. 즉 펀더멘털은 올라가는데 멀티플이 내려간 전형적인 '공포 할인' 구간이다.",
-     "upside_scenario": "FY2026 매출 가이던스 160.5~162.2억 달러(+9~10%)와 EBITDA 마진 +150~175bp가 달성되고 FY2027에 매출 한 자릿수 중반·마진 소폭 확대만 유지돼도 EPS 24~25달러는 방어된다. 여기에 연 3~4%의 주식수 축소가 더해지고 멀티플이 14~15배로만 회복해도 340~375달러(상승 여력 20~35%)로, 36명 애널리스트 평균 목표주가 340.6달러와 대체로 일치한다.",
-     "summary": "성장률이 한 자릿수대로 둔화되는 경기소비재임을 감안해도 11.5배·PEG 0.74배는 과도한 할인이다. 다만 이 할인은 'AI가 OTA를 우회할 수 있다'는 구조적 의심의 대가이므로, 멀티플 재평가는 실적보다 AI 내러티브 전환에 더 좌우될 수 있다. 4점."
-    },
-    "catalysts": [
-     {
-      "event": "Q3 2026 실적 발표",
-      "timing": "2026-11-05",
-      "impact": "불확실",
-      "detail": "가이던스는 매출 46.5~47.5억 달러(+5~8%), 조정 EBITDA 15.1~15.6억 달러(마진 32.5~32.8%)로 Q2(+14%)보다 크게 낮춰 잡혔다. 5개 분기 연속 상회 기록을 이어가며 실제로는 가이던스 상단을 넘길지, 아니면 둔화가 진짜 추세인지 확인하는 분기다. 유럽 아웃바운드 회복 여부와 B2B 성장률의 두 자릿수 유지가 핵심 체크포인트."
-     },
-     {
-      "event": "FY2027 가이던스 제시 (Q4 실적)",
-      "timing": "2027년 2월 예상",
-      "impact": "불확실",
-      "detail": "현재 멀티플(11.5배)은 사실상 저성장 고착을 가정한다. FY2027 매출 성장 7% 이상 + 마진 추가 확대가 제시되면 리레이팅 트리거가 되고, 5% 미만 + 마진 플랫이면 할인이 정당화된다."
-     },
-     {
-      "event": "AI 플랫폼과의 유통 관계 구체화",
-      "timing": "향후 6~12개월",
-      "impact": "긍정",
-      "detail": "2026년 3월 OpenAI가 ChatGPT 내 직접 결제 계획을 축소한다는 보도에 EXPE 주가가 하루 12% 급등했을 만큼 이 이슈의 민감도가 크다. Expedia는 ChatGPT 앱으로 조기 진입했고 경영진은 유료 유통 모델로 전환되더라도 '익숙한 영역'이라고 밝혔다. AI 채널에서의 실제 예약 기여가 수치로 공개되면 디스인터미디에이션 공포가 완화될 수 있다."
-     },
-     {
-      "event": "광고 사업의 Vrbo·B2B 확장",
-      "timing": "2026~2027년",
-      "impact": "긍정",
-      "detail": "경영진은 광고 매출을 B2B·Vrbo 등 신규 지면으로 확장 중이라고 밝혔으며 Vrbo는 아직 초기 단계다. 광고는 증분 마진이 거의 100%에 가까워 매출 비중이 커질수록 EBITDA 마진 가이던스(+150~175bp)의 상향 여지를 만든다."
-     },
-     {
-      "event": "자사주 매입 지속 및 주식수 축소",
-      "timing": "분기별 상시",
-      "impact": "긍정",
-      "detail": "상반기 9억 달러 집행(Q2 평균 매입단가 226달러), TTM 19.2억 달러로 주식수가 연 3.6% 감소 중이다. 현 주가가 자사주 평균 매입단가 대비 크게 높지 않아 매입의 주당가치 기여가 유효하다."
-     }
-    ],
-    "bear_case": {
-     "summary": "가장 강한 약세 논리는 '싼 데는 이유가 있다'이다. Expedia의 소비자 부문은 매출의 절반 가까이를 마케팅에 쓰며 구글 검색 유입에 의존해 왔는데, AI 검색/에이전트가 여행 탐색 단계를 흡수하면 트래픽 획득 비용이 오르거나 예약 자체가 우회된다. 회사 스스로 10-K에 '생성형·에이전트 AI'를 경쟁 위협으로 새로 명시하고 자사 존재감이 약할 수 있는 AI 채널을 언급했다. 여기에 Q3 매출 가이던스가 +5~8%로 급감하고 항공권 예약이 -5%, 유럽 아웃바운드가 부진한 점은 순환적 둔화까지 겹칠 수 있음을 시사한다.",
-     "key_risks": [
-      "AI 디스인터미디에이션: OpenAI의 결제 축소로 단기 공포는 완화됐지만 구글 AI 모드 등 탐색 단계 장악은 진행 중이며, 이는 EXPE의 교차판매·네트워크 효과를 서서히 잠식한다.",
-      "성장 둔화의 실체화: Q2 +14%에서 Q3 가이던스 +5~8%로 급락. 경영진도 기저 부담·B2B 투자·환율로 마진 확대 폭이 축소될 것이라고 안내했다.",
-      "믹스 악화: 고성장 B2B(+23%)는 B2C보다 테이크레이트·마진이 낮아, B2B 비중 상승이 매출 성장률과 EBITDA 마진의 방향을 엇갈리게 만들 수 있다.",
-      "현금흐름 착시: TTM FCF 44.6억 달러는 순이익의 2.3배로 선수예약금 플로트 의존도가 높다. 여행 수요가 꺾이면 FCF가 순이익 수준으로 급락하며 자사주 매입 여력이 함께 줄어든다.",
-      "경기 민감성: 소비자 재량 지출에 직결되는 업종으로 미국 소비 둔화나 매크로 충격 시 예약·객단가(ADR $220.6, +5%)가 동시에 압박받는다.",
-      "경쟁: Booking.com·Airbnb 대비 B2C 브랜드력 열위가 구조적으로 지속되며, B2B에서도 경쟁 심화 질문이 실적 컨콜에서 반복 제기되고 있다."
-     ],
-     "thesis_breakers": [
-      "B2B 총예약 성장률이 두 자릿수(현재 +21%) 아래로 2개 분기 연속 떨어질 때 — 핵심 성장 축이 무너진 신호.",
-      "예약 객실 수(현재 +6%) 증가율이 0% 이하로 전환되거나, 마케팅비/매출 비율이 상승하는데도 예약 성장률이 둔화될 때(트래픽 획득 경제성 붕괴).",
-      "회사가 FY2026 EBITDA 마진 확대 가이던스(+150~175bp)를 하향하거나, FY2027 매출 성장 가이던스를 5% 미만으로 제시할 때.",
-      "FY2027 EPS 컨센서스(현재 24.43달러, 90일 +5.8% 상향)가 3개월 누적 -5% 이상 하향 전환될 때.",
-      "분기 자사주 매입이 SBC(분기 약 1억 달러) 수준 이하로 축소되어 주식수 감소가 멈출 때 — 현금흐름 훼손의 선행 신호.",
-      "AI 플랫폼(구글·OpenAI 등)이 호텔 직접 예약을 본격 중개하기 시작해 OTA 우회가 트래픽 지표로 확인될 때."
-     ]
-    },
-    "thesis_status": "해당없음",
-    "thesis_status_reason": "신규 편입 후보로, 기존 보유 논리가 없어 해당없음으로 둡니다.",
-    "verdict": "편입 적합",
-    "verdict_reason": "다섯 관점 중 재무(순현금, 연 3.6% 주식수 축소), 가격(선행 PER 11.5배·PEG 0.74배, 목표주가 대비 +21%), 촉매(추정치 상향 사이클, 광고·B2B 확장), 실행력(4개 분기 연속 어닝 서프라이즈, 5개 분기 연속 가이던스 상회와 연간 가이던스 상향)이 우호적입니다. 기업의 질은 B2C 브랜드력 열위와 마케팅 의존이라는 약점이 있어 3점에 그치지만, B2B 20개 분기 연속 두 자릿수 성장이라는 구조적 축과 간접비 동결로 만든 마진 확대(+196bp)가 이를 상쇄합니다. 결정적으로 현재 밸류에이션은 AI 디스인터미디에이션이라는 아직 실현되지 않은 위험을 이미 상당 부분 반영한 반면, 2026년 3월 OpenAI의 직접 결제 계획 축소는 이 위험의 타임라인이 시장 우려보다 길 수 있음을 보여줬습니다. '좋은 회사'는 아니지만 '싸게 사는 괜찮은 현금창출 기업'으로 6개월+ 보유의 기대값이 뚜렷하며, 다만 성장주가 아니라 밸류 리레이팅+주주환원 베팅임을 인지하고 포지션은 코어가 아닌 위성 비중으로 가져가는 것이 적절합니다.",
-    "conviction": 3,
-    "sources": [
-     {
-      "title": "Expedia Group Reports Second Quarter 2026 Results (Form 8-K, SEC)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001324424/000132442426000051/earningsrelease-q22026.htm"
-     },
-     {
-      "title": "Earnings call transcript: Expedia beats Q2 2026 estimates, raises outlook",
-      "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-expedia-beats-q2-2026-estimates-raises-outlook-93CH-4839467"
-     },
-     {
-      "title": "Expedia Group Inc (EXPE) (Q2 2026) Earnings Call Highlights: Record Growth and Strategic Expansion",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/expedia-group-inc-expe-q2-051329986.html"
-     },
-     {
-      "title": "Expedia Group Q2 Earnings & Revenues Beat Estimates, Increase Y/Y",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/expedia-group-q2-earnings-revenues-164700520.html"
-     },
-     {
-      "title": "Expedia (EXPE) Q2 2026 Earnings Call Transcript",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/expedia-expe-q2-2026-earnings-205914315.html"
-     },
-     {
-      "title": "ChatGPT Bails on Transactions — Good News for Expedia and Booking (Skift)",
-      "url": "https://skift.com/2026/03/05/openai-chatgpt-checkout-walkback/"
-     },
-     {
-      "title": "Expedia Group sees reward and risk in the rise of AI-powered travel (GeekWire)",
-      "url": "https://www.geekwire.com/2026/expedia-group-sees-reward-and-risk-in-the-rise-of-ai-powered-travel/"
-     },
-     {
-      "title": "'We're experimenting aggressively': How Expedia sees AI reshaping travel — and its own business (GeekWire)",
-      "url": "https://www.geekwire.com/2026/were-experimenting-aggressively-how-expedia-sees-ai-reshaping-travel-and-its-own-business/"
-     },
-     {
-      "title": "Online Travel Stocks Surge as OpenAI Scales Back Direct Bookings",
-      "url": "https://www.globalbankingandfinance.com/online-travel-stocks-rise-report-openai-scale-back-direct/"
-     },
-     {
-      "title": "Is AI Search Killing The Hotel Website? (Hospitality Net)",
-      "url": "https://www.hospitalitynet.org/opinion/4132144/is-ai-search-killing-the-hotel-website"
-     }
-    ]
-   },
-   "metrics": {
-    "ticker": "EXPE",
-    "name": "Expedia Group, Inc.",
-    "sector": "경기소비재",
-    "industry": "Travel Services",
-    "as_of": "2026-10-10",
-    "price": 274.22,
-    "market_cap_b": 32.91,
-    "valuation": {
-     "trailing_pe": 17.128044,
-     "forward_pe": 11.174254,
-     "peg": 0.6802,
-     "fcf_yield_pct": 10.43,
-     "analyst_target_mean": 336.14285,
-     "analyst_rating_mean_1buy_5sell": 2.15789,
-     "analysts": 35.0
-    },
-    "growth_profitability": {
-     "gross_margin_pct": 90.4,
-     "op_margin_pct": 19.0,
-     "roe_pct": 89.5,
-     "revenue_growth_last_q_yoy_pct": 14.0,
-     "eps_growth_last_q_yoy_pct": 188.7,
-     "eps_growth_est_this_fy_pct": 32.5,
-     "eps_growth_est_next_fy_pct": 16.8
-    },
-    "cash_debt_dilution": {
-     "fcf_ttm_b": 4.46,
-     "sbc_ttm_b": 0.41,
-     "buyback_ttm_b": 1.92,
-     "fcf_margin_pct": 21.9,
-     "net_debt_to_ebitda": -0.5,
-     "share_count_change_pct": -3.61,
-     "share_count_span": "2025-06→2026-06"
-    },
-    "estimate_revisions_next_fy_eps": {
-     "current": 24.54034,
-     "chg_7d_pct": 0.12,
-     "chg_30d_pct": 0.66,
-     "chg_90d_pct": 6.17,
-     "up_revisions_30d": 3.0,
-     "down_revisions_30d": 0.0
-    },
-    "quarterly": {
-     "periods": [
-      "2025-06",
-      "2025-09",
-      "2025-12",
-      "2026-03",
-      "2026-06"
-     ],
-     "revenue_b": [
-      3.79,
-      4.41,
-      3.55,
-      3.43,
-      4.32
-     ],
-     "op_margin_pct": [
-      14.0,
-      25.6,
-      15.4,
-      7.1,
-      19.0
-     ],
-     "diluted_eps": [
-      2.48,
-      7.33,
-      1.6,
-      -0.05,
-      7.16
-     ]
-    },
-    "annual_revenue_b": [
-     [
-      "2022-12",
-      11.67
-     ],
-     [
-      "2023-12",
-      12.84
-     ],
-     [
-      "2024-12",
-      13.69
-     ],
-     [
-      "2025-12",
-      14.73
-     ]
-    ],
-    "eps_surprises": [
-     {
-      "quarter": "2025-09",
-      "actual": 7.57,
-      "estimate": 6.94574,
-      "surprise_pct": 9.0
-     },
-     {
-      "quarter": "2025-12",
-      "actual": 3.78,
-      "estimate": 3.36869,
-      "surprise_pct": 12.2
-     },
-     {
-      "quarter": "2026-03",
-      "actual": 1.96,
-      "estimate": 1.37698,
-      "surprise_pct": 42.3
-     },
-     {
-      "quarter": "2026-06",
-      "actual": 5.76,
-      "estimate": 5.25301,
-      "surprise_pct": 9.6
-     }
-    ],
-    "next_earnings": "2026-11-04",
-    "return_1y_pct": 31.3,
-    "from_52w_high_pct": -19.0,
-    "quant_score": {
-     "score": 79.7,
-     "quality": 75,
-     "health": 73,
-     "value": 85,
-     "revisions": 83
-    },
-    "cycle_check": null,
-    "dashboard_signals": []
-   },
-   "reused_from": "2026-09-13"
-  },
-  "CPAY": {
-   "analysis": {
-    "one_line_thesis": "유류카드에서 기업지불·크로스보더로 사업을 갈아타며 5개 분기 연속 두 자릿수 유기적 성장을 내는 Corpay가, 회계상 상각비·FTC 합의금으로 눌린 GAAP 이익 탓에 선행 PER 12.7배·FCF수익률 7.4%에 거래되는 '실적은 가속, 멀티플은 디레이팅' 국면.",
-    "quality": {
-     "score": 4,
-     "moat": "폐쇄형 유류카드 네트워크(가맹점 직접계약·데이터 통제)와 기업 AP·숙박·크로스보더 결제의 높은 전환비용이 해자의 핵심이며, 매출총이익률 80.5%·영업이익률(조정 기준) 40%대·ROE 29.2%가 이를 뒷받침한다. 다만 해자의 성격이 '네트워크 독점'보다 '틈새 수직시장별 지배력 + 가격결정력'에 가까워, 유류카드 부문은 EV 전환·연비 개선이라는 구조적 역풍을 안고 있다.",
-     "growth_durability": "2026년 2분기 매출 +21%(13.4억달러), 유기적 성장 +10%로 5개 분기 연속 두 자릿수 유기 성장을 기록했고, 1분기도 매출 +25%·유기 +11%였다. 즉 전체 성장의 절반가량은 Alpha Group 등 M&A 기여지만 유기 성장만으로도 10% 수준이 유지되고 있어 일회성으로 보기 어렵다. 연매출도 2022년 34.3억→2025년 45.3억달러로 꾸준히 확대됐다.",
-     "summary": "성장의 질은 '기업지불·크로스보더로의 로테이션'이 실제 숫자로 확인된다는 점에서 양호하다. 다만 M&A 의존도가 높아 유기 성장률이 6~7%대로 떨어지면 해자 서사 자체가 재평가 대상이 된다."
-    },
-    "financial_health": {
-     "score": 3,
-     "cash_flow": "TTM 잉여현금흐름 16.4억달러(FCF마진 38.8%)로 현금창출력은 강하고, 주식보상비용이 1.1억달러(FCF의 7% 수준)에 불과해 조정지표의 왜곡이 작다. 다만 Corpay의 현금흐름에는 고객예치금·운전자본 변동이 섞여 분기별 변동성이 크다는 점은 감안해야 한다.",
-     "debt": "순부채/EBITDA 2.7배로 동종 결제업체 평균보다 높고, 사상 두 번째 규모의 인수(2025년 4분기 클로징)와 전략적 지분투자를 연달아 집행하면서 레버리지가 올라간 상태다. 조정 EBITDA가 분기 7.67억달러(+24%)로 빠르게 늘고 있어 디레버리징 여력은 있으나, 금리·FX 환경이 악화되면 여유가 얇아진다.",
-     "dilution": "최근 1년 주식 수 -7.02%, 자사주 매입 18억달러로 FCF를 초과하는 공격적 환원을 집행했다. 희석 리스크는 사실상 없으나, 부채를 유지한 채 FCF 이상을 자사주에 쓰는 구조는 재무 완충을 갉아먹는 선택이다.",
-     "summary": "현금창출력(FCF 16.4억달러, 마진 38.8%)은 A급이지만 2.7배 레버리지 + 대형 M&A + FCF 초과 자사주 매입의 조합이 건전성 점수를 끌어내린다. 정량 health 점수 45점도 같은 지점을 가리킨다."
-    },
-    "valuation": {
-     "score": 4,
-     "current_view": "주가 398.11달러, 시총 261억달러 기준 선행 PER 12.7배·PEG 0.75·FCF수익률 7.45%로, 두 자릿수 유기 성장과 20%대 조정 EPS 성장을 내는 결제 플랫폼치고는 명백히 낮다. 후행 PER 24.2배와의 큰 괴리는 인수 무형자산 상각과 2026년 2분기 1억달러 FTC 합의 충당금 때문이며, 이 때문에 GAAP 희석 EPS는 3.70달러(-7%)인 반면 조정 순이익은 +27%다. 데이터 요약의 영업이익률 하락(43.5%→35.2%)도 같은 일회성·비현금 요인이 주된 원인이라는 점을 밝혀둔다.",
-     "upside_scenario": "유기 성장 10% 유지 + 자사주 매입으로 주식 수 연 5~7% 감소가 이어지면 조정 EPS는 연 15~20% 성장이 가능하고, 멀티플이 역사적 하단(15~16배)만 회복해도 31.4달러 추정치 기준 470~500달러가 나온다. 애널리스트 15인 평균 목표가 461달러(+16%), 투자의견 1.69도 이 구간과 겹친다.",
-     "summary": "시장은 GAAP 이익 감소·레버리지·유류카드 구조적 우려를 이유로 디스카운트를 주고 있고, 이것이 틀렸음을 입증할 근거(조정 EPS +36%, 유기 10%, 상향 리비전 13건 vs 하향 2건)가 이미 쌓이는 중이다. 가격은 낙관을 선반영한 상태가 아니라 회의를 반영한 상태다."
-    },
-    "catalysts": [
-     {
-      "event": "2026년 3분기 실적 발표",
-      "timing": "2026-11-04",
-      "impact": "긍정",
-      "detail": "최근 4개 분기 EPS가 모두 컨센서스를 상회했고 직전 두 분기는 +6.0%, +6.3% 서프라이즈였다. 유기 성장 10% 이상 유지와 연간 가이던스 상향이 확인되면 디레이팅 해소의 직접적 방아쇠가 된다."
-     },
-     {
-      "event": "FTC 소비자보호국과의 1억달러 예비 합의 최종 승인",
-      "timing": "2026년 4분기(회사는 '연내 마무리' 언급)",
-      "impact": "긍정",
-      "detail": "수년간 주가 멀티플을 눌러온 유류카드 수수료 관련 규제 리스크가 금액이 확정되며 해소된다. 반대로 승인 지연이나 조건 추가 시에는 불확실성이 재점화된다."
-     },
-     {
-      "event": "Alpha Group 등 대형 인수 통합 및 시너지 실현",
-      "timing": "2026년 4분기~2027년 상반기",
-      "impact": "불확실",
-      "detail": "2025년 4분기 클로징한 사상 두 번째 규모 인수가 현재 21~25%의 전체 매출 성장을 견인 중이다. 통합 성과가 2027년 유기 성장률로 전환되는지가 관건이며, 실패 시 성장률이 유기 10%대로 되돌아간다."
-     },
-     {
-      "event": "2027년 연간 가이던스 제시",
-      "timing": "2027년 2월 초",
-      "impact": "불확실",
-      "detail": "M&A 기여가 소멸하는 2027년의 성장 프로파일이 처음 공개된다. 조정 EPS 두 자릿수 성장과 레버리지 2.5배 이하 복귀 경로가 함께 제시되면 재평가, 그렇지 못하면 현 멀티플이 정당화된다."
-     },
-     {
-      "event": "자사주 매입 지속 및 금리 인하에 따른 예치금 이자수익 변화",
-      "timing": "상시 / 6~12개월",
-      "impact": "불확실",
-      "detail": "TTM 18억달러 매입으로 주식 수가 7% 줄어 EPS를 직접 밀어올리고 있으나, 정책금리 인하 국면에서는 고객 예치금 운용수익이 감소해 일부 상쇄된다."
-     }
-    ],
-    "bear_case": {
-     "summary": "가장 강한 약세 논리는 '조정 이익과 GAAP 이익의 괴리'다. 2026년 2분기 조정 순이익은 4.64억달러(+27%)지만 GAAP 순이익은 2.48억달러(-13%)로 절반 수준이며, 이 격차의 상당 부분이 반복적으로 발생하는 M&A 무형자산 상각에서 나온다. 즉 성장의 상당 부분을 부채(순부채/EBITDA 2.7배)로 산 뒤 그 비용을 '조정'으로 제외하는 구조라면 선행 PER 12.7배는 싼 게 아니라 정당한 가격일 수 있다.",
-     "key_risks": [
-      "레버리지 2.7배 상태에서 대형 M&A와 FCF 초과 자사주 매입을 병행 — 금리 상승이나 실적 둔화 시 재무 완충이 빠르게 얇아짐",
-      "유류·차량 결제 부문의 구조적 역풍(전기차 전환, 연비 개선, 유가 변동)으로 레거시 현금창출원이 장기 축소",
-      "1억달러 FTC 합의가 끝이 아닐 가능성 — 수수료 관행 관련 집단소송·주정부 규제가 추가로 이어질 수 있음",
-      "크로스보더 사업 확대로 FX 변동성과 거래량 경기민감도가 손익에 더 크게 반영됨",
-      "20년 넘게 회사를 이끈 Ron Clarke 회장 겸 CEO에 대한 의존도와 승계 불확실성"
-     ],
-     "thesis_breakers": [
-      "유기적 매출 성장률이 2개 분기 연속 7% 미만으로 하락(현재 10~11%에서 이탈)",
-      "순부채/EBITDA가 3.5배를 초과하거나 자사주 매입이 중단·대폭 축소되는 경우",
-      "연간 조정 EPS 가이던스가 하향 조정되고 차기 FY EPS 추정치 리비전이 3개월 누적 -5% 이상으로 돌아서는 경우(현재 +2.75%)",
-      "FTC 합의 외에 1억달러를 초과하는 추가 규제 제재·소송 충당이 발생",
-      "기업지불·크로스보더 부문의 유기 성장률이 한 자릿수로 둔화되어 '로테이션' 서사가 깨지는 경우"
-     ]
-    },
-    "thesis_status": "해당없음",
-    "thesis_status_reason": "신규 편입 후보로 기존 보유 논리가 없어 해당없음으로 둔다.",
-    "verdict": "편입 적합",
-    "verdict_reason": "5개 분기 연속 두 자릿수 유기 성장(2026년 2분기 +10%, 1분기 +11%)과 조정 EPS +36%라는 펀더멘털 가속이, 무형자산 상각과 1회성 1억달러 FTC 충당금 탓에 눌린 GAAP 숫자에 가려 선행 PER 12.7배·FCF수익률 7.45%에 방치돼 있다는 점이 핵심이다. 여기에 연 7%의 주식 수 감소와 13건 상향 대 2건 하향의 추정치 리비전이 더해져 6개월 이상 보유 시 기대값이 뚜렷하다. 다만 순부채 2.7배와 M&A 의존적 성장 구조 때문에 만점짜리 편입은 아니며, 분할 매수와 유기 성장률·레버리지 모니터링을 전제로 한 편입 적합이다.",
-    "conviction": 3,
-    "sources": [
-     {
-      "title": "Corpay Reports Second Quarter Financial Results (Form 8-K Exhibit 99.1, 2026-08-05)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001175454/000117545426000045/ex991q2_2026.htm"
-     },
-     {
-      "title": "Corpay Reports First Quarter Financial Results (Form 8-K Exhibit 99.1, 2026-05-07)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001175454/000117545426000029/ex991q1_2026.htm"
-     },
-     {
-      "title": "Corpay Reports Fourth Quarter and Full Year Financial Results (Form 8-K Exhibit 99.1, 2026-02-04)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1175454/000117545426000008/ex991q4_2025.htm"
-     }
-    ]
-   },
-   "metrics": {
-    "ticker": "CPAY",
-    "name": "Corpay, Inc.",
-    "sector": "IT·기술",
-    "industry": "Software - Infrastructure",
-    "as_of": "2026-10-10",
-    "price": 397.92,
-    "market_cap_b": 26.13,
-    "valuation": {
-     "trailing_pe": 24.44226,
-     "forward_pe": 12.62992,
-     "peg": 0.7512,
-     "fcf_yield_pct": 7.45,
-     "analyst_target_mean": 461.0,
-     "analyst_rating_mean_1buy_5sell": 1.6875,
-     "analysts": 15.0
-    },
-    "growth_profitability": {
-     "gross_margin_pct": 80.5,
-     "op_margin_pct": 46.9,
-     "roe_pct": 29.2,
-     "revenue_growth_last_q_yoy_pct": 21.5,
-     "eps_growth_last_q_yoy_pct": -7.0,
-     "eps_growth_est_this_fy_pct": 28.2,
-     "eps_growth_est_next_fy_pct": 14.9
-    },
-    "cash_debt_dilution": {
-     "fcf_ttm_b": 1.64,
-     "sbc_ttm_b": 0.11,
-     "buyback_ttm_b": 1.8,
-     "fcf_margin_pct": 38.8,
-     "net_debt_to_ebitda": 2.7,
-     "share_count_change_pct": -7.02,
-     "share_count_span": "2025-06→2026-06"
-    },
-    "estimate_revisions_next_fy_eps": {
-     "current": 31.50614,
-     "chg_7d_pct": 0.18,
-     "chg_30d_pct": 0.18,
-     "chg_90d_pct": 2.94,
-     "up_revisions_30d": 13.0,
-     "down_revisions_30d": 2.0
-    },
-    "quarterly": {
-     "periods": [
-      "2025-06",
-      "2025-09",
-      "2025-12",
-      "2026-03",
-      "2026-06"
-     ],
-     "revenue_b": [
-      1.1,
-      1.17,
-      1.25,
-      1.26,
-      1.34
-     ],
-     "op_margin_pct": [
-      43.5,
-      44.6,
-      41.8,
-      40.8,
-      35.2
-     ],
-     "diluted_eps": [
-      3.98,
-      3.91,
-      3.75,
-      5.07,
-      3.7
-     ]
-    },
-    "annual_revenue_b": [
-     [
-      "2022-12",
-      3.43
-     ],
-     [
-      "2023-12",
-      3.76
-     ],
-     [
-      "2024-12",
-      3.97
-     ],
-     [
-      "2025-12",
-      4.53
-     ]
-    ],
-    "eps_surprises": [
-     {
-      "quarter": "2025-09",
-      "actual": 5.7,
-      "estimate": 5.64252,
-      "surprise_pct": 1.0
-     },
-     {
-      "quarter": "2025-12",
-      "actual": 6.04,
-      "estimate": 5.94046,
-      "surprise_pct": 1.7
-     },
-     {
-      "quarter": "2026-03",
-      "actual": 5.8,
-      "estimate": 5.4702,
-      "surprise_pct": 6.0
-     },
-     {
-      "quarter": "2026-06",
-      "actual": 7.0,
-      "estimate": 6.58496,
-      "surprise_pct": 6.3
-     }
-    ],
-    "next_earnings": "2026-11-04",
-    "return_1y_pct": 42.1,
-    "from_52w_high_pct": -6.4,
-    "quant_score": {
-     "score": 70.7,
-     "quality": 83,
-     "health": 45,
-     "value": 84,
-     "revisions": 67
-    },
-    "cycle_check": null,
-    "dashboard_signals": [
-     "M1 대가 최근분기 매수: Chase Coleman (+5점)"
-    ]
-   },
-   "reused_from": "2026-09-26"
-  },
-  "RDDT": {
-   "analysis": {
-    "one_line_thesis": "Reddit는 8개 분기 연속 60%+ 매출 성장과 43% 조정 EBITDA 마진을 내는 고마진 광고 플랫폼으로, 구글 검색 의존 우려로 주가가 1년간 38% 빠지며 성장 대비 밸류에이션(선행 PER 약 22배, PEG 0.79)이 처음으로 합리적 구간에 들어왔다.",
-    "quality": {
-     "score": 4,
-     "moat": "전 세계 10만 개 이상 커뮤니티에 20년간 축적된 사람 작성 텍스트 아카이브는 복제 불가능한 자산이며, 91.4%의 총마진과 광고·데이터 라이선싱 양쪽에서 수익화가 가능하다. 고의도(high-intent) 제품 논의 데이터 덕분에 검색·AI 시대에 오히려 인용 가치가 커졌고, 2026년 2분기 광고매출 762백만 달러(전체의 약 94%)로 광고 엔진 개선과 해외 확장이 동시에 작동 중이다.",
-     "growth_durability": "2026년 2분기 매출 805백만 달러(+61% YoY)로 8개 분기 연속 60% 이상 성장했고 3분기 가이던스도 860~870백만 달러로 컨센서스(828백만)를 상회했다. 다만 글로벌 DAUq는 130.3백만(+18%)인 반면 수익성 핵심인 미국 DAUq는 53.2백만(+6%)으로 둔화 중이며, 성장의 상당 부분이 해외·기계번역·광고 단가 개선에서 나온다는 점에서 구조적이지만 구글 검색 유입 변수에 노출돼 있다.",
-     "summary": "독점적 UGC 데이터와 91% 총마진, 28.8% 영업이익률(조정 EBITDA 43%)을 갖춘 소수의 흑자 소셜 플랫폼이다. 다만 트래픽의 상당 부분이 구글 검색 유입에 의존하고 매출의 94%가 광고 한 축에 몰려 있어 해자의 '지속성'은 검증 중 단계로, 질적으로는 최상급이지만 만점은 아니다."
-    },
-    "financial_health": {
-     "score": 5,
-     "cash_flow": "TTM 잉여현금흐름 10.2억 달러(FCF 마진 24.4%)로 순이익(2026년 2분기 253백만 달러) 대비 현금 창출력이 견조하다. 다만 TTM 주식보상비용 3.4억 달러(매출의 약 12%)를 차감하면 실질 FCF는 약 6.8억 달러 수준으로 낮아지고, 회사는 3분기 SBC가 더 늘어날 것이라고 안내했다.",
-     "debt": "순부채/EBITDA -3.45배로 실질 무차입 순현금 구조이며, 부채 상환 부담이 사실상 없다. 매크로 광고 경기 둔화 시에도 재무적 생존 리스크는 낮다.",
-     "dilution": "데이터 요약의 주식수 +2.8%(2025-06→2026-06)와 달리 회사 공시 기준 2026년 6월 말 완전희석 주식수는 207.0백만 주로 전년 대비 +0.2%에 그쳤고, 2분기에만 150만 주를 평균 157.57달러에 총 2.35억 달러 자사주 매입했다. 최신 공시를 따르면 SBC 희석이 자사주 매입으로 거의 상쇄되고 있다는 점이 긍정적이다.",
-     "summary": "순현금 + 두 자릿수 FCF 마진 + 자사주 매입으로 희석 상쇄까지 이뤄지는 매우 건강한 재무구조다. 유일한 감점 요인은 매출의 12%에 달하는 SBC와 3분기 추가 증가 안내지만, 현금흐름 규모가 이를 흡수하고 있다."
-    },
-    "valuation": {
-     "score": 4,
-     "current_view": "주가 157.77달러, 시가총액 303억 달러로 TTM 매출 약 27.7억 달러 대비 약 11배, TTM EPS 4.30달러 기준 PER 36.6배, 차기 회계연도 EPS 추정치 7.04달러 기준으로는 약 22배다. 성장률(매출 +61%, EPS +178% YoY) 대비 PEG 0.79는 대형 광고 플랫폼 대비 명백히 저평가 구간이며, 1년간 -38%·52주 고점 대비 -41.7% 하락으로 구글 리스크가 상당 부분 가격에 반영됐다.",
-     "upside_scenario": "구글·OpenAI 데이터 라이선싱이 기존 연 6천만 달러 수준보다 상향 갱신되고 매출 성장률이 40%대로만 유지되면, 2027년 매출 40억 달러대·EBITDA 마진 45%에서 현재 EV(순현금 감안 약 260억 달러)는 EV/EBITDA 15배 이하가 된다. 애널리스트 33인 평균 목표주가 213달러(현재가 대비 +35%), 평균 등급 1.94는 이 시나리오를 반영한다.",
-     "summary": "절대 멀티플이 싸지는 않지만 성장률·마진·순현금을 감안하면 역사적 밴드 하단이며, 최근 90일 차기연도 EPS 추정치가 +9.2%(상향 23건 vs 하향 2건) 올라온 점이 밸류에이션 매력을 뒷받침한다. 정당화 조건은 '매출 성장률 40% 이상 유지 + 미국 DAU 재가속'이다."
-    },
-    "catalysts": [
-     {
-      "event": "2026년 3분기 실적 발표",
-      "timing": "2026-10-29",
-      "impact": "불확실",
-      "detail": "가이던스는 매출 860~870백만 달러, 조정 EBITDA 385~395백만 달러로 컨센서스를 상회한다. 다만 3분기부터 로그인/비로그인 사용자 지표 공시를 중단해 구글 유입 훼손 여부를 투자자가 직접 검증하기 어려워지고, SBC도 증가 예정이라 반응이 양방향으로 벌어질 수 있다."
-     },
-     {
-      "event": "구글 데이터 라이선싱 계약 갱신(연 약 6천만 달러 규모)",
-      "timing": "2026년 하반기~2027년 상반기, 시점 미확정",
-      "impact": "불확실",
-      "detail": "WSJ 보도로 Reddit이 구글의 데이터 접근 차단을 검토 중이라는 소식에 7월 주가가 9% 급락했다. 대폭 상향된 조건으로 갱신되면 고마진 매출 재평가 요인이지만, 결렬 시 검색 유입 감소로 비로그인 트래픽이 추가 훼손될 수 있어 양날의 검이다."
-     },
-     {
-      "event": "S&P 500 지수 편입 효과",
-      "timing": "2026년 8~9월(발표 후 지수 추종 자금 유입 진행 중)",
-      "impact": "긍정",
-      "detail": "편입 발표 당시 주가가 11~12% 급등했고 인덱스 펀드의 기계적 매수 수요가 발생한다. 대형주 지위 확보로 기관 커버리지와 유동성이 개선되는 부수 효과도 있다."
-     },
-     {
-      "event": "사용자 재가속 및 미국 DAU 1억 명 목표 진척",
-      "timing": "향후 2~4개 분기",
-      "impact": "긍정",
-      "detail": "9월 10일 2026년 중 가장 빠른 월간 사용자 증가 소식에 주가가 7% 상승했고, 회사는 머신러닝 기반 피드·온보딩·속도 개선으로 미국 일간 1억 명을 중기 목표로 제시했다. 미국 DAU(+6%)가 두 자릿수로 회복되면 광고 단가·매출 성장률 유지의 핵심 근거가 된다."
-     },
-     {
-      "event": "미성년자 소셜미디어 규제 확산",
-      "timing": "2026년 하반기~2027년",
-      "impact": "부정",
-      "detail": "캘리포니아 주지사가 9월 11일 16세 미만 대상 소셜미디어 기능을 제한하는 법안에 서명했다. Reddit은 연령 인증·기능 제한 대응 비용과 광고 타게팅 제약을 떠안을 수 있다."
-     }
-    ],
-    "bear_case": {
-     "summary": "Reddit 트래픽의 핵심 유입원은 구글 검색이며, 구글이 AI Overviews·Gemini 챗으로 답을 직접 제공할수록 외부 링크 클릭이 줄어든다. 경영진 스스로 2026년 2분기 콘퍼런스콜에서 검색 유입이 '들쭉날쭉하다(choppy)'고 인정했고, 호실적에도 주가가 시간외 11% 급락한 이유가 여기에 있다. 매출의 94%가 광고이고 미국 DAU 성장률이 6%까지 낮아진 상태에서 유입이 꺾이면 60%대 성장률은 빠르게 무너질 수 있다.",
-     "key_risks": [
-      "구글 AI 검색 확대로 인한 비로그인 트래픽 구조적 감소 — 회사가 통제할 수 없는 외부 변수",
-      "구글·OpenAI 데이터 라이선싱 갱신 시점·조건 불확실(기존 구글 계약 연 약 6천만 달러), 결렬 시 고마진 매출 공백과 유입 감소 동시 발생 가능",
-      "2026년 3분기부터 로그인/비로그인 사용자 지표 공시 중단 — 핵심 리스크 지표의 투명성 후퇴",
-      "매출의 94%가 광고에 집중돼 경기·광고예산 사이클에 취약하며, 유료 마케팅 지출의 ROI도 아직 개선 중",
-      "SBC 매출 대비 약 12%로 높고 3분기 추가 증가 예정 — GAAP 이익 대비 실질 주주가치 희석",
-      "미성년자 이용 규제 등 소셜미디어 규제 강화"
-     ],
-     "thesis_breakers": [
-      "분기 매출 성장률이 2개 분기 연속 30% 미만으로 둔화되거나, 가이던스가 컨센서스를 하회",
-      "글로벌 DAUq가 전분기 대비 감소(2026년 2분기 130.3백만 기준)하거나 미국 DAUq가 역성장 전환",
-      "구글과의 데이터 라이선싱이 결렬되거나 기존 조건보다 불리하게 갱신되고 동시에 검색 유입 감소가 실적에 반영",
-      "조정 EBITDA 마진이 43%에서 30% 초반 이하로 2개 분기 연속 하락",
-      "자사주 매입이 중단되고 완전희석 주식수가 연 3% 이상 증가로 재전환"
-     ]
-    },
-    "thesis_status": "해당없음",
-    "thesis_status_reason": "신규 편입 후보로 기존 보유 논리가 없어 해당없음으로 둔다. 향후 보유 시 점검 기준은 '매출 성장률 40%+ 유지, 글로벌 DAU 증가 지속, 구글 라이선싱 갱신 조건'이다.",
-    "verdict": "편입 적합",
-    "verdict_reason": "8개 분기 연속 60%+ 성장, 조정 EBITDA 마진 43%, 순현금·자사주 매입으로 희석 상쇄라는 펀더멘털은 개선 중인데 주가는 1년간 38% 하락해 차기연도 EPS 기준 약 22배(PEG 0.79)까지 내려왔고, 최근 90일 EPS 추정치는 오히려 9.2% 상향됐다. 즉 '구글 트래픽 훼손' 공포가 실적보다 먼저·과하게 반영된 구간으로 판단되며, 6개월 이상 보유 관점에서 기대값이 뚜렷하다. 다만 구글 의존이라는 통제 불가 리스크와 사용자 지표 공시 중단을 감안해 소형 비중으로 시작하고 분기 DAU·성장률을 엄격히 추적하는 조건부 편입이다.",
-    "conviction": 3,
-    "sources": [
-     {
-      "title": "Reddit Reports Second Quarter 2026 Results (Business Wire)",
-      "url": "https://www.businesswire.com/news/home/20260730598707/en/Reddit-Reports-Second-Quarter-2026-Results"
-     },
-     {
-      "title": "Reddit (RDDT) Q2 2026 earnings report (CNBC)",
-      "url": "https://www.cnbc.com/2026/07/30/reddit-rddt-q2-2026-earnings-report.html"
-     },
-     {
-      "title": "Reddit Q2 2026 earnings surge on revenue growth | RDDT 8-K Filing (StockTitan)",
-      "url": "https://www.stocktitan.net/sec-filings/RDDT/8-k-reddit-inc-reports-material-event-162e95400070.html"
-     },
-     {
-      "title": "Reddit Inc (RDDT) (Q2 2026) Earnings Call Highlights (Yahoo Finance)",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/reddit-inc-rddt-q2-2026-050309810.html"
-     },
-     {
-      "title": "Google traffic wobble sends major signal for sinking Reddit stock (TheStreet)",
-      "url": "https://www.thestreet.com/investing/stocks/rddt-google-search-referrals-reddit-stock-drop-q2-2026"
-     },
-     {
-      "title": "Reddit (RDDT) Stock Plunges 9% Amid Google AI Partnership Uncertainty (Parameter)",
-      "url": "https://parameter.io/reddit-rddt-stock-plunges-9-amid-google-ai-partnership-uncertainty/"
-     },
-     {
-      "title": "Reddit Stock Soared on the News of Its Inclusion in the S&P 500 (Motley Fool)",
-      "url": "https://www.fool.com/investing/2026/08/15/reddit-stock-soared-on-the-news-of-its-inclusion-in-the-s-and-p-500-here-are-3-things-investors-need-to-know-about-the-social-media-stock-in-2026/"
-     },
-     {
-      "title": "RDDT: Reddit, Inc. - Stock Price, Quote and News (CNBC)",
-      "url": "https://www.cnbc.com/quotes/RDDT"
-     },
-     {
-      "title": "Reddit outlines Q2 2026 revenue while targeting 100M daily U.S. users (Seeking Alpha)",
-      "url": "https://seekingalpha.com/news/4583636-reddit-outlines-715m-725m-q2-2026-revenue-while-targeting-100m-daily-u-s-users"
-     }
-    ]
-   },
-   "metrics": {
-    "ticker": "RDDT",
-    "name": "Reddit, Inc.",
-    "sector": "커뮤니케이션",
-    "industry": "Internet Content & Information",
-    "as_of": "2026-10-10",
-    "price": 159.91,
-    "market_cap_b": 30.77,
-    "valuation": {
-     "trailing_pe": 36.42597,
-     "forward_pe": 16.506855,
-     "peg": 0.7581,
-     "fcf_yield_pct": 2.2,
-     "analyst_target_mean": 213.70909,
-     "analyst_rating_mean_1buy_5sell": 1.94118,
-     "analysts": 33.0
-    },
-    "growth_profitability": {
-     "gross_margin_pct": 91.4,
-     "op_margin_pct": 28.8,
-     "roe_pct": 30.7,
-     "revenue_growth_last_q_yoy_pct": 61.1,
-     "eps_growth_last_q_yoy_pct": 177.8,
-     "eps_growth_est_this_fy_pct": 69.2,
-     "eps_growth_est_next_fy_pct": 26.2
-    },
-    "cash_debt_dilution": {
-     "fcf_ttm_b": 1.02,
-     "sbc_ttm_b": 0.34,
-     "buyback_ttm_b": null,
-     "fcf_margin_pct": 24.4,
-     "net_debt_to_ebitda": -3.45,
-     "share_count_change_pct": 2.8,
-     "share_count_span": "2025-06→2026-06"
-    },
-    "estimate_revisions_next_fy_eps": {
-     "current": 7.08639,
-     "chg_7d_pct": 0.25,
-     "chg_30d_pct": 0.7,
-     "chg_90d_pct": 9.22,
-     "up_revisions_30d": 3.0,
-     "down_revisions_30d": 0.0
-    },
-    "quarterly": {
-     "periods": [
-      "2025-06",
-      "2025-09",
-      "2025-12",
-      "2026-03",
-      "2026-06"
-     ],
-     "revenue_b": [
-      0.5,
-      0.58,
-      0.73,
-      0.66,
-      0.8
-     ],
-     "op_margin_pct": [
-      13.6,
-      23.7,
-      31.9,
-      27.6,
-      28.8
-     ],
-     "diluted_eps": [
-      0.45,
-      0.8,
-      1.24,
-      1.01,
-      1.25
-     ]
-    },
-    "annual_revenue_b": [
-     [
-      "2022-12",
-      0.67
-     ],
-     [
-      "2023-12",
-      0.8
-     ],
-     [
-      "2024-12",
-      1.3
-     ],
-     [
-      "2025-12",
-      2.2
-     ]
-    ],
-    "eps_surprises": [
-     {
-      "quarter": "2025-09",
-      "actual": 0.8,
-      "estimate": 0.52015,
-      "surprise_pct": 53.8
-     },
-     {
-      "quarter": "2025-12",
-      "actual": 1.24,
-      "estimate": 0.93136,
-      "surprise_pct": 33.1
-     },
-     {
-      "quarter": "2026-03",
-      "actual": 1.01,
-      "estimate": 0.56388,
-      "surprise_pct": 79.1
-     },
-     {
-      "quarter": "2026-06",
-      "actual": 1.25,
-      "estimate": 0.96481,
-      "surprise_pct": 29.6
-     }
-    ],
-    "next_earnings": "2026-10-29",
-    "return_1y_pct": -19.5,
-    "from_52w_high_pct": -38.2,
-    "quant_score": {
-     "score": 75.3,
-     "quality": 85,
-     "health": 77,
-     "value": 53,
-     "revisions": 85
-    },
-    "cycle_check": null,
-    "dashboard_signals": []
-   },
-   "reused_from": "2026-09-13"
-  },
-  "KEYS": {
-   "analysis": {
-    "one_line_thesis": "AI 인프라·1.6T 네트워킹·방산 수요로 주문이 분기 20억 달러를 넘어서며 구조적 상승 사이클에 올라탄 글로벌 1위 계측 기업이지만, FY26 EPS 60% 급증과 1년 99% 주가 상승으로 사이클 피크 실적에 25배 멀티플이 붙어 있어 FY2027 가이던스 확인 후 진입이 합리적이다.",
-    "quality": {
-     "score": 4,
-     "moat": "전자 계측(T&M) 시장 글로벌 1위로 Rohde&Schwarz, Anritsu, Tektronix(Fortive), VIAVI와 과점 구조를 형성하며, 5G/6G·800G/1.6T 이더넷·양자 등 표준 제정 초기 단계부터 고객 R&D에 침투해 설계 주기 전체에 락인되는 구조다. 비GAAP 총마진이 60% 중후반, GAAP 총마진 63.3%로 유지되는 점과 소프트웨어(Eggplant, APS-ONE-400 사이버보안 테스트 등)·서비스·교정 애뉴이티 매출이 이를 뒷받침한다. Spirent 인수로 네트워크 성능·보안 시험 포트폴리오를 보강해 데이터센터 검증 영역의 커버리지를 넓혔다(FY26 3분기 보고 성장 36% 대비 코어 성장 31%로 인수 기여 약 5%p).",
-     "growth_durability": "FY26 3분기 매출 18.5억 달러(+36% YoY), 주문 20.9억 달러(+56%)로 2개 분기 연속 20억 달러 주문·기록적 수주잔고를 확보했고, 상용 통신이 첫 10억 달러 분기(10.06억, +56%)를 기록하며 유선(wireline) 주문이 YoY 두 배 이상 늘어 처음으로 무선을 앞질렀다. EISG도 매출 5.01억(+21%)에 일반전자·반도체·자동차/에너지 3개 시장 모두 두 자릿수 주문 성장으로 회복이 광범위하다. 다만 연매출 추이(FY22 54.2억 → FY24 49.8억 → FY26 약 71억)가 보여주듯 본질적으로 고객 R&D 예산에 연동된 사이클 산업이며, 현재 성장률은 2024년 침체 후 AI 설비투자 급증이 겹친 국면이라 구조적 성장과 사이클 회복이 혼재한다.",
-     "summary": "고객 R&D 초기 단계 침투와 과점 구조에서 나오는 해자는 실체가 뚜렷하고, AI 데이터센터·실리콘포토닉스·HBM·방산이라는 다년 수요축도 확인된다. 그러나 매출의 상당 부분이 고객 설비·R&D 예산 사이클에 노출돼 있어 성장의 '구조성'은 4점 수준까지가 타당하다."
-    },
-    "financial_health": {
-     "score": 5,
-     "cash_flow": "TTM 잉여현금흐름 14.7억 달러(FCF 마진 28.4%)이며 FY26 3분기 단독 FCF만 4.03억 달러로, 실적 급증이 현금흐름으로 시차 없이 전환되고 있다. TTM 주식보상비용 2.1억 달러를 차감해도 SBC 조정 FCF는 약 12.6억 달러(수익률 약 2.2%)로 GAAP 순이익(TTM 주당 7.28달러 × 약 172백만주 ≒ 12.5억 달러)을 상회한다. 다만 CapEx 가이던스가 2억 달러로 상향돼 현금흐름 증가분 일부는 재투자로 흡수된다.",
-     "debt": "순부채/EBITDA 0.09배로 사실상 무차입에 가까운 재무구조다. Spirent 인수 대금을 지불하고도 레버리지가 이 수준이라는 점은 추가 M&A나 자사주 매입 여력이 충분함을 뜻한다.",
-     "dilution": "TTM 자사주 매입 6.2억 달러로 SBC(2.1억)를 크게 상회하며 주식수는 1년간 -0.92% 감소했다. 4분기 가이던스 기준 희석주식수 약 1.72억 주로 희석 압력은 관리되고 있으나, 배당은 없고 매입 규모도 시총 대비 1% 남짓이라 주주환원 강도 자체는 보통이다.",
-     "summary": "무차입에 가까운 대차대조표, 순이익을 넘어서는 FCF, SBC를 초과하는 자사주 매입이라는 3박자가 갖춰진 최상위권 재무구조다. 실적이 사이클 하강기에 들어가도 재무적 위험으로 번질 가능성은 매우 낮다."
-    },
-    "valuation": {
-     "score": 3,
-     "current_view": "주가 338.64달러, 시총 576억 달러 기준 FY26 비GAAP EPS 약 11.5달러(1분기 2.17+2분기 2.87+3분기 3.07+4분기 가이던스 중간값 3.37)에 약 29배, FY27 컨센서스 13.65달러에 24.8배다. 과거 KEYS의 통상 12개월 선행 PER 밴드(대략 20~28배) 상단 근처지만 성장률(FY26 매출 +32%, EPS +60%)이 과거 대비 훨씬 높아 PEG는 0.67로 낮게 계산된다. 문제는 분모의 질이다 — 3분기 비GAAP 영업이익률 33.2%(+820bp)에는 관세 환급 등 일회성 요인과 인수 효과가 섞여 있어, 정상화된 이익 기준 멀티플은 표면 수치보다 높을 수 있다.",
-     "upside_scenario": "AI 데이터센터의 800G→1.6T 전환, 224G SerDes·HBM·실리콘포토닉스 검증 수요와 방산 현대화가 FY27~28까지 이어져 매출이 연 15% 내외, 영업이익률 30%대 초반을 유지하면 FY27 EPS 14달러 이상이 가능하고, 27~28배 적용 시 380~400달러대(애널리스트 평균 목표가 415달러)가 정당화된다. 반대로 FY27 매출이 한 자릿수 성장으로 둔화되고 마진이 28%대로 정상화되면 EPS 10~11달러, 멀티플 20배 재적용 시 220달러 내외까지 열려 있어 상하방이 비대칭적이지 않다.",
-     "summary": "절대 멀티플만 보면 24.8배 선행 PER이 과하다고 보기 어렵지만, 이는 사이클 피크 가능성이 있는 이익에 붙은 값이라는 점이 핵심이다. 30일간 FY27 EPS 추정치가 14.5% 상향(상향 11건, 하향 0건)된 것은 강한 긍정 신호이나, 이미 주가가 1년간 98.6% 오르며 그 상향을 상당 부분 선반영했다."
-    },
-    "catalysts": [
-     {
-      "event": "FY26 4분기 실적 및 FY2027 첫 가이던스 발표",
-      "timing": "2026년 11월 24일(추정)",
-      "impact": "불확실",
-      "detail": "4분기 가이던스는 매출 19.3~19.5억 달러(+37%), 비GAAP EPS 3.34~3.40달러로 이미 높게 설정돼 있다. 진짜 변수는 FY2027 가이던스다. 기록적 수주잔고를 근거로 두 자릿수 성장을 제시하면 멀티플이 유지되지만, 어려워지는 기저효과로 한 자릿수 성장을 제시하면 FY27 EPS 13.65달러 컨센서스의 하향 조정이 불가피하다."
-     },
-     {
-      "event": "분기 주문·book-to-bill 추이",
-      "timing": "매 분기(11월, 2027년 2월)",
-      "impact": "불확실",
-      "detail": "2개 분기 연속 20억 달러 초과 주문(3분기 20.9억, +56%)이 현 밸류에이션의 근거다. 유선 주문이 무선을 처음으로 추월한 흐름이 이어지는지, book-to-bill이 1을 유지하는지가 사이클 지속성의 가장 빠른 선행지표다."
-     },
-     {
-      "event": "하이퍼스케일러 설비투자 가이던스 및 AI 네트워킹 로드맵",
-      "timing": "2026년 4분기~2027년 상반기",
-      "impact": "불확실",
-      "detail": "Keysight 통신 부문 수요는 하이퍼스케일러와 네트워크 장비 OEM의 R&D·설비투자에 직결된다. 1.6T 이더넷·224G SerDes·HBM4 검증 투자가 계획대로 집행되면 수혜가 이어지지만, AI 투자 속도 조절 신호가 나오면 주문이 가장 먼저 반응한다."
-     },
-     {
-      "event": "Spirent 통합 시너지 및 소프트웨어 비중 확대",
-      "timing": "FY2027 중",
-      "impact": "긍정",
-      "detail": "인수 효과로 보고 성장률이 코어 대비 약 5%p 높게 나오고 있으며, APS-ONE-400 사이버보안 테스트 플랫폼과 Eggplant AI 기능 등 소프트웨어 라인이 확대 중이다. 반복 매출 비중이 올라가면 사이클 변동성을 완화하고 멀티플 디스카운트를 줄이는 요인이 된다."
-     },
-     {
-      "event": "관세·수출규제 환경 변화",
-      "timing": "상시",
-      "impact": "부정",
-      "detail": "3분기 마진 급등에 관세 환급 등 일회성 요인이 기여했다는 지적이 있어 역기저가 발생할 수 있다. 또한 중국향 계측 장비는 수출통제 대상이 되기 쉬워 정책 변화 시 지역 매출이 직접 타격을 받는다."
-     }
-    ],
-    "bear_case": {
-     "summary": "Keysight의 현재 실적은 2024년 매출 -9% 침체(49.8억 달러) 직후의 사이클 반등에 AI 설비투자 붐, 인수 효과, 관세 환급이라는 일회성 요인이 한꺼번에 겹친 결과다. 주문 +56%, EPS +79%, 영업이익률 +820bp는 정상 상태가 아니며, 계측 산업 역사상 이런 수주 급증은 2~3년 내 재고·잔고 소진 국면으로 이어졌다. 주가가 1년간 98.6% 올라 사이클 피크 이익에 선행 PER 25배가 붙은 상태라, 이익 정상화와 멀티플 축소가 동시에 오면 하방이 크다.",
-     "key_risks": [
-      "수요 집중 위험: 성장의 핵심인 상용 통신(3분기 CSG 매출의 75%)이 소수 하이퍼스케일러·네트워크 OEM의 R&D 예산에 의존해, AI 투자 속도 조절 시 주문이 급격히 꺾일 수 있다.",
-      "이익의 질: 3분기 비GAAP 영업이익률 33.2%에 관세 환급 등 일회성이 포함돼 있고 인수 효과로 보고 성장률이 코어(31%)보다 부풀려져 있어, FY27 마진 정상화 시 EPS 컨센서스가 과대평가일 수 있다.",
-      "기저효과: FY26 매출이 약 71억 달러(+32%)로 급증해 FY27부터 비교 기준이 극도로 높아진다. 컨센서스 EPS 성장률 18.7%가 유지되려면 AI 검증 수요가 한 번 더 확장돼야 한다.",
-      "지정학·정책: 중국 수출통제와 관세 정책 변화가 계측 장비 수출과 마진에 직접적으로 작용한다.",
-      "애널리스트 커버리지 12명·매수 편중(평균 등급 1.58)으로 컨센서스가 한쪽으로 쏠려 있어, 실망 시 추정치 하향이 집중적으로 발생할 위험."
-     ],
-     "thesis_breakers": [
-      "2개 분기 연속 신규 주문이 전년 대비 감소하거나 book-to-bill이 1.0을 밑도는 경우(수주잔고 소진 국면 진입 신호).",
-      "코어(인수·환율 제외) 매출 성장률이 한 자릿수 중반 이하로 둔화되고 상용 통신 매출이 전분기 대비 감소하는 경우.",
-      "비GAAP 영업이익률이 일회성 제거 후 28% 아래로 되돌아가고, FY27 EPS 컨센서스가 고점 대비 10% 이상 하향되는 경우(현재는 30일간 +14.5%, 하향 0건).",
-      "FY2027 가이던스가 매출 한 자릿수 성장 이하로 제시되는 경우(11월 24일 실적 발표에서 확인 가능).",
-      "무차입 구조를 훼손하는 대형 차입 인수로 순부채/EBITDA가 2배를 넘어서거나, 자사주 매입이 SBC 규모 이하로 축소되는 경우."
-     ]
-    },
-    "thesis_status": "해당없음",
-    "thesis_status_reason": "신규 편입 후보로 기존 보유 논리가 없어 '해당없음'으로 둔다. 다만 향후 편입 시에는 '분기 주문 20억 달러 유지 + 코어 두 자릿수 성장 + 비GAAP 영업이익률 30% 이상'을 논리 유지 조건으로 설정하는 것이 적절하다.",
-    "verdict": "관찰",
-    "verdict_reason": "기업의 질(계측 과점 1위, 총마진 63%대, ROE 20.9%)과 재무 건전성(순부채/EBITDA 0.09배, FCF 마진 28.4%, 순매입 기준 주식수 -0.92%)은 편입 기준을 충분히 충족한다. 문제는 타이밍과 가격이다. FY26 매출 +32%, EPS +60%, 영업이익률 +820bp라는 실적은 2024년 -9% 침체 이후의 사이클 반등에 AI 설비투자·Spirent 인수·관세 환급 일회성이 중첩된 결과이고, 주가는 이미 1년간 98.6% 상승해 사이클 피크 가능성이 있는 이익에 선행 PER 24.8배가 붙었다. 11월 24일 FY2027 가이던스에서 기록적 수주잔고가 두 자릿수 성장으로 이어진다는 증거를 확인한 뒤 진입해도 기대수익의 훼손이 크지 않은 반면, 확인 전 진입은 이익 정상화와 멀티플 축소의 이중 위험을 떠안는 구조여서 '관찰'로 판단한다.",
-    "conviction": 3,
-    "sources": [
-     {
-      "title": "Keysight Technologies Reports Third Quarter 2026 Results (IR 보도자료)",
-      "url": "https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2026/Keysight-Technologies-Reports-Third-Quarter-2026-Results/default.aspx"
-     },
-     {
-      "title": "Keysight Technologies, Inc. - Form 10-Q FY2026 (2026-07-31 종료 분기)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001601046/000160104626000036/keys-20260731.htm"
-     },
-     {
-      "title": "Keysight Tops $2 Billion in Orders as AI Infrastructure Drives Record Q3 - Converge Digest",
-      "url": "https://convergedigest.com/keysight-q3-2026-ai-infrastructure-record-orders/"
-     },
-     {
-      "title": "Keysight Technologies (KEYS) Q3 2026 Earnings Report - Results, Call & Slides - TipRanks",
-      "url": "https://www.tipranks.com/stocks/keys/earnings/q3-2026-report"
-     },
-     {
-      "title": "Keysight Technologies (KEYS) Is Down 6.1% After Robust Q3 Beat And Strong Q4 Revenue Guidance - Simply Wall St",
-      "url": "https://simplywall.st/stocks/us/tech/nyse-keys/keysight-technologies/news/keysight-technologies-keys-is-down-61-after-robust-q3-beat-a"
-     },
-     {
-      "title": "Keysight Stock (KEYS): Can Growth Survive the Tariff Gain? - Trade The Pool",
-      "url": "https://tradethepool.com/pre-market-prep/keysight-stock-keys-can-growth-survive-the-tariff-gain/"
-     },
-     {
-      "title": "Keysight Technologies Inc (KEYS) Q3 2026 Earnings Call Highlights - Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/keysight-technologies-inc-keys-q3-050059989.html"
-     }
-    ]
-   },
-   "metrics": {
-    "ticker": "KEYS",
-    "name": "Keysight Technologies Inc.",
-    "sector": "IT·기술",
-    "industry": "Scientific & Technical Instruments",
-    "as_of": "2026-10-10",
-    "price": 382.75,
-    "market_cap_b": 65.16,
-    "valuation": {
-     "trailing_pe": 50.695362,
-     "forward_pe": 27.592407,
-     "peg": 0.7007,
-     "fcf_yield_pct": 2.87,
-     "analyst_target_mean": 418.0,
-     "analyst_rating_mean_1buy_5sell": 1.58333,
-     "analysts": 12.0
-    },
-    "growth_profitability": {
-     "gross_margin_pct": 63.3,
-     "op_margin_pct": 25.7,
-     "roe_pct": 20.9,
-     "revenue_growth_last_q_yoy_pct": 36.5,
-     "eps_growth_last_q_yoy_pct": 109.1,
-     "eps_growth_est_this_fy_pct": 60.2,
-     "eps_growth_est_next_fy_pct": 21.4
-    },
-    "cash_debt_dilution": {
-     "fcf_ttm_b": 1.47,
-     "sbc_ttm_b": 0.21,
-     "buyback_ttm_b": 0.62,
-     "fcf_margin_pct": 28.4,
-     "net_debt_to_ebitda": 0.09,
-     "share_count_change_pct": -0.92,
-     "share_count_span": "2025-07→2026-07"
-    },
-    "estimate_revisions_next_fy_eps": {
-     "current": 13.93407,
-     "chg_7d_pct": 0.45,
-     "chg_30d_pct": 2.08,
-     "chg_90d_pct": 17.52,
-     "up_revisions_30d": 12.0,
-     "down_revisions_30d": 0.0
-    },
-    "quarterly": {
-     "periods": [
-      "2025-07",
-      "2025-10",
-      "2026-01",
-      "2026-04",
-      "2026-07"
-     ],
-     "revenue_b": [
-      1.35,
-      1.42,
-      1.6,
-      1.72,
-      1.85
-     ],
-     "op_margin_pct": [
-      17.3,
-      15.3,
-      15.5,
-      23.7,
-      25.0
-     ],
-     "diluted_eps": [
-      1.1,
-      1.33,
-      1.63,
-      2.02,
-      2.3
-     ]
-    },
-    "annual_revenue_b": [
-     [
-      "2022-10",
-      5.42
-     ],
-     [
-      "2023-10",
-      5.46
-     ],
-     [
-      "2024-10",
-      4.98
-     ],
-     [
-      "2025-10",
-      5.38
-     ]
-    ],
-    "eps_surprises": [
-     {
-      "quarter": "2025-10",
-      "actual": 1.91,
-      "estimate": 1.85411,
-      "surprise_pct": 3.0
-     },
-     {
-      "quarter": "2026-01",
-      "actual": 2.17,
-      "estimate": 1.9954,
-      "surprise_pct": 8.8
-     },
-     {
-      "quarter": "2026-04",
-      "actual": 2.87,
-      "estimate": 2.32041,
-      "surprise_pct": 23.7
-     },
-     {
-      "quarter": "2026-07",
-      "actual": 3.07,
-      "estimate": 2.48193,
-      "surprise_pct": 23.7
-     }
-    ],
-    "next_earnings": "2026-11-24",
-    "return_1y_pct": 140.0,
-    "from_52w_high_pct": -1.4,
-    "quant_score": {
-     "score": 74.0,
-     "quality": 76,
-     "health": 69,
-     "value": 55,
-     "revisions": 91
-    },
-    "cycle_check": null,
-    "dashboard_signals": []
-   },
-   "reused_from": "2026-09-13"
-  },
   "SPCX": {
    "analysis": {
     "one_line_thesis": "발사·위성 인터넷에서 사실상 독점적 해자를 가진 세대급 기업이지만, 2026년 6월 IPO 이후 시총 2.1조 달러(2026년 예상 매출 대비 약 60배)에 AI 컴퓨트 투자로 분기 180억 달러대 자본지출·TTM FCF -325억 달러를 쓰고 있어, '회사는 최고급·가격은 이미 완벽을 가정' 구간이다.",
@@ -1475,16 +260,16 @@
     "name": "Space Exploration Technologies ",
     "sector": "산업재",
     "industry": "Aerospace & Defense",
-    "as_of": "2026-10-10",
+    "as_of": "2026-10-11",
     "price": 162.57,
-    "market_cap_b": 2142.96,
+    "market_cap_b": 2141.73,
     "valuation": {
      "trailing_pe": null,
-     "forward_pe": 83.28979,
+     "forward_pe": 84.42871,
      "peg": null,
      "fcf_yield_pct": null,
-     "analyst_target_mean": 224.77779,
-     "analyst_rating_mean_1buy_5sell": 1.78947,
+     "analyst_target_mean": 224.55556,
+     "analyst_rating_mean_1buy_5sell": 1.78378,
      "analysts": 27.0
     },
     "growth_profitability": {
@@ -1494,7 +279,7 @@
      "revenue_growth_last_q_yoy_pct": 91.9,
      "eps_growth_last_q_yoy_pct": null,
      "eps_growth_est_this_fy_pct": null,
-     "eps_growth_est_next_fy_pct": 8215.8
+     "eps_growth_est_next_fy_pct": 4176.2
     },
     "cash_debt_dilution": {
      "fcf_ttm_b": -32.52,
@@ -1508,7 +293,7 @@
     "estimate_revisions_next_fy_eps": {
      "current": 2.03722,
      "chg_7d_pct": 5.57,
-     "chg_30d_pct": 11.83,
+     "chg_30d_pct": 14.33,
      "chg_90d_pct": 201.4,
      "up_revisions_30d": 3.0,
      "down_revisions_30d": 0.0
@@ -1584,7 +369,232 @@
      "흑자전환 임박(다음 분기 EPS 컨센서스 흑자) (+10점)"
     ]
    },
-   "reused_from": null
+   "reused_from": "2026-10-10"
+  },
+  "CPAY": {
+   "analysis": {
+    "one_line_thesis": "유류카드에서 기업지불·크로스보더로 사업을 갈아타며 5개 분기 연속 두 자릿수 유기적 성장을 내는 Corpay가, 회계상 상각비·FTC 합의금으로 눌린 GAAP 이익 탓에 선행 PER 12.7배·FCF수익률 7.4%에 거래되는 '실적은 가속, 멀티플은 디레이팅' 국면.",
+    "quality": {
+     "score": 4,
+     "moat": "폐쇄형 유류카드 네트워크(가맹점 직접계약·데이터 통제)와 기업 AP·숙박·크로스보더 결제의 높은 전환비용이 해자의 핵심이며, 매출총이익률 80.5%·영업이익률(조정 기준) 40%대·ROE 29.2%가 이를 뒷받침한다. 다만 해자의 성격이 '네트워크 독점'보다 '틈새 수직시장별 지배력 + 가격결정력'에 가까워, 유류카드 부문은 EV 전환·연비 개선이라는 구조적 역풍을 안고 있다.",
+     "growth_durability": "2026년 2분기 매출 +21%(13.4억달러), 유기적 성장 +10%로 5개 분기 연속 두 자릿수 유기 성장을 기록했고, 1분기도 매출 +25%·유기 +11%였다. 즉 전체 성장의 절반가량은 Alpha Group 등 M&A 기여지만 유기 성장만으로도 10% 수준이 유지되고 있어 일회성으로 보기 어렵다. 연매출도 2022년 34.3억→2025년 45.3억달러로 꾸준히 확대됐다.",
+     "summary": "성장의 질은 '기업지불·크로스보더로의 로테이션'이 실제 숫자로 확인된다는 점에서 양호하다. 다만 M&A 의존도가 높아 유기 성장률이 6~7%대로 떨어지면 해자 서사 자체가 재평가 대상이 된다."
+    },
+    "financial_health": {
+     "score": 3,
+     "cash_flow": "TTM 잉여현금흐름 16.4억달러(FCF마진 38.8%)로 현금창출력은 강하고, 주식보상비용이 1.1억달러(FCF의 7% 수준)에 불과해 조정지표의 왜곡이 작다. 다만 Corpay의 현금흐름에는 고객예치금·운전자본 변동이 섞여 분기별 변동성이 크다는 점은 감안해야 한다.",
+     "debt": "순부채/EBITDA 2.7배로 동종 결제업체 평균보다 높고, 사상 두 번째 규모의 인수(2025년 4분기 클로징)와 전략적 지분투자를 연달아 집행하면서 레버리지가 올라간 상태다. 조정 EBITDA가 분기 7.67억달러(+24%)로 빠르게 늘고 있어 디레버리징 여력은 있으나, 금리·FX 환경이 악화되면 여유가 얇아진다.",
+     "dilution": "최근 1년 주식 수 -7.02%, 자사주 매입 18억달러로 FCF를 초과하는 공격적 환원을 집행했다. 희석 리스크는 사실상 없으나, 부채를 유지한 채 FCF 이상을 자사주에 쓰는 구조는 재무 완충을 갉아먹는 선택이다.",
+     "summary": "현금창출력(FCF 16.4억달러, 마진 38.8%)은 A급이지만 2.7배 레버리지 + 대형 M&A + FCF 초과 자사주 매입의 조합이 건전성 점수를 끌어내린다. 정량 health 점수 45점도 같은 지점을 가리킨다."
+    },
+    "valuation": {
+     "score": 4,
+     "current_view": "주가 398.11달러, 시총 261억달러 기준 선행 PER 12.7배·PEG 0.75·FCF수익률 7.45%로, 두 자릿수 유기 성장과 20%대 조정 EPS 성장을 내는 결제 플랫폼치고는 명백히 낮다. 후행 PER 24.2배와의 큰 괴리는 인수 무형자산 상각과 2026년 2분기 1억달러 FTC 합의 충당금 때문이며, 이 때문에 GAAP 희석 EPS는 3.70달러(-7%)인 반면 조정 순이익은 +27%다. 데이터 요약의 영업이익률 하락(43.5%→35.2%)도 같은 일회성·비현금 요인이 주된 원인이라는 점을 밝혀둔다.",
+     "upside_scenario": "유기 성장 10% 유지 + 자사주 매입으로 주식 수 연 5~7% 감소가 이어지면 조정 EPS는 연 15~20% 성장이 가능하고, 멀티플이 역사적 하단(15~16배)만 회복해도 31.4달러 추정치 기준 470~500달러가 나온다. 애널리스트 15인 평균 목표가 461달러(+16%), 투자의견 1.69도 이 구간과 겹친다.",
+     "summary": "시장은 GAAP 이익 감소·레버리지·유류카드 구조적 우려를 이유로 디스카운트를 주고 있고, 이것이 틀렸음을 입증할 근거(조정 EPS +36%, 유기 10%, 상향 리비전 13건 vs 하향 2건)가 이미 쌓이는 중이다. 가격은 낙관을 선반영한 상태가 아니라 회의를 반영한 상태다."
+    },
+    "catalysts": [
+     {
+      "event": "2026년 3분기 실적 발표",
+      "timing": "2026-11-04",
+      "impact": "긍정",
+      "detail": "최근 4개 분기 EPS가 모두 컨센서스를 상회했고 직전 두 분기는 +6.0%, +6.3% 서프라이즈였다. 유기 성장 10% 이상 유지와 연간 가이던스 상향이 확인되면 디레이팅 해소의 직접적 방아쇠가 된다."
+     },
+     {
+      "event": "FTC 소비자보호국과의 1억달러 예비 합의 최종 승인",
+      "timing": "2026년 4분기(회사는 '연내 마무리' 언급)",
+      "impact": "긍정",
+      "detail": "수년간 주가 멀티플을 눌러온 유류카드 수수료 관련 규제 리스크가 금액이 확정되며 해소된다. 반대로 승인 지연이나 조건 추가 시에는 불확실성이 재점화된다."
+     },
+     {
+      "event": "Alpha Group 등 대형 인수 통합 및 시너지 실현",
+      "timing": "2026년 4분기~2027년 상반기",
+      "impact": "불확실",
+      "detail": "2025년 4분기 클로징한 사상 두 번째 규모 인수가 현재 21~25%의 전체 매출 성장을 견인 중이다. 통합 성과가 2027년 유기 성장률로 전환되는지가 관건이며, 실패 시 성장률이 유기 10%대로 되돌아간다."
+     },
+     {
+      "event": "2027년 연간 가이던스 제시",
+      "timing": "2027년 2월 초",
+      "impact": "불확실",
+      "detail": "M&A 기여가 소멸하는 2027년의 성장 프로파일이 처음 공개된다. 조정 EPS 두 자릿수 성장과 레버리지 2.5배 이하 복귀 경로가 함께 제시되면 재평가, 그렇지 못하면 현 멀티플이 정당화된다."
+     },
+     {
+      "event": "자사주 매입 지속 및 금리 인하에 따른 예치금 이자수익 변화",
+      "timing": "상시 / 6~12개월",
+      "impact": "불확실",
+      "detail": "TTM 18억달러 매입으로 주식 수가 7% 줄어 EPS를 직접 밀어올리고 있으나, 정책금리 인하 국면에서는 고객 예치금 운용수익이 감소해 일부 상쇄된다."
+     }
+    ],
+    "bear_case": {
+     "summary": "가장 강한 약세 논리는 '조정 이익과 GAAP 이익의 괴리'다. 2026년 2분기 조정 순이익은 4.64억달러(+27%)지만 GAAP 순이익은 2.48억달러(-13%)로 절반 수준이며, 이 격차의 상당 부분이 반복적으로 발생하는 M&A 무형자산 상각에서 나온다. 즉 성장의 상당 부분을 부채(순부채/EBITDA 2.7배)로 산 뒤 그 비용을 '조정'으로 제외하는 구조라면 선행 PER 12.7배는 싼 게 아니라 정당한 가격일 수 있다.",
+     "key_risks": [
+      "레버리지 2.7배 상태에서 대형 M&A와 FCF 초과 자사주 매입을 병행 — 금리 상승이나 실적 둔화 시 재무 완충이 빠르게 얇아짐",
+      "유류·차량 결제 부문의 구조적 역풍(전기차 전환, 연비 개선, 유가 변동)으로 레거시 현금창출원이 장기 축소",
+      "1억달러 FTC 합의가 끝이 아닐 가능성 — 수수료 관행 관련 집단소송·주정부 규제가 추가로 이어질 수 있음",
+      "크로스보더 사업 확대로 FX 변동성과 거래량 경기민감도가 손익에 더 크게 반영됨",
+      "20년 넘게 회사를 이끈 Ron Clarke 회장 겸 CEO에 대한 의존도와 승계 불확실성"
+     ],
+     "thesis_breakers": [
+      "유기적 매출 성장률이 2개 분기 연속 7% 미만으로 하락(현재 10~11%에서 이탈)",
+      "순부채/EBITDA가 3.5배를 초과하거나 자사주 매입이 중단·대폭 축소되는 경우",
+      "연간 조정 EPS 가이던스가 하향 조정되고 차기 FY EPS 추정치 리비전이 3개월 누적 -5% 이상으로 돌아서는 경우(현재 +2.75%)",
+      "FTC 합의 외에 1억달러를 초과하는 추가 규제 제재·소송 충당이 발생",
+      "기업지불·크로스보더 부문의 유기 성장률이 한 자릿수로 둔화되어 '로테이션' 서사가 깨지는 경우"
+     ]
+    },
+    "thesis_status": "해당없음",
+    "thesis_status_reason": "신규 편입 후보로 기존 보유 논리가 없어 해당없음으로 둔다.",
+    "verdict": "편입 적합",
+    "verdict_reason": "5개 분기 연속 두 자릿수 유기 성장(2026년 2분기 +10%, 1분기 +11%)과 조정 EPS +36%라는 펀더멘털 가속이, 무형자산 상각과 1회성 1억달러 FTC 충당금 탓에 눌린 GAAP 숫자에 가려 선행 PER 12.7배·FCF수익률 7.45%에 방치돼 있다는 점이 핵심이다. 여기에 연 7%의 주식 수 감소와 13건 상향 대 2건 하향의 추정치 리비전이 더해져 6개월 이상 보유 시 기대값이 뚜렷하다. 다만 순부채 2.7배와 M&A 의존적 성장 구조 때문에 만점짜리 편입은 아니며, 분할 매수와 유기 성장률·레버리지 모니터링을 전제로 한 편입 적합이다.",
+    "conviction": 3,
+    "sources": [
+     {
+      "title": "Corpay Reports Second Quarter Financial Results (Form 8-K Exhibit 99.1, 2026-08-05)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001175454/000117545426000045/ex991q2_2026.htm"
+     },
+     {
+      "title": "Corpay Reports First Quarter Financial Results (Form 8-K Exhibit 99.1, 2026-05-07)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001175454/000117545426000029/ex991q1_2026.htm"
+     },
+     {
+      "title": "Corpay Reports Fourth Quarter and Full Year Financial Results (Form 8-K Exhibit 99.1, 2026-02-04)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1175454/000117545426000008/ex991q4_2025.htm"
+     }
+    ]
+   },
+   "metrics": {
+    "ticker": "CPAY",
+    "name": "Corpay, Inc.",
+    "sector": "IT·기술",
+    "industry": "Software - Infrastructure",
+    "as_of": "2026-10-11",
+    "price": 397.92,
+    "market_cap_b": 26.13,
+    "valuation": {
+     "trailing_pe": 24.44226,
+     "forward_pe": 12.62992,
+     "peg": 0.7512,
+     "fcf_yield_pct": 7.45,
+     "analyst_target_mean": 461.0,
+     "analyst_rating_mean_1buy_5sell": 1.6875,
+     "analysts": 15.0
+    },
+    "growth_profitability": {
+     "gross_margin_pct": 80.5,
+     "op_margin_pct": 46.9,
+     "roe_pct": 29.2,
+     "revenue_growth_last_q_yoy_pct": 21.5,
+     "eps_growth_last_q_yoy_pct": -7.0,
+     "eps_growth_est_this_fy_pct": 28.1,
+     "eps_growth_est_next_fy_pct": 15.0
+    },
+    "cash_debt_dilution": {
+     "fcf_ttm_b": 1.64,
+     "sbc_ttm_b": 0.11,
+     "buyback_ttm_b": 1.8,
+     "fcf_margin_pct": 38.8,
+     "net_debt_to_ebitda": 2.7,
+     "share_count_change_pct": -7.02,
+     "share_count_span": "2025-06→2026-06"
+    },
+    "estimate_revisions_next_fy_eps": {
+     "current": 31.50739,
+     "chg_7d_pct": 0.19,
+     "chg_30d_pct": 0.19,
+     "chg_90d_pct": 2.95,
+     "up_revisions_30d": 13.0,
+     "down_revisions_30d": 2.0
+    },
+    "quarterly": {
+     "periods": [
+      "2025-06",
+      "2025-09",
+      "2025-12",
+      "2026-03",
+      "2026-06"
+     ],
+     "revenue_b": [
+      1.1,
+      1.17,
+      1.25,
+      1.26,
+      1.34
+     ],
+     "op_margin_pct": [
+      43.5,
+      44.6,
+      41.8,
+      40.8,
+      35.2
+     ],
+     "diluted_eps": [
+      3.98,
+      3.91,
+      3.75,
+      5.07,
+      3.7
+     ]
+    },
+    "annual_revenue_b": [
+     [
+      "2022-12",
+      3.43
+     ],
+     [
+      "2023-12",
+      3.76
+     ],
+     [
+      "2024-12",
+      3.97
+     ],
+     [
+      "2025-12",
+      4.53
+     ]
+    ],
+    "eps_surprises": [
+     {
+      "quarter": "2025-09",
+      "actual": 5.7,
+      "estimate": 5.64252,
+      "surprise_pct": 1.0
+     },
+     {
+      "quarter": "2025-12",
+      "actual": 6.04,
+      "estimate": 5.94046,
+      "surprise_pct": 1.7
+     },
+     {
+      "quarter": "2026-03",
+      "actual": 5.8,
+      "estimate": 5.4702,
+      "surprise_pct": 6.0
+     },
+     {
+      "quarter": "2026-06",
+      "actual": 7.0,
+      "estimate": 6.58496,
+      "surprise_pct": 6.3
+     }
+    ],
+    "next_earnings": "2026-11-04",
+    "return_1y_pct": 42.1,
+    "from_52w_high_pct": -6.4,
+    "quant_score": {
+     "score": 70.7,
+     "quality": 83,
+     "health": 45,
+     "value": 84,
+     "revisions": 67
+    },
+    "cycle_check": null,
+    "dashboard_signals": [
+     "M1 대가 최근분기 매수: Chase Coleman (+5점)"
+    ]
+   },
+   "reused_from": "2026-09-26"
   },
   "ADBE": {
    "analysis": {
@@ -1718,11 +728,11 @@
     "name": "Adobe Inc.",
     "sector": "IT·기술",
     "industry": "Software - Application",
-    "as_of": "2026-10-10",
+    "as_of": "2026-10-11",
     "price": 242.27,
     "market_cap_b": 94.29,
     "valuation": {
-     "trailing_pe": 13.459445,
+     "trailing_pe": 13.527081,
      "forward_pe": 8.754654,
      "peg": 0.5816,
      "fcf_yield_pct": 9.91,
@@ -1834,7 +844,7 @@
     "return_1y_pct": -28.2,
     "from_52w_high_pct": -32.7,
     "quant_score": {
-     "score": 74.7,
+     "score": 74.8,
      "quality": 81,
      "health": 69,
      "value": 93,
@@ -1843,7 +853,7 @@
     "cycle_check": null,
     "dashboard_signals": []
    },
-   "reused_from": null
+   "reused_from": "2026-10-10"
   },
   "MPC": {
    "analysis": {
@@ -1962,15 +972,15 @@
     "name": "Marathon Petroleum Corporation",
     "sector": "에너지",
     "industry": "Oil & Gas Refining & Marketing",
-    "as_of": "2026-10-10",
+    "as_of": "2026-10-11",
     "price": 455.03,
-    "market_cap_b": 127.78,
+    "market_cap_b": 132.84,
     "valuation": {
-     "trailing_pe": 16.04478,
-     "forward_pe": 8.811034,
+     "trailing_pe": 15.755887,
+     "forward_pe": 8.711596,
      "peg": 0.8956,
-     "fcf_yield_pct": 7.24,
-     "analyst_target_mean": 400.0,
+     "fcf_yield_pct": 6.96,
+     "analyst_target_mean": 385.55557,
      "analyst_rating_mean_1buy_5sell": 2.36842,
      "analysts": 18.0
     },
@@ -1980,8 +990,8 @@
      "roe_pct": 42.1,
      "revenue_growth_last_q_yoy_pct": 53.7,
      "eps_growth_last_q_yoy_pct": 348.0,
-     "eps_growth_est_this_fy_pct": 460.7,
-     "eps_growth_est_next_fy_pct": -13.7
+     "eps_growth_est_this_fy_pct": 443.1,
+     "eps_growth_est_next_fy_pct": -12.8
     },
     "cash_debt_dilution": {
      "fcf_ttm_b": 12.9,
@@ -1993,10 +1003,10 @@
      "share_count_span": "2025-06→2026-06"
     },
     "estimate_revisions_next_fy_eps": {
-     "current": 51.76689,
-     "chg_7d_pct": 6.4,
-     "chg_30d_pct": 50.91,
-     "chg_90d_pct": 119.37,
+     "current": 50.68686,
+     "chg_7d_pct": 7.54,
+     "chg_30d_pct": 51.98,
+     "chg_90d_pct": 111.28,
      "up_revisions_30d": 12.0,
      "down_revisions_30d": 0.0
     },
@@ -2089,141 +1099,453 @@
      "M3 실적 개선 기업 (+3점)"
     ]
    },
-   "reused_from": null
+   "reused_from": "2026-10-10"
   },
-  "ALL": {
+  "NVDA": {
    "analysis": {
-    "one_line_thesis": "사이클 최고점의 손해보험 이익(결합비율 86.6, 과거연도 준비금 환입 포함)을 PER 8배·주주환원수익률 6%에 사는 구조로, 싸 보이지만 2027년 EPS -21% 정상화가 전제된 '피크 어닝스 저PER' 종목이다.",
+    "one_line_thesis": "분기 매출이 1년 만에 467억달러에서 962억달러로 두 배가 됐고, 3분기 가이던스 1,080억달러와 FY28 매출 +70%라는 1년 앞 가이던스까지 나왔습니다. 그런데도 주가는 차기 회계연도 EPS 기준 약 14배에 머물러 있어 '고성장 + 비고평가' 조합이 유지되고 있습니다. 다만 공급 약정 2,790억달러와 OpenAI 부지 신용보강 최대 1,050억달러로 재무 레버리지성 위험이 새로 커져, 논리의 검증축이 '수요'에서 '자금조달·마진'으로 옮겨가고 있습니다.",
     "quality": {
-     "score": 3,
-     "moat": "개인용 자동차·주택보험의 브랜드 인지도, 전속설계사+다이렉트 이중 채널, Arity/Drivewise 기반 주행데이터, National General을 통한 비표준 시장 커버가 해자의 실체다. 다만 상품 자체는 가격 비교가 쉬운 준(準)범용재이며, 비용구조 면에서 Progressive·GEICO 대비 구조적 우위가 아니라 열위에서 따라가는 입장이다. Transformative Growth로 사업비율을 낮춰 10년 평균 자동차 결합비율 95.2로 업계 평균을 밑도는 성과는 확인된다.",
-     "growth_durability": "2026년 2분기 매출은 전년 대비 11.8% 증가한 186억 달러, 순이익 32.4억 달러(+55.9%)였고 재물보험 결합비율은 4.5p 개선된 86.6(underlying 79.4)이었다. 그러나 개선의 상당 부분은 과거연도 준비금 환입(자동차 손해율 3.6p 하락의 주요인)과 전년 대비 13.5% 감소한 재해손실(17.2억 달러) 덕분으로 반복성이 낮다. 연매출은 2022년 506억→2025년 671억 달러로 성장했지만 이는 요율 인상 사이클의 산물이며, 요율 인하 국면에서는 보유계약 증가가 보험료 성장을 상쇄하기 어렵다.",
-     "summary": "운영 실행력은 업계 상위권이나 산업 자체가 가격 경쟁적·사이클적이라 질 점수는 중간이다. 현재 수익성은 구조적 개선(사업비 절감)과 일회성(준비금 환입·저재해)이 섞여 있으며, 후자의 비중이 작지 않다. ROE 46%는 보장성·건강사업 매각 차익 등이 섞인 수치로 정상화 ROE는 20%대 후반으로 보는 것이 합리적이다."
+     "score": 5,
+     "moat": "해자의 실체는 GPU 칩 하나가 아니라 CUDA 소프트웨어 생태계, NVLink·Spectrum-X 네트워킹, 랙 단위 시스템 설계, 그리고 1년 주기 제품 출시를 한데 묶은 풀스택 플랫폼입니다. FY27 2분기 데이터센터 네트워킹은 1분기에만 148억달러(+199% YoY)를 기록했고, Vera Rubin은 2026년 8월 출하를 시작하며 회사가 '역대 가장 빠른 램프'라고 밝혔습니다. 2026년 9월 발표한 Hugging Face 인수(약 129억달러)도 개발자 워크플로우 초입을 선점해 소프트웨어 해자를 넓히는 움직임입니다. 반면 Google TPU 8t/8i 출시와 Meta·Anthropic의 TPU 계약, AMD의 Meta 대상 최대 600억달러 공급 계약은 해자의 가장자리를 실제로 깎고 있습니다.",
+     "growth_durability": "FY27 2분기(2026년 7월 종료) 매출은 962.2억달러로 전년 대비 +106%, 전분기 대비 +18%였고, 데이터센터는 890억달러(+117%)였습니다. 데이터센터 안에서 하이퍼스케일 비중은 487억달러, AI클라우드·산업·기업(ACIE)은 403억달러로 고객층이 넓어지고 있습니다. 3분기 가이던스 1,080억달러(±2%, 중국 데이터센터 컴퓨트 매출 제외)는 전분기 대비 약 +12%이고, 경영진은 FY28 매출 성장률을 약 70%로 처음 제시했습니다(시장 기대는 44%). 공급 제약이 없었다면 이보다 '훨씬 높았을 것'이라고 했습니다. 빅4 하이퍼스케일러의 2026년 설비투자는 7,200억~7,450억달러로 상향됐고, 2027년 컨센서스는 약 9,350억달러여서 성장은 단발성이 아니라 구조적인 성격이 강합니다.",
+     "summary": "기업의 질은 최상위입니다. 매출 성장, 총마진 75%, 영업이익률 66%가 동시에 나오는 것은 가격결정력이 살아 있다는 증거입니다. 다만 성장의 병목이 '수요'에서 HBM·웨이퍼·패키징 공급과 고객의 전력·자금조달로 바뀌었다는 점이 새 변수입니다. 맞춤형 ASIC 경쟁은 점유율을 서서히 깎을 위험이지만, 아직 엔비디아의 절대 매출 성장을 꺾는 수준은 아닙니다."
     },
     "financial_health": {
      "score": 4,
-     "cash_flow": "TTM 잉여현금흐름 122.5억 달러(FCF 마진 21.6%)로 보험료 유입(플로트) 효과가 크게 반영된 수치이나, 실제로 2026년 2분기에만 자사주 10억 달러와 배당 2.8억 달러를 집행했고 최근 1년 주주환원 총액은 35억 달러였다. 순투자수익은 전년 대비 33.8% 증가한 10.1억 달러로 금리 상승기에 재투자 수익률이 뒷받침되고 있다.",
-     "debt": "순부채/EBITDA 0.1배로 레버리지 부담은 사실상 없고, 보험사 특성상 지주 유동성과 자회사 배당 여력이 관건인데 현 이익 수준에서는 여유가 충분하다. 다만 자본의 변동성은 재해손실과 채권 평가손익에 좌우된다.",
-     "dilution": "2025년 6월→2026년 6월 주식수 3.7% 감소, TTM 자사주 매입 24.6억 달러로 희석이 아닌 지속적 축소 국면이다. 배당(분기 약 1.1달러 추정, 시가배당률 약 1.9%)과 합치면 주주환원수익률은 6% 내외다.",
-     "summary": "보험업 기준으로 재무 건전성은 상위권이며, 건강·단체보장 사업 매각으로 확보한 현금이 자본환원을 뒷받침하고 있다. 리스크는 레버리지가 아니라 단일 대형 재해(캘리포니아 산불·허리케인) 시 자본 훼손과 재보험 비용 상승이다. 현금창출의 질은 양호하나 FCF 수익률 26%는 보험 플로트 특성상 그대로 주주가치로 해석하면 안 된다."
+     "cash_flow": "TTM 잉여현금흐름은 1,270억달러이고, 주식보상비용 72.4억달러를 빼도 약 1,198억달러가 남습니다. TTM 매출(약 3,030억달러) 대비 FCF 마진은 약 42%, 시가총액 5.54조달러 대비 FCF 수익률은 약 2.2% 수준입니다. 데이터 요약의 FCF 마진 13.8%와 FCF 수익률 0.76%는 계산 오류로 보입니다. 하나 더 짚을 점은, GAAP 순이익이 지분투자 평가이익 때문에 부풀려져 있다는 것입니다. 1분기 GAAP 순이익은 583억달러로 non-GAAP 455억달러보다 많았고, 2분기도 597억달러 대 540억달러였습니다. 따라서 이익의 질은 non-GAAP와 현금흐름 기준으로 보는 것이 맞습니다.",
+     "debt": "현금과 유가증권은 566억달러이고 순부채/EBITDA는 -0.12배로 사실상 순현금입니다. 다만 2026년 6월 250억달러 선순위채 발행으로 총부채가 335억달러로 늘었습니다. 대차대조표 밖 약정도 크게 불었습니다. 공급·생산능력 약정은 1분기 1,190억달러에서 2분기 2,790억달러로 늘었고(주로 메모리), 클라우드 계약 290억달러, 데이터센터 임대 보증 최대 35억달러가 있습니다. 여기에 OpenAI 전용 오하이오 PORTS-Pike 부지(약 4.25GW) 신용보강이 최대 1,050억달러입니다. 이 신용보강은 FY29부터 단계적으로 효력이 생기지만, 이런 우발채무 때문에 엔비디아 5년 CDS가 6월 약 40bp에서 10월 84bp로 벌어졌습니다.",
+     "dilution": "TTM 자사주 매입은 553억달러이고, 2분기에만 배당을 포함해 약 260억달러를 환원했습니다. 9월 28일에는 1,500억달러 추가 매입 승인을 발표했고, 분기 배당도 0.01달러에서 0.25달러로 올렸습니다. 그런데도 2025년 7월부터 2026년 7월까지 주식수는 -0.82% 줄어드는 데 그쳤습니다. 주가가 높은 수준에서 매입이 이뤄지는 데다 주식보상이 상쇄하고 있어, 주당가치를 끌어올리는 효과는 제한적입니다. FY27부터 non-GAAP에 주식보상비용을 포함하기로 한 점은 회계 투명성 측면에서 긍정적입니다.",
+     "summary": "현금 창출력 자체는 압도적이고 순현금 상태도 유지되고 있습니다. 감점 요인은 고객 대상 자금조달 지원, 즉 '순환 금융' 논란과 대규모 공급 약정입니다. 수요가 꺾이면 엔비디아가 재고·약정·보증 손실을 직접 떠안는 구조로 바뀌고 있습니다. 당장의 재무 위험은 낮지만 꼬리위험은 1년 전보다 분명히 커져 5점이 아니라 4점을 줍니다."
     },
     "valuation": {
      "score": 4,
-     "current_view": "주가 229.43달러는 TTM 희석 EPS 50.1달러 기준 PER 4.6배지만, 여기에는 사업부 매각차익과 투자평가익이 포함돼 있다. 시장이 보는 차기 회계연도 EPS 28.05달러(전년 대비 -20.7%) 기준 선행 PER은 8.2배로, 역사적 정상 배수(대략 10~12배)보다는 낮지만 '사이클 피크 이익의 정상화'를 이미 전제한 숫자다. 주가는 52주 고점 대비 -16.3%, 1년 수익률 +13.7%이며 애널리스트 평균 목표가 270.5달러(+18%), 투자의견 평균 2.52(중립~매수)다.",
-     "upside_scenario": "최근 90일 차기연도 EPS 컨센서스가 6.0% 상향(30일 상향 3건·하향 0건)된 흐름이 이어져 2027년 EPS가 28달러가 아니라 32~34달러로 수렴하고, 보유계약(PIF) 증가가 요율 인하를 상쇄하면 9~10배 재평가로 290~330달러가 가능하다. 반대로 결합비율이 95 근처로 되돌아가면 EPS 20달러대 초반·배수 9배로 200달러 이하도 성립한다.",
-     "summary": "헤드라인 저PER은 착시이고, 핵심은 '정상화 이익 대비 8배'가 싼가다. 재해손실이 평균 수준으로 돌아오고 준비금 환입이 사라져도 두 자릿수 ROE가 유지된다면 저평가지만, 요율 인하 경쟁이 본격화되면 배수가 아니라 이익이 깎인다. 가격 매력은 있으나 '피크 사이클 할인'이 정당한 측면도 있어 압도적 저평가로 보기는 어렵다."
+     "current_view": "주가 229.28달러는 차기 회계연도(FY28) EPS 컨센서스 15.91달러 대비 14.4배, 트레일링 GAAP 기준 29.0배입니다. 트레일링 GAAP 수치는 투자이익 때문에 왜곡돼 있습니다. MarketWatch 분석에 따르면 12개월 선행 PER은 6월 약 21배에서 10월 약 16배로 떨어졌는데, 같은 기간 선행 EPS가 10.48달러에서 14.18달러로 30% 넘게 올라 주가는 버텼습니다. 52주 고점 대비 -4.2%, 1년 수익률 +25.5%로, 이익 증가 속도가 주가 상승보다 빨라 멀티플이 압축된 상태입니다. 애널리스트 59명의 평균 목표가는 328.7달러(+43%)입니다.",
+     "upside_scenario": "FY28 매출 +70%가 실현되고 총마진이 가이던스대로 72~73%에서 유지된다고 가정합니다. 이 경우 FY28 EPS 15.9달러에 과거 5년 평균보다 낮은 20배만 적용해도 약 318달러(+39%)가 됩니다. 이를 정당화하는 조건은 세 가지입니다. 첫째, 3분기 실적이 1,080억달러 이상이고 4분기 가이던스가 전분기 대비 두 자릿수 성장을 유지할 것. 둘째, 4분기 총마진 저점이 71%를 지킬 것. 셋째, FY28 1분기 가격 인상이 실제로 마진을 회복시킬 것.",
+     "summary": "성장률 대비 가격은 여전히 싼 편입니다(PEG 약 0.48). 시장이 할인하는 이유는 '수요가 있느냐'가 아니라 '이 수요가 2028년 이후에도 지속되고, 고객이 자금을 조달할 수 있느냐'입니다. UBS는 하이퍼스케일러 설비투자 증가율이 2027년 25%, 2028년 6%로 둔화될 것으로 봅니다. 사이클 정점 이후의 이익을 할인하는 것이므로, 반도체 사이클 특성상 14배가 영구적인 저평가라고 단정할 수는 없습니다."
     },
     "catalysts": [
      {
-      "event": "2026년 3분기 실적 발표",
-      "timing": "2026-11-04",
+      "event": "하이퍼스케일러 3분기 실적 및 2027년 설비투자 가이던스(Alphabet, Microsoft, Amazon, Meta)",
+      "timing": "2026-10 하순 (예상)",
       "impact": "불확실",
-      "detail": "최근 4개 분기 연속 컨센서스를 45~48% 상회했으나(2026년 2분기 조정 EPS 8.99달러 vs 추정 6.07달러), 3분기는 허리케인 시즌 재해손실과 자동차 요율 인하 영향이 동시에 드러나는 분기다. underlying 결합비율(2026년 2분기 79.4)이 80 초반을 유지하는지, PIF가 증가 전환하는지가 관전 포인트."
+      "detail": "Alphabet은 2027년 설비투자가 '크게' 늘어날 것이라고 이미 밝혔고, 9월에는 2026년 설비투자를 2,050억달러로 올렸습니다. Amazon은 2027년에도 생산능력이 부족할 것이라고 했습니다. 빅4 2027년 컨센서스 약 9,350억달러가 확인되거나 상향되면 긍정적입니다. 반대로 FCF가 마이너스로 돌아선 Alphabet·Amazon이 증가율을 낮추면 논리 붕괴 조건 6번(합산 설비투자 감소) 쪽으로 다가갑니다."
      },
      {
-      "event": "2027년 요율 전략·자본환원 계획(자사주 신규 승인·배당 인상)",
-      "timing": "2027년 1~2월 4분기 실적 시점",
+      "event": "FY27 3분기 실적 발표 및 4분기 가이던스",
+      "timing": "2026-11-17~18 (예상)",
       "impact": "긍정",
-      "detail": "현 이익 수준이면 추가 자사주 승인과 배당 인상 여력이 크다. 주식수가 연 3~4% 줄고 배당이 늘면 EPS 감소분을 일부 상쇄한다."
+      "detail": "가이던스는 매출 1,080억달러(±2%), 총마진 74%입니다. 예측시장(Manifold)은 1,100억~1,140억달러 구간 확률을 약 66%로 보고 있습니다. 4분기 가이던스가 전분기 대비 +10% 이상이고 총마진 저점 71~72%가 재확인되면 논리가 강화됩니다. 전분기 대비 5% 미만 가이던스가 나오면 논리 붕괴 조건 1번에 가까워집니다."
      },
      {
-      "event": "1월 재보험 프로그램 갱신 및 캘리포니아·플로리다 규제 환경",
-      "timing": "2027년 1분기",
+      "event": "4분기 총마진 저점 통과 및 FY28 1분기 가격 인상 적용",
+      "timing": "2027-02 (FY27 4분기 실적) ~ 2027-05",
       "impact": "불확실",
-      "detail": "산불·대류성 폭풍 손실 추세에 따라 주택보험 재보험 비용이 결정된다. 비용 하락 시 마진 방어, 상승 시 주택보험 결합비율 압박."
+      "detail": "경영진은 '극단적인 메모리 가격 상황' 때문에 총마진이 4분기에 71~72%로 저점을 찍은 뒤 FY28에 72~73%로 회복한다고 했습니다. 가격 인상이 받아들여지면 가격결정력이 입증되지만, 70% 아래로 떨어지면 논리 붕괴 조건 2번에 해당합니다."
      },
      {
-      "event": "자동차 보험 요율 인하 경쟁 본격화와 보유계약 성장",
-      "timing": "향후 2~4개 분기",
-      "impact": "불확실",
-      "detail": "업계가 요율을 내리며 점유율 경쟁에 들어가면 광고비 증가와 보험료 성장 둔화가 동시에 발생한다. Allstate가 가격을 낮추면서도 PIF를 늘려 '물량으로 마진 감소를 상쇄'하는지가 2027년 이익의 핵심 변수."
+      "event": "Vera Rubin 본격 램프 및 Vera CPU 단독 판매 확대",
+      "timing": "2026-11 ~ 2027 상반기",
+      "impact": "긍정",
+      "detail": "CoreWeave, Google Cloud, Azure, OCI, Nebius에 랙 배치가 시작됐습니다. AWS는 FY27~FY29에 걸쳐 GPU 200만 개를 추가 배치하기로 약속했습니다. 세대 전환 공백 없이 램프되면 ASIC 대비 기술 격차가 다시 벌어집니다."
+     },
+     {
+      "event": "Hugging Face 인수(약 129억달러) 규제 승인 및 완료",
+      "timing": "2027 상반기 (예상)",
+      "impact": "긍정",
+      "detail": "오픈모델 생태계의 관문을 확보해 CUDA 소프트웨어 해자를 넓히는 거래입니다. 규모는 FCF 대비 미미하지만 반독점 심사가 지연·조건부 승인될 가능성이 있습니다."
+     },
+     {
+      "event": "OpenAI 등 AI 랩의 매출·자금조달 뉴스 흐름",
+      "timing": "상시 (2026-10 이후)",
+      "impact": "부정",
+      "detail": "2026년 4월과 10월 8일에 OpenAI 매출 미달 보도가 나오자 엔비디아·마이크론 등 AI 칩주가 동반 하락했습니다. 엔비디아가 OpenAI 오하이오 부지에 최대 1,050억달러 신용보강을 약속한 만큼, 주요 AI 랩의 자금난 신호는 곧바로 엔비디아의 우발채무 위험으로 연결됩니다."
      }
     ],
     "bear_case": {
-     "summary": "현재 이익은 손해보험 하드마켓의 정점에서 나온 것으로, 2026년 2분기 결합비율 86.6은 역사적으로 지속 불가능한 수준이다. 자동차 손해율 개선은 과거연도 준비금 환입에 크게 기대고 있고, 10-Q에서도 2026년 발생연도 심도는 의료비 인플레이션과 변호사 선임 증가로 계속 상승 중임을 인정하고 있다. 컨센서스조차 차기연도 EPS -20.7%를 예상하며, 경쟁사들의 요율 인하가 겹치면 하락폭은 더 커질 수 있다.",
+     "summary": "가장 강한 약세 논리는 '엔비디아가 수요를 스스로 금융으로 만들어내고 있다'는 것입니다. 공급 약정이 한 분기 만에 1,190억달러에서 2,790억달러로 늘었습니다. 엔비디아는 OpenAI 부지에 최대 1,050억달러 신용보강을 약속했고, 월가 6개사와 5,000억달러 규모의 자금조달 플랫폼을 만들었으며, AI 랩 지분투자도 늘렸습니다. 이는 고객의 대차대조표가 감당하지 못하는 수요를 엔비디아의 신용으로 떠받치는 구조입니다. 그 사이 하이퍼스케일러 FCF는 이미 마이너스(Alphabet 2분기 -59억달러, Amazon TTM -76억달러)로 돌아섰고, UBS는 설비투자 증가율이 2028년 6%로 급감할 것으로 봅니다. 여기에 Google TPU와 AMD가 대형 고객을 나눠 가지기 시작했습니다. 사이클이 꺾이면 매출 둔화, 약정·재고 부담, 보증 손실이 동시에 닥치는 '역레버리지'가 나타날 수 있습니다.",
      "key_risks": [
-      "준비금 환입 소멸 또는 역전(불리한 준비금 적립)로 자동차 손해율이 빠르게 악화",
-      "사회적 인플레이션(변호사 선임률·의료비) 지속으로 발생연도 심도 상승이 요율 인하와 충돌",
-      "주택보험 대형 재해(산불·허리케인) 1회로 분기 이익 소멸 가능 — 10년 평균 재해손실 기여도는 2분기 결합비율 13.5p",
-      "Progressive·GEICO의 공격적 광고·요율 인하에 따른 점유율·마진 동시 압박",
-      "이익 피크 구간에서의 자사주 매입은 고점 매수가 될 수 있고, 주가/장부가 배수도 과거 대비 낮지 않음"
+      "순환 금융·거래상대방 위험: OpenAI 부지 신용보강 최대 1,050억달러와 임대 보증 35억달러, AI 랩·인프라 금융사 지분투자가 겹쳐 있습니다. 애널리스트들은 2028년까지 최대 부채 노출을 800억~2,000억달러로 추정하며, CDS는 40bp에서 84bp로 벌어졌습니다.",
+      "마진 압박: HBM 등 메모리 가격 급등으로 총마진 가이던스가 75%에서 3분기 74%, 4분기 71~72%로 내려갑니다. 가격 인상이 받아들여지지 않으면 70% 붕괴 가능성이 있습니다.",
+      "고객의 자체 칩 전환: Google TPU 8t/8i가 Meta·Anthropic·OpenAI로 확산되고 있고, Meta-AMD 최대 600억달러 계약, Broadcom 맞춤형 XPU가 있습니다. 하이퍼스케일러는 데이터센터 매출의 절반 이상을 차지합니다.",
+      "설비투자 사이클 둔화: 하이퍼스케일러 FCF가 악화되고 있고 UBS는 설비투자 증가율을 2027년 25%, 2028년 6%로 봅니다. FY28 +70% 가이던스 이후 FY29 성장률이 급감할 위험이 있습니다.",
+      "중국 불확실성: H200 중국 판매는 2분기 데이터센터 매출의 1% 미만이고 가이던스에서도 빠져 있습니다. 상방 옵션이지만 규제 변화에 따른 변동성은 계속 남아 있습니다."
      ],
      "thesis_breakers": [
-      "재해 제외 underlying 결합비율이 2개 분기 연속 상승해 85를 넘어설 때",
-      "자동차 부문에서 불리한 준비금 발전(adverse development)이 보고될 때",
-      "요율 인하에도 보유계약(PIF)이 전년 대비 감소하는 '가격과 물량 동시 악화'가 확인될 때",
-      "차기연도 EPS 컨센서스가 90일 기준 -10% 이상 하향 전환(현재는 +6.0%, 상향 3·하향 0)",
-      "자사주 매입 중단 또는 재보험 비용 급등으로 자본환원 축소가 공시될 때"
+      "분기 매출의 전분기 대비 증가율이 2개 분기 연속 5% 미만이거나, 분기 가이던스가 컨센서스를 밑도는 경우(현재 2분기 +18%, 3분기 가이던스 +12%로 미해당)",
+      "GAAP 총마진이 70% 아래로 떨어지고 FY28 가격 인상으로도 72~73% 회복 가이던스를 철회하는 경우(현재 4분기 저점 가이던스 71~72%로 근접 관찰 필요)",
+      "차기 회계연도 EPS 컨센서스가 2개 분기 연속 하향되고, 하향 건수가 상향 건수보다 많아지는 경우(현재 30일 상향 46건, 하향 0건)",
+      "공급 약정(2분기 2,790억달러)과 재고는 계속 늘어나는데 데이터센터 매출의 전분기 대비 성장률이 한 자릿수로 둔화되는 조합이 나타나는 경우",
+      "주요 AI 랩·AI 클라우드 고객의 채무불이행이나 리스 미이행으로 엔비디아의 보증 또는 신용보강이 실제로 발동되는 경우, 또는 신규 보증 약정이 연간 FCF를 넘는 규모로 늘어나는 경우",
+      "하이퍼스케일러 합산 2027년 설비투자 가이던스가 전년 대비 감소로 제시되거나, 상위 고객 한 곳이 자체 ASIC으로 엔비디아 물량 축소를 공식화하는 경우"
      ]
     },
-    "thesis_status": "해당없음",
-    "thesis_status_reason": "신규 편입 후보로 기존 보유 논리가 없다. 다만 편입 시에는 '사이클 피크 이익의 정상화 속도'와 '요율 인하 국면에서의 PIF 성장'을 핵심 추적 지표로 설정해야 한다.",
-    "verdict": "관찰",
-    "verdict_reason": "실행력·재무건전성·주주환원(주식수 -3.7%, 환원수익률 약 6%)은 우수하고 선행 PER 8.2배는 역사적 평균보다 낮아 하방이 과도하지 않다. 그러나 2026년 2분기 결합비율 86.6과 TTM EPS 50달러는 저재해·준비금 환입이라는 반복 불가능한 요인에 기대고 있고, 컨센서스조차 차기연도 EPS -20.7%를 가정한다. 6개월 이상 보유의 기대값이 '싸다'는 것만으로 성립하기엔 이익 정상화 폭이 불확실해, 3분기(11/4)·4분기 실적에서 underlying 결합비율 유지와 PIF 증가 전환이 확인될 때까지 관찰이 적절하다.",
-    "conviction": 3,
+    "thesis_status": "유효",
+    "thesis_status_reason": "기존 논리 붕괴 조건 6개 중 촉발된 것은 하나도 없습니다. 3분기 가이던스는 전분기 대비 +12%로 성장률 조건(5%)을 넉넉히 넘고, 3분기 총마진 가이던스 74%(4분기 저점 71~72%)도 70%를 웃돌며, 차기 회계연도 EPS 추정치는 90일간 +25%(상향 46건, 하향 0건)입니다. 공급 약정은 2,790억달러로 급증했지만 데이터센터 매출이 +18% QoQ로 함께 성장하고 있어 조건 4는 미해당입니다. 공식적인 ASIC 전환 선언이나 2027년 설비투자 감소 신호도 없습니다. 주가 기준(편입가 218.29달러 대비 +5%, 선행 PER 약 14배)으로도 '고성장 + 비고평가'라는 원래 논리가 그대로 유효합니다. 다만 편입 이후 OpenAI 부지 신용보강 최대 1,050억달러라는 새 위험이 생겨 관련 붕괴 조건을 추가했고, 4분기 총마진이 70%선에 근접하는 점은 다음 실적에서 집중 점검해야 합니다.",
+    "verdict": "편입 적합",
+    "verdict_reason": "다섯 관점 가운데 기업의 질(5)과 가격 매력(4)이 매우 우호적이고, 재무 건전성(4)도 순현금과 연 1,200억달러 수준의 SBC 차감 후 FCF로 견고합니다. FY28 +70%라는 회사 가이던스와 4주간 EPS 추정치 하향 0건을 감안하면 선행 14배는 6개월 이상 보유 시 기대값이 뚜렷합니다. 그래도 확신도를 5로 올리지 않는 이유는 세 가지입니다. 첫째, 고객 자금조달을 엔비디아 신용으로 받치는 구조가 커지면서 사이클 하강 시 손실 폭이 과거보다 커졌습니다. 둘째, 총마진이 4분기 71~72%로 하락이 예고돼 있습니다. 셋째, 하이퍼스케일러 FCF가 악화되고 있습니다. 보유는 유지하되 추가 매수는 11월 3분기 실적(1,080억달러 이상, 4분기 가이던스 두 자릿수 QoQ)과 10월 말 하이퍼스케일러 2027년 설비투자 코멘트를 확인한 뒤에 하고, 포트폴리오 내 단일 종목 비중은 과도하게 늘리지 않을 것을 권합니다.",
+    "conviction": 4,
     "sources": [
      {
-      "title": "Allstate Corp - Form 10-Q (2026년 2분기)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0000899051/000089905126000118/all-20260630.htm"
+      "title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027 (NVIDIA Newsroom, 2026-08-26)",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
      },
      {
-      "title": "Allstate Corp - Form 8-K 2026년 2분기 실적 보도자료",
-      "url": "https://www.sec.gov/Archives/edgar/data/0000899051/000089905126000117/allcorp63026earningsreleas.htm"
+      "title": "NVIDIA Announces Financial Results for First Quarter Fiscal 2027 (NVIDIA Newsroom, 2026-05-20)",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027"
      },
      {
-      "title": "Allstate Q2 2026 slides: strong earnings, 86.6 combined ratio (Investing.com)",
-      "url": "https://www.investing.com/news/company-news/allstate-q2-2026-slides-strong-earnings-866-combined-ratio-93CH-4843367"
+      "title": "NVIDIA Corp. Q2 2027 Earnings: Recap of $NVDA Earnings Call, Forecast (TheStreet)",
+      "url": "https://www.thestreet.com/latest-news/nvidia-corp-nvda-q2-2027-earnings-call-updates"
      },
      {
-      "title": "The Allstate Corporation (ALL) Q2 2026 Summary (Quartr)",
-      "url": "https://quartr.com/events/the-allstate-corporation-all-q2-2026_ojVZPi7b"
+      "title": "Nvidia financial results for Q2'26–FY'27 (Jon Peddie Research)",
+      "url": "https://www.jonpeddie.com/news/nvidia-financial-results-for-q226-fy27/"
      },
      {
-      "title": "Allstate Corp - Form 10-Q (2026년 1분기)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0000899051/000089905126000075/all-20260331.htm"
+      "title": "NVIDIA's Q2 earnings broadly beat expectations... 70% growth in fiscal 2028 (Gate News)",
+      "url": "https://www.gate.com/news/detail/nvidias-q2-earnings-beat-expectations-across-the-board-with-962-billion-in-23751470"
+     },
+     {
+      "title": "Nvidia Stock Forecast: Rubin Ramp and $108 Billion Q3 Outlook Keep AI Growth Accelerating (TradingKey, 2026-10-06)",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262201321-nvidia-nvda-stock-forecast-october-6-2026"
+     },
+     {
+      "title": "Why Nvidia's stock is dodging the AI credit scare that is crushing Broadcom and Oracle (MarketWatch via Morningstar, 2026-10-10)",
+      "url": "https://www.morningstar.com/news/marketwatch/20261010101/why-nvidias-stock-is-dodging-the-ai-credit-scare-that-is-crushing-broadcom-and-oracle"
+     },
+     {
+      "title": "Nvidia Reports $96.2B Q2 Revenue Amid $80B Debt and Financing Debate (Gate News)",
+      "url": "https://www.gate.com/news/detail/nvidia-reports-962b-q2-revenue-amid-80b-debt-and-financing-debate-23833572"
+     },
+     {
+      "title": "AI Capex to Hit $1 Trillion – And Estimates Are Still Too Low (I/O Fund)",
+      "url": "https://io-fund.com/ai-stocks/ai-capex-1-trillion-estimates-too-low"
+     },
+     {
+      "title": "2026 hyperscaler capex tops US$700bn – analysis (TMT Finance)",
+      "url": "https://www.tmtfinance.com/intel/2026-hyperscaler-capex-tops-us700bn-analysis"
+     },
+     {
+      "title": "Among AI crowd, some investors position for slower hyperscaler spending growth (Reuters, 2026-07-17)",
+      "url": "https://www.reuters.com/business/retail-consumer/among-ai-crowd-some-investors-position-slower-hyperscaler-spending-growth-2026-07-17/"
+     },
+     {
+      "title": "Google announces 2 AI chips as competition with Nvidia heats up (Yahoo Finance, 2026-04-22)",
+      "url": "https://finance.yahoo.com/sectors/technology/article/google-announces-2-ai-chips-as-competition-with-nvidia-heats-up-120011883.html"
+     },
+     {
+      "title": "Nvidia Steps Back Into China Market With First H200 Chip Sales (Bloomberg, 2026-08-26)",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-26/nvidia-steps-back-into-china-market-with-first-h200-chip-sales"
+     },
+     {
+      "title": "What will NVIDIA's Q3 fiscal 2027 revenue be? (Manifold Markets)",
+      "url": "https://manifold.markets/Terminator2/what-will-nvidias-q3-fiscal-2027-re"
      }
     ]
    },
    "metrics": {
-    "ticker": "ALL",
-    "name": "Allstate Corporation (The)",
-    "sector": "금융",
-    "industry": "Insurance - Property & Casualty",
-    "as_of": "2026-10-10",
-    "price": 229.43,
-    "market_cap_b": 58.01,
+    "ticker": "NVDA",
+    "name": "NVIDIA Corporation",
+    "sector": "IT·기술",
+    "industry": "Semiconductors",
+    "as_of": "2026-10-11",
+    "price": 229.28,
+    "market_cap_b": 5536.42,
     "valuation": {
-     "trailing_pe": 4.6144404,
-     "forward_pe": 8.201271,
-     "peg": 1.6878,
-     "fcf_yield_pct": 26.13,
-     "analyst_target_mean": 270.54544,
-     "analyst_rating_mean_1buy_5sell": 2.52,
-     "analysts": 22.0
+     "trailing_pe": 28.986094,
+     "forward_pe": 14.406897,
+     "peg": 0.4791,
+     "fcf_yield_pct": 0.76,
+     "analyst_target_mean": 328.71695,
+     "analyst_rating_mean_1buy_5sell": 1.29508,
+     "analysts": 59.0
     },
     "growth_profitability": {
-     "gross_margin_pct": 36.8,
-     "op_margin_pct": 22.8,
-     "roe_pct": 46.1,
-     "revenue_growth_last_q_yoy_pct": 11.8,
-     "eps_growth_last_q_yoy_pct": 61.2,
-     "eps_growth_est_this_fy_pct": 1.6,
-     "eps_growth_est_next_fy_pct": -20.7
+     "gross_margin_pct": 74.7,
+     "op_margin_pct": 66.2,
+     "roe_pct": 117.2,
+     "revenue_growth_last_q_yoy_pct": 105.9,
+     "eps_growth_last_q_yoy_pct": 127.8,
+     "eps_growth_est_this_fy_pct": 95.2,
+     "eps_growth_est_next_fy_pct": 70.9
     },
     "cash_debt_dilution": {
-     "fcf_ttm_b": 12.25,
-     "sbc_ttm_b": null,
-     "buyback_ttm_b": 2.46,
-     "fcf_margin_pct": 21.6,
-     "net_debt_to_ebitda": 0.1,
-     "share_count_change_pct": -3.7,
+     "fcf_ttm_b": 127.01,
+     "sbc_ttm_b": 7.24,
+     "buyback_ttm_b": 55.31,
+     "fcf_margin_pct": 13.8,
+     "net_debt_to_ebitda": -0.12,
+     "share_count_change_pct": -0.82,
+     "share_count_span": "2025-07→2026-07"
+    },
+    "estimate_revisions_next_fy_eps": {
+     "current": 15.9146,
+     "chg_7d_pct": 1.48,
+     "chg_30d_pct": 2.55,
+     "chg_90d_pct": 25.21,
+     "up_revisions_30d": 46.0,
+     "down_revisions_30d": 0.0
+    },
+    "quarterly": {
+     "periods": [
+      "2025-07",
+      "2025-10",
+      "2026-01",
+      "2026-04",
+      "2026-07"
+     ],
+     "revenue_b": [
+      46.74,
+      57.01,
+      68.13,
+      81.61,
+      96.22
+     ],
+     "op_margin_pct": [
+      60.8,
+      63.2,
+      65.0,
+      65.6,
+      66.2
+     ],
+     "diluted_eps": [
+      1.08,
+      1.3,
+      1.76,
+      2.39,
+      2.46
+     ]
+    },
+    "annual_revenue_b": [
+     [
+      "2023-01",
+      26.97
+     ],
+     [
+      "2024-01",
+      60.92
+     ],
+     [
+      "2025-01",
+      130.5
+     ],
+     [
+      "2026-01",
+      215.94
+     ]
+    ],
+    "eps_surprises": [
+     {
+      "quarter": "2025-10",
+      "actual": 1.3,
+      "estimate": 1.25647,
+      "surprise_pct": 3.5
+     },
+     {
+      "quarter": "2026-01",
+      "actual": 1.62,
+      "estimate": 1.53812,
+      "surprise_pct": 5.3
+     },
+     {
+      "quarter": "2026-04",
+      "actual": 1.87,
+      "estimate": 1.77191,
+      "surprise_pct": 5.5
+     },
+     {
+      "quarter": "2026-07",
+      "actual": 2.22,
+      "estimate": 2.09113,
+      "surprise_pct": 6.2
+     }
+    ],
+    "next_earnings": "2026-11-17",
+    "return_1y_pct": 25.5,
+    "from_52w_high_pct": -4.2,
+    "quant_score": {
+     "score": 79.3,
+     "quality": 89,
+     "health": 70,
+     "value": 61,
+     "revisions": 92
+    },
+    "cycle_check": null,
+    "dashboard_signals": [
+     "M1 대가 상위보유: Chase Coleman (+3점)",
+     "M1 대가 최근분기 매수: Cathie Wood (+5점)",
+     "M3 실적 개선 기업 (+3점)"
+    ]
+   },
+   "reused_from": null
+  },
+  "EXPE": {
+   "analysis": {
+    "one_line_thesis": "B2B(+21%)가 이끄는 매출 9~10% 성장과 SBC 차감 후에도 10% 안팎인 FCF 수익률을 갖춘 세계 2위 OTA가 'AI 에이전트가 OTA를 건너뛴다'는 우려로 내년 이익 기준 PER 11배까지 내려와 있습니다. 다만 B2C 사용자 정체와 하반기 성장 둔화가 11월 4일 실적에서 검증되기 전까지는 관찰이 맞습니다.",
+    "quality": {
+     "score": 3,
+     "moat": "해자의 실체는 세 가지입니다. 하나는 세계 최대 B2B 여행 유통망(Rapid API, TAAP)으로 항공사·카드사·여행사·Qantas 같은 파트너에 숙박 재고를 공급하는 인프라입니다. 둘째는 Expedia·Hotels.com·Vrbo의 공급망과 One Key 로열티, 셋째는 광고 네트워크입니다. B2B는 2분기 예약 +21%, 매출 +23%로 파트너 락인이 실제로 작동하고 있고, 자체 광고(EG Advertising) 매출 +13%, trivago +48%로 수익원도 넓어지고 있습니다. 반면 소비자 브랜드는 Morgan Stanley가 지적했듯 2분기 MAU가 전년 대비 거의 제자리여서 Booking 대비 '약한 소비자 자산'과 호텔 직판 리스크가 해자의 약한 고리입니다.",
+     "growth_durability": "2026년 2분기 총예약 339.3억달러(+12%), 매출 43.2억달러(+14%), 숙박일수 +6%로 가이던스 상단을 넘었고, 연간 매출 가이던스도 160.5억~162.2억달러(+9~10%)로 올렸습니다. 2025년 성장률 약 7.6%보다 빨라진 수치입니다. 다만 3분기 가이던스는 예약 +5~7%, 매출 +5~8%로 크게 둔화되고, 경영진도 하반기 비교 기저가 높아 성장률이 내려간다고 밝혔습니다. B2C 예약 증가율은 +8%로, 마케팅비는 1%만 늘려 이 성장을 낸 점은 효율 개선이지만, 구조적 성장의 상당 부분은 B2B에 집중돼 있습니다.",
+     "summary": "B2B와 광고라는 성장축은 구조적이고, 비용 규율로 수익성도 개선되고 있습니다. 그러나 매출의 다수를 차지하는 B2C는 사용자 정체, 호텔 직판, AI 에이전트의 중개라는 세 방향 압력을 받고 있어 기업의 질은 '양호하지만 최상위는 아님'으로 평가합니다."
+    },
+    "financial_health": {
+     "score": 4,
+     "cash_flow": "TTM FCF는 44.6억달러(FCF 마진 21.9%)로 2년 새 약 두 배가 됐고, 2분기 FCF도 12.8억달러로 39% 늘었습니다. SBC 4.1억달러(매출의 약 2.6%)를 빼도 약 40억달러로 시가총액 329억달러 대비 약 12%입니다. 다만 FCF의 상당 부분은 선결제 예약금(이연 머천트 예약 154억달러)이라는 운전자본 플로트에서 나옵니다. 예약 성장이 둔화되면 현금흐름 증가율도 함께 꺾이는 구조라는 점은 감안해야 합니다.",
+     "debt": "2분기 말 장기부채는 54.6억달러이고 1년 내 만기는 없습니다(전년 16.9억달러 만기분 상환 완료). 현금(제한성 포함)은 90.8억달러로, 데이터 기준 순부채/EBITDA는 -0.5배입니다. 다만 현금의 큰 부분이 고객 선결제금이어서 '순현금'은 장부상 수치보다 보수적으로 봐야 합니다.",
+     "dilution": "주식 수는 2025년 6월에서 2026년 6월 사이 3.6% 줄었고, 2분기 희석주식수도 1억2,255만주로 전년 1억3,281만주보다 감소했습니다. TTM 자사주 매입은 19.2억달러로 SBC의 4배가 넘습니다. 다만 상반기 매입 10.6억달러 가운데 2분기 몫은 2억달러(약 88만주)에 그쳐 매입 속도가 눈에 띄게 줄었습니다. 분기 배당 주당 0.48달러도 지급하고 있습니다.",
+     "summary": "부채 부담은 낮고 현금창출력은 매출 대비 20%대로 탄탄하며, 순소각 구조도 유지되고 있습니다. 감점 요인은 FCF가 예약 플로트에 의존한다는 점과 2분기 들어 자사주 매입이 둔화됐다는 점입니다. 또 2분기 GAAP EPS 7.16달러에는 지분투자 평가이익 2.8억달러(주당 약 2.29달러)가 섞여 있어, 조정 EPS 5.76달러(+36%)를 기준으로 봐야 합니다."
+    },
+    "valuation": {
+     "score": 4,
+     "current_view": "주가 274.22달러는 내년(FY27) EPS 컨센서스 24.55달러 대비 11.2배, 트레일링 GAAP 17.1배, PEG 0.68 수준입니다. TIKR 기준 12개월 선행 EV/EBITDA는 9월 말 약 7.2배로, 2025년 말 9.9배에서 내려와 2025년 중반 저점 수준으로 돌아갔습니다. 주가는 52주 고점 342달러보다 19% 낮고, 8월 고점 대비로는 9월 23일 Meta Muse 쇼크 때 -24%까지 밀렸습니다. 같은 기간 2026년 매출 추정치는 156.4억달러에서 162억달러로 올랐는데도 밸류에이션이 수축했다는 뜻입니다.",
+     "upside_scenario": "하반기 둔화가 비교 기저 효과에 그치고 내년 EPS 24.55달러(+16.8%)가 달성되면, 14배만 적용해도 약 344달러(+25%)입니다. 애널리스트 평균 목표가 338.8달러(+23.5%)와 비슷한 수준입니다. 연 3~4% 자사주 소각이 더해지면 멀티플이 그대로여도 주당이익은 연 13~15% 늘 수 있습니다. 정당화 조건은 B2B 예약이 두 자릿수 중후반 성장을 이어가고, AI 에이전트 채널 예약이 Expedia·Vrbo 브랜드로 귀속되면서 B2C 예약이 한 자릿수 중반 이상을 지키는 것입니다.",
+     "summary": "가격은 AI 중개 리스크를 상당 부분 반영해 저렴한 편이고, 추정치 상향(90일 +6.2%, 30일 상향 3건·하향 0건)과 반대로 움직이고 있습니다. 다만 AI가 OTA의 트래픽을 실제로 가져가면 10배 안팎이 적정 멀티플이 될 수 있어, 싸다는 것만으로는 재평가를 장담할 수 없습니다."
+    },
+    "catalysts": [
+     {
+      "event": "2026년 3분기 실적 및 4분기 가이던스 발표",
+      "timing": "2026-11-04 (확정)",
+      "impact": "불확실",
+      "detail": "총예약이 가이던스 322억~328억달러(+5~7%) 안에 들어오는지, 4분기 매출 가이던스 중간값이 시장 예상(약 37.3억달러)을 넘는지가 핵심입니다. Muse 출시(9월 8일) 이후 첫 분기 실적이어서, B2C 약세를 AI 채널과 연결하는 발언이 나오면 9월 23일 급락이 정당화되고, 반대면 반등의 출발점이 됩니다."
+     },
+     {
+      "event": "AI 에이전트 채널 연동 확대(Meta Muse, Google AI Mode 호텔 예약, ChatGPT·Claude)",
+      "timing": "2026-10 ~ 2027-상반기",
+      "impact": "불확실",
+      "detail": "Google은 8월 27일 AI Mode 안에서 바로 결제하는 호텔 예약을 시작했고 Expedia·Hotels.com이 출시 파트너로 들어갔습니다. Expedia는 9월 22일 Meta Muse 합류도 발표했습니다. 판매 주체(merchant of record)는 유지되지만 수수료 구조와 고객 소유권이 플랫폼 쪽으로 넘어갈 위험이 있습니다. Gorin CEO도 자체 자연어 검색이 '아직 전환율을 높이지 못한다'고 인정했습니다."
+     },
+     {
+      "event": "B2B 플랫폼 확장(Qantas 파트너십, Rapid Activities API·TAAP 액티비티)",
+      "timing": "2026-09-30 ~ 2027",
+      "impact": "긍정",
+      "detail": "9월 30일 Qantas Loyalty와 호텔·패키지 예약 기술 파트너십을 맺었고, 10월 1일에는 Rapid Activities API 베타와 영국 여행사 대상 Tiqets 액티비티 판매 파일럿을 발표했습니다. B2B는 매출 +23%로 가장 빠르게 크는 사업이어서 대형 파트너 추가가 내년 성장률 방어의 핵심입니다."
+     },
+     {
+      "event": "FY2027 가이던스 및 자본배분 계획",
+      "timing": "2027-02 (예상, 4분기 실적 발표 시)",
+      "impact": "불확실",
+      "detail": "올해 EBITDA 마진 1.5~1.75%p 확대 이후에도 내년 마진 확대와 고성장을 동시에 제시하는지가 관건입니다. 2분기 자사주 매입이 2억달러로 줄어든 만큼, 주가 하락기에 매입 속도를 다시 높이는지도 경영진의 저평가 인식을 확인할 신호입니다."
+     },
+     {
+      "event": "Vrbo 화재 사망 사고 손해배상 소송",
+      "timing": "2026-09 제기, 장기 진행",
+      "impact": "부정",
+      "detail": "9월 22일 도미니카공화국 임대 숙소 화재로 4명이 숨진 사건과 관련해, Vrbo가 화재 안전 기준 미달 숙소를 등록해 왔다는 소송이 King County 법원에 제기됐습니다(주장은 미입증). 금액보다는 숙소 등록 규제와 평판 측면의 리스크입니다."
+     }
+    ],
+    "bear_case": {
+     "summary": "가장 강한 약세 논리는 AI 에이전트가 OTA의 핵심 가치인 '검색·비교·예약 중개'를 상품화한다는 것입니다. Gorin CEO에 따르면 소비자 사업의 3분의 2는 직접 유입이지만, 나머지 3분의 1은 Google·Meta·OpenAI 같은 에이전트로 옮겨갈 수 있습니다. Goldman Sachs는 Expedia를 에이전트가 전환비용을 낮추면 타격받는 '소비자 관성' 종목군으로 분류했습니다. Morgan Stanley는 2분기 MAU 정체, 약한 소비자 자산, 호텔 직판 리스크를 들어 9월 비중축소(목표가 235달러)로 하향했습니다. 여기에 3분기 성장률이 5~7%로 반토막 나는 가이던스와 중동 분쟁에 따른 항공 운임·유가 부담이 겹칩니다.",
+     "key_risks": [
+      "AI 중개: Google AI Mode(8월 27일 출시)와 Meta Muse 안에서 예약이 끝나면, 트래픽 획득 비용 상승이나 수수료 공유로 B2C 마진이 깎이고 고객 데이터·로열티를 잃을 수 있습니다.",
+      "B2C 정체: 2분기 MAU가 전년 대비 거의 제자리이고 B2C 예약은 +8%로 B2B(+21%)의 절반 이하입니다. 매출 비중이 큰 소비자 사업이 Booking·Airbnb·호텔 직판에 밀릴 수 있습니다.",
+      "하반기 둔화: 3분기 예약 +5~7%, 매출 +5~8%로 2분기(+12%, +14%)보다 크게 둔화되고, 경영진도 3분기 마진 확대 폭이 줄어든다고 밝혔습니다.",
+      "거시·지정학: 중동 분쟁에 따른 유가·항공 운임 상승, 유럽 출국 수요 약세, 항공 공급 축소. 1분기에는 중동 전쟁 영향으로 보수적 예약 전망을 낸 전례도 있습니다.",
+      "현금흐름의 경기 민감도: FCF가 선결제 예약금 플로트에 의존해, 예약 성장이 멈추면 FCF와 자사주 매입 여력이 동시에 줄어듭니다."
+     ],
+     "thesis_breakers": [
+      "B2C 총예약 증가율이 2개 분기 연속 3% 미만으로 떨어지거나, 경영진이 B2C 약세의 원인으로 AI 에이전트·검색 채널 변화를 직접 지목하는 경우",
+      "B2B 총예약 증가율이 2개 분기 연속 10% 미만으로 둔화되는 경우(핵심 성장축 훼손)",
+      "4분기 또는 FY2027 가이던스가 매출 한 자릿수 초반 성장이나 조정 EBITDA 마진 축소로 제시되는 경우",
+      "AI 플랫폼 연동 조건에서 Expedia가 판매 주체 지위를 잃거나, 수수료·트래픽 비용이 늘어 B2C 마케팅비 증가율이 B2C 예약 증가율을 지속적으로 웃도는 경우",
+      "TTM FCF가 35억달러 아래로 떨어지거나, 자사주 매입이 SBC 수준 이하로 줄어 주식 수 감소 추세가 멈추는 경우"
+     ]
+    },
+    "thesis_status": "해당없음",
+    "thesis_status_reason": "신규 편입 후보로 기존 보유 논리가 없습니다.",
+    "verdict": "관찰",
+    "verdict_reason": "숫자는 좋습니다. 연간 가이던스는 상향됐고 4분기 연속 EPS가 예상을 웃돌았습니다(최근 +9.6%). B2B +21%, SBC 차감 후 FCF 수익률은 약 10~12%, 주식 수는 연 3.6% 줄었고, 내년 기준 PER 11배와 상향되는 추정치를 보면 퀀트 점수 79.9가 충분히 이해됩니다. 그러나 9월에만 Morgan Stanley 하향(MAU 정체), Meta Muse 쇼크(-7.7%), Google AI Mode 직접 예약 출시가 이어지면서 'AI 에이전트가 B2C를 잠식하는가'라는 핵심 쟁점이 막 수면 위로 올라왔습니다. 이를 검증할 첫 데이터인 3분기 실적과 4분기 가이던스가 3주 뒤인 11월 4일에 나옵니다. 3분기 성장률이 5~7%로 둔화되고 2분기 자사주 매입이 2억달러로 준 점도 지금 서둘러 편입하기보다 확인한 뒤 들어가는 쪽을 지지합니다. 11월 4일에 총예약이 가이던스 안에 들고, B2C가 한 자릿수 중반 이상을 지키고, 4분기 가이던스가 시장 예상 이상이면 '편입 적합'으로 올릴 근거가 충분합니다.",
+    "conviction": 3,
+    "sources": [
+     {
+      "title": "Expedia Group Reports Second Quarter 2026 Results (Expedia IR)",
+      "url": "https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-Reports-Second-Quarter-2026-Results/default.aspx"
+     },
+     {
+      "title": "Q2 2026 Expedia Group, Inc. Earnings Call Transcript (Expedia IR PDF)",
+      "url": "https://s202.q4cdn.com/757635260/files/doc_financials/2026/q2/EXPE-USQ_Transcript_2026-08-05.pdf"
+     },
+     {
+      "title": "Expedia (EXPE) Q2 2026 Earnings Call Transcript (The Motley Fool)",
+      "url": "https://www.fool.com/earnings/call-transcripts/2026/08/12/expedia-expe-q2-2026-earnings-call-transcript/"
+     },
+     {
+      "title": "Expedia Raises 2026 Revenue Outlook To As Much As $16.22 Billion After 14% Q2 Growth (Pulse 2.0)",
+      "url": "https://pulse2.com/expedia-raises-2026-revenue-outlook-to-as-much-as-16-22-billion-after-14-q2-growth/"
+     },
+     {
+      "title": "Expedia Stock Closed Down Nearly 8% the Day After Its Meta Muse Tie-Up (TIKR)",
+      "url": "https://www.tikr.com/blog/expedia-stock-closed-down-nearly-8-the-day-after-its-meta-muse-tie-up-heres-where-the-stock-could-go"
+     },
+     {
+      "title": "Starbucks initiated, Expedia downgraded: Wall Street's top analyst calls (Yahoo Finance / The Fly)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/starbucks-initiated-expedia-downgraded-wall-134246447.html"
+     },
+     {
+      "title": "This Analyst Just Downgraded Expedia Stock. Here's Why. (Barchart)",
+      "url": "https://www.barchart.com/story/news/4643493/this-analyst-just-downgraded-expedia-stock-here-s-why"
+     },
+     {
+      "title": "Google AI Mode Hotel Booking: What It Means for Travel Agents (DMC Quote)",
+      "url": "https://dmcquote.com/blog/post/google-ai-mode-hotel-booking-travel-agents"
+     },
+     {
+      "title": "Expedia Group Investor Overview: Q3 2026 실적 발표일, Qantas 파트너십, B2B 제품 발표 (Expedia IR)",
+      "url": "https://ir.expediagroup.com/investors-overview/default.aspx"
+     },
+     {
+      "title": "Expedia calls on Layla to speed up its AI strategy (PhocusWire)",
+      "url": "https://www.phocuswire.com/news/technology/expedia-group-acquires-ai-travel-planning-app-layla"
+     },
+     {
+      "title": "Expedia forecasts downbeat bookings on Middle East war impact (Reuters)",
+      "url": "https://www.reuters.com/business/expedia-beats-quarterly-estimates-flags-hit-middle-east-war-2026-05-07/"
+     },
+     {
+      "title": "'We're experimenting aggressively': How Expedia sees AI reshaping travel (GeekWire)",
+      "url": "https://www.geekwire.com/2026/were-experimenting-aggressively-how-expedia-sees-ai-reshaping-travel-and-its-own-business/"
+     }
+    ]
+   },
+   "metrics": {
+    "ticker": "EXPE",
+    "name": "Expedia Group, Inc.",
+    "sector": "경기소비재",
+    "industry": "Travel Services",
+    "as_of": "2026-10-11",
+    "price": 274.22,
+    "market_cap_b": 32.91,
+    "valuation": {
+     "trailing_pe": 17.128044,
+     "forward_pe": 11.174254,
+     "peg": 0.6802,
+     "fcf_yield_pct": 10.44,
+     "analyst_target_mean": 338.77142,
+     "analyst_rating_mean_1buy_5sell": 2.15789,
+     "analysts": 35.0
+    },
+    "growth_profitability": {
+     "gross_margin_pct": 90.4,
+     "op_margin_pct": 19.0,
+     "roe_pct": 89.5,
+     "revenue_growth_last_q_yoy_pct": 14.0,
+     "eps_growth_last_q_yoy_pct": 188.7,
+     "eps_growth_est_this_fy_pct": 32.5,
+     "eps_growth_est_next_fy_pct": 16.8
+    },
+    "cash_debt_dilution": {
+     "fcf_ttm_b": 4.46,
+     "sbc_ttm_b": 0.41,
+     "buyback_ttm_b": 1.92,
+     "fcf_margin_pct": 21.9,
+     "net_debt_to_ebitda": -0.5,
+     "share_count_change_pct": -3.61,
      "share_count_span": "2025-06→2026-06"
     },
     "estimate_revisions_next_fy_eps": {
-     "current": 28.0522,
-     "chg_7d_pct": 0.97,
-     "chg_30d_pct": 1.61,
-     "chg_90d_pct": 6.01,
+     "current": 24.55131,
+     "chg_7d_pct": 0.35,
+     "chg_30d_pct": 0.7,
+     "chg_90d_pct": 6.22,
      "up_revisions_30d": 3.0,
      "down_revisions_30d": 0.0
     },
@@ -2236,74 +1558,874 @@
       "2026-06"
      ],
      "revenue_b": [
-      16.55,
-      17.06,
-      17.2,
-      16.75,
-      18.34
+      3.79,
+      4.41,
+      3.55,
+      3.43,
+      4.32
      ],
-     "op_margin_pct": [],
+     "op_margin_pct": [
+      14.0,
+      25.6,
+      15.4,
+      7.1,
+      19.0
+     ],
      "diluted_eps": [
-      7.76,
-      13.95,
-      14.37,
-      9.25,
-      12.51
+      2.48,
+      7.33,
+      1.6,
+      -0.05,
+      7.16
      ]
     },
     "annual_revenue_b": [
      [
       "2022-12",
-      50.62
+      11.67
      ],
      [
       "2023-12",
-      56.59
+      12.84
      ],
      [
       "2024-12",
-      63.52
+      13.69
      ],
      [
       "2025-12",
-      67.07
+      14.73
      ]
     ],
     "eps_surprises": [
      {
       "quarter": "2025-09",
-      "actual": 11.17,
-      "estimate": 7.54321,
-      "surprise_pct": 48.1
+      "actual": 7.57,
+      "estimate": 6.94574,
+      "surprise_pct": 9.0
      },
      {
       "quarter": "2025-12",
-      "actual": 14.31,
-      "estimate": 9.86302,
-      "surprise_pct": 45.1
+      "actual": 3.78,
+      "estimate": 3.36869,
+      "surprise_pct": 12.2
      },
      {
       "quarter": "2026-03",
-      "actual": 10.65,
-      "estimate": 7.24462,
-      "surprise_pct": 47.0
+      "actual": 1.96,
+      "estimate": 1.37698,
+      "surprise_pct": 42.3
      },
      {
       "quarter": "2026-06",
-      "actual": 8.99,
-      "estimate": 6.07298,
-      "surprise_pct": 48.0
+      "actual": 5.76,
+      "estimate": 5.25301,
+      "surprise_pct": 9.6
      }
     ],
     "next_earnings": "2026-11-04",
-    "return_1y_pct": 13.7,
-    "from_52w_high_pct": -16.3,
+    "return_1y_pct": 31.3,
+    "from_52w_high_pct": -19.0,
     "quant_score": {
-     "score": 72.6,
-     "quality": 53,
+     "score": 79.9,
+     "quality": 75,
+     "health": 73,
+     "value": 85,
+     "revisions": 84
+    },
+    "cycle_check": null,
+    "dashboard_signals": []
+   },
+   "reused_from": null
+  },
+  "RDDT": {
+   "analysis": {
+    "one_line_thesis": "광고 매출이 8개 분기 연속 60% 넘게 늘고 조정 EBITDA 마진이 43%까지 오른 '사람이 직접 쓴 콘텐츠' 플랫폼입니다. 다만 구글 검색 유입 둔화로 미국 사용자가 정체됐고 AI 라이선스 재계약도 미정이어서, FY27 PER 약 22배가 싸다고 보려면 10/29 3분기 실적에서 미국 사용자 반등을 먼저 확인해야 하는 '관찰'형 고성장주입니다.",
+    "quality": {
+     "score": 4,
+     "moat": "해자는 20년 가까이 쌓인 수십만 개 관심사 커뮤니티의 실제 사람 대화 데이터입니다. AI 생성 콘텐츠가 늘수록 희소성이 커져 검색 수요(구매 의도)와 소셜 참여를 동시에 갖춘 광고 지면이 됩니다. 2분기 총이익률 91.3%, 직원 1인당 매출 100만달러 돌파, 광고 매출 +64%(가격과 노출 동시 상승)가 가격결정력의 증거입니다. 구글(약 6천만달러/년)과 OpenAI(약 7천만달러/년)가 학습 데이터 비용을 낸다는 사실도 콘텐츠 자산 가치를 보여줍니다. 반면 신규 사용자 유입의 상당 부분(외부 분석상 트래픽의 약 40%)을 구글 검색에 기대고 있어, 해자의 '입구'는 남이 통제합니다.",
+     "growth_durability": "2분기 매출 8.05억달러(+61%), 미국 +56%, 해외 +84%, 사용자당 매출(ARPU) 6.18달러(+36%)로 수익화 고도화는 구조적입니다. 그러나 미국 DAUq는 5,320만으로 1분기(5,350만)보다 줄었고 성장률은 +6%로 낮아졌습니다. 가장 수익성 높은 미국 로그인 사용자는 2,310만으로 5개 분기째 제자리(+1%)입니다. 3분기 가이던스 8.6~8.7억달러(+47~49%)도 2분기 61%에서 뚜렷하게 둔화한 숫자이고, 회사는 3분기부터 로그인/비로그인 구분 공시를 중단합니다.",
+     "summary": "수익화 엔진(광고 단가, 해외 확장, 마진)은 최상위급입니다. 하지만 성장의 원재료인 미국 사용자 유입이 구글 AI 개요(AI Overviews) 확산으로 흔들리고 있습니다. 앞으로 2~3년 성장이 '사용자 증가'가 아니라 'ARPU 증가'에만 기대게 될 위험이 질적 측면의 핵심 쟁점입니다."
+    },
+    "financial_health": {
+     "score": 5,
+     "cash_flow": "최근 12개월 FCF는 10.2억달러(FCF 마진 24.4%)이고, 2분기 FCF는 2.61억달러(매출 대비 33%, 전년 대비 +135%)로 영업현금흐름이 처음 12개월 누적 10억달러를 넘었습니다. 최근 12개월 주식보상비용(SBC) 3.4억달러를 빼면 약 6.8억달러로 시가총액 307.7억달러 대비 2.2% 수준이라 아직 낮습니다. 다만 SBC가 매출의 13%로 떨어졌고 회사가 연간 SBC 가이던스를 '10%대 후반'에서 '10%대 초중반'으로 낮춰 현금흐름의 질은 빠르게 좋아지고 있습니다.",
+     "debt": "6월 말 현금·유가증권은 27.9억달러(1년 새 +7억달러)이고 차입금이 사실상 없어, 순부채/EBITDA가 -3.45배인 순현금 구조입니다. 설비투자도 가벼워(서버를 외부 인프라에 맡김) 재무 부담이 전혀 없습니다.",
+     "dilution": "2026년 2월 10억달러 자사주 매입을 승인했고, 2분기에 150만주를 2.35억달러(평균 157.57달러)에 샀습니다. 그 결과 완전희석 주식수는 2.07억주로 전년 대비 +0.2%에 그쳐 희석이 사실상 멈췄습니다. Yahoo 기준 기본주식수는 +2.8%(2025-06→2026-06)로 RSU 행사 효과가 아직 남아 있지만, 매입 속도가 이어지면 2027년부터 순감소로 돌아설 수 있습니다.",
+     "summary": "순현금 28억달러, FCF 마진 24~33%, 희석 거의 0%라 재무 건전성에는 흠이 없습니다. 유일한 약점은 SBC 차감 후 FCF 수익률이 2%대로, 아직 '현금흐름으로 싸다'고 말할 단계는 아니라는 점입니다."
+    },
+    "valuation": {
+     "score": 3,
+     "current_view": "주가 159.91달러는 최근 12개월 EPS 4.30달러 대비 약 37배입니다. 컨센서스 FY27 EPS 7.07달러(90일간 +9.2% 상향) 대비로는 약 22.6배입니다. Yahoo의 forward PER 16.5배는 산정 기준이 달라 보여 보수적으로 22배대를 기준으로 삼았고, 외부 분석은 약 18배로 봅니다. EV(시가총액-순현금, 약 280억달러) 기준 최근 12개월 조정 EBITDA(약 11.7억달러) 대비 약 24배, 2026년 예상 매출(약 33억달러) 대비 약 8.4배입니다. 52주 고점 대비 -38.2%, 1년 수익률 -19.5%로, 시장은 '구글 의존 트래픽이 꺾이면 매출 40~50억달러에서 성장이 막힌다'는 시나리오를 할인하고 있습니다.",
+     "upside_scenario": "FY27 EPS 성장 26%와 마진 확대(3분기 조정 EBITDA 마진 가이던스 45%)가 이어지고 미국 DAUq가 다시 늘면, 28~30배 재평가만으로도 200~210달러(+25~30%)가 나옵니다. 이는 애널리스트 평균 목표가 213.7달러와 비슷하고, Needham은 300달러를 유지하고 있습니다. 정당화 조건은 세 가지입니다. 3분기 매출이 컨센서스 약 8.72~8.74억달러를 넘을 것, 미국 DAUq가 1분기 5,350만 이상으로 돌아올 것, 2027년 구글·OpenAI 라이선스가 기존 이상 조건으로 갱신될 것.",
+     "summary": "성장률(PEG 0.76) 대비로는 비싸지 않지만, 성장 지속성에 대한 구조적 의문을 감안하면 '확실히 싸다'고 보기도 어렵습니다. 가격은 낙관과 비관의 중간쯤을 반영하고 있어 가격 매력은 중립보다 약간 우호적인 수준입니다."
+    },
+    "catalysts": [
+     {
+      "event": "2026년 3분기 실적 발표",
+      "timing": "2026-10-29",
+      "impact": "불확실",
+      "detail": "가이던스는 매출 8.6~8.7억달러, 조정 EBITDA 3.85~3.95억달러(마진 45%)이고, 컨센서스는 EPS 1.32달러, 매출 8.74억달러입니다. 회사는 최근 5개 분기 연속 가이던스 상단을 넘었고(2분기는 11% 초과), Needham도 트래픽 추적상 3분기 사용자·매출이 강하다고 봤습니다. 다만 로그인 지표가 빠진 첫 분기라 미국 DAUq 총계가 5,350만 위로 돌아오는지가 주가 방향을 정할 것입니다."
+     },
+     {
+      "event": "구글·OpenAI AI 데이터 라이선스 재계약 협상 결과",
+      "timing": "2026-4분기~2027년 (계약 만료 2027년)",
+      "impact": "불확실",
+      "detail": "WSJ 보도(7/22)에 따르면 레딧은 구글의 AI용 접근 차단까지 검토했고, CEO는 '활발히 협상 중'이라며 독점 계약 가능성에 '노코멘트'했습니다. 기존 연 약 1.3억달러(기타 매출은 2분기 매출의 5.3%)보다 크게 오른 조건이나 트래픽 보장이 붙은 계약이면 강한 긍정입니다. 결렬되거나 조건이 낮아지면 고마진 매출이 줄고 구글 검색 노출까지 불확실해집니다."
+     },
+     {
+      "event": "RSS 피드 종료 및 공개 API 접근 제한(AI 스크래핑 차단)",
+      "timing": "2026-11-13",
+      "impact": "긍정",
+      "detail": "무단 수집 통로를 닫아 데이터 희소성을 높이는 조치로, 라이선스 협상력을 키웁니다(Anthropic 상대 소송도 같은 흐름). 다만 외부 앱·개발자 생태계의 반발과 트래픽 일부 손실 가능성은 지켜봐야 합니다."
+     },
+     {
+      "event": "2026년 4분기 실적 및 2027년 전망 발표",
+      "timing": "2027-02 초 (예상)",
+      "impact": "불확실",
+      "detail": "연말 광고 성수기 실적과 2027년 성장률 첫 시사가 나오는 자리입니다. 컨센서스의 2027년 매출 성장 약 30% 초반, EPS +26%를 뒷받침하는 1분기 가이던스가 나오면 22배 멀티플이 낮아 보이게 되고, 30% 밑을 시사하면 '40~50억달러 성장 정체론'이 힘을 얻습니다."
+     },
+     {
+      "event": "10억달러 자사주 매입 집행 확대",
+      "timing": "분기별, 상시",
+      "impact": "긍정",
+      "detail": "2분기에 2.35억달러를 157달러대에서 매입했고 현재 주가도 비슷합니다. 순현금 28억달러와 분기 FCF 2.6억달러를 감안하면 매입 속도를 높일 여력이 충분하고, 완전희석 주식수가 순감소로 돌아서면 주당가치 성장이 빨라집니다."
+     },
+     {
+      "event": "해외 수익화 및 광고 상품(R-Max 등) 확대",
+      "timing": "2026~2027년",
+      "impact": "긍정",
+      "detail": "해외 DAUq는 7,710만(+28%)이지만 ARPU는 미국 11.85달러 대비 2.26달러로 5분의 1 수준입니다. 해외 ARPU가 조금만 따라와도 미국 사용자 정체를 상쇄할 수 있는 가장 큰 수익화 여지입니다."
+     }
+    ],
+    "bear_case": {
+     "summary": "가장 강한 약세 논리는 레딧의 성장 원료인 신규 사용자 유입을 구글이 쥐고 있고, 그 구글이 AI 개요로 외부 클릭을 줄이고 있다는 점입니다. 2분기 미국 DAUq는 전 분기보다 줄었고 미국 로그인 사용자는 1년째 2,300만에 머물렀는데, 회사는 바로 이 지표의 공시를 중단합니다. 그래서 '사용자 성장 없이 ARPU만 짜내는 구조'를 투자자가 검증하기 더 어려워졌습니다. 여기에 2027년 AI 라이선스 갱신이 결렬되거나 조건이 낮아지는 위험, 성장률 둔화(61%→48%)가 겹치면 시장이 경고하는 '트위터 2.0'(매출 40~50억달러 정체) 시나리오가 됩니다.",
+     "key_risks": [
+      "검색 유입 의존: COO가 'SEO 역풍이 사용자 확보 노력을 상쇄하고도 남았다'고 했고, AI 개요 영향이 2분기 말부터 3분기까지 이어진다는 분석이 있습니다. 구글 알고리즘이 한 번 바뀌면 미국 비로그인 트래픽이 크게 줄 수 있습니다.",
+      "미국 핵심 사용자 정체: 미국 로그인 DAUq가 2,290만→2,310만(+1%)으로 사실상 멈췄습니다. 고ARPU 사용자 기반이 늘지 않으면 광고 단가 인상과 광고 비중 확대에도 한계가 옵니다.",
+      "AI 라이선스 재계약 불확실성: 구글(연 약 6천만달러)·OpenAI(연 약 7천만달러) 계약이 2027년 만료되며, 협상 결렬 시 고마진 매출이 줄고 구글과의 관계 악화로 검색 노출까지 위험해질 수 있습니다.",
+      "성장 둔화와 경쟁: 3분기 가이던스 성장률 48%로 감속 중이고, 광고주들이 2026년 TikTok·Snap·ChatGPT 광고 테스트 예산으로 이동할 수 있다는 경고(Cleveland Research)가 있습니다.",
+      "공시 축소와 높은 변동성: 3분기부터 로그인/비로그인 구분 공시를 중단하고, 최근 1년간 5% 넘는 주가 변동이 59회였습니다. 실적이 좋아도 2분기처럼 하루 -20%가 나올 수 있는 종목입니다."
+     ],
+     "thesis_breakers": [
+      "미국 DAUq가 2개 분기 연속 전 분기 대비 감소하거나 전년 대비 성장률이 3% 미만으로 내려가는 경우.",
+      "분기 매출 성장률이 회사 가이던스 하단을 밑돌거나, 2027년 1분기 가이던스가 전년 대비 25% 미만 성장을 시사하는 경우.",
+      "구글 또는 OpenAI와의 데이터 라이선스가 갱신되지 않거나 기존(연 6천만~7천만달러)보다 낮은 조건으로 갱신되고, 기타 매출이 전년 대비 감소하는 경우.",
+      "조정 EBITDA 마진이 40% 아래로 내려가거나 SBC가 다시 매출의 15%를 넘어 SBC 차감 후 FCF가 줄어드는 경우.",
+      "완전희석 주식수가 전년 대비 2% 이상 다시 늘거나, 자사주 매입이 사실상 멈춘 상태에서 대규모 주식 발행형 인수가 나오는 경우."
+     ]
+    },
+    "thesis_status": "해당없음",
+    "thesis_status_reason": "신규 편입 후보라 기존 보유 논리가 없습니다. 편입을 검토한다면 기준점은 '미국 DAUq 재성장 + 매출 성장 40%대 유지 + 조정 EBITDA 마진 45% 안팎'입니다.",
+    "verdict": "관찰",
+    "verdict_reason": "수익화(매출 +61%, ARPU +36%), 수익성(조정 EBITDA 마진 43%, 순이익률 31%), 재무(순현금 28억달러, 희석 0.2%)는 모두 최상위권이고, FY27 PER 약 22배는 EPS 성장 26%를 감안하면 과하지 않습니다. 그러나 가장 중요한 미국 사용자 지표가 2분기에 꺾였고, 회사가 바로 그 세부 지표의 공시를 끊었으며, 2027년 AI 라이선스 갱신이라는 이진(binary) 변수도 남아 있습니다. 그래서 반대 근거를 감안한 6개월+ 기대값이 '뚜렷하다'고 말하기 어렵습니다. 10/29 3분기 실적에서 미국 DAUq가 5,350만 이상으로 반등하고 매출이 8.74억달러를 넘으면 편입 적합으로 다시 평가할 만하며, 그 전까지는 관찰이 합리적입니다.",
+    "conviction": 3,
+    "sources": [
+     {
+      "title": "Reddit Reports Second Quarter 2026 Results (Reddit IR)",
+      "url": "https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-Reports-Second-Quarter-2026-Results/default.aspx"
+     },
+     {
+      "title": "Reddit Q2'26 Earnings Call Transcript (Reddit IR PDF)",
+      "url": "https://s203.q4cdn.com/380862485/files/doc_financials/2026/q2/Reddit-Q2-26-Earnings-Call_Transcript.pdf"
+     },
+     {
+      "title": "Reddit stock sinks on report it may not renew Google AI content deal (CNBC, 2026-07-22)",
+      "url": "https://www.cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal.html"
+     },
+     {
+      "title": "Reddit flags volatile search referrals as US user growth slows (Reuters via StreetInsider)",
+      "url": "https://www.streetinsider.com/Reuters/Reddit+expects+revenue+above+estimates+as+AI+tools+attract+advertisers/26843655.html"
+     },
+     {
+      "title": "Reddit's US User Decline Raises a Bigger Question After Its Earnings Beat (Investing.com, 2026-08-04)",
+      "url": "https://www.investing.com/analysis/reddits-us-user-decline-raises-a-bigger-question-after-its-earnings-beat-200685200"
+     },
+     {
+      "title": "Reddit earnings analysis: questions answered and next catalysts (Investing.com)",
+      "url": "https://www.investing.com/news/stock-market-news/reddit-earnings-analysis-questions-answered-and-next-catalysts-93CH-4829037"
+     },
+     {
+      "title": "Reddit Stock Popped 9.31% Yesterday on an AI Licensing Bet (TIKR, 2026-09-03)",
+      "url": "https://www.tikr.com/blog/reddit-stock-popped-9-31-yesterday-on-an-ai-licensing-bet-heres-the-fuller-picture"
+     },
+     {
+      "title": "Reddit Stock Is Down Nearly 35% in 2026, Yet Wall Street Sees Revenue Topping $5 Billion by 2028 (TIKR, 2026-09-26)",
+      "url": "https://www.tikr.com/blog/reddit-stock-is-down-nearly-35-in-2026-yet-wall-street-sees-revenue-topping-5-billion-by-2028"
+     },
+     {
+      "title": "Reddit (RDDT) Stock Is Up, What You Need To Know (Yahoo Finance, 2026-10-09)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/reddit-rddt-stock-know-224310439.html"
+     },
+     {
+      "title": "Reddit has announced it will discontinue RSS feeds and terminate access to its public API (GIGAZINE, 2026-10-01)",
+      "url": "https://gigazine.net/gsc_news/en/20261001-reddit-killing-rss-feeds-end-public-api"
+     },
+     {
+      "title": "Reddit announces $1B share repurchase program as quarterly earnings top estimates (Proactive Investors, 2026-02-06)",
+      "url": "https://www.proactiveinvestors.co.uk/companies/news/1086970/reddit-announces-1b-share-repurchase-program-as-quarterly-earnings-top-estimates-1086970.html"
+     },
+     {
+      "title": "Reddit stock tumbles 9% as analyst warns of slowing growth in 2026 (Investing.com, 2026-01-27)",
+      "url": "https://www.investing.com/news/stock-market-news/reddit-stock-tumbles-9-as-analyst-warns-of-slowing-growth-in-2026-4467551"
+     },
+     {
+      "title": "Reddit Earnings Estimates, EPS & Revenue (Benzinga)",
+      "url": "https://www.benzinga.com/quote/RDDT/earnings"
+     }
+    ]
+   },
+   "metrics": {
+    "ticker": "RDDT",
+    "name": "Reddit, Inc.",
+    "sector": "커뮤니케이션",
+    "industry": "Internet Content & Information",
+    "as_of": "2026-10-11",
+    "price": 159.91,
+    "market_cap_b": 30.77,
+    "valuation": {
+     "trailing_pe": 37.18837,
+     "forward_pe": 16.506855,
+     "peg": 0.7581,
+     "fcf_yield_pct": 2.2,
+     "analyst_target_mean": 213.70909,
+     "analyst_rating_mean_1buy_5sell": 1.94118,
+     "analysts": 33.0
+    },
+    "growth_profitability": {
+     "gross_margin_pct": 91.4,
+     "op_margin_pct": 28.8,
+     "roe_pct": 30.7,
+     "revenue_growth_last_q_yoy_pct": 61.1,
+     "eps_growth_last_q_yoy_pct": 177.8,
+     "eps_growth_est_this_fy_pct": 69.2,
+     "eps_growth_est_next_fy_pct": 26.2
+    },
+    "cash_debt_dilution": {
+     "fcf_ttm_b": 1.02,
+     "sbc_ttm_b": 0.34,
+     "buyback_ttm_b": null,
+     "fcf_margin_pct": 24.4,
+     "net_debt_to_ebitda": -3.45,
+     "share_count_change_pct": 2.8,
+     "share_count_span": "2025-06→2026-06"
+    },
+    "estimate_revisions_next_fy_eps": {
+     "current": 7.06846,
+     "chg_7d_pct": 0.45,
+     "chg_30d_pct": 0.66,
+     "chg_90d_pct": 9.24,
+     "up_revisions_30d": 3.0,
+     "down_revisions_30d": 0.0
+    },
+    "quarterly": {
+     "periods": [
+      "2025-06",
+      "2025-09",
+      "2025-12",
+      "2026-03",
+      "2026-06"
+     ],
+     "revenue_b": [
+      0.5,
+      0.58,
+      0.73,
+      0.66,
+      0.8
+     ],
+     "op_margin_pct": [
+      13.6,
+      23.7,
+      31.9,
+      27.6,
+      28.8
+     ],
+     "diluted_eps": [
+      0.45,
+      0.8,
+      1.24,
+      1.01,
+      1.25
+     ]
+    },
+    "annual_revenue_b": [
+     [
+      "2022-12",
+      0.67
+     ],
+     [
+      "2023-12",
+      0.8
+     ],
+     [
+      "2024-12",
+      1.3
+     ],
+     [
+      "2025-12",
+      2.2
+     ]
+    ],
+    "eps_surprises": [
+     {
+      "quarter": "2025-09",
+      "actual": 0.8,
+      "estimate": 0.52015,
+      "surprise_pct": 53.8
+     },
+     {
+      "quarter": "2025-12",
+      "actual": 1.24,
+      "estimate": 0.93136,
+      "surprise_pct": 33.1
+     },
+     {
+      "quarter": "2026-03",
+      "actual": 1.01,
+      "estimate": 0.56388,
+      "surprise_pct": 79.1
+     },
+     {
+      "quarter": "2026-06",
+      "actual": 1.25,
+      "estimate": 0.96481,
+      "surprise_pct": 29.6
+     }
+    ],
+    "next_earnings": "2026-10-29",
+    "return_1y_pct": -19.5,
+    "from_52w_high_pct": -38.2,
+    "quant_score": {
+     "score": 75.2,
+     "quality": 84,
+     "health": 77,
+     "value": 53,
+     "revisions": 85
+    },
+    "cycle_check": null,
+    "dashboard_signals": []
+   },
+   "reused_from": null
+  },
+  "KEYS": {
+   "analysis": {
+    "one_line_thesis": "AI 데이터센터(1.6T 광 트랜시버, 실리콘 포토닉스, 랙 단위 에뮬레이션), 6G, 국방 현대화가 한꺼번에 오면서 코어 매출 +31%, 수주 +52%를 낸 계측·시뮬레이션 1위 기업입니다. 다만 사이클 정점 수준 마진(영업이익률 33.2%)을 FY27 PER 27.5배로 이미 높게 쳐주고 있어 좋은 회사이지만 비싼 가격이라는 게 핵심입니다.",
+    "quality": {
+     "score": 4,
+     "moat": "오실로스코프·네트워크 분석기·224G 디지털 통신 분석기 같은 고성능 계측 장비와 EDA, Spirent 네트워크 에뮬레이션·PNT를 묶어 설계 이전 단계부터 양산 테스트까지 한 번에 공급하는 것이 해자입니다. 표준이 바뀔 때(800G→1.6T, 5G→6G)마다 고객보다 먼저 측정 장비를 내놓아야 하는 구조라, 이 분야 R&D 규모와 고객 신뢰가 진입장벽 역할을 합니다. FY26 3분기 non-GAAP 총이익률 69.0%, CSG 영업이익률 34.0%, EISG 31.0%는 높은 가격결정력을 보여줍니다. 소프트웨어·서비스가 매출의 약 33%, 반복매출(ARR)이 24%라 순수 하드웨어 업체보다 안정성도 높습니다.",
+     "growth_durability": "FY26 3분기 매출은 18.46억달러(+36%, 코어 +31%)였고, 수주는 20.91억달러(+56%, 코어 +52%)로 2분기 연속 20억달러를 넘었습니다. 북투빌은 약 1.13입니다. 유선(Wireline) 수주가 전년의 두 배를 넘으면서 상업통신 매출이 처음으로 분기 10억달러(+56%)를 돌파했고, 처음으로 유선 매출이 무선을 앞질렀습니다. 국방(+14%), EISG(+21%, 범용전자·반도체·자동차 모두 두 자릿수 수주 성장)도 함께 커서 성장 기반은 넓은 편입니다. 다만 연매출이 FY23 54.6억달러에서 FY24 49.8억달러로 줄었다가 FY25 53.8억달러로 회복한 데서 보이듯, 계측 산업은 고객 R&D·설비투자 사이클을 강하게 타기 때문에 지금의 30%대 성장은 구조적 요인에 사이클 상승이 겹친 결과로 봐야 합니다.",
+     "summary": "AI 인프라, 6G 상용 개발 착수(3GPP가 첫 표준을 2029년 3월로 확정), 국방 예산 확대라는 세 가지 장기 흐름에 모두 걸쳐 있는 질 높은 사업입니다. 하지만 현재 성장률과 마진은 과거 사이클 고점을 크게 넘는 수준이라, 이 중 얼마가 지속 가능한 몫인지가 가치 판단의 핵심입니다. 회사가 장기 목표로 제시한 영업이익률 31~32%를 3분기에 이미 넘어선 점도 정상화 위험을 시사합니다."
+    },
+    "financial_health": {
+     "score": 5,
+     "cash_flow": "3분기 영업현금흐름은 4.37억달러, FCF는 4.03억달러(+38%)였고, 2분기에는 사상 최대인 4.72억달러를 기록했습니다. TTM FCF는 14.7억달러(FCF 마진 28.4%)이고 FY26 영업현금흐름도 사상 최대가 예상됩니다. 주식보상비용 TTM 2.1억달러를 빼면 실질 FCF는 약 12.6억달러로, 시가총액 652억달러 대비 약 1.9%에 그칩니다. 현금 창출의 질은 좋지만 가격 대비 수익률은 낮습니다.",
+     "debt": "7월 말 기준 현금 26.05억달러, 총차입 약 25.17억달러로 사실상 순현금에 가깝습니다(순부채/EBITDA 0.09배). 이 중 7억달러가 1년 내 만기(유동성 장기부채)로 넘어왔지만, 보유 현금과 분기 4억달러대 FCF로 충분히 감당할 수 있는 수준입니다.",
+     "dilution": "FY26 들어 3분기까지 자사주 매입이 5.17억달러(3분기에만 약 64만주를 평균 326달러에 2.1억달러)이고, 2025년 7월 대비 2026년 7월 주식수는 0.92% 줄었습니다. 매입 규모가 SBC를 넘어 순소각 구조이지만, 소각률이 연 1% 수준이라 주당가치에 주는 효과는 크지 않습니다.",
+     "summary": "대차대조표와 현금흐름에는 약점이 거의 없습니다. Spirent 등 인수 통합을 예정보다 한 분기 빨리 마쳤고, 1억달러 비용 시너지 중 80~90%를 FY26 말까지 run-rate로 실현할 것으로 예상해 추가 마진 여력도 있습니다. 다만 순현금에 가까운 재무 구조가 주가 하방을 지지해 주지는 못하는 밸류에이션 수준입니다."
+    },
+    "valuation": {
+     "score": 2,
+     "current_view": "주가 382.75달러는 FY26 non-GAAP EPS 추정치 약 11.48달러(1~3분기 실적 8.11달러 + 4분기 가이던스 중간값 3.37달러) 대비 약 33배, FY27 컨센서스 13.93달러 대비 27.5배, 트레일링 GAAP 기준 51.8배입니다. 연초 Q1 실적 직후 선행 PER이 약 33배였던 점을 감안하면 이익 상향이 멀티플 일부를 흡수했지만, 1년 수익률 +140%에 52주 고점 대비 -1.4%로 고점 부근입니다. 애널리스트 평균 목표가 418달러는 상승여력 약 9%에 그칩니다. 최근 목표가는 Goldman 487달러, UBS·Susquehanna 440달러, Citi 400달러이고, Truist는 Hold입니다.",
+     "upside_scenario": "FY27 EPS가 컨센서스(+21%)를 넘어 15달러 이상 나오고, 시장이 AI 인프라 테스트를 구조적 성장으로 인정해 28~30배를 유지하면 420~450달러(+10~18%)가 가능합니다. 그러려면 수주가 분기 20억달러 이상을 유지하고(북투빌 1 초과), 공급망 제약이 풀리면서 백로그가 매출로 전환되고, 영업이익률이 33% 안팎을 지켜야 합니다. 반대로 사이클이 정상화돼 이익 성장이 한 자릿수로 둔화되고 멀티플이 과거 평균대인 20~22배로 돌아가면 FY27 EPS 기준 280~305달러(-20~27%)로 하방이 더 큽니다.",
+     "summary": "PEG 0.7과 30일 상향 12건·하향 0건, 90일 FY27 EPS +17.5% 상향이라는 이익 모멘텀은 강합니다. 하지만 이 가격은 '사이클 정점 마진이 수년 유지된다'는 낙관을 이미 상당 부분 반영하고 있습니다. 가격 매력만 놓고 보면 중립보다 약간 불리합니다."
+    },
+    "catalysts": [
+     {
+      "event": "FY26 4분기 실적 및 FY27 첫 가이던스(1분기) 발표",
+      "timing": "2026-11-24 (예상, 일부 자료는 11-23)",
+      "impact": "불확실",
+      "detail": "4분기 가이던스는 매출 19.3~19.5억달러(+37%), EPS 3.34~3.40달러입니다. 최근 두 분기 EPS 서프라이즈가 각각 +23.7%여서 기대치가 높습니다. FY27 1분기 가이던스와 수주가 20억달러 이상 유지되는지가 주가 방향을 정할 것이며, 수주가 꺾이면 고점 멀티플이 바로 조정될 수 있습니다."
+     },
+     {
+      "event": "공급망 제약 해소 여부",
+      "timing": "2026-11 ~ 2027-02 (향후 2개 분기)",
+      "impact": "불확실",
+      "detail": "경영진은 부품 수급 제약이 향후 두 분기가량 수요의 매출 전환을 막을 수 있다고 밝혔고, 9월 투자자 콘퍼런스에서 이를 언급한 뒤 주가가 하락했습니다. 제약이 풀리면 쌓인 백로그가 매출 상단 서프라이즈로 이어지지만, 길어지면 총이익률과 납기 경쟁력이 손상될 수 있습니다."
+     },
+     {
+      "event": "인수 비용 시너지 1억달러 실현",
+      "timing": "2026-10 FY26 말 80~90% run-rate, FY27 완료",
+      "impact": "긍정",
+      "detail": "Spirent 등 인수 통합이 한 분기 앞당겨 끝나 4분기부터 시너지 실현이 가속됩니다. 매출 성장이 둔화되더라도 FY27 영업이익률을 받쳐 주는 완충 장치입니다."
+     },
+     {
+      "event": "AI 데이터센터 속도 전환(1.6T 양산, 3.2T·448G 개발) 및 OFC 2027",
+      "timing": "2027-03 (OFC), 연중 상시",
+      "impact": "긍정",
+      "detail": "트랜시버 업체들이 지금 1.6T 생산을 늘리고 있고, 회사는 R&D 대 양산 매출 비중이 약 2/3 대 1/3으로 양산 쪽이 커지고 있다고 밝혔습니다. 다음 세대 표준(3.2T, 224G→448G SerDes)용 장비 수주가 이어지면 AI 관련 매출이 일회성 설비 사이클이 아니라는 근거가 됩니다."
+     },
+     {
+      "event": "6G 상용 개발 프로그램 본격화와 미국·유럽 국방예산 집행",
+      "timing": "2027년 전반 (FY27)",
+      "impact": "긍정",
+      "detail": "3GPP가 2026년 6월 첫 6G 표준 시점을 2029년 3월로 확정하면서 고객들이 탐색 연구에서 예산이 배정된 개발로 넘어가고 있습니다. 국방 부문도 3분기 수주가 두 자릿수 증가했습니다. AI 이후의 성장 동력을 보여줄 지표입니다."
+     }
+    ],
+    "bear_case": {
+     "summary": "가장 강한 약세 논리는 지금 실적이 AI 데이터센터 설비투자와 세대 전환이 겹친 사이클 정점이고, 시장이 이를 27~33배로 영구화해 가격을 매기고 있다는 것입니다. 3분기 매출 증가분 4.94억달러 중 약 73%(3.62억달러)가 상업통신, 특히 유선 AI 인프라에서 나와 단일 테마 집중도가 커졌습니다. 영업이익률 33.2%는 회사 장기 목표 31~32%를 이미 넘었습니다. 계측 업종은 FY24에 매출이 9% 줄었던 것처럼 고객 투자 둔화에 민감합니다. 하이퍼스케일러 투자가 속도 조절에 들어가거나 공급 제약이 길어지면 이익 추정치 하향과 멀티플 축소가 동시에 올 수 있습니다.",
+     "key_risks": [
+      "AI 인프라 집중도: 상업통신 매출이 +56%로 전체 성장을 이끌고 유선 수주는 2배 이상 늘었습니다. 하이퍼스케일러 설비투자가 둔화되면 성장의 핵심 축이 한꺼번에 흔들립니다.",
+      "마진 정점 위험: non-GAAP 영업이익률 33.2%(코어 34.7%, 증분 마진 66%)는 장기 목표를 넘은 수준입니다. 매출 성장이 둔화되면 영업 레버리지가 반대로 작동합니다.",
+      "공급망 제약: 부품 수급 문제로 수요를 매출로 전환하지 못하는 상황이 향후 2개 분기 이어질 수 있고, 국방 매출 성장률도 직전 분기보다 둔화됐습니다.",
+      "밸류에이션 부담: FY27 PER 27.5배, SBC 차감 FCF 수익률 약 1.9%, 1년 +140% 상승으로 작은 실망에도 큰 폭의 조정이 가능합니다.",
+      "중국·관세 등 지정학 리스크: 아시아 반도체·전자 고객 비중이 높아 수출 규제나 관세 변화가 수주에 직접 영향을 줄 수 있습니다."
+     ],
+     "thesis_breakers": [
+      "분기 수주가 2개 분기 연속 매출을 밑돌거나(북투빌 1 미만) 코어 수주 성장률이 한 자릿수로 떨어지는 경우",
+      "상업통신(특히 유선) 수주가 전년 대비 감소로 돌아서는 경우",
+      "non-GAAP 영업이익률이 2개 분기 연속 29% 아래로 내려가 시너지와 레버리지 효과가 사라졌음이 확인되는 경우",
+      "FY27 가이던스나 컨센서스가 EPS 성장률 10% 미만으로 하향되는 경우",
+      "공급망 제약이 2027년 2분기 이후까지 이어지며 총이익률이 65%(non-GAAP) 아래로 떨어지는 경우"
+     ]
+    },
+    "thesis_status": "해당없음",
+    "thesis_status_reason": "신규 편입 후보라 기존 보유 논리가 없습니다. 편입을 검토한다면 기준점은 '분기 수주 20억달러 이상 유지, 영업이익률 31~33%, FY27 EPS 두 자릿수 성장'입니다.",
+    "verdict": "관찰",
+    "verdict_reason": "사업의 질(총이익률 69%, AI·6G·국방 다변화)과 재무 건전성(사실상 순현금, FCF 마진 28%)은 우수하고, 이익 추정치 상향도 강합니다(30일 상향 12건·하향 0건). 하지만 주가가 1년 새 140% 올라 52주 고점 부근이고, FY27 PER 27.5배·SBC 차감 FCF 수익률 약 1.9%에서는 사이클 정점 마진이 유지된다는 가정이 이미 가격에 들어가 있습니다. 평균 목표가 대비 상승여력도 약 9%에 불과합니다. 11월 24일 전후 FY26 4분기 실적에서 수주 지속성과 공급 제약 해소를 확인하거나, 주가가 FY27 EPS 대비 22~23배(약 310~320달러)로 내려올 때 편입을 다시 검토하는 편이 기대값 측면에서 낫다고 판단합니다.",
+    "conviction": 3,
+    "sources": [
+     {
+      "title": "Keysight Technologies Reports Third Quarter 2026 Results (Keysight IR)",
+      "url": "https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2026/Keysight-Technologies-Reports-Third-Quarter-2026-Results/default.aspx"
+     },
+     {
+      "title": "Keysight Technologies Third Quarter 2026 Earnings Conference Call Prepared Remarks (PDF)",
+      "url": "https://s22.q4cdn.com/444849635/files/doc_earnings/2026/q3/transcript/Q3-FY2026-Prepared-Remarks.pdf"
+     },
+     {
+      "title": "Keysight Technologies Inc. (KEYS) Q3 FY2026 earnings call transcript (Yahoo Finance)",
+      "url": "https://finance.yahoo.com/quote/KEYS/earnings/KEYS-Q3-2026-earnings_call-675583.html"
+     },
+     {
+      "title": "Keysight Technologies Q3 2026 Earnings Report (MarketBeat)",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-8-18-keysight-technologies-inc-stock"
+     },
+     {
+      "title": "Keysight Q3 FY2026 earnings: Commercial communications drives 36% revenue growth (TradingKey)",
+      "url": "https://www.tradingkey.com/news/earnings/262116024-tradingkey"
+     },
+     {
+      "title": "Q3 2026 Keysight Technologies Inc Earnings Call Transcript (GuruFocus)",
+      "url": "https://www.gurufocus.com/stock/STU:1KT/transcripts/9042144"
+     },
+     {
+      "title": "Keysight Technologies (KEYS) Analyst Ratings (StockAnalysis)",
+      "url": "https://stockanalysis.com/stocks/keys/ratings/"
+     },
+     {
+      "title": "Keysight Technologies Q2 2026: $2B in Orders and 69% EPS Growth, Is the Stock Already Priced for It at $344? (TIKR)",
+      "url": "https://www.tikr.com/blog/keysight-technologies-q2-2026-2b-in-orders-and-69-eps-growth-is-the-stock-already-priced-for-it-at-344"
+     },
+     {
+      "title": "Keysight Stock Is Up 23% in 2026 After Earnings Beat (TIKR)",
+      "url": "https://www.tikr.com/blog/keysight-stock-is-up-23-in-2026-after-earnings-beat-what-the-rally-means-from-here"
+     },
+     {
+      "title": "Keysight Technologies Reports First Quarter 2026 Results (Keysight IR)",
+      "url": "https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2026/Keysight-Technologies-Reports-First-Quarter-2026-Results/default.aspx"
+     },
+     {
+      "title": "Keysight Technologies News: Keysight falls after execs highlight supply chain constraints (Markets Insider)",
+      "url": "https://markets.businessinsider.com/news/keys"
+     }
+    ]
+   },
+   "metrics": {
+    "ticker": "KEYS",
+    "name": "Keysight Technologies Inc.",
+    "sector": "IT·기술",
+    "industry": "Scientific & Technical Instruments",
+    "as_of": "2026-10-11",
+    "price": 382.75,
+    "market_cap_b": 65.16,
+    "valuation": {
+     "trailing_pe": 51.792965,
+     "forward_pe": 27.468643,
+     "peg": 0.7007,
+     "fcf_yield_pct": 2.87,
+     "analyst_target_mean": 418.0,
+     "analyst_rating_mean_1buy_5sell": 1.58333,
+     "analysts": 12.0
+    },
+    "growth_profitability": {
+     "gross_margin_pct": 63.3,
+     "op_margin_pct": 25.7,
+     "roe_pct": 20.9,
+     "revenue_growth_last_q_yoy_pct": 36.5,
+     "eps_growth_last_q_yoy_pct": 109.1,
+     "eps_growth_est_this_fy_pct": 60.2,
+     "eps_growth_est_next_fy_pct": 21.4
+    },
+    "cash_debt_dilution": {
+     "fcf_ttm_b": 1.47,
+     "sbc_ttm_b": 0.21,
+     "buyback_ttm_b": 0.62,
+     "fcf_margin_pct": 28.4,
+     "net_debt_to_ebitda": 0.09,
+     "share_count_change_pct": -0.92,
+     "share_count_span": "2025-07→2026-07"
+    },
+    "estimate_revisions_next_fy_eps": {
+     "current": 13.93407,
+     "chg_7d_pct": 0.45,
+     "chg_30d_pct": 2.08,
+     "chg_90d_pct": 17.52,
+     "up_revisions_30d": 12.0,
+     "down_revisions_30d": 0.0
+    },
+    "quarterly": {
+     "periods": [
+      "2025-07",
+      "2025-10",
+      "2026-01",
+      "2026-04",
+      "2026-07"
+     ],
+     "revenue_b": [
+      1.35,
+      1.42,
+      1.6,
+      1.72,
+      1.85
+     ],
+     "op_margin_pct": [
+      17.3,
+      15.3,
+      15.5,
+      23.7,
+      25.0
+     ],
+     "diluted_eps": [
+      1.1,
+      1.33,
+      1.63,
+      2.02,
+      2.3
+     ]
+    },
+    "annual_revenue_b": [
+     [
+      "2022-10",
+      5.42
+     ],
+     [
+      "2023-10",
+      5.46
+     ],
+     [
+      "2024-10",
+      4.98
+     ],
+     [
+      "2025-10",
+      5.38
+     ]
+    ],
+    "eps_surprises": [
+     {
+      "quarter": "2025-10",
+      "actual": 1.91,
+      "estimate": 1.85411,
+      "surprise_pct": 3.0
+     },
+     {
+      "quarter": "2026-01",
+      "actual": 2.17,
+      "estimate": 1.9954,
+      "surprise_pct": 8.8
+     },
+     {
+      "quarter": "2026-04",
+      "actual": 2.87,
+      "estimate": 2.32041,
+      "surprise_pct": 23.7
+     },
+     {
+      "quarter": "2026-07",
+      "actual": 3.07,
+      "estimate": 2.48193,
+      "surprise_pct": 23.7
+     }
+    ],
+    "next_earnings": "2026-11-24",
+    "return_1y_pct": 140.0,
+    "from_52w_high_pct": -1.4,
+    "quant_score": {
+     "score": 74.1,
+     "quality": 76,
      "health": 69,
-     "value": 78,
-     "revisions": 86
+     "value": 55,
+     "revisions": 91
+    },
+    "cycle_check": null,
+    "dashboard_signals": []
+   },
+   "reused_from": null
+  },
+  "FSLR": {
+   "analysis": {
+    "one_line_thesis": "미국 유일의 대형 비실리콘(CdTe) 모듈 제조사가 Section 232 수입 하한가(모듈 와트당 0.38달러+15% 관세, 12월 4일 발효)와 45X 세액공제라는 정책 해자 덕분에 2027년 예상 EPS 기준 PER 7.7배까지 싸졌습니다. 다만 이익의 약 80%가 45X 보조금이고 신규 수주와 백로그가 줄고 있습니다. 그래서 '싸지만 정책 의존도가 높은 종목'으로 보고, 10월 29일 3분기 실적에서 Section 232 이후 수주와 단가가 실제로 붙는지 확인한 뒤 편입을 판단하는 것이 맞습니다.",
+    "quality": {
+     "score": 3,
+     "moat": "해자는 세 가지입니다. 중국 폴리실리콘 공급망과 무관한 CdTe 박막 기술, 2027년 약 17.7GW에 이를 미국 내 수직계열화 생산능력, 그리고 FEOC(우려 외국기관) 규정 적합성입니다. 백로그 45.1GW 중 약 41GW에 미국산 사용(domestic content) 요건이 붙어 있습니다. Google 데이터센터용 Steel River(1단계 1.6GW) 등 하이퍼스케일러 프로젝트가 '공급 확실성'을 이유로 이 회사를 고르고 있습니다. 반면 이 해자의 상당 부분은 기술 우위보다 정책(45X 세액공제, Section 232, 301 관세)이 만든 것이어서 정책이 바뀌면 함께 약해질 수 있습니다.",
+     "growth_durability": "2025년 매출은 52.2억달러(+24%)였지만 2026년 가이던스는 49~52억달러로 정체 내지 감소입니다. 2분기 매출도 10.6억달러(-4%)로 줄었는데, 전년 계약해지 수익이 빠진 영향이 큽니다. 2분기 EPS 3.92달러(+23%)와 총이익률 57%(+12%p)에는 일회성 IEEPA 관세 환급 효과 8,900만달러(세전 주당 약 0.8달러)가 들어 있습니다. 이를 빼면 컨센서스(2.90달러) 대비 초과폭은 약 10%로 줄어듭니다. 이익 성장의 주된 동력은 45X 적격 물량 확대(2026년 공제액 21.0억~21.9억달러 가이던스)입니다.",
+     "summary": "회사 자체의 질은 좋지만 이익 구조를 보면 2026년 조정 EBITDA 가이던스(26억~28억달러)의 약 75~84%가 45X 세액공제입니다. 공제가 없다면 영업 경제성은 훨씬 얇습니다. 백로그도 1분기 말 47.9GW에서 2분기 말 45.1GW로 줄어 출하가 신규 수주를 앞지르고 있습니다. CuRe 기술 상용화와 페로브스카이트 파일럿(2027년 상반기)은 기술 해자를 넓힐 수 있는 요소지만 아직 실적으로 확인되지는 않았습니다."
+    },
+    "financial_health": {
+     "score": 4,
+     "cash_flow": "TTM FCF는 15억달러(FCF 마진 29.7%), 주식보상비용은 2,000만달러에 불과합니다. 보상비를 빼도 시가총액 191억달러 대비 약 7.7%의 FCF 수익률입니다. 다만 2026년 상반기 영업현금흐름은 -3.6억달러, 설비투자는 2.8억달러였습니다. 현금흐름은 45X 공제를 일괄 매각하는 시점에 크게 좌우되며, 순현금은 2025년 말 24억달러에서 6월 말 17억달러로 줄었습니다.",
+     "debt": "2분기에 인도 DFC 대출을 전액 조기상환해 총현금과 순현금이 모두 17억달러가 됐습니다. 순부채/EBITDA는 -0.64배로 사실상 무차입입니다. 2026년 연말 순현금 가이던스는 17억~23억달러로, 회사가 목표로 하는 장기 현금 범위(15억~20억달러) 안에 있습니다.",
+     "dilution": "1년간 주식수는 0.21% 늘어 희석은 거의 없습니다. 반면 자사주 매입도 없습니다. 현금은 사우스캐롤라이나 공장(약 3.3억달러), 페로브스카이트 R&D, 설비투자(2026년 8억~10억달러 가이던스)에 우선 배분돼 주주환원으로 주당가치가 늘어나는 구조는 아닙니다.",
+     "summary": "부채 위험이 없고 보상비 희석도 미미해 재무 건전성은 우수합니다. 다만 FCF의 원천이 상당 부분 45X 공제 매각이라 보조금 의존도가 높고, 자사주 매입이 없어 주가 저평가를 회사가 직접 활용하지는 않습니다. 금리 상승(9월 24일 10년물 5.2%)은 회사 재무보다 고객 프로젝트 자금조달을 통해 수요 쪽에 부담을 줍니다."
+    },
+    "valuation": {
+     "score": 4,
+     "current_view": "주가 177.82달러는 TTM EPS 16.22달러 대비 11.0배, 2026년 추정 EPS(약 17.6달러) 대비 약 10배, 2027년 컨센서스 23.16달러 대비 7.7배입니다. EV(약 174억달러)는 2026년 조정 EBITDA 중간값의 약 6.4배입니다. 주가는 6월 3일 고점(약 321달러) 대비 -44%, 연초 대비 약 -32%이고, 애널리스트 평균 목표가 274달러와는 약 54% 차이가 납니다. 시장은 45X 공제가 2030년부터 단계적으로 줄어드는 점과 수주 둔화를 반영해 '보조금을 뺀 이익'에 낮은 배수를 주고 있습니다.",
+     "upside_scenario": "Section 232가 12월 4일 발효된 뒤 수입 모듈 가격이 와트당 0.40달러 이상으로 굳으면(현재 현물가 약 0.46달러, Intertek CEA) 신규 수주 단가가 기존 백로그 평균(약 0.30달러)보다 크게 높아집니다. 실제로 최근 수주 단가는 0.36달러였습니다. 이 경우 2027년 EPS 23달러에 11배만 적용해도 약 255달러(+43%)가 나옵니다. 2026~2029년 45X 공제만 연 20억달러 이상, 누적 80억달러 이상이 법으로 정해져 있다는 점도 하방을 받쳐 줍니다. 이 시나리오가 정당화되려면 백로그가 다시 늘고, 신규 수주 단가가 0.35달러 이상으로 유지돼야 합니다.",
+     "summary": "숫자상으로는 확실히 싸지만, 싼 이유(이익의 약 80%가 보조금, 매출 정체, 백로그 감소, 금리 민감도)도 분명합니다. 정책 환경은 오히려 개선됐습니다(Section 232 확정, 45X 유지). 그래서 '정책 수혜가 수주로 이어지는지'만 확인되면 재평가 여지가 크다고 봅니다."
+    },
+    "catalysts": [
+     {
+      "event": "2026년 3분기 실적 발표",
+      "timing": "2026-10-29 (예상)",
+      "impact": "불확실",
+      "detail": "회사 가이던스는 판매량 3.9~4.5GW, 조정 EBITDA 6.25억~7.75억달러입니다. 핵심은 Section 232 발표(8월 6일) 이후의 신규 수주량과 단가입니다. 7월에 이미 약 2GW를 수주했고, 선행조건부 계약 2GW 이상과 협상 중인 2GW가 더 있다고 밝혔습니다. 이것이 확정 수주로 전환돼 백로그가 반등하는지가 투자 판단의 1차 검증 지점입니다."
+     },
+     {
+      "event": "Section 232 폴리실리콘·파생상품 수입 하한가(MIP) 및 15% 관세 발효",
+      "timing": "2026-12-04",
+      "impact": "긍정",
+      "detail": "모듈 와트당 0.38달러, 셀 0.22달러의 최저수입가격에 15% 종가세와 기존 301조 관세(10~12.5%)가 겹칩니다. CdTe 기반인 이 회사는 적용 대상 밖이라 상대 가격경쟁력과 신규 수주 단가 협상력이 직접 개선됩니다. 다만 8월 6일 이전 고정가 계약에는 예외가 있어 효과는 2027년 계약부터 본격화될 가능성이 큽니다."
+     },
+     {
+      "event": "사우스캐롤라이나 3.7GW 마감(finishing) 공장 1단계 가동",
+      "timing": "2026년 하반기 (2단계는 2027년 중반)",
+      "impact": "긍정",
+      "detail": "해외(말레이시아·베트남) 반제품을 미국에서 마감해 FEOC 적합 미국산 물량을 늘리는 공장으로, 2027년 미국 생산능력 약 17.7GW 달성의 핵심입니다. 지금은 약 20% 수준으로 저가동 중인 동남아 공장의 활용도를 높여 분기 약 3,000만달러의 저가동 비용을 줄일 수 있습니다. 2단계가 2027년 중반으로 미뤄진 점은 일정 리스크입니다."
+     },
+     {
+      "event": "FY2026 4분기 실적 및 2027년 가이던스",
+      "timing": "2027-02 (예상)",
+      "impact": "불확실",
+      "detail": "컨센서스 2027년 EPS 23.16달러(+32%)를 뒷받침하는 판매량·단가·45X 규모가 제시되는지가 관건입니다. 2026년 2월에도 매출 가이던스(49억~52억달러)가 컨센서스(61.6억달러)를 크게 밑돌아 주가가 하루 13% 넘게 떨어진 전례가 있습니다."
+     },
+     {
+      "event": "FEOC 최종 규정 및 45X 관련 정책 결정",
+      "timing": "2026년 말~2027년 (시점 미정)",
+      "impact": "불확실",
+      "detail": "최종 FEOC 규정이 엄격할수록 중국 공급망에 의존하는 경쟁사가 불리해져 이 회사에 유리합니다. 반대로 45X 공제의 축소나 조기 종료 논의가 다시 나오면 이익의 약 80%가 흔들릴 수 있는 최대 변수입니다."
+     },
+     {
+      "event": "TOPCon 특허 소송 진행(JA Solar·American Panel Solutions 제소) 및 동남아 공장 장기 활용 결정",
+      "timing": "2026-10 이후 순차",
+      "impact": "불확실",
+      "detail": "9월 15일 ITC 337조 제소를 철회하고 연방법원 소송으로 전환해 빠른 수입금지 기대가 사라졌고, 이 소식으로 주가가 크게 빠졌습니다. 10월 1일 JA Solar 제소로 로열티나 합의 수익 가능성은 남아 있습니다. 약 1.8GW 해외 완제품 생산능력을 어떻게 쓸지에 대한 결정도 대기 중입니다."
+     }
+    ],
+    "bear_case": {
+     "summary": "가장 강한 약세 논리는 '이 회사는 보조금으로 이익을 내는 제조사'라는 것입니다. 2026년 45X 공제 21억~21.9억달러가 조정 EBITDA의 약 80%이고, 공제는 2030년부터 단계적으로 줄어듭니다. 그 사이 매출은 정체돼 있고 백로그는 47.9GW에서 45.1GW로 줄었습니다. 여기에 10년물 5.2%, 30년물 5.48%의 고금리가 유틸리티급 프로젝트의 자금조달을 압박합니다. 동남아 공장 저가동, 국내 운송비 상승, 관세 비용(순 6,000만~8,000만달러)도 부담입니다. 내부자 순매도와 집단소송도 투자심리를 누르고 있습니다.",
+     "key_risks": [
+      "정책 의존: 45X 공제가 이익의 약 75~84%를 차지합니다. 입법이나 행정 변화로 공제 금액, 양도성, 적격 요건이 바뀌면 EPS가 크게 줄어듭니다.",
+      "수주 둔화와 백로그 소진: 분기당 출하 약 4GW 대비 신규 수주가 부족해 백로그가 1분기 47.9GW에서 2분기 45.1GW로 줄었습니다. 경영진이 '수량보다 가격'을 우선하는 선별 수주 전략을 이어 가고 있어 2028년 이후 물량 가시성이 낮아질 수 있습니다.",
+      "금리와 프로젝트 금융: 고금리로 유틸리티급 태양광 프로젝트의 경제성이 나빠지면 주문 지연이나 해지(de-booking) 위험이 커집니다. 9월 24일 금리 급등일에 주가가 하루 10.3% 떨어지며 52주 신저가를 기록한 것이 그 민감도를 보여 줍니다.",
+      "이익의 질: 2분기 EPS 서프라이즈(+36%)에는 일회성 IEEPA 관세 환급 효과 8,900만달러가 포함돼 있습니다. 반복 가능한 이익 개선 폭은 헤드라인보다 작습니다.",
+      "경쟁 기술: 미국 내에서 TOPCon 셀·모듈 조립이 늘면 수입 하한가 효과가 줄고 시장가격이 와트당 0.30달러 수준으로 돌아갈 수 있습니다(Intertek CEA 전망). ITC 제소 철회로 특허를 통한 방어 속도도 느려졌습니다."
+     ],
+     "thesis_breakers": [
+      "3분기(10/29)와 4분기 실적에서 분기 신규 수주가 출하량에 못 미쳐 백로그가 2개 분기 연속 감소하고 40GW 아래로 내려가는 경우",
+      "Section 232 발효(12/4) 이후에도 신규 미국 수주 단가가 와트당 0.33달러 이하로 떨어지는 경우(최근 0.36달러, 기존 백로그 평균 약 0.30달러)",
+      "45X 공제 축소·조기 종료 법안이 통과되거나, FEOC 등 하위 규정으로 이 회사의 공제 적격 물량이 줄어드는 경우",
+      "2027년 가이던스에서 조정 EBITDA가 2026년 수준(26억~28억달러)을 밑돌거나 판매량 증가가 제시되지 않는 경우",
+      "고객 계약 해지(de-booking)가 분기 1GW 이상으로 늘거나 하이퍼스케일러 대형 프로젝트가 취소·연기되는 경우",
+      "사우스캐롤라이나 공장 1단계 가동이 2027년 상반기 이후로 다시 미뤄지는 경우"
+     ]
+    },
+    "thesis_status": "해당없음",
+    "thesis_status_reason": "신규 편입 후보라 기존 보유 논리가 없습니다. 편입을 검토할 때의 기준점은 '백로그 반등 + 신규 수주 단가 와트당 0.35달러 이상 + 45X 제도 유지' 세 가지입니다.",
+    "verdict": "관찰",
+    "verdict_reason": "2027년 예상 기준 PER 7.7배, EV/EBITDA 약 6.4배, 순현금 17억달러, SBC를 빼고도 7%대인 FCF 수익률은 매우 싸 보입니다. 정책 환경도 Section 232 확정(12월 4일 발효)과 45X 유지로 오히려 좋아졌습니다. 그러나 이익의 약 80%가 보조금이고, 매출은 정체(-4%)돼 있으며, 백로그는 줄고 있고, 2분기 서프라이즈의 상당 부분이 일회성입니다. 이번 주가 하락이 비합리적이라고 단정하기 어렵습니다. 특히 가장 중요한 검증(Section 232 이후 수주량과 단가가 실제로 반등하는지)이 3주 뒤인 10월 29일 3분기 실적에서 바로 확인됩니다. 그래서 지금은 '관찰'로 두고, 그 실적에서 백로그 순증과 와트당 0.35달러 이상의 신규 수주가 확인되면 편입 적합으로 올리는 것을 권합니다.",
+    "conviction": 3,
+    "sources": [
+     {
+      "title": "First Solar, Inc. Announces Second Quarter 2026 Financial Results and Reaffirms Guidance (Business Wire, 2026-07-30)",
+      "url": "https://www.businesswire.com/news/home/20260730673319/en/First-Solar-Inc.-Announces-Second-Quarter-2026-Financial-Results-and-Reaffirms-Guidance"
+     },
+     {
+      "title": "First Solar (FSLR) Q2 2026 Earnings Call Transcript (StockAnalysis)",
+      "url": "https://stockanalysis.com/stocks/fslr/transcripts/658589-q2-2026"
+     },
+     {
+      "title": "First Solar, Inc. Announces First Quarter 2026 Financial Results and Reaffirms Guidance (SEC EX-99.1)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1274494/000127449426000108/ex991pressreleaseq1-2026.htm"
+     },
+     {
+      "title": "First Solar Q2 2026 net cash decrease and South Carolina capex (AOL / Business Wire)",
+      "url": "https://www.aol.com/articles/first-solar-inc-announces-second-200200000.html"
+     },
+     {
+      "title": "Adjusting Imports of Polysilicon and its Derivatives into the United States (The White House, 2026-08-06)",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/08/adjusting-imports-of-polysilicon-and-its-derivatives-into-the-united-states/"
+     },
+     {
+      "title": "First Solar Applauds Comprehensive Section 232 Action on Polysilicon and Derivatives (Business Wire)",
+      "url": "https://www.businesswire.com/news/home/20260806572170/en/First-Solar-Applauds-Comprehensive-Section-232-Action-on-Polysilicon-and-Derivatives"
+     },
+     {
+      "title": "Section 232 tariffs push U.S. module prices to 2023 levels, but analysts see a path back to 30 cents per watt (pv magazine USA)",
+      "url": "https://pv-magazine-usa.com/2026/08/31/section-232-tariffs-push-u-s-module-prices-to-2023-levels-but-analysts-see-a-path-back-to-30-cents-per-watt"
+     },
+     {
+      "title": "Solar Stocks Slide as High Borrowing Costs Weigh on Project Financing: First Solar Sinks 8% (24/7 Wall St.)",
+      "url": "https://247wallst.com/investing/2026/09/24/solar-stocks-slide-as-high-borrowing-costs-weigh-on-project-financing-first-solar-sinks-8-solaredge-falls-5-enphase-energy-drops-4/"
+     },
+     {
+      "title": "First Solar Falls as Investors Weigh Patent-Case Shift and a Lower Price Target (Quiver Quantitative)",
+      "url": "https://www.quiverquant.com/news/First+Solar+Falls+as+Investors+Weigh+Patent-Case+Shift+and+a+Lower+Price+Target"
+     },
+     {
+      "title": "Why First Solar (FSLR) Is Down 13.9% After Rising Tax Credits Meet ITC Trade Scrutiny (Simply Wall St)",
+      "url": "https://simplywall.st/stocks/us/semiconductors/nasdaq-fslr/first-solar/news/why-first-solar-fslr-is-down-139-after-rising-tax-credits-me"
+     },
+     {
+      "title": "First Solar (FSLR) Falls Following Disappointing Guidance for Q1 2026 (Yahoo Finance)",
+      "url": "https://finance.yahoo.com/news/first-solar-fslr-falls-following-152057026.html"
+     },
+     {
+      "title": "First Solar Selects South Carolina for New US Production Facility (Business Wire)",
+      "url": "https://www.businesswire.com/news/home/20251114690346/en/First-Solar-Selects-South-Carolina-for-New-US-Production-Facility"
+     },
+     {
+      "title": "First Solar, Inc., News (Investor Relations: TOPCon IP strategy, JA Solar lawsuit)",
+      "url": "https://investor.firstsolar.com/news/default.aspx"
+     }
+    ]
+   },
+   "metrics": {
+    "ticker": "FSLR",
+    "name": "First Solar, Inc.",
+    "sector": "IT·기술",
+    "industry": "Solar",
+    "as_of": "2026-10-11",
+    "price": 177.82,
+    "market_cap_b": 19.11,
+    "valuation": {
+     "trailing_pe": 10.96301,
+     "forward_pe": 7.670213,
+     "peg": 0.3571,
+     "fcf_yield_pct": 8.37,
+     "analyst_target_mean": 274.47134,
+     "analyst_rating_mean_1buy_5sell": 1.86111,
+     "analysts": 30.0
+    },
+    "growth_profitability": {
+     "gross_margin_pct": 44.0,
+     "op_margin_pct": 42.6,
+     "roe_pct": 18.5,
+     "revenue_growth_last_q_yoy_pct": -3.7,
+     "eps_growth_last_q_yoy_pct": 23.3,
+     "eps_growth_est_this_fy_pct": 23.8,
+     "eps_growth_est_next_fy_pct": 32.0
+    },
+    "cash_debt_dilution": {
+     "fcf_ttm_b": 1.5,
+     "sbc_ttm_b": 0.02,
+     "buyback_ttm_b": null,
+     "fcf_margin_pct": 29.7,
+     "net_debt_to_ebitda": -0.64,
+     "share_count_change_pct": 0.21,
+     "share_count_span": "2025-06→2026-06"
+    },
+    "estimate_revisions_next_fy_eps": {
+     "current": 23.15513,
+     "chg_7d_pct": -0.01,
+     "chg_30d_pct": 0.38,
+     "chg_90d_pct": -0.43,
+     "up_revisions_30d": 4.0,
+     "down_revisions_30d": 0.0
+    },
+    "quarterly": {
+     "periods": [
+      "2025-06",
+      "2025-09",
+      "2025-12",
+      "2026-03",
+      "2026-06"
+     ],
+     "revenue_b": [
+      1.1,
+      1.59,
+      1.68,
+      1.04,
+      1.06
+     ],
+     "op_margin_pct": [
+      33.0,
+      29.2,
+      32.6,
+      33.1,
+      42.6
+     ],
+     "diluted_eps": [
+      null,
+      4.24,
+      4.84,
+      3.22,
+      3.92
+     ]
+    },
+    "annual_revenue_b": [
+     [
+      "2022-12",
+      2.62
+     ],
+     [
+      "2023-12",
+      3.32
+     ],
+     [
+      "2024-12",
+      4.21
+     ],
+     [
+      "2025-12",
+      5.22
+     ]
+    ],
+    "eps_surprises": [
+     {
+      "quarter": "2025-09",
+      "actual": 4.24,
+      "estimate": 4.28843,
+      "surprise_pct": -1.1
+     },
+     {
+      "quarter": "2025-12",
+      "actual": 4.84,
+      "estimate": 5.16793,
+      "surprise_pct": -6.3
+     },
+     {
+      "quarter": "2026-03",
+      "actual": 3.22,
+      "estimate": 2.97424,
+      "surprise_pct": 8.3
+     },
+     {
+      "quarter": "2026-06",
+      "actual": 3.92,
+      "estimate": 2.87963,
+      "surprise_pct": 36.1
+     }
+    ],
+    "next_earnings": "2026-10-29",
+    "return_1y_pct": -21.3,
+    "from_52w_high_pct": -44.1,
+    "quant_score": {
+     "score": 72.7,
+     "quality": 63,
+     "health": 73,
+     "value": 94,
+     "revisions": 63
     },
     "cycle_check": null,
     "dashboard_signals": []
@@ -2315,17 +2437,17 @@
   {
    "ticker": "NVDA",
    "action": "유지",
-   "reason": "[2026-09-13 분석 재사용 — 이후 실적 발표·큰 주가 변동·추정치 급변 없음] 실적(FY27 2분기 매출 96.2B·+106% YoY, 영업이익률 66.2%, 총마진 75%)과 추정치 상향(차기 FY EPS 30일간 +21.3%, 상향 41건·하향 0건)이 동시에 가속 중인데 선행 PER 14배·PEG 0.46배로 가격이 낙관을 선반영하지 않았다. 순현금·FCF 127B·SBC 비중 5.7%로 하방 방어력도 충분해, 사이클 피크 리스크를 감안해도 6개월 이상 보유 기대값이 우위다. 다만 단일 종목 비중을 통제하고 총마진 70%선과 QoQ 성장률을 분기마다 확인하는 조건부 편입이다."
+   "reason": "기존 논리 붕괴 조건 6개 중 촉발된 것은 하나도 없습니다. 3분기 가이던스는 전분기 대비 +12%로 성장률 조건(5%)을 넉넉히 넘고, 3분기 총마진 가이던스 74%(4분기 저점 71~72%)도 70%를 웃돌며, 차기 회계연도 EPS 추정치는 90일간 +25%(상향 46건, 하향 0건)입니다. 공급 약정은 2,790억달러로 급증했지만 데이터센터 매출이 +18% QoQ로 함께 성장하고 있어 조건 4는 미해당입니다. 공식적인 ASIC 전환 선언이나 2027년 설비투자 감소 신호도 없습니다. 주가 기준(편입가 218.29달러 대비 +5%, 선행 PER 약 14배)으로도 '고성장 + 비고평가'라는 원래 논리가 그대로 유효합니다. 다만 편입 이후 OpenAI 부지 신용보강 최대 1,050억달러라는 새 위험이 생겨 관련 붕괴 조건을 추가했고, 4분기 총마진이 70%선에 근접하는 점은 다음 실적에서 집중 점검해야 합니다."
   },
   {
    "ticker": "SPCX",
    "action": "미편입",
-   "reason": "[관찰] 기업의 질(해자·성장 지속성)은 5점에 가깝지만, 가격 매력(60~65배 PSR, 선행 PER 83배)과 현금흐름(TTM FCF -325억 달러)이 명백히 불리해 '좋은 회사, 비싼 가격' 전형이다. 게다가 상장 4개월차로 공시 이력이 짧고 2026년 12월 전후 락업 해제라는 수급 이벤트가 예정되어 있어, 지금 전량 편입보다는 11월 3일 3분기 실적에서 캐펙스 가이던스·Connectivity 마진·AI 매출 실체를 확인한 뒤 판단하는 것이 기대값이 높다. 락업 해제 구간에서 펀더멘털 훼손 없이 52주 고점(약 211달러) 대비 35% 이상 조정이 나오면 분할 편입을 검토할 만하다."
+   "reason": "[2026-10-10 분석 재사용 — 이후 실적 발표·큰 주가 변동·추정치 급변 없음] [관찰] 기업의 질(해자·성장 지속성)은 5점에 가깝지만, 가격 매력(60~65배 PSR, 선행 PER 83배)과 현금흐름(TTM FCF -325억 달러)이 명백히 불리해 '좋은 회사, 비싼 가격' 전형이다. 게다가 상장 4개월차로 공시 이력이 짧고 2026년 12월 전후 락업 해제라는 수급 이벤트가 예정되어 있어, 지금 전량 편입보다는 11월 3일 3분기 실적에서 캐펙스 가이던스·Connectivity 마진·AI 매출 실체를 확인한 뒤 판단하는 것이 기대값이 높다. 락업 해제 구간에서 펀더멘털 훼손 없이 52주 고점(약 211달러) 대비 35% 이상 조정이 나오면 분할 편입을 검토할 만하다."
   },
   {
    "ticker": "EXPE",
    "action": "미편입",
-   "reason": "[2026-09-13 분석 재사용 — 이후 실적 발표·큰 주가 변동·추정치 급변 없음] 편입 적합이나 확신도 3로 기준(4) 미달. 다섯 관점 중 재무(순현금, 연 3.6% 주식수 축소), 가격(선행 PER 11.5배·PEG 0.74배, 목표주가 대비 +21%), 촉매(추정치 상향 사이클, 광고·B2B 확장), 실행력(4개 분기 연속 어닝 서프라이즈, 5개 분기 연속 가이던스 상회와 연간 가이던스 상향)이 우호적입니다. 기업의 질은 B2C 브랜드력 열위와 마케팅 의존이라는 약점이 있어 3점에 그치지만, B2B 20개 분기 연속 두 자릿수 성장이라는 구조적 축과 간접비 동결로 만든 마진 확대(+196bp)가 이를 상쇄합니다. 결정적으로 현재 밸류에이션은 AI 디스인터미디에이션이라는 아직 실현되지 않은 위험을 이미 상당 부분 반영한 반면, 2026년 3월 OpenAI의 직접 결제 계획 축소는 이 위험의 타임라인이 시장 우려보다 길 수 있음을 보여줬습니다. '좋은 회사'는 아니지만 '싸게 사는 괜찮은 현금창출 기업'으로 6개월+ 보유의 기대값이 뚜렷하며, 다만 성장주가 아니라 밸류 리레이팅+주주환원 베팅임을 인지하고 포지션은 코어가 아닌 위성 비중으로 가져가는 것이 적절합니다."
+   "reason": "[관찰] 숫자는 좋습니다. 연간 가이던스는 상향됐고 4분기 연속 EPS가 예상을 웃돌았습니다(최근 +9.6%). B2B +21%, SBC 차감 후 FCF 수익률은 약 10~12%, 주식 수는 연 3.6% 줄었고, 내년 기준 PER 11배와 상향되는 추정치를 보면 퀀트 점수 79.9가 충분히 이해됩니다. 그러나 9월에만 Morgan Stanley 하향(MAU 정체), Meta Muse 쇼크(-7.7%), Google AI Mode 직접 예약 출시가 이어지면서 'AI 에이전트가 B2C를 잠식하는가'라는 핵심 쟁점이 막 수면 위로 올라왔습니다. 이를 검증할 첫 데이터인 3분기 실적과 4분기 가이던스가 3주 뒤인 11월 4일에 나옵니다. 3분기 성장률이 5~7%로 둔화되고 2분기 자사주 매입이 2억달러로 준 점도 지금 서둘러 편입하기보다 확인한 뒤 들어가는 쪽을 지지합니다. 11월 4일에 총예약이 가이던스 안에 들고, B2C가 한 자릿수 중반 이상을 지키고, 4분기 가이던스가 시장 예상 이상이면 '편입 적합'으로 올릴 근거가 충분합니다."
   },
   {
    "ticker": "CPAY",
@@ -2335,38 +2457,37 @@
   {
    "ticker": "RDDT",
    "action": "미편입",
-   "reason": "[2026-09-13 분석 재사용 — 이후 실적 발표·큰 주가 변동·추정치 급변 없음] 편입 적합이나 확신도 3로 기준(4) 미달. 8개 분기 연속 60%+ 성장, 조정 EBITDA 마진 43%, 순현금·자사주 매입으로 희석 상쇄라는 펀더멘털은 개선 중인데 주가는 1년간 38% 하락해 차기연도 EPS 기준 약 22배(PEG 0.79)까지 내려왔고, 최근 90일 EPS 추정치는 오히려 9.2% 상향됐다. 즉 '구글 트래픽 훼손' 공포가 실적보다 먼저·과하게 반영된 구간으로 판단되며, 6개월 이상 보유 관점에서 기대값이 뚜렷하다. 다만 구글 의존이라는 통제 불가 리스크와 사용자 지표 공시 중단을 감안해 소형 비중으로 시작하고 분기 DAU·성장률을 엄격히 추적하는 조건부 편입이다."
+   "reason": "[관찰] 수익화(매출 +61%, ARPU +36%), 수익성(조정 EBITDA 마진 43%, 순이익률 31%), 재무(순현금 28억달러, 희석 0.2%)는 모두 최상위권이고, FY27 PER 약 22배는 EPS 성장 26%를 감안하면 과하지 않습니다. 그러나 가장 중요한 미국 사용자 지표가 2분기에 꺾였고, 회사가 바로 그 세부 지표의 공시를 끊었으며, 2027년 AI 라이선스 갱신이라는 이진(binary) 변수도 남아 있습니다. 그래서 반대 근거를 감안한 6개월+ 기대값이 '뚜렷하다'고 말하기 어렵습니다. 10/29 3분기 실적에서 미국 DAUq가 5,350만 이상으로 반등하고 매출이 8.74억달러를 넘으면 편입 적합으로 다시 평가할 만하며, 그 전까지는 관찰이 합리적입니다."
   },
   {
    "ticker": "ADBE",
    "action": "미편입",
-   "reason": "편입 적합이나 확신도 3로 기준(4) 미달. 가격이 낙관이 아니라 비관을 반영한 드문 사례입니다. FY27 기준 PER 8.8배, SBC 차감 후에도 9%대 FCF 수익률, 연 5% 주식수 소각이라는 조합은 멀티플이 전혀 오르지 않아도 주당가치가 연 13~15% 증가하는 구조이며, 그 전제인 ARR(+11.2%)과 매출(+13%)은 아직 훼손되지 않았습니다. 다만 AI 원가로 GAAP 순이익이 +3%에 그친 점, RPO가 +8%로 둔화된 점, 12월 1일 CEO 교체와 정규 CFO 공백은 실질적 리스크여서 '싸니까 전액 매수'가 아니라 분할 편입 + 소규모 비중으로 시작하고 12월 9일 FY27 가이던스를 1차 검증 지점으로 삼을 것을 권합니다. 하방(한 자릿수 성장 고착 시 7~8배)과 상방(12배 재평가 시 330달러대)의 비대칭이 매수 쪽에 있다고 판단합니다."
+   "reason": "[2026-10-10 분석 재사용 — 이후 실적 발표·큰 주가 변동·추정치 급변 없음] 편입 적합이나 확신도 3로 기준(4) 미달. 가격이 낙관이 아니라 비관을 반영한 드문 사례입니다. FY27 기준 PER 8.8배, SBC 차감 후에도 9%대 FCF 수익률, 연 5% 주식수 소각이라는 조합은 멀티플이 전혀 오르지 않아도 주당가치가 연 13~15% 증가하는 구조이며, 그 전제인 ARR(+11.2%)과 매출(+13%)은 아직 훼손되지 않았습니다. 다만 AI 원가로 GAAP 순이익이 +3%에 그친 점, RPO가 +8%로 둔화된 점, 12월 1일 CEO 교체와 정규 CFO 공백은 실질적 리스크여서 '싸니까 전액 매수'가 아니라 분할 편입 + 소규모 비중으로 시작하고 12월 9일 FY27 가이던스를 1차 검증 지점으로 삼을 것을 권합니다. 하방(한 자릿수 성장 고착 시 7~8배)과 상방(12배 재평가 시 330달러대)의 비대칭이 매수 쪽에 있다고 판단합니다."
   },
   {
    "ticker": "KEYS",
    "action": "미편입",
-   "reason": "[2026-09-13 분석 재사용 — 이후 실적 발표·큰 주가 변동·추정치 급변 없음] [관찰] 기업의 질(계측 과점 1위, 총마진 63%대, ROE 20.9%)과 재무 건전성(순부채/EBITDA 0.09배, FCF 마진 28.4%, 순매입 기준 주식수 -0.92%)은 편입 기준을 충분히 충족한다. 문제는 타이밍과 가격이다. FY26 매출 +32%, EPS +60%, 영업이익률 +820bp라는 실적은 2024년 -9% 침체 이후의 사이클 반등에 AI 설비투자·Spirent 인수·관세 환급 일회성이 중첩된 결과이고, 주가는 이미 1년간 98.6% 상승해 사이클 피크 가능성이 있는 이익에 선행 PER 24.8배가 붙었다. 11월 24일 FY2027 가이던스에서 기록적 수주잔고가 두 자릿수 성장으로 이어진다는 증거를 확인한 뒤 진입해도 기대수익의 훼손이 크지 않은 반면, 확인 전 진입은 이익 정상화와 멀티플 축소의 이중 위험을 떠안는 구조여서 '관찰'로 판단한다."
+   "reason": "[관찰] 사업의 질(총이익률 69%, AI·6G·국방 다변화)과 재무 건전성(사실상 순현금, FCF 마진 28%)은 우수하고, 이익 추정치 상향도 강합니다(30일 상향 12건·하향 0건). 하지만 주가가 1년 새 140% 올라 52주 고점 부근이고, FY27 PER 27.5배·SBC 차감 FCF 수익률 약 1.9%에서는 사이클 정점 마진이 유지된다는 가정이 이미 가격에 들어가 있습니다. 평균 목표가 대비 상승여력도 약 9%에 불과합니다. 11월 24일 전후 FY26 4분기 실적에서 수주 지속성과 공급 제약 해소를 확인하거나, 주가가 FY27 EPS 대비 22~23배(약 310~320달러)로 내려올 때 편입을 다시 검토하는 편이 기대값 측면에서 낫다고 판단합니다."
   },
   {
    "ticker": "MPC",
    "action": "미편입",
-   "reason": "[관찰] 기업의 실행력(캡처율 112%, 가동률 94%)과 재무·환원 정책(1년 주식수 -6.9%, 분기 25억 달러 매입)은 흠잡을 데가 거의 없다. 그러나 투자 판단의 핵심은 '지금 가격에 6개월 이상 들고 갈 기대값이 있는가'인데, 선행 PER 8.8배는 90일 만에 119% 상향된 피크 추정치에 기반한 착시이며 중기 정상이익 기준으로는 18~23배에 해당한다. 1년 +156%, 52주 고점 -1.8%, 평균 목표가가 현재가보다 12% 낮은 상태에서 신규 진입은 '비정상적 정제마진이 2027년까지 지속된다'는 단일 변수에 베팅하는 것과 같다. 사이클 하강 신호 없이 크랙이 정상화되는 국면에서 주가가 중기 정상이익 10~12배(주당 250~300달러대) 수준으로 되돌아올 때 재검토하는 것이 합리적이며, 그때까지는 관찰 대상으로 둔다."
+   "reason": "[2026-10-10 분석 재사용 — 이후 실적 발표·큰 주가 변동·추정치 급변 없음] [관찰] 기업의 실행력(캡처율 112%, 가동률 94%)과 재무·환원 정책(1년 주식수 -6.9%, 분기 25억 달러 매입)은 흠잡을 데가 거의 없다. 그러나 투자 판단의 핵심은 '지금 가격에 6개월 이상 들고 갈 기대값이 있는가'인데, 선행 PER 8.8배는 90일 만에 119% 상향된 피크 추정치에 기반한 착시이며 중기 정상이익 기준으로는 18~23배에 해당한다. 1년 +156%, 52주 고점 -1.8%, 평균 목표가가 현재가보다 12% 낮은 상태에서 신규 진입은 '비정상적 정제마진이 2027년까지 지속된다'는 단일 변수에 베팅하는 것과 같다. 사이클 하강 신호 없이 크랙이 정상화되는 국면에서 주가가 중기 정상이익 10~12배(주당 250~300달러대) 수준으로 되돌아올 때 재검토하는 것이 합리적이며, 그때까지는 관찰 대상으로 둔다."
   },
   {
-   "ticker": "ALL",
+   "ticker": "FSLR",
    "action": "미편입",
-   "reason": "[관찰] 실행력·재무건전성·주주환원(주식수 -3.7%, 환원수익률 약 6%)은 우수하고 선행 PER 8.2배는 역사적 평균보다 낮아 하방이 과도하지 않다. 그러나 2026년 2분기 결합비율 86.6과 TTM EPS 50달러는 저재해·준비금 환입이라는 반복 불가능한 요인에 기대고 있고, 컨센서스조차 차기연도 EPS -20.7%를 가정한다. 6개월 이상 보유의 기대값이 '싸다'는 것만으로 성립하기엔 이익 정상화 폭이 불확실해, 3분기(11/4)·4분기 실적에서 underlying 결합비율 유지와 PIF 증가 전환이 확인될 때까지 관찰이 적절하다."
+   "reason": "[관찰] 2027년 예상 기준 PER 7.7배, EV/EBITDA 약 6.4배, 순현금 17억달러, SBC를 빼고도 7%대인 FCF 수익률은 매우 싸 보입니다. 정책 환경도 Section 232 확정(12월 4일 발효)과 45X 유지로 오히려 좋아졌습니다. 그러나 이익의 약 80%가 보조금이고, 매출은 정체(-4%)돼 있으며, 백로그는 줄고 있고, 2분기 서프라이즈의 상당 부분이 일회성입니다. 이번 주가 하락이 비합리적이라고 단정하기 어렵습니다. 특히 가장 중요한 검증(Section 232 이후 수주량과 단가가 실제로 반등하는지)이 3주 뒤인 10월 29일 3분기 실적에서 바로 확인됩니다. 그래서 지금은 '관찰'로 두고, 그 실적에서 백로그 순증과 와트당 0.35달러 이상의 신규 수주가 확인되면 편입 적합으로 올리는 것을 권합니다."
   }
  ],
  "usage": {
-  "claude-opus-5": {
-   "calls": 5,
-   "input_tokens": 622360,
-   "cache_read_tokens": 521343,
-   "cache_write_tokens": 100935,
-   "output_tokens": 55348,
-   "web_searches": 23,
-   "est_cost_usd": 2.51
+  "aside": {
+   "engine": "Aside (무료)",
+   "analyzed": 5,
+   "reused": 4,
+   "failed": [],
+   "est_cost_usd": 0,
+   "analyzed_at": "2026-10-11 10:59"
   }
  }
 }
