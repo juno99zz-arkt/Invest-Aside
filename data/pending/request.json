@@ -4329,5 +4329,6 @@
    "sec": true
   }
  },
- "finalized_at": null
+ "finalized_at": "2026-10-11 11:00",
+ "finalize_errors": []
 }
