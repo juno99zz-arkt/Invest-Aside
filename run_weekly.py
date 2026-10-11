@@ -48,6 +48,12 @@ def _load(path, default=None):
         return json.load(f)
 
 
+def load_watchlist():
+    """data/watchlist.json {"tickers": [...]} → 대문자 티커 목록."""
+    w = _load(os.path.join(DATA_DIR, "watchlist.json"), {}) or {}
+    return [str(t).strip().upper() for t in w.get("tickers", []) if str(t).strip()]
+
+
 def build_dossier(tk, snaps, details, scores, hits, holding, today):
     from signals import SECTOR_KR
     s, d, q = snaps[tk], details.get(tk, {}), scores.get(tk, {})
@@ -128,6 +134,13 @@ def prepare():
     m5 = fetch_insider_trades(sorted(snaps)) if sec_ok else None
     m2 = build_m2(snaps)
     m3_tk, m4_tk = build_m3(snaps), build_m4(snaps)
+
+    # 관심종목(data/watchlist.json): 순위와 관계없이 매주 심층분석. 유니버스 밖이면 시세를 따로 수집
+    watch = load_watchlist()
+    missing = [(t, t) for t in watch if t not in snaps]
+    if missing:
+        snaps.update(fetch_snapshots(missing))
+    print("관심종목:", watch, "(시세 없음: " + str([t for t in watch if t not in snaps]) + ")")
     scores = quant_scores(snaps)
 
     hist = load_history()
@@ -138,8 +151,11 @@ def prepare():
         scores[tk]["cycle_note"] = note
         print(f"  {tk}: {note}")
     held_tk, new_tk = pick_candidates(scores, snaps, hist["portfolio"], m1, m3_tk, m5, cycle_notes)
-    print("보유:", held_tk, "/ 신규 후보:", new_tk)
-    details = fetch_details(held_tk + new_tk + m3_tk + m4_tk + CAPEX_TICKERS)
+    picked_tk = new_tk
+    watch_tk = [t for t in watch if t in snaps and t not in held_tk and t not in new_tk]
+    new_tk = new_tk + watch_tk
+    print("보유:", held_tk, "/ 신규 후보:", picked_tk, "/ 관심종목:", watch_tk)
+    details = fetch_details(list(dict.fromkeys(held_tk + new_tk + m3_tk + m4_tk + CAPEX_TICKERS)))
     m6 = build_m6(snaps, details)
 
     signals_block = {
@@ -166,7 +182,7 @@ def prepare():
     tickers = held_tk + new_tk
     request = {
         "week": week, "date": today, "created_at_kst": now.strftime("%Y-%m-%d %H:%M"), "spy_price": spy,
-        "held": held_tk, "new_candidates": new_tk,
+        "held": held_tk, "new_candidates": new_tk, "watchlist": watch_tk,
         "fresh_reason": fresh_reason, "reused": reused,
         "to_analyze": to_analyze,                         # Aside 가 분석할 종목 자료 (dossier)
         "dossiers": dossiers,                             # 리포트 metrics 용 (재사용 포함 전체)
@@ -187,7 +203,8 @@ def prepare():
     }
     try:  # 후보 선정 순위표 (왜 탈락했나 답변용)
         from explain import ranking_table
-        request["ranking"] = ranking_table(scores, snaps, hist["portfolio"], m1, m3_tk, m5, cycle_notes, new_tk)
+        request["ranking"] = ranking_table(scores, snaps, hist["portfolio"], m1, m3_tk, m5, cycle_notes, picked_tk,
+                                           extra=watch_tk)
     except Exception as e:
         print(f"순위표 생성 실패(무시): {e}")
     _dump(PENDING_PATH, request)
@@ -212,6 +229,7 @@ def finalize():
     week, today, spy = req["week"], req["date"], req.get("spy_price")
     snaps, scores, next_e = req["snaps"], req["scores"], req.get("next_earnings", {})
     held_tk, new_tk = req["held"], req["new_candidates"]
+    watch_tk = set(req.get("watchlist") or [])
 
     if res.get("week") != week:
         sys.exit(f"::error::결과 주차({res.get('week')})가 요청서({week})와 다름 — 반영 중단")
@@ -237,6 +255,8 @@ def finalize():
         analyses = {**{tk: c["analysis"] for tk, c in reused.items()}, **fresh}
         kept, decisions, removed = decide(hist["portfolio"], new_tk, analyses, snaps, scores, today)
         for dcs in decisions:
+            if dcs["ticker"] in watch_tk and dcs["ticker"] not in held_tk:
+                dcs["reason"] = "[관심종목] " + dcs["reason"]
             if dcs["ticker"] in reused:
                 dcs["reason"] = (f"[{reused[dcs['ticker']]['analyzed_date']} 분석 재사용 — 이후 실적 발표·큰 주가 변동·"
                                  f"추정치 급변 없음] " + dcs["reason"])
@@ -256,7 +276,8 @@ def finalize():
         dossier_by_tk = {d["ticker"]: d for d in req["dossiers"]}
         report = {
             "week": week, "date": today, "spy_price": spy,
-            "candidates": [{"ticker": tk, "role": "보유" if tk in held_tk else "신규후보", **scores[tk],
+            "candidates": [{"ticker": tk, "role": "보유" if tk in held_tk else ("관심종목" if tk in watch_tk else "신규후보"),
+                            **scores[tk],
                             "analysis": "재사용" if tk in reused else (req["fresh_reason"].get(tk) or "")}
                            for tk in held_tk + new_tk],
             "analyses": {tk: {"analysis": a, "metrics": {k: v for k, v in dossier_by_tk[tk].items() if k != "holding"},
