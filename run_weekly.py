@@ -398,7 +398,7 @@ def finalize():
         hist = update_history(hist, week, today, kept, decisions, removed, snaps, spy)
         hist["weeks"][-1]["weights"] = weights
         hist["weeks"][-1]["allocation"] = {k: alloc[k] for k in
-                                           ("stance", "equity_pct", "stock_pct", "core_etf", "core_pct", "cash_pct", "reason")}
+                                           ("stance", "equity_pct", "stock_pct", "core_etf", "core_pct", "cash_pct", "reason", "expected_return_pct")}
         for h in hist["portfolio"]:
             a = analyses.get(h["ticker"]) or {}
             h["weight"] = weights.get(h["ticker"])
@@ -511,7 +511,7 @@ def finalize_interim(req, res):
     hist["weeks"].append({"week": f"{req['week']}+중간점검", "date": today, "interim": True, "decisions": decisions,
                           "portfolio_after": [h["ticker"] for h in kept], "weights": weights,
                           "allocation": {k: alloc[k] for k in ("stance", "equity_pct", "stock_pct", "core_etf", "core_pct",
-                                                               "cash_pct", "reason")},
+                                                               "cash_pct", "reason", "expected_return_pct")},
                           "trigger": res.get("trigger")})
     save_history(hist)
 
