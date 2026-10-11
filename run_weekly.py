@@ -318,6 +318,26 @@ def _risk_info(a, price, weight):
     return out
 
 
+def _rewind_week(hist, week):
+    """같은 주를 다시 finalize 할 때 그 주 결정 이전 상태로 되돌린다 (재실행해도 결과가 같도록).
+    그 주에 편입된 종목은 보유에서 빼고, 그 주에 제외된 종목은 보유로 되돌린다."""
+    last = next((w for w in hist.get("weeks", []) if w["week"] == week and not w.get("interim")), None)
+    if not last:
+        return hist
+    d0 = last["date"]
+    port = [h for h in hist.get("portfolio", []) if h.get("added_date") != d0]
+    out_tk = {d["ticker"] for d in last.get("decisions", []) if d["action"] == "제외"}
+    back = [c for c in hist.get("closed", []) if c.get("removed_date") == d0 and c["ticker"] in out_tk]
+    for c in back:
+        port.append({"ticker": c["ticker"], "name": c.get("name"), "added_date": c.get("added_date"),
+                     "added_price": c.get("added_price"), "thesis_status": "유효"})
+    hist["closed"] = [c for c in hist.get("closed", []) if c not in back]
+    if len(port) != len(hist.get("portfolio", [])) or back:
+        print(f"{week} 재실행 — 이번 주 결정 이전 보유로 되돌림: {[h['ticker'] for h in port]}")
+    hist["portfolio"] = port
+    return hist
+
+
 def finalize():
     import aside_bridge
     from picks import cache_entry, decide, load_cache, load_history, save_cache, save_history, update_history
@@ -355,7 +375,7 @@ def finalize():
         print("::error::Aside 심층분석 결과가 전부 무효 — 추천 이력 갱신 건너뜀, 신호·브리핑만 반영")
     else:
         cache = load_cache()
-        hist = load_history()
+        hist = _rewind_week(load_history(), week)
         reused = {tk: cache[tk] for tk in req.get("reused", {}) if tk in cache and not fresh.get(tk)}
         for tk, a in fresh.items():
             if a is not None:

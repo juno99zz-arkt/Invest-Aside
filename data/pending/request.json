@@ -7895,7 +7895,7 @@
    "CRCL": "Financial Services"
   }
  },
- "finalized_at": "2026-10-11 20:07",
+ "finalized_at": "2026-10-11 20:12",
  "ranking": {
   "cutoff_final": 72.3,
   "eligible_count": 501,
@@ -9401,6 +9401,6 @@
    }
   ]
  },
- "finalized_result_at": "2026-10-11 20:06",
+ "finalized_result_at": "2026-10-11 20:11",
  "finalize_errors": []
 }
